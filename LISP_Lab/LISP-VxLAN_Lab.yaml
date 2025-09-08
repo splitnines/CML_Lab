@@ -4,7 +4,7 @@ nodes:
     configuration:
       - name: ios_config.txt
         content: "Building configuration...\n\nCurrent configuration : 5643 bytes\n\
-          !\n! Last configuration change at 03:35:15 UTC Mon Sep 8 2025\n!\nversion\
+          !\n! Last configuration change at 04:31:02 UTC Mon Sep 8 2025\n!\nversion\
           \ 17.12\nservice timestamps debug datetime msec\nservice timestamps log\
           \ datetime msec\nservice password-encryption\n!\nhostname edge-1\n!\nboot-start-marker\n\
           boot-end-marker\n!\n!\nvrf definition A\n !\n address-family ipv4\n exit-address-family\n\
@@ -139,7 +139,7 @@ nodes:
 
           Current configuration : 3709 bytes
           !
-          ! Last configuration change at 03:35:15 UTC Mon Sep 8 2025
+          ! Last configuration change at 04:31:03 UTC Mon Sep 8 2025
           !
           version 17.12
           service timestamps debug datetime msec
@@ -426,7 +426,7 @@ nodes:
 
           Current configuration : 1980 bytes
           !
-          ! Last configuration change at 03:35:15 UTC Mon Sep 8 2025
+          ! Last configuration change at 04:31:03 UTC Mon Sep 8 2025
           !
           version 17.12
           service timestamps debug datetime msec
@@ -626,7 +626,7 @@ nodes:
 
           Current configuration : 1980 bytes
           !
-          ! Last configuration change at 03:35:15 UTC Mon Sep 8 2025
+          ! Last configuration change at 04:31:02 UTC Mon Sep 8 2025
           !
           version 17.12
           service timestamps debug datetime msec
@@ -824,9 +824,9 @@ nodes:
         content: |-
           Building configuration...
 
-          Current configuration : 3374 bytes
+          Current configuration : 3470 bytes
           !
-          ! Last configuration change at 03:35:15 UTC Mon Sep 8 2025
+          ! Last configuration change at 04:31:03 UTC Mon Sep 8 2025
           !
           version 17.12
           service timestamps debug datetime msec
@@ -991,16 +991,19 @@ nodes:
            address-family ipv4
             network 10.0.0.0 mask 255.255.255.0
             neighbor 10.255.0.2 activate
+            default-information originate
            exit-address-family
            !
            address-family ipv4 vrf A
             neighbor 10.255.0.6 remote-as 65200
             neighbor 10.255.0.6 activate
+            default-information originate
            exit-address-family
            !
            address-family ipv4 vrf B
             neighbor 10.255.0.10 remote-as 65200
             neighbor 10.255.0.10 activate
+            default-information originate
            exit-address-family
           !
           ip forward-protocol nd
@@ -1100,8 +1103,8 @@ nodes:
   - boot_disk_size: null
     configuration:
       - name: ios_config.txt
-        content: "Building configuration...\n\nCurrent configuration : 7362 bytes\n\
-          !\n! Last configuration change at 03:35:15 UTC Mon Sep 8 2025\n!\nversion\
+        content: "Building configuration...\n\nCurrent configuration : 7392 bytes\n\
+          !\n! Last configuration change at 04:31:03 UTC Mon Sep 8 2025\n!\nversion\
           \ 17.12\nservice timestamps debug datetime msec\nservice timestamps log\
           \ datetime msec\nservice password-encryption\n!\nhostname BxC-1\n!\nboot-start-marker\n\
           boot-end-marker\n!\n!\nvrf definition A\n rd 65000:10\n !\n address-family\
@@ -1196,13 +1199,13 @@ nodes:
           \ lisp metric 10\n  neighbor 10.255.0.5 remote-as 65100\n  neighbor 10.255.0.5\
           \ activate\n exit-address-family\n !\n address-family ipv4 vrf B\n  network\
           \ 10.20.0.1 mask 255.255.255.255\n  aggregate-address 10.20.0.0 255.255.255.0\
-          \ summary-only\n  neighbor 10.255.0.9 remote-as 65100\n  neighbor 10.255.0.9\
-          \ activate\n exit-address-family\n!\nip forward-protocol nd\n!\n!\nip http\
-          \ server\nip http secure-server\nip ssh bulk-mode 131072\n!\nlogging host\
-          \ 10.0.0.84\n!\n!\n!\n!\ncontrol-plane\n!\n!\nalias exec q exit\n!\nline\
-          \ con 0\n exec-timeout 0 0\n logging synchronous\nline aux 0\nline vty 0\
-          \ 4\n exec-timeout 0 0\n logging synchronous\n login local\n transport input\
-          \ ssh\n!\n!\n!\n!\nend"
+          \ summary-only\n  redistribute lisp metric 10\n  neighbor 10.255.0.9 remote-as\
+          \ 65100\n  neighbor 10.255.0.9 activate\n exit-address-family\n!\nip forward-protocol\
+          \ nd\n!\n!\nip http server\nip http secure-server\nip ssh bulk-mode 131072\n\
+          !\nlogging host 10.0.0.84\n!\n!\n!\n!\ncontrol-plane\n!\n!\nalias exec q\
+          \ exit\n!\nline con 0\n exec-timeout 0 0\n logging synchronous\nline aux\
+          \ 0\nline vty 0 4\n exec-timeout 0 0\n logging synchronous\n login local\n\
+          \ transport input ssh\n!\n!\n!\n!\nend"
     cpu_limit: null
     cpus: null
     data_volume: null
@@ -1322,7 +1325,7 @@ nodes:
 
           Current configuration : 3709 bytes
           !
-          ! Last configuration change at 03:35:15 UTC Mon Sep 8 2025
+          ! Last configuration change at 04:31:03 UTC Mon Sep 8 2025
           !
           version 17.12
           service timestamps debug datetime msec
@@ -1723,5 +1726,5 @@ links:
 lab:
   description: ''
   notes: ''
-  title: LISP Lab
+  title: LISP-VxLAN Lab
   version: 0.2.2
