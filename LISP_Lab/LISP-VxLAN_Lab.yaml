@@ -3,8 +3,8 @@ nodes:
   - boot_disk_size: null
     configuration:
       - name: ios_config.txt
-        content: "Building configuration...\n\nCurrent configuration : 5643 bytes\n\
-          !\n! Last configuration change at 04:31:02 UTC Mon Sep 8 2025\n!\nversion\
+        content: "Building configuration...\n\nCurrent configuration : 5654 bytes\n\
+          !\n! Last configuration change at 03:01:05 UTC Thu Sep 11 2025\n!\nversion\
           \ 17.12\nservice timestamps debug datetime msec\nservice timestamps log\
           \ datetime msec\nservice password-encryption\n!\nhostname edge-1\n!\nboot-start-marker\n\
           boot-end-marker\n!\n!\nvrf definition A\n !\n address-family ipv4\n exit-address-family\n\
@@ -50,38 +50,39 @@ nodes:
           \ ip address 10.254.0.5 255.255.255.255\n ip router isis\n!\ninterface LISP0\n\
           !\ninterface LISP0.10\n vrf forwarding A\n!\ninterface LISP0.20\n vrf forwarding\
           \ B\n!\ninterface Ethernet0/0\n no switchport\n ip address 10.1.0.22 255.255.255.252\n\
-          \ ip router isis\n isis network point-to-point\n!\ninterface Ethernet0/1\n\
-          \ no switchport\n ip address 10.1.0.18 255.255.255.252\n ip router isis\n\
-          \ isis network point-to-point\n!\ninterface Ethernet0/2\n switchport access\
-          \ vlan 10\n!\ninterface Ethernet0/3\n switchport access vlan 20\n!\ninterface\
-          \ Ethernet1/0\n!\ninterface Ethernet1/1\n!\ninterface Ethernet1/2\n!\ninterface\
-          \ Ethernet1/3\n!\ninterface Vlan10\n mac-address 02ca.feba.be01\n vrf forwarding\
-          \ A\n ip address 10.10.0.1 255.255.255.0\n lisp mobility VLAN10\n!\ninterface\
-          \ Vlan20\n mac-address 06de.adbe.ef02\n vrf forwarding B\n ip address 10.20.0.1\
-          \ 255.255.255.0\n lisp mobility VLAN20\n!\nrouter lisp\n locator-table default\n\
-          \ locator-set edge-1\n  IPv4-interface Loopback0 priority 10 weight 10\n\
-          \  exit-locator-set\n !\n locator default-set edge-1\n service ipv4\n  encapsulation\
-          \ vxlan\n  itr map-resolver 10.254.0.2\n  etr map-server 10.254.0.2 key\
-          \ 7 00071A150754\n  etr map-server 10.254.0.2 proxy-reply\n  etr\n  sgt\n\
-          \  no map-cache away-eids send-map-request\n  use-petr 10.254.0.2\n  proxy-itr\
-          \ 10.254.0.5\n  exit-service-ipv4\n !\n service ethernet\n  itr map-resolver\
-          \ 10.254.0.2\n  itr\n  etr map-server 10.254.0.2 key 7 1511021F0725\n  etr\
-          \ map-server 10.254.0.2 proxy-reply\n  etr\n  exit-service-ethernet\n !\n\
-          \ instance-id 10\n  remote-rloc-probe on-route-change\n  dynamic-eid VLAN10\n\
-          \   database-mapping 10.10.0.0/24 locator-set edge-1\n   exit-dynamic-eid\n\
-          \  !\n  service ipv4\n   eid-table vrf A\n   map-cache 0.0.0.0/0 map-request\n\
-          \   exit-service-ipv4\n  !\n  exit-instance-id\n !\n instance-id 20\n  remote-rloc-probe\
-          \ on-route-change\n  dynamic-eid VLAN20\n   database-mapping 10.20.0.0/24\
+          \ ip router isis\n shutdown\n isis network point-to-point\n!\ninterface\
+          \ Ethernet0/1\n no switchport\n ip address 10.1.0.18 255.255.255.252\n ip\
+          \ router isis\n isis network point-to-point\n!\ninterface Ethernet0/2\n\
+          \ switchport access vlan 10\n!\ninterface Ethernet0/3\n switchport access\
+          \ vlan 20\n!\ninterface Ethernet1/0\n!\ninterface Ethernet1/1\n!\ninterface\
+          \ Ethernet1/2\n!\ninterface Ethernet1/3\n!\ninterface Vlan10\n mac-address\
+          \ 02ca.feba.be01\n vrf forwarding A\n ip address 10.10.0.1 255.255.255.0\n\
+          \ lisp mobility VLAN10\n!\ninterface Vlan20\n mac-address 06de.adbe.ef02\n\
+          \ vrf forwarding B\n ip address 10.20.0.1 255.255.255.0\n lisp mobility\
+          \ VLAN20\n!\nrouter lisp\n locator-table default\n locator-set edge-1\n\
+          \  IPv4-interface Loopback0 priority 10 weight 10\n  exit-locator-set\n\
+          \ !\n locator default-set edge-1\n service ipv4\n  encapsulation vxlan\n\
+          \  itr map-resolver 10.254.0.2\n  etr map-server 10.254.0.2 key 7 00071A150754\n\
+          \  etr map-server 10.254.0.2 proxy-reply\n  etr\n  sgt\n  no map-cache away-eids\
+          \ send-map-request\n  use-petr 10.254.0.2\n  proxy-itr 10.254.0.5\n  exit-service-ipv4\n\
+          \ !\n service ethernet\n  itr map-resolver 10.254.0.2\n  itr\n  etr map-server\
+          \ 10.254.0.2 key 7 1511021F0725\n  etr map-server 10.254.0.2 proxy-reply\n\
+          \  etr\n  exit-service-ethernet\n !\n instance-id 10\n  remote-rloc-probe\
+          \ on-route-change\n  dynamic-eid VLAN10\n   database-mapping 10.10.0.0/24\
           \ locator-set edge-1\n   exit-dynamic-eid\n  !\n  service ipv4\n   eid-table\
-          \ vrf B\n   map-cache 0.0.0.0/0 map-request\n   exit-service-ipv4\n  !\n\
-          \  exit-instance-id\n !\n ipv4 locator reachability minimum-mask-length\
-          \ 32\n ipv4 source-locator Loopback0\n exit-router-lisp\n!\nrouter isis\n\
-          \ net 49.0000.0100.0005.00\n metric-style wide\n log-adjacency-changes\n\
-          !\nip forward-protocol nd\n!\n!\nip http server\nip http secure-server\n\
-          ip ssh bulk-mode 131072\n!\n!\nlogging host 10.0.0.84\n!\n!\n!\n!\ncontrol-plane\n\
-          !\n!\nalias exec q exit\n!\nline con 0\n exec-timeout 0 0\n logging synchronous\n\
-          line aux 0\nline vty 0 4\n exec-timeout 0 0\n logging synchronous\n login\
-          \ local\n transport input ssh\n!\n!\nend"
+          \ vrf A\n   map-cache 0.0.0.0/0 map-request\n   exit-service-ipv4\n  !\n\
+          \  exit-instance-id\n !\n instance-id 20\n  remote-rloc-probe on-route-change\n\
+          \  dynamic-eid VLAN20\n   database-mapping 10.20.0.0/24 locator-set edge-1\n\
+          \   exit-dynamic-eid\n  !\n  service ipv4\n   eid-table vrf B\n   map-cache\
+          \ 0.0.0.0/0 map-request\n   exit-service-ipv4\n  !\n  exit-instance-id\n\
+          \ !\n ipv4 locator reachability minimum-mask-length 32\n ipv4 source-locator\
+          \ Loopback0\n exit-router-lisp\n!\nrouter isis\n net 49.0000.0100.0005.00\n\
+          \ metric-style wide\n log-adjacency-changes\n!\nip forward-protocol nd\n\
+          !\n!\nip http server\nip http secure-server\nip ssh bulk-mode 131072\n!\n\
+          !\nlogging host 10.0.0.84\n!\n!\n!\n!\ncontrol-plane\n!\n!\nalias exec q\
+          \ exit\n!\nline con 0\n exec-timeout 0 0\n logging synchronous\nline aux\
+          \ 0\nline vty 0 4\n exec-timeout 0 0\n logging synchronous\n login local\n\
+          \ transport input ssh\n!\n!\nend"
     cpu_limit: null
     cpus: null
     data_volume: null
@@ -137,9 +138,9 @@ nodes:
         content: |-
           Building configuration...
 
-          Current configuration : 3709 bytes
+          Current configuration : 3710 bytes
           !
-          ! Last configuration change at 04:31:03 UTC Mon Sep 8 2025
+          ! Last configuration change at 03:01:05 UTC Thu Sep 11 2025
           !
           version 17.12
           service timestamps debug datetime msec
@@ -424,9 +425,9 @@ nodes:
         content: |-
           Building configuration...
 
-          Current configuration : 1980 bytes
+          Current configuration : 1981 bytes
           !
-          ! Last configuration change at 04:31:03 UTC Mon Sep 8 2025
+          ! Last configuration change at 03:01:04 UTC Thu Sep 11 2025
           !
           version 17.12
           service timestamps debug datetime msec
@@ -624,9 +625,9 @@ nodes:
         content: |-
           Building configuration...
 
-          Current configuration : 1980 bytes
+          Current configuration : 1981 bytes
           !
-          ! Last configuration change at 04:31:02 UTC Mon Sep 8 2025
+          ! Last configuration change at 03:01:04 UTC Thu Sep 11 2025
           !
           version 17.12
           service timestamps debug datetime msec
@@ -824,9 +825,9 @@ nodes:
         content: |-
           Building configuration...
 
-          Current configuration : 3470 bytes
+          Current configuration : 3471 bytes
           !
-          ! Last configuration change at 04:31:03 UTC Mon Sep 8 2025
+          ! Last configuration change at 03:01:05 UTC Thu Sep 11 2025
           !
           version 17.12
           service timestamps debug datetime msec
@@ -1103,8 +1104,8 @@ nodes:
   - boot_disk_size: null
     configuration:
       - name: ios_config.txt
-        content: "Building configuration...\n\nCurrent configuration : 7392 bytes\n\
-          !\n! Last configuration change at 04:31:03 UTC Mon Sep 8 2025\n!\nversion\
+        content: "Building configuration...\n\nCurrent configuration : 7393 bytes\n\
+          !\n! Last configuration change at 03:01:05 UTC Thu Sep 11 2025\n!\nversion\
           \ 17.12\nservice timestamps debug datetime msec\nservice timestamps log\
           \ datetime msec\nservice password-encryption\n!\nhostname BxC-1\n!\nboot-start-marker\n\
           boot-end-marker\n!\n!\nvrf definition A\n rd 65000:10\n !\n address-family\
@@ -1323,9 +1324,9 @@ nodes:
         content: |-
           Building configuration...
 
-          Current configuration : 3709 bytes
+          Current configuration : 3710 bytes
           !
-          ! Last configuration change at 04:31:03 UTC Mon Sep 8 2025
+          ! Last configuration change at 03:01:05 UTC Thu Sep 11 2025
           !
           version 17.12
           service timestamps debug datetime msec
