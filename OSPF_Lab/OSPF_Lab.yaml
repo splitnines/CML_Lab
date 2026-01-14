@@ -1,0 +1,1440 @@
+annotations: []
+nodes:
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: |-
+          Building configuration...
+
+          Current configuration : 3078 bytes
+          !
+          ! Last configuration change at 03:59:57 UTC Tue Apr 22 2025
+          !
+          version 17.12
+          service timestamps debug datetime msec
+          service timestamps log datetime msec
+          service password-encryption
+          !
+          hostname r1
+          !
+          boot-start-marker
+          boot-end-marker
+          !
+          !
+          no logging console
+          aaa new-model
+          !
+          !
+          aaa group server tacacs+ LAB
+           server-private 10.0.0.84 key 7 011E1F175E08140A35474B10
+           ip tacacs source-interface Loopback10
+          !
+          aaa authentication login default group LAB local
+          aaa authentication login no_tacacs local
+          aaa authorization config-commands
+          aaa authorization exec default group LAB local
+          aaa authorization commands 1 default group LAB if-authenticated
+          aaa authorization commands 15 default group LAB if-authenticated
+          aaa accounting exec default start-stop group LAB
+          aaa accounting commands 1 default start-stop group LAB
+          aaa accounting commands 15 default start-stop group LAB
+          aaa accounting connection default start-stop group LAB
+          !
+          aaa session-id common
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          no ip domain lookup
+          ip domain name cml.lab
+          ip cef
+          login on-success log
+          ipv6 unicast-routing
+          ipv6 cef
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          multilink bundle-name authenticated
+          !
+          !
+          !
+          !
+          !
+          memory free low-watermark processor 81225
+          !
+          !
+          spanning-tree mode rapid-pvst
+          !
+          !
+          username cisco privilege 15 password 7 104D000A0618
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          interface Loopback0
+           ip address 10.254.0.1 255.255.255.255
+           ip ospf 1 area 0
+           ipv6 address 2001:DB8:0:FF::1/128
+           ipv6 enable
+           ospfv3 1 ipv6 area 0
+          !
+          interface Ethernet0/0
+           ip address 10.254.100.1 255.255.255.252
+           ip ospf network point-to-point
+           ip ospf 1 area 0
+           ipv6 address 2001:DB8:0:1::1/64
+           ipv6 enable
+           ospfv3 1 ipv6 area 0
+           ospfv3 1 ipv6 network point-to-point
+          !
+          interface Ethernet0/1
+           ip address 10.254.100.5 255.255.255.252
+           ip ospf network point-to-point
+           ip ospf 1 area 0
+           ipv6 address 2001:DB8:0:2::1/64
+           ipv6 enable
+           ospfv3 1 ipv6 area 0
+           ospfv3 1 ipv6 network point-to-point
+          !
+          interface Ethernet0/2
+           ip address 10.2.100.1 255.255.255.252
+           ip ospf network point-to-point
+           ip ospf 1 area 2
+           ipv6 enable
+           ospfv3 network point-to-point
+           ospfv3 1 ipv4 area 2
+          !
+          interface Ethernet0/3
+           ip address 10.1.100.1 255.255.255.248
+           ip ospf priority 100
+           ip ospf 1 area 1
+          !
+          interface Ethernet1/0
+           description External lab connection
+           ip address 10.0.0.248 255.255.255.0
+           ip ospf 1 area 0
+           ipv6 enable
+           ospfv3 1 ipv6 area 0
+          !
+          interface Ethernet1/1
+           no ip address
+           shutdown
+          !
+          interface Ethernet1/2
+           no ip address
+           shutdown
+          !
+          interface Ethernet1/3
+           no ip address
+           shutdown
+          !
+          router ospfv3 1
+           router-id 10.254.0.1
+           log-adjacency-changes detail
+           !
+           address-family ipv4 unicast
+            passive-interface Ethernet1/0
+           exit-address-family
+           !
+           address-family ipv6 unicast
+            passive-interface Ethernet1/0
+           exit-address-family
+          !
+          router ospf 1
+          !
+          ip forward-protocol nd
+          !
+          !
+          ip http server
+          ip http secure-server
+          ip ssh bulk-mode 131072
+          !
+          logging source-interface Loopback0
+          logging host 10.0.0.84
+          !
+          !
+          !
+          !
+          !
+          !
+          control-plane
+          !
+          !
+          alias exec q exit
+          !
+          line con 0
+           exec-timeout 0 0
+           logging synchronous
+          line aux 0
+          line vty 0 4
+           exec-timeout 0 0
+           logging synchronous
+           transport input ssh
+          !
+          !
+          !
+          !
+          end
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n0
+    image_definition: null
+    label: r1
+    node_definition: iol-xe
+    parameters: {}
+    ram: null
+    tags: []
+    x: -40
+    y: -360
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: Ethernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: Ethernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: Ethernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: Ethernet0/3
+        slot: 3
+        type: physical
+      - id: i5
+        label: Ethernet1/0
+        slot: 4
+        type: physical
+      - id: i6
+        label: Ethernet1/1
+        slot: 5
+        type: physical
+      - id: i7
+        label: Ethernet1/2
+        slot: 6
+        type: physical
+      - id: i8
+        label: Ethernet1/3
+        slot: 7
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: "Building configuration...\n\nCurrent configuration : 5055 bytes\n\
+          !\n! Last configuration change at 03:59:57 UTC Tue Apr 22 2025\n!\nversion\
+          \ 17.12\nservice timestamps debug datetime msec\nservice timestamps log\
+          \ datetime msec\nservice password-encryption\n!\nhostname r3\n!\nboot-start-marker\n\
+          boot-end-marker\n!\n!\nno logging console\naaa new-model\n!\n!\naaa group\
+          \ server tacacs+ LAB\n server-private 10.0.0.84 key 7 011E1F175E08140A35474B10\n\
+          \ ip tacacs source-interface Loopback10\n!\naaa authentication login default\
+          \ group LAB local\naaa authentication login no_tacacs local\naaa authorization\
+          \ config-commands\naaa authorization exec default group LAB local\naaa authorization\
+          \ commands 1 default group LAB if-authenticated\naaa authorization commands\
+          \ 15 default group LAB if-authenticated\naaa accounting exec default start-stop\
+          \ group LAB\naaa accounting commands 1 default start-stop group LAB\naaa\
+          \ accounting commands 15 default start-stop group LAB\naaa accounting connection\
+          \ default start-stop group LAB\n!\naaa session-id common\n!\n!\n!\n!\n!\n\
+          !\n!\n!\n!\n!\n!\n!\n!\nno ip domain lookup\nip domain name cml.lab\nip\
+          \ cef\nlogin on-success log\nipv6 unicast-routing\nipv6 cef\n!\n!\n!\n!\n\
+          !\n!\n!\n!\nmultilink bundle-name authenticated\n!\n!\ncrypto pki trustpoint\
+          \ TP-self-signed-131184651\n enrollment selfsigned\n subject-name cn=IOS-Self-Signed-Certificate-131184651\n\
+          \ revocation-check none\n rsakeypair TP-self-signed-131184651\n hash sha256\n\
+          !\n!\ncrypto pki certificate chain TP-self-signed-131184651\n certificate\
+          \ self-signed 01\n  3082032E 30820216 A0030201 02020101 300D0609 2A864886\
+          \ F70D0101 0B050030\n  30312E30 2C060355 04030C25 494F532D 53656C66 2D536967\
+          \ 6E65642D 43657274\n  69666963 6174652D 31333131 38343635 31301E17 0D323530\
+          \ 34323131 34353830\n  395A170D 33353034 32313134 35383039 5A303031 2E302C06\
+          \ 03550403 0C25494F\n  532D5365 6C662D53 69676E65 642D4365 72746966 69636174\
+          \ 652D3133 31313834\n  36353130 82012230 0D06092A 864886F7 0D010101 05000382\
+          \ 010F0030 82010A02\n  82010100 8CCB3FFF EDD16799 022D0811 396AFEF8 C4972034\
+          \ 0529DC4E CCB8EB42\n  4DE47A28 D691A635 BB45C608 78B00256 6513A5B0 A83500D4\
+          \ 4AC59883 7DF5ED7A\n  23CA0FA6 AEC622C8 854B56E4 EEA7F845 21A8E8CE 61409383\
+          \ 5063F190 2E89AA84\n  93F1088A 9D65AE82 0711383D 40940156 B5DEA80A 4CD0A94D\
+          \ FCCED014 A710C55C\n  AC1A2927 5EF76245 92B21975 EDF3468B D48CC4AA 9E991F80\
+          \ 5D4F1940 EF651294\n  F1F55166 E88DD6A6 ADC46764 B648FB38 71FCADD8 81EAC7B1\
+          \ 118F876A 09391734\n  F2A4E236 DC825FC3 790D0DD6 00A2A0F1 FF9475F0 91FA1275\
+          \ 43DD37FE F8A3BCE6\n  D2B0BAAD C888F876 3B630CD3 6F3CB995 BA30D516 94AB7DD5\
+          \ EC0F3D01 E2E4D3DA\n  6E39E63F 02030100 01A35330 51301D06 03551D0E 04160414\
+          \ 8FA7DE68 17507FD1\n  05127E36 9EF19123 5BC1906A 301F0603 551D2304 18301680\
+          \ 148FA7DE 6817507F\n  D105127E 369EF191 235BC190 6A300F06 03551D13 0101FF04\
+          \ 05300301 01FF300D\n  06092A86 4886F70D 01010B05 00038201 01007C8E 701E4AD1\
+          \ 7DDC373C B0845B77\n  C0008E56 3DD4EF56 FC57353C 38878CF3 D00E78AE D9C0AADC\
+          \ 3BC64A56 78F6D59A\n  F7066F24 49F3A389 910B3C28 C490BE76 6E5B94D6 57DDDCFA\
+          \ 536E8435 1875C15C\n  82432634 A38369A4 A6AF3C53 8F2AA55D 5E2AA393 0D97DDFE\
+          \ E3592EB7 C5649FB5\n  58C1F2F6 C5819A15 6F93AA53 210D43F7 41AF889E DB9152BB\
+          \ C35A9917 6F94E888\n  1AF10765 D82935FB CDCFDC95 814E6DB9 923F8D61 BF3546BC\
+          \ B5496F49 4A383702\n  F1D3302A 75B04DF2 DAE093A5 64BC5C43 735D610B F34B7514\
+          \ 424E91C9 E1994C40\n  D4E5F28F 409AC6A9 CF2C3086 E9B48E74 88B1BB87 39375815\
+          \ 0772AF90 DE0ACF32\n  358751F8 C9FA691D 15CBFA68 64C355E9 3277\n  \tquit\n\
+          !\n!\nmemory free low-watermark processor 81225\n!\n!\nspanning-tree mode\
+          \ rapid-pvst\n!\n!\nusername cisco privilege 15 password 7 0822455D0A16\n\
+          !\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\ninterface\
+          \ Loopback0\n ip address 10.254.0.3 255.255.255.255\n ip ospf 1 area 0\n\
+          \ ipv6 address 2001:DB8:0:FF::3/128\n ipv6 enable\n ospfv3 1 ipv6 area 0\n\
+          !\ninterface Ethernet0/0\n ip address 10.254.100.9 255.255.255.252\n ip\
+          \ ospf network point-to-point\n ip ospf 1 area 0\n ipv6 address 2001:DB8:0:3::1/64\n\
+          \ ipv6 address 2001:DB8:0:3::3/64\n ipv6 enable\n ospfv3 1 ipv6 area 0\n\
+          \ ospfv3 1 ipv6 network point-to-point\n!\ninterface Ethernet0/1\n ip address\
+          \ 10.254.100.6 255.255.255.252\n ip ospf network point-to-point\n ip ospf\
+          \ 1 area 0\n ipv6 address 2001:DB8:0:2::2/64\n ipv6 address 2001:DB8:0:2::3/64\n\
+          \ ipv6 enable\n ospfv3 1 ipv6 area 0\n ospfv3 1 ipv6 network point-to-point\n\
+          !\ninterface Ethernet0/2\n ip address 10.1.100.2 255.255.255.248\n ip ospf\
+          \ priority 50\n ip ospf 1 area 1\n!\ninterface Ethernet0/3\n no ip address\n\
+          \ shutdown\n!\ninterface Ethernet1/0\n no ip address\n shutdown\n!\ninterface\
+          \ Ethernet1/1\n no ip address\n shutdown\n!\ninterface Ethernet1/2\n no\
+          \ ip address\n shutdown\n!\ninterface Ethernet1/3\n no ip address\n shutdown\n\
+          !\nrouter ospfv3 1\n router-id 10.254.0.3\n log-adjacency-changes detail\n\
+          \ !\n address-family ipv4 unicast\n exit-address-family\n !\n address-family\
+          \ ipv6 unicast\n exit-address-family\n!\nrouter ospf 1\n!\nip forward-protocol\
+          \ nd\n!\n!\nip http server\nip http secure-server\nip ssh bulk-mode 131072\n\
+          !\nlogging source-interface Loopback0\nlogging host 10.0.0.84\n!\n!\n!\n\
+          !\n!\n!\ncontrol-plane\n!\n!\nalias exec q exit\n!\nline con 0\n exec-timeout\
+          \ 0 0\n logging synchronous\nline aux 0\nline vty 0 4\n exec-timeout 0 0\n\
+          \ logging synchronous\n transport input ssh\n!\n!\n!\n!\nend"
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n1
+    image_definition: null
+    label: r3
+    node_definition: iol-xe
+    parameters: {}
+    ram: null
+    tags: []
+    x: 80
+    y: -160
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: Ethernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: Ethernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: Ethernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: Ethernet0/3
+        slot: 3
+        type: physical
+      - id: i5
+        label: Ethernet1/0
+        slot: 4
+        type: physical
+      - id: i6
+        label: Ethernet1/1
+        slot: 5
+        type: physical
+      - id: i7
+        label: Ethernet1/2
+        slot: 6
+        type: physical
+      - id: i8
+        label: Ethernet1/3
+        slot: 7
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: |-
+          Building configuration...
+
+          Current configuration : 2815 bytes
+          !
+          ! Last configuration change at 03:59:57 UTC Tue Apr 22 2025
+          !
+          version 17.12
+          service timestamps debug datetime msec
+          service timestamps log datetime msec
+          service password-encryption
+          !
+          hostname r2
+          !
+          boot-start-marker
+          boot-end-marker
+          !
+          !
+          no logging console
+          aaa new-model
+          !
+          !
+          aaa group server tacacs+ LAB
+           server-private 10.0.0.84 key 7 011E1F175E08140A35474B10
+           ip tacacs source-interface Loopback10
+          !
+          aaa authentication login default group LAB local
+          aaa authentication login no_tacacs local
+          aaa authorization config-commands
+          aaa authorization exec default group LAB local
+          aaa authorization commands 1 default group LAB if-authenticated
+          aaa authorization commands 15 default group LAB if-authenticated
+          aaa accounting exec default start-stop group LAB
+          aaa accounting commands 1 default start-stop group LAB
+          aaa accounting commands 15 default start-stop group LAB
+          aaa accounting connection default start-stop group LAB
+          !
+          aaa session-id common
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          no ip domain lookup
+          ip domain name cml.lab
+          ip cef
+          login on-success log
+          ipv6 unicast-routing
+          ipv6 cef
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          multilink bundle-name authenticated
+          !
+          !
+          !
+          !
+          !
+          memory free low-watermark processor 81225
+          !
+          !
+          spanning-tree mode rapid-pvst
+          !
+          !
+          username cisco privilege 15 password 7 110A1016141D
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          interface Loopback0
+           ip address 10.254.0.2 255.255.255.255
+           ip ospf 1 area 0
+           ipv6 address 2001:DB8:0:FF::2/128
+           ipv6 enable
+           ospfv3 1 ipv6 area 0
+          !
+          interface Ethernet0/0
+           ip address 10.254.100.2 255.255.255.252
+           ip ospf network point-to-point
+           ip ospf 1 area 0
+           ipv6 address 2001:DB8:0:1::2/64
+           ipv6 enable
+           ospfv3 1 ipv6 area 0
+           ospfv3 1 ipv6 network point-to-point
+          !
+          interface Ethernet0/1
+           ip address 10.254.100.10 255.255.255.252
+           ip ospf network point-to-point
+           ip ospf 1 area 0
+           ipv6 address 2001:DB8:0:3::2/64
+           ipv6 enable
+           ospfv3 1 ipv6 area 0
+           ospfv3 1 ipv6 network point-to-point
+          !
+          interface Ethernet0/2
+           ip address 10.2.102.1 255.255.255.252
+           ip ospf network point-to-point
+           ip ospf 1 area 2
+          !
+          interface Ethernet0/3
+           no ip address
+           shutdown
+          !
+          interface Ethernet1/0
+           no ip address
+           shutdown
+          !
+          interface Ethernet1/1
+           no ip address
+           shutdown
+          !
+          interface Ethernet1/2
+           no ip address
+           shutdown
+          !
+          interface Ethernet1/3
+           no ip address
+           shutdown
+          !
+          router ospfv3 1
+           router-id 10.254.0.2
+           log-adjacency-changes detail
+           !
+           address-family ipv4 unicast
+           exit-address-family
+           !
+           address-family ipv6 unicast
+           exit-address-family
+          !
+          router ospf 1
+           router-id 10.254.0.2
+          !
+          ip forward-protocol nd
+          !
+          !
+          ip http server
+          ip http secure-server
+          ip ssh bulk-mode 131072
+          !
+          logging source-interface Loopback0
+          logging host 10.0.0.84
+          !
+          !
+          !
+          !
+          !
+          !
+          control-plane
+          !
+          !
+          alias exec q exit
+          !
+          line con 0
+           exec-timeout 0 0
+           logging synchronous
+          line aux 0
+          line vty 0 4
+           exec-timeout 0 0
+           logging synchronous
+           transport input ssh
+          !
+          !
+          !
+          !
+          end
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n2
+    image_definition: null
+    label: r2
+    node_definition: iol-xe
+    parameters: {}
+    ram: null
+    tags: []
+    x: -120
+    y: -160
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: Ethernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: Ethernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: Ethernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: Ethernet0/3
+        slot: 3
+        type: physical
+      - id: i5
+        label: Ethernet1/0
+        slot: 4
+        type: physical
+      - id: i6
+        label: Ethernet1/1
+        slot: 5
+        type: physical
+      - id: i7
+        label: Ethernet1/2
+        slot: 6
+        type: physical
+      - id: i8
+        label: Ethernet1/3
+        slot: 7
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: "Building configuration...\n\nCurrent configuration : 4801 bytes\n\
+          !\n! Last configuration change at 03:59:57 UTC Tue Apr 22 2025\n!\nversion\
+          \ 17.12\nservice timestamps debug datetime msec\nservice timestamps log\
+          \ datetime msec\nservice password-encryption\n!\nhostname sw1-1\n!\nboot-start-marker\n\
+          boot-end-marker\n!\n!\nno logging console\naaa new-model\n!\n!\naaa group\
+          \ server tacacs+ LAB\n server-private 10.0.0.84 key 7 011E1F175E08140A35474B10\n\
+          \ ip tacacs source-interface Loopback10\n!\naaa authentication login default\
+          \ group LAB local\naaa authentication login no_tacacs local\naaa authorization\
+          \ config-commands\naaa authorization exec default group LAB local\naaa authorization\
+          \ commands 1 default group LAB if-authenticated\naaa authorization commands\
+          \ 15 default group LAB if-authenticated\naaa accounting exec default start-stop\
+          \ group LAB\naaa accounting commands 1 default start-stop group LAB\naaa\
+          \ accounting commands 15 default start-stop group LAB\naaa accounting connection\
+          \ default start-stop group LAB\n!\n!\naaa session-id common\n!\n!\n!\n!\n\
+          !\n!\n!\n!\n!\n!\n!\n!\n!\nip audit notify log\nip audit po max-events 100\n\
+          no ip domain lookup\nip domain name cml.lab\nip cef\nlogin on-success log\n\
+          ipv6 unicast-routing\nipv6 cef\n!\n!\n!\n!\n!\n!\n!\nvtp version 1\nmultilink\
+          \ bundle-name authenticated\n!\ncrypto pki trustpoint TP-self-signed-131184653\n\
+          \ enrollment selfsigned\n subject-name cn=IOS-Self-Signed-Certificate-131184653\n\
+          \ revocation-check none\n rsakeypair TP-self-signed-131184653\n hash sha256\n\
+          !\n!\ncrypto pki certificate chain TP-self-signed-131184653\n certificate\
+          \ self-signed 01\n  3082032E 30820216 A0030201 02020101 300D0609 2A864886\
+          \ F70D0101 0B050030\n  30312E30 2C060355 04030C25 494F532D 53656C66 2D536967\
+          \ 6E65642D 43657274\n  69666963 6174652D 31333131 38343635 33301E17 0D323530\
+          \ 34323131 34353035\n  375A170D 33353034 32313134 35303537 5A303031 2E302C06\
+          \ 03550403 0C25494F\n  532D5365 6C662D53 69676E65 642D4365 72746966 69636174\
+          \ 652D3133 31313834\n  36353330 82012230 0D06092A 864886F7 0D010101 05000382\
+          \ 010F0030 82010A02\n  82010100 96B1302F DD0B8B5D C677FF69 806A87E8 31419DB2\
+          \ 706382D2 91C9DD16\n  26210E79 8538A6F8 C9332495 A27041B2 99381E74 3CEE0F49\
+          \ 7BE34606 422DA20A\n  FF39E71D 9DBBF02A C771C637 34CA794A 15A77DF4 867CC2B1\
+          \ ADD11565 5DF4F9B2\n  466B791D 0770F691 6E0AE252 E05DCBAA F02A58C6 4D8CD6F1\
+          \ 4AE00179 5B2E43A4\n  DCA31A39 D50D7B11 AA5ADDD5 6474F67D 6B48F8CA 4AC20D9F\
+          \ F965853B F0F27567\n  C73DE895 7CC6EABB 54394C50 D7DB96B6 D2BDEFA9 72C5CA1F\
+          \ C8E72F6B F05D2C1C\n  C22CF0B3 778F514E 8B1D8EF0 C686E1DA 3761D405 4A0DE21A\
+          \ 987CEECB 87FFBB77\n  5B2F9B17 022E8BFB AAA1A1E7 7B530D8F 8E2B11DC 7C1BABF9\
+          \ D943AF09 629A62D2\n  DBB27EE1 02030100 01A35330 51301D06 03551D0E 04160414\
+          \ 9A13FD24 E4B4BBFD\n  AB60A38D 96EE28AC 760F4F56 301F0603 551D2304 18301680\
+          \ 149A13FD 24E4B4BB\n  FDAB60A3 8D96EE28 AC760F4F 56300F06 03551D13 0101FF04\
+          \ 05300301 01FF300D\n  06092A86 4886F70D 01010B05 00038201 010054F1 8DB9AC1B\
+          \ 61D7C646 8C5A5D93\n  8325DE9B 1704DB3E 887B44ED 4A730112 779CF35B 0CA17E4A\
+          \ 6B2AFCDE 686044B9\n  EBFCD57D A70A5979 4CDF94F9 89CA0C34 53D76766 92478FBC\
+          \ 298836AA 506ED849\n  181DAC1F 09E64EA7 586D0BEC 9210134C 8678A9A1 9B6D44BD\
+          \ DA89BEB6 133AD018\n  4024CC43 11EA2FC0 84DB6F51 77258514 DF30AA21 4009A1C6\
+          \ 7236CB76 51A6B181\n  54104E74 6A0E1B36 3B5FA887 F8D62F33 C335C170 D87D4915\
+          \ A92F00D5 AA663ED0\n  19110102 11FAD697 03D0C173 718742E6 1B93879C 2D8C12D7\
+          \ ABFCE4E0 0DEC38F2\n  817CBEE6 8A71BFB2 ACE9D966 F03C5CEE 7EF853BE 0DB87DAF\
+          \ 7C5F06C2 0B00B0B4\n  6559459C 09EB33F1 C2632F6E E090DFDB CBB1\n  \tquit\n\
+          !\n!\nmemory free low-watermark processor 80589\n!\n!\nspanning-tree mode\
+          \ rapid-pvst\nspanning-tree extend system-id\n!\n!\nusername cisco privilege\
+          \ 15 password 7 13061E010803\n!\nvlan internal allocation policy ascending\n\
+          !\n!\n!\n!\n!\ninterface Loopback0\n ip address 10.1.1.1 255.255.255.255\n\
+          \ ip ospf 1 area 1\n!\ninterface Ethernet0/0\n switchport access vlan 100\n\
+          \ switchport mode access\n spanning-tree portfast\n!\ninterface Ethernet0/1\n\
+          \ switchport access vlan 100\n switchport mode access\n spanning-tree portfast\n\
+          !\ninterface Ethernet0/2\n switchport access vlan 1000\n switchport mode\
+          \ access\n spanning-tree portfast\n!\ninterface Ethernet0/3\n!\ninterface\
+          \ Ethernet1/0\n!\ninterface Ethernet1/1\n!\ninterface Ethernet1/2\n!\ninterface\
+          \ Ethernet1/3\n!\ninterface Vlan100\n ip address 10.1.100.3 255.255.255.248\n\
+          \ ip ospf 1 area 1\n ipv6 enable\n ospfv3 1 ipv4 area 1\n!\ninterface Vlan1000\n\
+          \ ip address 10.1.10.1 255.255.255.0\n ip ospf 1 area 1\n!\nrouter ospfv3\
+          \ 1\n router-id 10.1.1.1\n log-adjacency-changes detail\n !\n address-family\
+          \ ipv4 unicast\n exit-address-family\n !\n address-family ipv6 unicast\n\
+          \ exit-address-family\n!\nrouter ospf 1\n!\nip forward-protocol nd\n!\n\
+          !\nip http server\nip http secure-server\nip ssh bulk-mode 131072\n!\n!\n\
+          logging host 10.0.0.84\n!\n!\n!\n!\n!\n!\ncontrol-plane\n!\n!\nalias exec\
+          \ q exit\n!\nline con 0\n exec-timeout 0 0\n logging synchronous\nline aux\
+          \ 0\nline vty 0 4\n exec-timeout 0 0\n logging synchronous\n transport input\
+          \ ssh\n!\n!\nend"
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n3
+    image_definition: null
+    label: sw1-1
+    node_definition: ioll2-xe
+    parameters: {}
+    ram: null
+    tags: []
+    x: 240
+    y: -280
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: Ethernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: Ethernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: Ethernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: Ethernet0/3
+        slot: 3
+        type: physical
+      - id: i5
+        label: Ethernet1/0
+        slot: 4
+        type: physical
+      - id: i6
+        label: Ethernet1/1
+        slot: 5
+        type: physical
+      - id: i7
+        label: Ethernet1/2
+        slot: 6
+        type: physical
+      - id: i8
+        label: Ethernet1/3
+        slot: 7
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: default
+        content: System Bridge
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n4
+    image_definition: null
+    label: ext-conn-0
+    node_definition: external_connector
+    parameters: {}
+    ram: null
+    tags: []
+    x: -40
+    y: -480
+    interfaces:
+      - id: i0
+        label: port
+        slot: 0
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: user-data
+        content: |-
+          #cloud-config
+          hostname: inserthostname-here
+          manage_etc_hosts: True
+          system_info:
+            default_user:
+              name: cisco
+          password: cisco
+          chpasswd: { expire: False }
+          ssh_pwauth: True
+          ssh_authorized_keys:
+            - your-ssh-pubkey-line-goes-here
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n5
+    image_definition: null
+    label: h1
+    node_definition: ubuntu
+    parameters: {}
+    ram: null
+    tags: []
+    x: 440
+    y: -280
+    interfaces:
+      - id: i0
+        label: ens2
+        slot: 0
+        type: physical
+      - id: i1
+        label: ens3
+        slot: 1
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: |-
+          Building configuration...
+
+          Current configuration : 2368 bytes
+          !
+          ! Last configuration change at 03:59:57 UTC Tue Apr 22 2025
+          !
+          version 17.12
+          service timestamps debug datetime msec
+          service timestamps log datetime msec
+          service password-encryption
+          !
+          hostname sw2-1
+          !
+          boot-start-marker
+          boot-end-marker
+          !
+          !
+          no logging console
+          no aaa new-model
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          ip audit notify log
+          ip audit po max-events 100
+          no ip domain lookup
+          ip domain name cml.lab
+          ip cef
+          login on-success log
+          ipv6 unicast-routing
+          ipv6 cef
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          vtp version 1
+          multilink bundle-name authenticated
+          !
+          !
+          !
+          !
+          memory free low-watermark processor 80589
+          !
+          !
+          spanning-tree mode rapid-pvst
+          spanning-tree extend system-id
+          !
+          username cisco privilege 15 password 7 094F471A1A0A
+          !
+          vlan internal allocation policy ascending
+          !
+          !
+          !
+          !
+          !
+          interface Loopback0
+           ip address 10.2.1.1 255.255.255.255
+          !
+          interface Port-channel1
+           switchport trunk encapsulation dot1q
+           switchport trunk native vlan 100
+           switchport mode dynamic desirable
+          !
+          interface Ethernet0/0
+           no switchport
+           ip address 10.2.100.2 255.255.255.252
+           ip ospf network point-to-point
+           ip ospf 1 area 2
+           ipv6 enable
+           ospfv3 network point-to-point
+           ospfv3 1 ipv4 area 2
+          !
+          interface Ethernet0/1
+           switchport trunk encapsulation dot1q
+           switchport trunk native vlan 100
+           switchport mode dynamic desirable
+           channel-group 1 mode active
+          !
+          interface Ethernet0/2
+           switchport access vlan 1000
+           switchport mode access
+          !
+          interface Ethernet0/3
+           switchport trunk encapsulation dot1q
+           switchport trunk native vlan 100
+           switchport mode dynamic desirable
+           channel-group 1 mode active
+          !
+          interface Ethernet1/0
+          !
+          interface Ethernet1/1
+          !
+          interface Ethernet1/2
+          !
+          interface Ethernet1/3
+          !
+          interface Vlan100
+           ip address 10.2.101.1 255.255.255.252
+           ip ospf network point-to-point
+           ip ospf 1 area 2
+          !
+          interface Vlan1000
+           ip address 10.2.10.2 255.255.255.0
+           standby 1 ip 10.2.10.1
+           standby 1 priority 150
+           standby 1 preempt
+           ip ospf 1 area 2
+          !
+          router ospfv3 1
+           router-id 10.2.1.1
+           !
+           address-family ipv4 unicast
+           exit-address-family
+          !
+          router ospf 1
+           router-id 10.2.1.1
+           log-adjacency-changes detail
+           passive-interface Vlan1000
+          !
+          ip forward-protocol nd
+          !
+          !
+          ip http server
+          ip http secure-server
+          ip ssh bulk-mode 131072
+          !
+          !
+          logging host 10.0.0.84
+          !
+          !
+          !
+          !
+          control-plane
+          !
+          !
+          alias exec q exit
+          !
+          line con 0
+           exec-timeout 0 0
+           logging synchronous
+          line aux 0
+          line vty 0 4
+           exec-timeout 0 0
+           logging synchronous
+           login local
+           transport input ssh
+          !
+          !
+          end
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n6
+    image_definition: null
+    label: sw2-1
+    node_definition: ioll2-xe
+    parameters: {}
+    ram: null
+    tags: []
+    x: -320
+    y: -360
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: Ethernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: Ethernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: Ethernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: Ethernet0/3
+        slot: 3
+        type: physical
+      - id: i5
+        label: Ethernet1/0
+        slot: 4
+        type: physical
+      - id: i6
+        label: Ethernet1/1
+        slot: 5
+        type: physical
+      - id: i7
+        label: Ethernet1/2
+        slot: 6
+        type: physical
+      - id: i8
+        label: Ethernet1/3
+        slot: 7
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: |-
+          Building configuration...
+
+          Current configuration : 2942 bytes
+          !
+          ! Last configuration change at 03:59:57 UTC Tue Apr 22 2025
+          !
+          version 17.12
+          service timestamps debug datetime msec
+          service timestamps log datetime msec
+          service password-encryption
+          !
+          hostname sw2-2
+          !
+          boot-start-marker
+          boot-end-marker
+          !
+          !
+          no logging console
+          aaa new-model
+          !
+          !
+          aaa group server tacacs+ LAB
+           server-private 10.0.0.84 key 7 011E1F175E08140A35474B10
+           ip tacacs source-interface Loopback10
+          !
+          aaa authentication login default group LAB local
+          aaa authentication login no_tacacs local
+          aaa authorization config-commands
+          aaa authorization exec default group LAB local
+          aaa authorization commands 1 default group LAB if-authenticated
+          aaa authorization commands 15 default group LAB if-authenticated
+          aaa accounting exec default start-stop group LAB
+          aaa accounting commands 1 default start-stop group LAB
+          aaa accounting commands 15 default start-stop group LAB
+          aaa accounting connection default start-stop group LAB
+          !
+          !
+          aaa session-id common
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          ip audit notify log
+          ip audit po max-events 100
+          no ip domain lookup
+          ip domain name cml.lab
+          ip cef
+          login on-success log
+          ipv6 unicast-routing
+          ipv6 cef
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          vtp version 1
+          multilink bundle-name authenticated
+          !
+          !
+          !
+          !
+          memory free low-watermark processor 80589
+          !
+          !
+          spanning-tree mode rapid-pvst
+          spanning-tree extend system-id
+          !
+          !
+          username cisco privilege 15 password 7 094F471A1A0A
+          !
+          vlan internal allocation policy ascending
+          !
+          !
+          !
+          !
+          !
+          interface Loopback0
+           ip address 10.2.1.2 255.255.255.255
+           ip ospf 1 area 2
+          !
+          interface Port-channel1
+           switchport trunk encapsulation dot1q
+           switchport trunk native vlan 100
+           switchport mode dynamic desirable
+          !
+          interface Ethernet0/0
+           no switchport
+           ip address 10.2.102.2 255.255.255.252
+           ip ospf network point-to-point
+           ip ospf 1 area 2
+          !
+          interface Ethernet0/1
+           switchport trunk encapsulation dot1q
+           switchport trunk native vlan 100
+           switchport mode dynamic desirable
+           channel-group 1 mode active
+          !
+          interface Ethernet0/2
+           switchport access vlan 1000
+           switchport mode access
+          !
+          interface Ethernet0/3
+           switchport trunk encapsulation dot1q
+           switchport trunk native vlan 100
+           switchport mode dynamic desirable
+           channel-group 1 mode active
+          !
+          interface Ethernet1/0
+          !
+          interface Ethernet1/1
+          !
+          interface Ethernet1/2
+          !
+          interface Ethernet1/3
+          !
+          interface Vlan100
+           ip address 10.2.101.2 255.255.255.252
+           ip ospf network point-to-point
+           ip ospf 1 area 2
+          !
+          interface Vlan1000
+           ip address 10.2.10.3 255.255.255.0
+           standby 1 ip 10.2.10.1
+           ip ospf 1 area 2
+          !
+          router ospfv3 1
+           router-id 10.2.1.2
+           !
+           address-family ipv4 unicast
+           exit-address-family
+          !
+          router ospf 1
+           router-id 10.2.1.2
+           log-adjacency-changes detail
+           passive-interface Vlan1000
+          !
+          ip forward-protocol nd
+          !
+          !
+          ip http server
+          ip http secure-server
+          ip ssh bulk-mode 131072
+          !
+          !
+          logging host 10.0.0.84
+          !
+          !
+          !
+          !
+          !
+          !
+          control-plane
+          !
+          !
+          alias exec q exit
+          !
+          line con 0
+           exec-timeout 0 0
+           logging synchronous
+          line aux 0
+          line vty 0 4
+           exec-timeout 0 0
+           logging synchronous
+           transport input ssh
+          !
+          !
+          end
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n7
+    image_definition: null
+    label: sw2-2
+    node_definition: ioll2-xe
+    parameters: {}
+    ram: null
+    tags: []
+    x: -320
+    y: -160
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: Ethernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: Ethernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: Ethernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: Ethernet0/3
+        slot: 3
+        type: physical
+      - id: i5
+        label: Ethernet1/0
+        slot: 4
+        type: physical
+      - id: i6
+        label: Ethernet1/1
+        slot: 5
+        type: physical
+      - id: i7
+        label: Ethernet1/2
+        slot: 6
+        type: physical
+      - id: i8
+        label: Ethernet1/3
+        slot: 7
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: user-data
+        content: |-
+          #cloud-config
+          hostname: inserthostname-here
+          manage_etc_hosts: True
+          system_info:
+            default_user:
+              name: cisco
+          password: cisco
+          chpasswd: { expire: False }
+          ssh_pwauth: True
+          ssh_authorized_keys:
+            - your-ssh-pubkey-line-goes-here
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n8
+    image_definition: null
+    label: h2
+    node_definition: ubuntu
+    parameters: {}
+    ram: null
+    tags: []
+    x: -600
+    y: -280
+    interfaces:
+      - id: i0
+        label: ens2
+        slot: 0
+        type: physical
+      - id: i1
+        label: ens3
+        slot: 1
+        type: physical
+  - boot_disk_size: null
+    configuration: []
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n9
+    image_definition: null
+    label: asw2-1
+    node_definition: unmanaged_switch
+    parameters: {}
+    ram: null
+    tags: []
+    x: -480
+    y: -280
+    interfaces:
+      - id: i0
+        label: port0
+        slot: 0
+        type: physical
+      - id: i1
+        label: port1
+        slot: 1
+        type: physical
+      - id: i2
+        label: port2
+        slot: 2
+        type: physical
+      - id: i3
+        label: port3
+        slot: 3
+        type: physical
+      - id: i4
+        label: port4
+        slot: 4
+        type: physical
+      - id: i5
+        label: port5
+        slot: 5
+        type: physical
+      - id: i6
+        label: port6
+        slot: 6
+        type: physical
+      - id: i7
+        label: port7
+        slot: 7
+        type: physical
+links:
+  - id: l0
+    n1: n0
+    n2: n2
+    i1: i1
+    i2: i1
+    conditioning: {}
+    label: iol-0-Ethernet0/0<->iol-0_1-Ethernet0/0
+  - id: l1
+    n1: n2
+    n2: n1
+    i1: i2
+    i2: i1
+    conditioning: {}
+    label: iol-0_1-Ethernet0/1<->iol-0_0-Ethernet0/0
+  - id: l2
+    n1: n0
+    n2: n1
+    i1: i2
+    i2: i2
+    conditioning: {}
+    label: iol-0-Ethernet0/1<->iol-0_0-Ethernet0/1
+  - id: l3
+    n1: n3
+    n2: n0
+    i1: i1
+    i2: i4
+    conditioning: {}
+    label: iol-l2-0_0-Ethernet0/0<->iol-0-Ethernet0/3
+  - id: l4
+    n1: n5
+    n2: n3
+    i1: i0
+    i2: i3
+    conditioning: {}
+    label: ubuntu-0_0-ens2<->iol-l2-0_0-Ethernet0/2
+  - id: l5
+    n1: n4
+    n2: n0
+    i1: i0
+    i2: i5
+    conditioning: {}
+    label: ext-conn-0-port<->iol-0-Ethernet1/0
+  - id: l6
+    n1: n1
+    n2: n3
+    i1: i3
+    i2: i2
+    conditioning: {}
+    label: r2-Ethernet0/2<->sw1-1-Ethernet0/1
+  - id: l7
+    n1: n6
+    n2: n0
+    i1: i1
+    i2: i3
+    conditioning: {}
+    label: sw1-1_0-Ethernet0/0<->r1-Ethernet0/2
+  - id: l8
+    n1: n7
+    n2: n2
+    i1: i1
+    i2: i3
+    conditioning: {}
+    label: sw1-1_1-Ethernet0/0<->r2-Ethernet0/2
+  - id: l9
+    n1: n6
+    n2: n7
+    i1: i2
+    i2: i2
+    conditioning: {}
+    label: sw1-1_0-Ethernet0/1<->sw1-1_1-Ethernet0/1
+  - id: l10
+    n1: n9
+    n2: n6
+    i1: i0
+    i2: i3
+    conditioning: {}
+    label: unmanaged-switch-0-port0<->sw1-1_0-Ethernet0/2
+  - id: l11
+    n1: n9
+    n2: n7
+    i1: i1
+    i2: i3
+    conditioning: {}
+    label: unmanaged-switch-0-port1<->sw1-1_1-Ethernet0/2
+  - id: l12
+    n1: n8
+    n2: n9
+    i1: i0
+    i2: i2
+    conditioning: {}
+    label: h1_0-ens2<->unmanaged-switch-0-port2
+  - id: l13
+    n1: n7
+    n2: n6
+    i1: i4
+    i2: i4
+    conditioning: {}
+    label: sw2-2-Ethernet0/3<->sw2-1-Ethernet0/3
+lab:
+  description: ''
+  notes: ''
+  title: OSPF Lab
+  version: 0.2.2

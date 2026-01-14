@@ -1,0 +1,825 @@
+annotations: []
+nodes:
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: "Building configuration...\n\nCurrent configuration : 4448 bytes\n\
+          !\n! Last configuration change at 22:08:28 UTC Tue Jul 9 2024\n!\nversion\
+          \ 17.12\nservice timestamps debug datetime msec\nservice timestamps log\
+          \ datetime msec\nservice password-encryption\n!\nhostname sw1\n!\nboot-start-marker\n\
+          boot-end-marker\n!\n!\nno logging console\nno aaa new-model\n!\n!\n!\n!\n\
+          !\n!\n!\n!\n!\n!\n!\n!\n!\nip audit notify log\nip audit po max-events 100\n\
+          no ip domain lookup\nip domain name cml.lab\nip cef\nlogin on-success log\n\
+          no ipv6 cef\n!\n!\n!\n!\n!\n!\n!\nvtp version 1\nmultilink bundle-name authenticated\n\
+          !\ncrypto pki trustpoint TP-self-signed-131184645\n enrollment selfsigned\n\
+          \ subject-name cn=IOS-Self-Signed-Certificate-131184645\n revocation-check\
+          \ none\n rsakeypair TP-self-signed-131184645\n hash sha256\n!\n!\ncrypto\
+          \ pki certificate chain TP-self-signed-131184645\n certificate self-signed\
+          \ 01\n  3082032E 30820216 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030\n\
+          \  30312E30 2C060355 04030C25 494F532D 53656C66 2D536967 6E65642D 43657274\n\
+          \  69666963 6174652D 31333131 38343634 35301E17 0D323430 37303532 32333830\n\
+          \  315A170D 33343037 30353232 33383031 5A303031 2E302C06 03550403 0C25494F\n\
+          \  532D5365 6C662D53 69676E65 642D4365 72746966 69636174 652D3133 31313834\n\
+          \  36343530 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 82010A02\n\
+          \  82010100 AFE687A8 B765422B 706FE893 170DF39C 0A972CB7 2499B610 857D4AAC\n\
+          \  15B4573D 26D93540 C99B27D7 8CD7A1F4 05D949A0 BD0E72AD 62F22545 E0AC04F4\n\
+          \  578AFE72 1C7203F5 1E81923A 6ECFAA47 7C850276 9CE6F692 6808055A F812097D\n\
+          \  669776E4 609BE9AE D5195204 40902B63 440FCBCF 78AE846C B012D778 353E1A20\n\
+          \  54E5E6E9 3F2D9B40 DFF8CE59 9FF51806 04D1AE84 3B0FBC22 BBAAC1D6 8B10A484\n\
+          \  584CDBDD 4A80459D 04210346 BFBF7328 39862CAD 4DCFA6B0 13955155 B1980483\n\
+          \  EE9FA752 B6009804 F137816C 7ED5AC61 05E6E8E7 3F7947E2 764B6D4D AAAFDE89\n\
+          \  B3906BA8 5855B126 F9FC56BF 8818BB51 CF16F427 E39FB092 A3CBBED4 EB94974F\n\
+          \  2774FC8F 02030100 01A35330 51301D06 03551D0E 04160414 9C02924B C669E60B\n\
+          \  A9414F6A 857AAE29 D8C3DEA8 301F0603 551D2304 18301680 149C0292 4BC669E6\n\
+          \  0BA9414F 6A857AAE 29D8C3DE A8300F06 03551D13 0101FF04 05300301 01FF300D\n\
+          \  06092A86 4886F70D 01010B05 00038201 01001458 E244A407 B97EE999 5FE9D256\n\
+          \  CB047F78 E5CCDB53 8208CAAD F52DC18A A2282E09 4F06E00E 08D432B4 AFF55AD1\n\
+          \  86F97454 7E11BC44 A21BD176 D07CB417 EFCB44F9 FC5508F7 BCB90F38 71535C79\n\
+          \  2F133FE9 683B7CB0 4FF402BA 9A7087B2 2019A7D7 F8B6437B 0DF3936E EB71C8E3\n\
+          \  ED2D8B3D 61D86215 E183F30E F65A60C7 72205E80 B4C93AD4 C03E9792 7CB3535B\n\
+          \  100CF839 F212C4D3 E3A6E8BF 196173AC 1A48356C 3A8D89E8 F0EE1761 7EBFFB2B\n\
+          \  C378F849 294F9BCD E5615A4F 17ACE700 ADBA78FF E981CA64 0B9A5570 70A28A50\n\
+          \  EF752FEA EA1284E9 0A405924 809FA038 9B24F00E 3BA25F60 1B615345 9B5276A9\n\
+          \  6945F030 8685A5B7 973516A0 C07EB046 95EC\n  \tquit\n!\n!\nmemory free\
+          \ low-watermark processor 80589\n!\n!\nspanning-tree mode mst\nspanning-tree\
+          \ extend system-id\nspanning-tree mst 0 priority 4096\nspanning-tree vlan\
+          \ 1 priority 4096\n!\nusername cisco privilege 15 password 7 094F471A1A0A\n\
+          !\nvlan internal allocation policy ascending\n!\n!\n!\n!\n!\ninterface Loopback0\n\
+          \ ip address 10.254.1.1 255.255.255.255\n ip ospf 1 area 0\n!\ninterface\
+          \ Port-channel1\n switchport trunk encapsulation dot1q\n switchport trunk\
+          \ allowed vlan 1-3\n switchport mode trunk\n!\ninterface Ethernet0/0\n switchport\
+          \ trunk encapsulation dot1q\n switchport trunk allowed vlan 1-3\n switchport\
+          \ mode trunk\n!\ninterface Ethernet0/1\n switchport trunk encapsulation\
+          \ dot1q\n switchport trunk allowed vlan 1-3\n switchport mode trunk\n!\n\
+          interface Ethernet0/2\n switchport trunk encapsulation dot1q\n switchport\
+          \ trunk allowed vlan 1-3\n switchport mode trunk\n channel-group 1 mode\
+          \ active\n!\ninterface Ethernet0/3\n switchport trunk encapsulation dot1q\n\
+          \ switchport trunk allowed vlan 1-3\n switchport mode trunk\n channel-group\
+          \ 1 mode active\n!\ninterface Ethernet1/0\n!\ninterface Ethernet1/1\n!\n\
+          interface Ethernet1/2\n!\ninterface Ethernet1/3\n no switchport\n ip address\
+          \ 10.0.0.248 255.255.255.0\n ip ospf 1 area 0\n!\ninterface Vlan1\n ip address\
+          \ 10.1.1.1 255.255.255.0\n ip ospf 1 area 0\n!\ninterface Vlan2\n ip address\
+          \ 10.2.1.1 255.255.255.0\n ip ospf 1 area 0\n!\ninterface Vlan3\n ip address\
+          \ 10.3.1.1 255.255.255.0\n ip ospf 1 area 0\n!\nrouter ospf 1\n router-id\
+          \ 10.254.1.1\n passive-interface Ethernet1/3\n!\nip forward-protocol nd\n\
+          !\n!\nip http server\nip http secure-server\nip ssh bulk-mode 131072\n!\n\
+          !\n!\n!\n!\n!\ncontrol-plane\n!\n!\n!\nline con 0\n exec-timeout 0 0\n logging\
+          \ synchronous\nline aux 0\nline vty 0 4\n exec-timeout 0 0\n logging synchronous\n\
+          \ login local\n transport input ssh\n!\n!\nend"
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n0
+    image_definition: null
+    label: sw1
+    node_definition: ioll2-xe
+    parameters: {}
+    ram: null
+    tags: []
+    x: 80
+    y: -120
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: Ethernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: Ethernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: Ethernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: Ethernet0/3
+        slot: 3
+        type: physical
+      - id: i5
+        label: Ethernet1/0
+        slot: 4
+        type: physical
+      - id: i6
+        label: Ethernet1/1
+        slot: 5
+        type: physical
+      - id: i7
+        label: Ethernet1/2
+        slot: 6
+        type: physical
+      - id: i8
+        label: Ethernet1/3
+        slot: 7
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: "Building configuration...\n\nCurrent configuration : 3982 bytes\n\
+          !\n! Last configuration change at 22:08:28 UTC Tue Jul 9 2024\n!\nversion\
+          \ 17.12\nservice timestamps debug datetime msec\nservice timestamps log\
+          \ datetime msec\nservice password-encryption\n!\nhostname sw3\n!\nboot-start-marker\n\
+          boot-end-marker\n!\n!\nno logging console\nno aaa new-model\n!\n!\n!\n!\n\
+          !\n!\n!\n!\n!\n!\n!\n!\n!\nip audit notify log\nip audit po max-events 100\n\
+          no ip domain lookup\nip domain name cml.lab\nip cef\nlogin on-success log\n\
+          no ipv6 cef\n!\n!\n!\n!\n!\n!\n!\nvtp version 1\nmultilink bundle-name authenticated\n\
+          !\ncrypto pki trustpoint TP-self-signed-131184647\n enrollment selfsigned\n\
+          \ subject-name cn=IOS-Self-Signed-Certificate-131184647\n revocation-check\
+          \ none\n rsakeypair TP-self-signed-131184647\n hash sha256\n!\n!\ncrypto\
+          \ pki certificate chain TP-self-signed-131184647\n certificate self-signed\
+          \ 01\n  3082032E 30820216 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030\n\
+          \  30312E30 2C060355 04030C25 494F532D 53656C66 2D536967 6E65642D 43657274\n\
+          \  69666963 6174652D 31333131 38343634 37301E17 0D323430 37303532 32333735\n\
+          \  375A170D 33343037 30353232 33373537 5A303031 2E302C06 03550403 0C25494F\n\
+          \  532D5365 6C662D53 69676E65 642D4365 72746966 69636174 652D3133 31313834\n\
+          \  36343730 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 82010A02\n\
+          \  82010100 C3844C82 E44EC143 C5D757B2 545116F9 6BDBD37D D4E78354 34E65661\n\
+          \  2E842C31 4CB911C3 93C60F94 F9BDAF10 7B915316 7C53B666 B4C7423A 604D8437\n\
+          \  9C87DE10 85C47A4A DECA7AF5 DE0DCA77 E5AF53AE D0AE67E4 A58005CD AC06406B\n\
+          \  465646B8 57C3C539 7C80047A F48754FE 1ACB0F99 79BCCEB8 334ACC58 C5BA0F33\n\
+          \  02E6D8FF 684EC270 D60C9496 71891328 52CD0AD7 C37B4E5E 367B0150 D5416C50\n\
+          \  04FEB21D 6BE03132 D8D15BFF CFD6BAE0 5B1CBF61 5C4FC0BE C78FF7F5 C9BDCD73\n\
+          \  D10C9499 3847B1CB 8B7792A9 8A2EA932 CD48F384 26F09A6B 0D50B00E EFFB7A57\n\
+          \  806460B7 962767E6 931F87E6 9C587DCD B1F9E822 39A58ADC 7E83826A 8CEEE9F9\n\
+          \  EDF158C1 02030100 01A35330 51301D06 03551D0E 04160414 528A2A4F E7F56BE7\n\
+          \  987590AB 568FAF6F 37ACF3AF 301F0603 551D2304 18301680 14528A2A 4FE7F56B\n\
+          \  E7987590 AB568FAF 6F37ACF3 AF300F06 03551D13 0101FF04 05300301 01FF300D\n\
+          \  06092A86 4886F70D 01010B05 00038201 01009F76 E16AE795 AFC3099C 6A3726CB\n\
+          \  CB855232 5947E67D 75BB05F0 8C8A19E1 F3F72AC8 CBCFF3CA ACAF31B2 76BCD365\n\
+          \  60305723 08E4E759 9CE2E66E 484E1D56 537CD13A A84BDE88 0C169F32 48591935\n\
+          \  48A3EE9B C7661547 4060FF07 A8686CBB 91A9BEB9 33FA9A79 A0FBE465 7B1946DD\n\
+          \  D6538936 00C1F580 73443E38 CD708276 6866DF9A C53D1446 8D1B29E7 83E61C06\n\
+          \  A9DE5F0D 199714D7 7AFFBE43 DD9F36F8 204C002E 86DA5F10 BFEAE10E 3DBD235F\n\
+          \  EC9B312C C04721EA 4DF181C3 4352570E 96EE7F77 89E074D2 0AA5A542 95C61AEB\n\
+          \  77F6E32E 2C2CAE72 AA90BD72 71597878 7444F306 FD9DE4AB CE9C7C41 B2F3924F\n\
+          \  FC0FB20C 2459E04F 768A0E5C 8708A0F8 6A27\n  \tquit\n!\n!\nmemory free\
+          \ low-watermark processor 80589\n!\n!\nspanning-tree mode mst\nspanning-tree\
+          \ extend system-id\n!\nusername cisco privilege 15 password 7 094F471A1A0A\n\
+          !\nvlan internal allocation policy ascending\n!\n!\n!\n!\n!\ninterface Loopback0\n\
+          \ ip address 10.254.1.3 255.255.255.255\n ip ospf 1 area 0\n!\ninterface\
+          \ Ethernet0/0\n switchport trunk encapsulation dot1q\n switchport trunk\
+          \ allowed vlan 1-3\n switchport mode trunk\n!\ninterface Ethernet0/1\n switchport\
+          \ trunk encapsulation dot1q\n switchport trunk allowed vlan 1-3\n switchport\
+          \ mode trunk\n!\ninterface Ethernet0/2\n switchport access vlan 2\n switchport\
+          \ trunk encapsulation dot1q\n switchport trunk allowed vlan 1-3\n switchport\
+          \ mode trunk\n!\ninterface Ethernet0/3\n!\ninterface Ethernet1/0\n switchport\
+          \ trunk encapsulation dot1q\n switchport trunk allowed vlan 1-3\n switchport\
+          \ mode trunk\n!\ninterface Ethernet1/1\n!\ninterface Ethernet1/2\n!\ninterface\
+          \ Ethernet1/3\n!\ninterface Vlan1\n ip address 10.1.1.3 255.255.255.0\n\
+          \ ip ospf 1 area 0\n!\nrouter ospf 1\n router-id 10.254.1.3\n!\nip forward-protocol\
+          \ nd\n!\n!\nip http server\nip http secure-server\nip ssh bulk-mode 131072\n\
+          !\n!\n!\n!\n!\n!\ncontrol-plane\n!\n!\n!\nline con 0\n exec-timeout 0 0\n\
+          \ logging synchronous\nline aux 0\nline vty 0 4\n exec-timeout 0 0\n logging\
+          \ synchronous\n login local\n transport input ssh\n!\n!\nend"
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n1
+    image_definition: null
+    label: sw3
+    node_definition: ioll2-xe
+    parameters: {}
+    ram: null
+    tags: []
+    x: 560
+    y: 120
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: Ethernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: Ethernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: Ethernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: Ethernet0/3
+        slot: 3
+        type: physical
+      - id: i5
+        label: Ethernet1/0
+        slot: 4
+        type: physical
+      - id: i6
+        label: Ethernet1/1
+        slot: 5
+        type: physical
+      - id: i7
+        label: Ethernet1/2
+        slot: 6
+        type: physical
+      - id: i8
+        label: Ethernet1/3
+        slot: 7
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: "Building configuration...\n\nCurrent configuration : 4052 bytes\n\
+          !\n! Last configuration change at 22:08:28 UTC Tue Jul 9 2024\n!\nversion\
+          \ 17.12\nservice timestamps debug datetime msec\nservice timestamps log\
+          \ datetime msec\nservice password-encryption\n!\nhostname sw2\n!\nboot-start-marker\n\
+          boot-end-marker\n!\n!\nno logging console\nno aaa new-model\n!\n!\n!\n!\n\
+          !\n!\n!\n!\n!\n!\n!\n!\n!\nip audit notify log\nip audit po max-events 100\n\
+          no ip domain lookup\nip domain name cml.lab\nip cef\nlogin on-success log\n\
+          no ipv6 cef\n!\n!\n!\n!\n!\n!\n!\nvtp version 1\nmultilink bundle-name authenticated\n\
+          !\ncrypto pki trustpoint TP-self-signed-131184646\n enrollment selfsigned\n\
+          \ subject-name cn=IOS-Self-Signed-Certificate-131184646\n revocation-check\
+          \ none\n rsakeypair TP-self-signed-131184646\n hash sha256\n!\n!\ncrypto\
+          \ pki certificate chain TP-self-signed-131184646\n certificate self-signed\
+          \ 01\n  3082032E 30820216 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030\n\
+          \  30312E30 2C060355 04030C25 494F532D 53656C66 2D536967 6E65642D 43657274\n\
+          \  69666963 6174652D 31333131 38343634 36301E17 0D323430 37303531 34333034\n\
+          \  395A170D 33343037 30353134 33303439 5A303031 2E302C06 03550403 0C25494F\n\
+          \  532D5365 6C662D53 69676E65 642D4365 72746966 69636174 652D3133 31313834\n\
+          \  36343630 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 82010A02\n\
+          \  82010100 B846A61A 2A220743 1C088263 06C2B0BB 38479E72 DE527279 8F5D7D9D\n\
+          \  DBC2A035 127163E7 BF8F1B8D DF76EAD7 3F8CF683 082DDC49 02034BCC 2BE0F369\n\
+          \  817374DC CF1F7EFB 33E8642F E114539E F0F45592 4DFF78AD D411A6FD B4C6B113\n\
+          \  7931AE81 117BD8B6 9399529F 0E96313D 46EA41BB E7FD5298 74D6576C F4C050CA\n\
+          \  83CDC91A ED0897C8 44B4D68E 25C22B7D 10CC37DF A911FD79 B7F71203 754DC878\n\
+          \  914654C6 5CE4B8F7 1D759C52 CD50E1AB 2BFF5EA8 CE4080A0 6537F7E8 D798964E\n\
+          \  6A392E43 CB669DBF 0721AEC3 6E0ED3AB D1052457 63EB1F62 E14102A9 C664EA80\n\
+          \  F677D968 B9C7B879 EF42E471 35995C5B CA9F0448 A03033B7 7AEED9F0 78C015C8\n\
+          \  C04C4009 02030100 01A35330 51301D06 03551D0E 04160414 B52329ED 494173B5\n\
+          \  9E8CEC80 8ED20139 8FE75A14 301F0603 551D2304 18301680 14B52329 ED494173\n\
+          \  B59E8CEC 808ED201 398FE75A 14300F06 03551D13 0101FF04 05300301 01FF300D\n\
+          \  06092A86 4886F70D 01010B05 00038201 0100134C ADE302AB E2AA8E97 3365BAE0\n\
+          \  C4C33FB7 BBD33479 B005011C AE118E2F 31E7F23A 08EA156D 53E4058C 1FC91E28\n\
+          \  B9781CD5 AD01ADF8 1934FC78 4A5C62AE 6B98A447 F3880A2F AFD8AF33 344682BB\n\
+          \  F45211DA 81D4CA30 8B4BBBDC E431B977 C8CBC4C6 20C5E386 2CB52741 F04C8FC4\n\
+          \  812CAB99 3B6885C5 D160D90B E10199B0 409BB126 DA42D866 0B77B338 73F0665B\n\
+          \  13B9F661 0B083435 7BB7EF84 5858BFB8 F47F69B2 C1A5493E 8E87533F 12009F30\n\
+          \  659F29BE 833994E7 8347A294 57524130 2AD4B0F3 C20B0772 7BE1A479 B0D683BA\n\
+          \  D76A7864 5221EEF9 64C3EBBE 84699F4A E4991472 A31D1510 DC792CA7 354C93C7\n\
+          \  F3FDDF54 1A1B72CE 422B0D1D 7DA014E1 2074\n  \tquit\n!\n!\nmemory free\
+          \ low-watermark processor 80589\n!\n!\nspanning-tree mode mst\nspanning-tree\
+          \ extend system-id\n!\nusername cisco privilege 15 password 7 094F471A1A0A\n\
+          !\nvlan internal allocation policy ascending\n!\n!\n!\n!\n!\ninterface Loopback0\n\
+          \ ip address 10.254.1.2 255.255.255.255\n ip ospf 1 area 0\n!\ninterface\
+          \ Ethernet0/0\n switchport trunk encapsulation dot1q\n switchport trunk\
+          \ allowed vlan 1-3\n switchport mode trunk\n!\ninterface Ethernet0/1\n switchport\
+          \ trunk encapsulation dot1q\n switchport trunk allowed vlan 1-3\n switchport\
+          \ mode trunk\n!\ninterface Ethernet0/2\n switchport trunk encapsulation\
+          \ dot1q\n switchport trunk allowed vlan 1-3\n switchport mode trunk\n!\n\
+          interface Ethernet0/3\n switchport trunk encapsulation dot1q\n switchport\
+          \ trunk allowed vlan 1-3\n switchport mode trunk\n!\ninterface Ethernet1/0\n\
+          \ switchport trunk encapsulation dot1q\n switchport trunk allowed vlan 1-3\n\
+          \ switchport mode trunk\n!\ninterface Ethernet1/1\n!\ninterface Ethernet1/2\n\
+          !\ninterface Ethernet1/3\n!\ninterface Vlan1\n ip address 10.1.1.2 255.255.255.0\n\
+          \ ip ospf 1 area 0\n!\nrouter ospf 1\n router-id 10.254.1.2\n!\nip forward-protocol\
+          \ nd\n!\n!\nip http server\nip http secure-server\nip ssh bulk-mode 131072\n\
+          !\n!\n!\n!\n!\n!\ncontrol-plane\n!\n!\n!\nline con 0\n exec-timeout 0 0\n\
+          \ logging synchronous\nline aux 0\nline vty 0 4\n exec-timeout 0 0\n logging\
+          \ synchronous\n login local\n transport input ssh\n!\n!\nend"
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n2
+    image_definition: null
+    label: sw2
+    node_definition: ioll2-xe
+    parameters: {}
+    ram: null
+    tags: []
+    x: -120
+    y: 120
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: Ethernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: Ethernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: Ethernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: Ethernet0/3
+        slot: 3
+        type: physical
+      - id: i5
+        label: Ethernet1/0
+        slot: 4
+        type: physical
+      - id: i6
+        label: Ethernet1/1
+        slot: 5
+        type: physical
+      - id: i7
+        label: Ethernet1/2
+        slot: 6
+        type: physical
+      - id: i8
+        label: Ethernet1/3
+        slot: 7
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: default
+        content: System Bridge
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: true
+    id: n3
+    image_definition: null
+    label: ext-conn-0
+    node_definition: external_connector
+    parameters: {}
+    ram: null
+    tags: []
+    x: 80
+    y: -200
+    interfaces:
+      - id: i0
+        label: port
+        slot: 0
+        type: physical
+  - boot_disk_size: null
+    configuration: []
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n4
+    image_definition: null
+    label: alpine-0
+    node_definition: alpine
+    parameters: {}
+    ram: null
+    tags: []
+    x: 400
+    y: 480
+    interfaces:
+      - id: i0
+        label: eth0
+        slot: 0
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: "Building configuration...\n\nCurrent configuration : 4304 bytes\n\
+          !\n! Last configuration change at 22:08:28 UTC Tue Jul 9 2024\n!\nversion\
+          \ 17.12\nservice timestamps debug datetime msec\nservice timestamps log\
+          \ datetime msec\nservice password-encryption\n!\nhostname sw4\n!\nboot-start-marker\n\
+          boot-end-marker\n!\n!\nno logging console\nno aaa new-model\n!\n!\n!\n!\n\
+          !\n!\n!\n!\n!\n!\n!\n!\n!\nip audit notify log\nip audit po max-events 100\n\
+          no ip domain lookup\nip domain name cml.lab\nip cef\nlogin on-success log\n\
+          no ipv6 cef\n!\n!\n!\n!\n!\n!\n!\nvtp version 1\nmultilink bundle-name authenticated\n\
+          !\ncrypto pki trustpoint TP-self-signed-131184648\n enrollment selfsigned\n\
+          \ subject-name cn=IOS-Self-Signed-Certificate-131184648\n revocation-check\
+          \ none\n rsakeypair TP-self-signed-131184648\n hash sha256\n!\n!\ncrypto\
+          \ pki certificate chain TP-self-signed-131184648\n certificate self-signed\
+          \ 01\n  3082032E 30820216 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030\n\
+          \  30312E30 2C060355 04030C25 494F532D 53656C66 2D536967 6E65642D 43657274\n\
+          \  69666963 6174652D 31333131 38343634 38301E17 0D323430 37303532 32333635\n\
+          \  355A170D 33343037 30353232 33363535 5A303031 2E302C06 03550403 0C25494F\n\
+          \  532D5365 6C662D53 69676E65 642D4365 72746966 69636174 652D3133 31313834\n\
+          \  36343830 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 82010A02\n\
+          \  82010100 A1F60396 532E7655 35835CA5 017AB0A0 769AE639 3668B678 AF6720F5\n\
+          \  DA233B2E B2D0FB6B DB7BB025 D1C32F00 CDA80E55 E297EC77 6E171233 8CB6CFF0\n\
+          \  61A43DDA B53565D5 D902286B 36BBFCD8 822BF0D0 BA362C57 6E142A03 5190BE82\n\
+          \  92AC6B99 C389D887 59378728 648A7CAB C8FD8DAB 0A919FD7 C70DC719 42412323\n\
+          \  5A407BAD A2373A51 7618C7CB 5D115834 8A89ECEE DEB45964 89350559 220D9869\n\
+          \  DD7BDA46 A56984E5 5D615207 1F0B5F5A 05682147 51B01926 154840B9 5CA8B2C1\n\
+          \  1E23B7E7 2029BAE2 EF258C89 2722D2AB 21600D3F 32D800C0 BAFE40E0 C9205CBC\n\
+          \  F7C7FC98 F1195FE7 EF8A3084 32B898D3 A5546C55 344047FC BDF0DD0D 46C6A986\n\
+          \  B30C2039 02030100 01A35330 51301D06 03551D0E 04160414 00071690 EFA254AD\n\
+          \  66A57C85 249F79D6 159B2F18 301F0603 551D2304 18301680 14000716 90EFA254\n\
+          \  AD66A57C 85249F79 D6159B2F 18300F06 03551D13 0101FF04 05300301 01FF300D\n\
+          \  06092A86 4886F70D 01010B05 00038201 010056CB 6C7BCC90 F7A267ED 8452D81F\n\
+          \  96D33738 19C3A7A8 9BB0A7A4 48D7CFC0 98831D7A 5E94642A AE42E488 5A6BD777\n\
+          \  3EE798A0 A1CC46C4 9EFC67AD AACDDC4B 0B607291 14A507DE 912B4175 3C1200C3\n\
+          \  BD0CF7C3 87D64E09 48E642C5 8124ECE9 917507D7 7F076601 01F5F16F 66AE958B\n\
+          \  C87009D9 899F365F CE5DC801 7ECD45F8 64E3D598 D92B615A CBA9D238 C46C3CEC\n\
+          \  834F5967 1D30E760 03BD1874 D0B708BB 866303DE 26A9C8F3 4CB64136 B040C183\n\
+          \  3DCC9121 7E8D4906 A171CF6C CF548573 54501733 8847D239 BF0FABF0 B7C6F8D5\n\
+          \  567F6E4B 17C4E80C 6B00B36C 0EF33F7D A0D54A62 994969A7 E8B1203A 0B8BDEEE\n\
+          \  C10DF641 469BA984 D274ED2A CAA3341F 16FE\n  \tquit\n!\n!\nmemory free\
+          \ low-watermark processor 80589\n!\n!\nspanning-tree mode mst\nspanning-tree\
+          \ extend system-id\nspanning-tree mst 0 priority 8192\n!\nusername cisco\
+          \ privilege 15 password 7 094F471A1A0A\n!\nvlan internal allocation policy\
+          \ ascending\n!\n!\n!\n!\n!\ninterface Loopback0\n ip address 10.254.1.4\
+          \ 255.255.255.255\n ip ospf 1 area 0\n!\ninterface Port-channel1\n switchport\
+          \ trunk encapsulation dot1q\n switchport trunk allowed vlan 1-3\n switchport\
+          \ mode trunk\n!\ninterface Ethernet0/0\n switchport trunk encapsulation\
+          \ dot1q\n switchport trunk allowed vlan 1-3\n switchport mode trunk\n channel-group\
+          \ 1 mode active\n!\ninterface Ethernet0/1\n switchport trunk encapsulation\
+          \ dot1q\n switchport trunk allowed vlan 1-3\n switchport mode trunk\n channel-group\
+          \ 1 mode active\n!\ninterface Ethernet0/2\n switchport trunk encapsulation\
+          \ dot1q\n switchport trunk allowed vlan 1-3\n switchport mode trunk\n!\n\
+          interface Ethernet0/3\n switchport trunk encapsulation dot1q\n switchport\
+          \ trunk allowed vlan 1-3\n switchport mode trunk\n!\ninterface Ethernet1/0\n\
+          !\ninterface Ethernet1/1\n!\ninterface Ethernet1/2\n!\ninterface Ethernet1/3\n\
+          !\ninterface Vlan1\n ip address 10.1.1.4 255.255.255.0\n ip ospf 1 area\
+          \ 0\n!\ninterface Vlan2\n ip address 10.2.1.2 255.255.255.0\n shutdown\n\
+          !\ninterface Vlan3\n ip address 10.3.1.2 255.255.255.0\n ip ospf 1 area\
+          \ 0\n!\nrouter ospf 1\n router-id 10.254.1.4\n!\nip forward-protocol nd\n\
+          !\n!\nip http server\nip http secure-server\nip ssh bulk-mode 131072\n!\n\
+          !\n!\n!\n!\n!\ncontrol-plane\n!\n!\n!\nline con 0\n exec-timeout 0 0\n logging\
+          \ synchronous\nline aux 0\nline vty 0 4\n exec-timeout 0 0\n logging synchronous\n\
+          \ login local\n transport input ssh\n!\n!\nend"
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n5
+    image_definition: null
+    label: sw4
+    node_definition: ioll2-xe
+    parameters: {}
+    ram: null
+    tags: []
+    x: 360
+    y: -120
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: Ethernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: Ethernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: Ethernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: Ethernet0/3
+        slot: 3
+        type: physical
+      - id: i5
+        label: Ethernet1/0
+        slot: 4
+        type: physical
+      - id: i6
+        label: Ethernet1/1
+        slot: 5
+        type: physical
+      - id: i7
+        label: Ethernet1/2
+        slot: 6
+        type: physical
+      - id: i8
+        label: Ethernet1/3
+        slot: 7
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: "Building configuration...\n\nCurrent configuration : 3790 bytes\n\
+          !\n! Last configuration change at 22:08:28 UTC Tue Jul 9 2024\n!\nversion\
+          \ 17.12\nservice timestamps debug datetime msec\nservice timestamps log\
+          \ datetime msec\nservice password-encryption\n!\nhostname sw5\n!\nboot-start-marker\n\
+          boot-end-marker\n!\n!\nno logging console\nno aaa new-model\n!\n!\n!\n!\n\
+          !\n!\n!\n!\n!\n!\n!\n!\n!\nip audit notify log\nip audit po max-events 100\n\
+          no ip domain lookup\nip domain name cml.lab\nip cef\nlogin on-success log\n\
+          no ipv6 cef\n!\n!\n!\n!\n!\n!\n!\nvtp version 1\nmultilink bundle-name authenticated\n\
+          !\ncrypto pki trustpoint TP-self-signed-131184649\n enrollment selfsigned\n\
+          \ subject-name cn=IOS-Self-Signed-Certificate-131184649\n revocation-check\
+          \ none\n rsakeypair TP-self-signed-131184649\n hash sha256\n!\n!\ncrypto\
+          \ pki certificate chain TP-self-signed-131184649\n certificate self-signed\
+          \ 01\n  3082032E 30820216 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030\n\
+          \  30312E30 2C060355 04030C25 494F532D 53656C66 2D536967 6E65642D 43657274\n\
+          \  69666963 6174652D 31333131 38343634 39301E17 0D323430 37303532 32333635\n\
+          \  385A170D 33343037 30353232 33363538 5A303031 2E302C06 03550403 0C25494F\n\
+          \  532D5365 6C662D53 69676E65 642D4365 72746966 69636174 652D3133 31313834\n\
+          \  36343930 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 82010A02\n\
+          \  82010100 CB6C196D 5A02BF6F 52B5DC7A 7468F115 EA24242E EB3F71AD BDAC3496\n\
+          \  C6869EEE 884FC14B 4367C37A B8E092F0 24DA0725 022119B1 F1F11368 ABDABFCD\n\
+          \  DD593334 C8D7260D C205A698 276BA615 F1F5078F A687493C 2F6BFDE7 CCC0FCAB\n\
+          \  ACE15621 BB81F87F 15F02216 3E17A661 CBF9F680 6595A87D F7F79BA0 8E0124C0\n\
+          \  2D58470C 0E810DCF 3B2F7F43 3DB90C90 ADC9031C E640A64F 4B0A7543 30AEE1E4\n\
+          \  6951422A F61BA8F3 6B62EAB8 D6BBDA82 ECFED7F5 4900860D E4BDB974 E0882CC0\n\
+          \  A3A69E3B 8DFC1958 35E3F371 85DE5807 93C481F0 23AC680E 6A87F438 16106675\n\
+          \  5B43F00D BFB31CC7 857E3D43 651DA8A2 A662223A BF65D3E4 0531CE46 A899517D\n\
+          \  FE1BDDC1 02030100 01A35330 51301D06 03551D0E 04160414 138F8473 3E8A10CD\n\
+          \  1AF25393 D4C73595 986D18E5 301F0603 551D2304 18301680 14138F84 733E8A10\n\
+          \  CD1AF253 93D4C735 95986D18 E5300F06 03551D13 0101FF04 05300301 01FF300D\n\
+          \  06092A86 4886F70D 01010B05 00038201 01003B7F 97C1D45A 4692EC7A 4D6AA135\n\
+          \  08DE5488 9DF6CEC4 2AA8C247 970ABBBC 087F4E9C 6024519A 465B379D B96D5CA1\n\
+          \  12ECC9A6 4C03ACA2 6D2564A1 6676C071 2CCA9E8E B370DF39 FFB93C61 E88B8D1E\n\
+          \  364C7E18 37E10EDB E50DA10C EC6DA665 85245968 01817116 38B527AF 2E330E19\n\
+          \  06BB68AB 99F99C3F 640F25A7 BB0B7E40 F5E6EDB2 8D481D1E E4C586E5 C778419C\n\
+          \  1586CF01 4CAD3217 E38799A7 CF8951FE 41EA9946 A770DA1D 4BE4D26A 86F3580D\n\
+          \  C5F93443 4CAF5405 1106AF3E C12C3A7F 9D98637B 20890090 D73E2417 85A98097\n\
+          \  29AAD45E 912DD631 471F5588 9F305C6A AFBF0340 2E6A6424 08730A52 90F45FCF\n\
+          \  64195528 05CCB13B 74107F33 31D9123C 063E\n  \tquit\n!\n!\nmemory free\
+          \ low-watermark processor 80589\n!\n!\nspanning-tree mode mst\nspanning-tree\
+          \ extend system-id\n!\nusername cisco privilege 15 password 7 094F471A1A0A\n\
+          !\nvlan internal allocation policy ascending\n!\n!\n!\n!\n!\ninterface Loopback0\n\
+          \ ip address 10.254.1.5 255.255.255.255\n ip ospf 1 area 0\n!\ninterface\
+          \ Ethernet0/0\n switchport trunk encapsulation dot1q\n switchport trunk\
+          \ allowed vlan 1-3\n switchport mode trunk\n!\ninterface Ethernet0/1\n switchport\
+          \ trunk encapsulation dot1q\n switchport trunk allowed vlan 1-3\n switchport\
+          \ mode trunk\n!\ninterface Ethernet0/2\n switchport access vlan 3\n!\ninterface\
+          \ Ethernet0/3\n!\ninterface Ethernet1/0\n!\ninterface Ethernet1/1\n!\ninterface\
+          \ Ethernet1/2\n!\ninterface Ethernet1/3\n!\ninterface Vlan1\n ip address\
+          \ 10.1.1.5 255.255.255.0\n ip ospf 1 area 0\n!\nrouter ospf 1\n router-id\
+          \ 10.254.1.5\n!\nip forward-protocol nd\n!\n!\nip http server\nip http secure-server\n\
+          ip ssh bulk-mode 131072\n!\n!\n!\n!\n!\n!\ncontrol-plane\n!\n!\n!\nline\
+          \ con 0\n exec-timeout 0 0\n logging synchronous\nline aux 0\nline vty 0\
+          \ 4\n exec-timeout 0 0\n logging synchronous\n login local\n transport input\
+          \ ssh\n!\n!\nend"
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n6
+    image_definition: null
+    label: sw5
+    node_definition: ioll2-xe
+    parameters: {}
+    ram: null
+    tags: []
+    x: 80
+    y: 320
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: Ethernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: Ethernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: Ethernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: Ethernet0/3
+        slot: 3
+        type: physical
+      - id: i5
+        label: Ethernet1/0
+        slot: 4
+        type: physical
+      - id: i6
+        label: Ethernet1/1
+        slot: 5
+        type: physical
+      - id: i7
+        label: Ethernet1/2
+        slot: 6
+        type: physical
+      - id: i8
+        label: Ethernet1/3
+        slot: 7
+        type: physical
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: "Building configuration...\n\nCurrent configuration : 3790 bytes\n\
+          !\n! Last configuration change at 22:08:29 UTC Tue Jul 9 2024\n!\nversion\
+          \ 17.12\nservice timestamps debug datetime msec\nservice timestamps log\
+          \ datetime msec\nservice password-encryption\n!\nhostname sw6\n!\nboot-start-marker\n\
+          boot-end-marker\n!\n!\nno logging console\nno aaa new-model\n!\n!\n!\n!\n\
+          !\n!\n!\n!\n!\n!\n!\n!\n!\nip audit notify log\nip audit po max-events 100\n\
+          no ip domain lookup\nip domain name cml.lab\nip cef\nlogin on-success log\n\
+          no ipv6 cef\n!\n!\n!\n!\n!\n!\n!\nvtp version 1\nmultilink bundle-name authenticated\n\
+          !\ncrypto pki trustpoint TP-self-signed-131184650\n enrollment selfsigned\n\
+          \ subject-name cn=IOS-Self-Signed-Certificate-131184650\n revocation-check\
+          \ none\n rsakeypair TP-self-signed-131184650\n hash sha256\n!\n!\ncrypto\
+          \ pki certificate chain TP-self-signed-131184650\n certificate self-signed\
+          \ 01\n  3082032E 30820216 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030\n\
+          \  30312E30 2C060355 04030C25 494F532D 53656C66 2D536967 6E65642D 43657274\n\
+          \  69666963 6174652D 31333131 38343635 30301E17 0D323430 37303532 32333634\n\
+          \  355A170D 33343037 30353232 33363435 5A303031 2E302C06 03550403 0C25494F\n\
+          \  532D5365 6C662D53 69676E65 642D4365 72746966 69636174 652D3133 31313834\n\
+          \  36353030 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 82010A02\n\
+          \  82010100 AC4A00A7 DF52A613 0BE176D7 82E078CF 5203E729 F1FF1E00 30AE7238\n\
+          \  1FE113D1 4D307C8A 6B4CE766 1DDFA857 89F230DC 3B751AC4 37EE7685 261E67A3\n\
+          \  5F035429 F8F591DD 3C340C20 070E47E6 550C5714 F618B426 E1A55198 CAD5B324\n\
+          \  BFA8C582 89E0CE5A 09AA4515 4B247903 0E192700 83E1B88D 9B8AA300 9253792A\n\
+          \  C5DF6806 8979F4A9 B3B4E065 ACCA919F 86D66173 FE4F2292 45C38F51 2F5092A0\n\
+          \  12398314 3BA95B81 8E084708 73EEBA99 3335F7EB ED45D879 77D4A456 F7861124\n\
+          \  084424E9 71D4A02B 36A6B0BD 7064BF60 7798263A D23413A6 B6A125D1 37ABE73D\n\
+          \  44DFE76D E15F7EBA F75B7B37 03D3F8DF CD1EA35F 2904E2C4 AF197FEB F5681878\n\
+          \  10FC5029 02030100 01A35330 51301D06 03551D0E 04160414 3FFC31F3 8A3C947C\n\
+          \  1BF58777 3CF6834E 89DD003D 301F0603 551D2304 18301680 143FFC31 F38A3C94\n\
+          \  7C1BF587 773CF683 4E89DD00 3D300F06 03551D13 0101FF04 05300301 01FF300D\n\
+          \  06092A86 4886F70D 01010B05 00038201 01009019 A88E1F64 40A8D5A2 781AB0BF\n\
+          \  2D3B34F7 5AA81A44 5FE5AD54 4A4A7FE0 7A3D7045 12407BD6 68FD76CE 22C4935F\n\
+          \  2BA33F51 D538ED76 8E220864 0BD1249B 52DB0374 8CCEC70B 168B8EB5 106A932E\n\
+          \  AD401D3A F2C40D65 267E3162 7C65C395 805F7DA8 DD31A7EB E2FF066F 3F5C3211\n\
+          \  01DA5F8C 4FC6752B 4B92D670 734CA1EE 54D73ED4 AE8884BE 42A17998 E07BAEC2\n\
+          \  C2B106DF 8262AB80 81EFDFC7 06E1D893 CD713043 FC223F43 7F518FBA D8B2E656\n\
+          \  A83E43BF 1BAC587E 316BB4BE 02E439BB 4D2BD118 8BCA44D2 288BE617 1B2B6169\n\
+          \  CEB56FC7 2C6739AC 79A919B0 13A23E33 CF90F240 F84EB976 227895EE 4B28C74D\n\
+          \  DF41FE35 1C9F4803 6212A3AE CBC54368 52A2\n  \tquit\n!\n!\nmemory free\
+          \ low-watermark processor 80589\n!\n!\nspanning-tree mode mst\nspanning-tree\
+          \ extend system-id\n!\nusername cisco privilege 15 password 7 094F471A1A0A\n\
+          !\nvlan internal allocation policy ascending\n!\n!\n!\n!\n!\ninterface Loopback0\n\
+          \ ip address 10.254.1.6 255.255.255.255\n ip ospf 1 area 0\n!\ninterface\
+          \ Ethernet0/0\n switchport trunk encapsulation dot1q\n switchport trunk\
+          \ allowed vlan 1-3\n switchport mode trunk\n!\ninterface Ethernet0/1\n switchport\
+          \ trunk encapsulation dot1q\n switchport trunk allowed vlan 1-3\n switchport\
+          \ mode trunk\n!\ninterface Ethernet0/2\n switchport access vlan 2\n!\ninterface\
+          \ Ethernet0/3\n!\ninterface Ethernet1/0\n!\ninterface Ethernet1/1\n!\ninterface\
+          \ Ethernet1/2\n!\ninterface Ethernet1/3\n!\ninterface Vlan1\n ip address\
+          \ 10.1.1.6 255.255.255.0\n ip ospf 1 area 0\n!\nrouter ospf 1\n router-id\
+          \ 10.254.1.6\n!\nip forward-protocol nd\n!\n!\nip http server\nip http secure-server\n\
+          ip ssh bulk-mode 131072\n!\n!\n!\n!\n!\n!\ncontrol-plane\n!\n!\n!\nline\
+          \ con 0\n exec-timeout 0 0\n logging synchronous\nline aux 0\nline vty 0\
+          \ 4\n exec-timeout 0 0\n logging synchronous\n login local\n transport input\
+          \ ssh\n!\n!\nend"
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n7
+    image_definition: null
+    label: sw6
+    node_definition: ioll2-xe
+    parameters: {}
+    ram: null
+    tags: []
+    x: 400
+    y: 320
+    interfaces:
+      - id: i0
+        label: Loopback0
+        type: loopback
+      - id: i1
+        label: Ethernet0/0
+        slot: 0
+        type: physical
+      - id: i2
+        label: Ethernet0/1
+        slot: 1
+        type: physical
+      - id: i3
+        label: Ethernet0/2
+        slot: 2
+        type: physical
+      - id: i4
+        label: Ethernet0/3
+        slot: 3
+        type: physical
+      - id: i5
+        label: Ethernet1/0
+        slot: 4
+        type: physical
+      - id: i6
+        label: Ethernet1/1
+        slot: 5
+        type: physical
+      - id: i7
+        label: Ethernet1/2
+        slot: 6
+        type: physical
+      - id: i8
+        label: Ethernet1/3
+        slot: 7
+        type: physical
+  - boot_disk_size: null
+    configuration: []
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n8
+    image_definition: null
+    label: alpine-1
+    node_definition: alpine
+    parameters: {}
+    ram: null
+    tags: []
+    x: 80
+    y: 480
+    interfaces:
+      - id: i0
+        label: eth0
+        slot: 0
+        type: physical
+links:
+  - id: l0
+    n1: n0
+    n2: n3
+    i1: i8
+    i2: i0
+    conditioning: {}
+    label: sw1-Ethernet1/3<->ext-conn-0-port
+  - id: l1
+    n1: n0
+    n2: n2
+    i1: i1
+    i2: i1
+    conditioning: {}
+    label: sw1-Ethernet0/0<->sw2-Ethernet0/0
+  - id: l2
+    n1: n2
+    n2: n1
+    i1: i2
+    i2: i2
+    conditioning: {}
+    label: sw2-Ethernet0/1<->sw3-Ethernet0/1
+  - id: l3
+    n1: n0
+    n2: n5
+    i1: i3
+    i2: i1
+    conditioning: {}
+    label: sw1-Ethernet0/2<->sw4-Ethernet0/0
+  - id: l4
+    n1: n0
+    n2: n5
+    i1: i4
+    i2: i2
+    conditioning: {}
+    label: sw1-Ethernet0/3<->sw4-Ethernet0/1
+  - id: l5
+    n1: n1
+    n2: n5
+    i1: i1
+    i2: i3
+    conditioning: {}
+    label: sw3-Ethernet0/0<->sw4-Ethernet0/2
+  - id: l6
+    n1: n2
+    n2: n5
+    i1: i3
+    i2: i4
+    conditioning: {}
+    label: sw2-Ethernet0/2<->sw4-Ethernet0/3
+  - id: l7
+    n1: n1
+    n2: n0
+    i1: i4
+    i2: i2
+    conditioning: {}
+    label: sw3-Ethernet0/3<->sw1-Ethernet0/1
+  - id: l8
+    n1: n6
+    n2: n2
+    i1: i1
+    i2: i4
+    conditioning: {}
+    label: sw5-Ethernet0/0<->sw2-Ethernet0/3
+  - id: l9
+    n1: n6
+    n2: n1
+    i1: i2
+    i2: i3
+    conditioning: {}
+    label: sw5-Ethernet0/1<->sw3-Ethernet0/2
+  - id: l10
+    n1: n7
+    n2: n2
+    i1: i1
+    i2: i5
+    conditioning: {}
+    label: sw6-Ethernet0/0<->sw2-Ethernet1/0
+  - id: l11
+    n1: n7
+    n2: n1
+    i1: i2
+    i2: i5
+    conditioning: {}
+    label: sw6-Ethernet0/1<->sw3-Ethernet1/0
+  - id: l12
+    n1: n4
+    n2: n7
+    i1: i0
+    i2: i3
+    conditioning: {}
+    label: alpine-0-eth0<->sw6-Ethernet0/2
+  - id: l13
+    n1: n8
+    n2: n6
+    i1: i0
+    i2: i3
+    conditioning: {}
+    label: alpine-1-eth0<->sw5-Ethernet0/2
+lab:
+  description: ''
+  notes: ''
+  title: Campus LAN Lab
+  version: 0.2.2

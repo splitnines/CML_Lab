@@ -1,0 +1,1983 @@
+annotations:
+  - border_color: '#FFFFFF'
+    border_style: ''
+    color: '#FFFFFF'
+    rotation: 0
+    text_bold: false
+    text_content: 10.10.0.0/16
+    text_font: monospace
+    text_italic: false
+    text_size: 12
+    text_unit: pt
+    thickness: 1
+    type: text
+    x1: -644.0
+    y1: -669.0
+    z_index: 0
+  - border_color: '#FFFFFF'
+    border_style: ''
+    color: '#FFFFFF'
+    rotation: 0
+    text_bold: false
+    text_content: 172.18.0.0/16
+    text_font: monospace
+    text_italic: false
+    text_size: 12
+    text_unit: pt
+    thickness: 1
+    type: text
+    x1: -666.0
+    y1: -367.0
+    z_index: 0
+  - border_color: '#FFFFFF'
+    border_style: ''
+    color: '#FFFFFF'
+    rotation: 0
+    text_bold: false
+    text_content: 172.19.0.0/16
+    text_font: monospace
+    text_italic: false
+    text_size: 12
+    text_unit: pt
+    thickness: 1
+    type: text
+    x1: -424.0
+    y1: -366.0
+    z_index: 0
+  - border_color: '#FFFFFF'
+    border_style: ''
+    color: '#FFFFFF'
+    rotation: 0
+    text_bold: false
+    text_content: 10.30.0.0/16
+    text_font: monospace
+    text_italic: false
+    text_size: 12
+    text_unit: pt
+    thickness: 1
+    type: text
+    x1: -665.0
+    y1: -165.0
+    z_index: 0
+  - border_color: '#000000'
+    border_radius: 0
+    border_style: ''
+    color: '#303030FF'
+    rotation: 0
+    thickness: 5
+    type: rectangle
+    x1: -680.0
+    y1: -720.0
+    x2: 520.0
+    y2: 240.0
+    z_index: -1
+  - border_color: '#000000'
+    border_radius: 0
+    border_style: ''
+    color: '#303030FF'
+    rotation: 0
+    thickness: 5
+    type: rectangle
+    x1: -680.0
+    y1: -400.0
+    x2: 200.0
+    y2: 80.0
+    z_index: -1
+  - border_color: '#000000'
+    border_radius: 0
+    border_style: ''
+    color: '#303030FF'
+    rotation: 0
+    thickness: 5
+    type: rectangle
+    x1: -440.0
+    y1: -399.0
+    x2: 279.0
+    y2: 80.0
+    z_index: -1
+  - border_color: '#000000'
+    border_radius: 0
+    border_style: ''
+    color: '#303030FF'
+    rotation: 0
+    thickness: 5
+    type: rectangle
+    x1: -680.0
+    y1: -240.0
+    x2: 520.0
+    y2: 200.0
+    z_index: -1
+  - border_color: '#000000'
+    border_radius: 0
+    border_style: ''
+    color: '#303030FF'
+    rotation: 0
+    thickness: 5
+    type: rectangle
+    x1: -880.0
+    y1: -600.0
+    x2: 160.0
+    y2: 120.0
+    z_index: -1
+  - border_color: '#FFFFFF'
+    border_style: ''
+    color: '#FFFFFF'
+    rotation: 0
+    text_bold: false
+    text_content: 10.0.0.0/24
+    text_font: monospace
+    text_italic: false
+    text_size: 12
+    text_unit: pt
+    thickness: 1
+    type: text
+    x1: -844.0
+    y1: -589.0
+    z_index: 0
+smart_annotations: []
+nodes:
+  - boot_disk_size: null
+    configuration:
+      - name: default
+        content: System Bridge
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n0
+    image_definition: null
+    label: ext-conn-0
+    node_definition: external_connector
+    parameters: {}
+    ram: null
+    tags: []
+    x: -800
+    y: -520
+    interfaces:
+      - id: i0
+        label: port
+        mac_address: null
+        type: physical
+        slot: 0
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: "Building configuration...\n\nCurrent configuration : 10782 bytes\n\
+          !\n! Last configuration change at 19:56:14 UTC Tue Jan 13 2026 by cisco\n\
+          !\nversion 17.16\nservice timestamps debug datetime msec\nservice timestamps\
+          \ log datetime msec\nservice password-encryption\n!\nhostname rr1\n!\nboot-start-marker\n\
+          boot-end-marker\n!\n!\nno logging console\naaa new-model\n!\n!\naaa group\
+          \ server tacacs+ LAB\n server-private 10.0.0.84 key 7 0702385F4B0A0B0003190E15\n\
+          \ ip tacacs source-interface Loopback10\n!\naaa authentication login default\
+          \ group LAB local\naaa authentication login no_tacacs local\naaa authorization\
+          \ config-commands\naaa authorization exec default group LAB local\naaa authorization\
+          \ commands 1 default group LAB if-authenticated\naaa authorization commands\
+          \ 15 default group LAB if-authenticated\naaa accounting exec default start-stop\
+          \ group LAB\naaa accounting commands 1 default start-stop group LAB\naaa\
+          \ accounting commands 15 default start-stop group LAB\naaa accounting connection\
+          \ default start-stop group LAB\n!\naaa session-id common\n!\n!\n!\n!\n!\n\
+          !\n!\n!\n!\n!\n!\n!\n!\nno ip domain lookup\nip domain name cml.lab\nip\
+          \ cef\nlogin on-success log\nno ipv6 cef\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n\
+          key chain BGP_TCPAO tcp\n key 42\n  send-id 1\n  recv-id 1\n  include-tcp-options\n\
+          \  cryptographic-algorithm hmac-sha-256\n  key-string 7 045802150C2E\npassword\
+          \ encryption aes\n!\ncrypto pki trustpoint TP-self-signed-131184653\n enrollment\
+          \ selfsigned\n subject-name cn=IOS-Self-Signed-Certificate-131184653\n revocation-check\
+          \ none\n rsakeypair TP-self-signed-131184653\n hash sha256\n!\ncrypto pki\
+          \ trustpoint LAB\n enrollment url http://10.0.0.84:8080\n fqdn rr1.cml.lab\n\
+          \ subject-name CN=rr1,O=cml.lab\n subject-alt-name rr1.cml.lab\n revocation-check\
+          \ none\n rsakeypair rr1.cml.lab\n hash sha256\n!\n!\ncrypto pki certificate\
+          \ chain TP-self-signed-131184653\n certificate self-signed 01\n  3082032E\
+          \ 30820216 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030\n  30312E30\
+          \ 2C060355 04030C25 494F532D 53656C66 2D536967 6E65642D 43657274\n  69666963\
+          \ 6174652D 31333131 38343635 33301E17 0D323430 37323130 35323032\n  305A170D\
+          \ 33343037 32313035 32303230 5A303031 2E302C06 03550403 0C25494F\n  532D5365\
+          \ 6C662D53 69676E65 642D4365 72746966 69636174 652D3133 31313834\n  36353330\
+          \ 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 82010A02\n  82010100\
+          \ BA62BC4C C6123A06 ED7CEA71 D972E33E 814A482F 9327C6AB 6A33A349\n  E2A82A83\
+          \ 91B713BA D7C4E96C 0986A9AA 9C081CE9 8201FEE3 05CFC36C F534E387\n  350DDF3C\
+          \ 4C6A13D9 3AE9542C FD977629 15A87038 CB501678 4FB51523 019D78B5\n  D2350828\
+          \ 2B828BA1 29906861 7F7D0392 9FF1C124 8C544672 6B3C2F25 5203EDC2\n  1D688018\
+          \ CF311C4D A43EF75F D2306203 6D2CFD0A 8D3FB71A 79B6B4F5 89D1B3A0\n  8772C7B0\
+          \ AD2976B5 BC01640B 7DA0545A 7F507433 18106512 9CA28144 EB81B24C\n  2C123AFD\
+          \ CE4DB913 F3540D24 B004FEE4 1A06E9A2 B013952B 7F2E7A09 48D193D4\n  C8314B11\
+          \ 574EDD78 207A9BF5 777BEC4A F15F9368 C92057B1 C0B6EA29 735C3CD5\n  2EDD9A3B\
+          \ 02030100 01A35330 51301D06 03551D0E 04160414 A0E09114 AC0CC891\n  66AFA9B7\
+          \ BC5C727A 4F1E3063 301F0603 551D2304 18301680 14A0E091 14AC0CC8\n  9166AFA9\
+          \ B7BC5C72 7A4F1E30 63300F06 03551D13 0101FF04 05300301 01FF300D\n  06092A86\
+          \ 4886F70D 01010B05 00038201 01001BEA 1F5C8399 7A13CF3E 9B69BD02\n  A4718001\
+          \ 2A8156B8 0FD3B95F CBD176A4 B9C88F41 04A06934 99BB2464 BABD0009\n  0C66E71A\
+          \ A32CAFE2 8E3C7180 97716BDA 313C4417 147B7894 BD81D50E 552748CC\n  55188E60\
+          \ 2842E914 C01C4776 A977A642 DC2A49F1 45599F7C B97CB28C 713CB8F3\n  F576122B\
+          \ 209AB4CE 683DEFB2 4321E669 ADFCF21A 1B6E3CBC 6D1AF031 4B1C416B\n  D8655C00\
+          \ 17F85B25 26BFD99B 11409CB9 1355DE77 B2539514 1ED11531 BDE357CD\n  B265930F\
+          \ DB2F892B 8B8FA4DC FF0CF753 0178C682 D53D9580 A768CC11 260E13EE\n  A28EC76B\
+          \ A8CD33EA 77152007 C69B28CB AA7F69D2 C231445F B70A076A 03B83D4A\n  0FC1021E\
+          \ 6501D1A7 1834CDC6 AFC26E66 C57C\n  \tquit\ncrypto pki certificate chain\
+          \ LAB\n certificate ca 6EA70F157CA299FA31E6F18E9D49A3D64B713C15\n  308205AD\
+          \ 30820395 A0030201 0202146E A70F157C A299FA31 E6F18E9D 49A3D64B\n  713C1530\
+          \ 0D06092A 864886F7 0D01010B 05003066 310B3009 06035504 06130255\n  53311330\
+          \ 11060355 04080C0A 43616C69 666F726E 69613111 300F0603 5504070C\n  0853616E\
+          \ 204A6F73 65310E30 0C060355 040A0C05 4D794F72 67310B30 09060355\n  040B0C02\
+          \ 49543112 30100603 5504030C 096C6F63 616C686F 7374301E 170D3234\n  31323238\
+          \ 32323536 30395A17 0D333431 32323632 32353630 395A3066 310B3009\n  06035504\
+          \ 06130255 53311330 11060355 04080C0A 43616C69 666F726E 69613111\n  300F0603\
+          \ 5504070C 0853616E 204A6F73 65310E30 0C060355 040A0C05 4D794F72\n  67310B30\
+          \ 09060355 040B0C02 49543112 30100603 5504030C 096C6F63 616C686F\n  73743082\
+          \ 0222300D 06092A86 4886F70D 01010105 00038202 0F003082 020A0282\n  020100AD\
+          \ 1441814B C53757FA 2C8F3327 106ED20C 097FADB6 CBB5F648 8D1B1E5D\n  25167FB0\
+          \ 571F67B3 389C08AE C75D7897 C577A5E0 E66D05D6 B4BC0736 71C5E5E1\n  2A088E5B\
+          \ C237B36C E5797358 E84EDB16 95FEFAAF D405CAA4 39A8430B 6FFFF6AE\n  D31B6A43\
+          \ 82095943 308ADEAC 1F41191E 7526C571 0A2800BC 11468DEF CE2D45D2\n  A763AFF5\
+          \ 3DA3F462 92B1F7D5 E1157A9A 54D1AF39 62D1B50F F4C14CC8 FF028637\n  2595F6A7\
+          \ 2C5B53AA 7979AC14 EB386A35 A4E418C7 650684A6 06803205 756882CF\n  B1D319AD\
+          \ 89E83816 E6352844 FB77AD94 F228150A 20DD9F15 6CCDA8C2 D64E3318\n  23389975\
+          \ 6F9B4C11 9FE623B8 0EBCE54C A9989713 897EE1E0 5E1A7E32 840FDE61\n  30827615\
+          \ 2844D4DC A951BD48 13C097E3 C36D830F 62E15B5D 2B59EE5D E454E637\n  AA3A57A9\
+          \ 2D603773 F228D722 95772E59 08D7CE27 2525BBC2 C3E0CA8B 6A592BB8\n  F8A02ABA\
+          \ 0ECF543A 05874D84 5A06D43E D8AC03C5 6132BB90 47FA5A4A 4F2EF9B7\n  932DEFD3\
+          \ 9F617566 462AA348 6F321C5E 7D0B9289 3CC3F09C 44F4579A 8F2B17D6\n  8AB70086\
+          \ DD340C5A 0A029D3A FD5DEE6F 39C38863 E6B91DF5 E7BCB64F 0D617D97\n  1ADF1C11\
+          \ 5610D1F2 FFC681BD D383F8F9 514BAA06 91814335 38E944EB 1C4702D3\n  DC2B6995\
+          \ 8AE0EB5D 8F513969 72B3D867 048A0E1A DD99E5EB 1F97C2D2 9A56BE13\n  E47C9A1D\
+          \ FBF2231A B690589D 0A5F5ACD B7BAB137 11C5E00B F4941A50 4CC0A709\n  BD8D9902\
+          \ 03010001 A3533051 301D0603 551D0E04 160414E6 79531D27 CFA576DE\n  E24CFE8D\
+          \ 06E04992 1D3A7F30 1F060355 1D230418 30168014 E679531D 27CFA576\n  DEE24CFE\
+          \ 8D06E049 921D3A7F 300F0603 551D1301 01FF0405 30030101 FF300D06\n  092A8648\
+          \ 86F70D01 010B0500 03820201 00770BA6 6EF08475 D7060D37 C91D57D5\n  C35D7BA6\
+          \ CDF15854 9F72354B 56A1359E BC36C689 62BBBBA5 F362AD71 2A2407BD\n  C5B1CA74\
+          \ BFCD3FBB 7C2BA742 9062F06C 27B3DC4D 7D6A4F6F 7FEFE683 633F9459\n  B9384F7C\
+          \ 5BF0F7D1 ACA5EDAD AD888FED 97609030 68ACEB94 1C704BBF 3F6D73D4\n  08EA9D09\
+          \ 3C77B9A2 83DF27B3 AB960DC8 18F3DA79 FCD9B939 E93C4BA6 614CC669\n  59B01F1E\
+          \ 71740207 FA30BF0E D0B0742E 73697E12 CEE34930 A5AA8BEB 1964AC67\n  1B19A6EE\
+          \ 364C76B4 47FC3DB4 AF977DD2 0170456A 24E30EC3 C45EC0F8 C90BA7C8\n  75647FD0\
+          \ B55C11AB 97B33633 8166C16E 9430ECA2 99EE7C4E 8BFDBE3C 35F7B313\n  61D21EE0\
+          \ 0CFAA48A AED46177 88B9DF25 39045DB5 6148C3B9 8A303C8A 7C658F4F\n  9EE056FC\
+          \ BAC427A6 86ADB09D 7866864B 44B9187F 9D499260 4DA0AE05 C0C44904\n  678CB604\
+          \ 9DBAAB19 E177DA08 F0CC99FA D39D3103 D935CC29 E57354FE 5F53CE68\n  2345E287\
+          \ 824CE0C2 C57C8E3B 0F106317 E12CCA2D CFC4FCDF 2CAD9087 0880B040\n  EA9CE39D\
+          \ 52AD5D5E 54FA3F2B 938CB023 2BA1D0FA 8ED03898 B2EC1746 AFFC3C2B\n  8F894652\
+          \ 7D93BE3C 38BD9815 91D3007D 47B544F4 1FE80A4F A8056EF7 400920DE\n  EB9DD581\
+          \ 8CCEDBD8 90A08BA5 8E6F4D85 AFF42910 B5099FE7 3E4FEEA5 87BF79FB\n  B58B5716\
+          \ 4A10DCED D32F0C84 E7FA6443 7D92763D 2384B2D5 73701006 E98855FB\n  E3F82639\
+          \ FE6C7F41 F9C2958D 1175736E 2E\n  \tquit\n!\n!\nmemory free low-watermark\
+          \ processor 81225\n!\n!\nspanning-tree mode rapid-pvst\n!\n!\nusername cisco\
+          \ privilege 15 password 7 00071A150754\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n\
+          !\n!\ncrypto isakmp policy 1\n encryption aes 256\n hash sha512\n authentication\
+          \ pre-share\n group 14\n lifetime 1200\ncrypto isakmp key cisco address\
+          \ 0.0.0.0\n!\n!\ncrypto ipsec transform-set GET-TRANS esp-aes 256 esp-sha512-hmac\n\
+          \ mode tunnel\n!\ncrypto ipsec profile GET-IPSEC\n set security-association\
+          \ lifetime seconds 7200\n set transform-set GET-TRANS\n!\n!\ncrypto gdoi\
+          \ group LAB-GDOI\n identity number 10\n server local\n  ! Incomplete unicast\
+          \ rekey configuration\n  ! Rekey authentication is not configured\n  rekey\
+          \ algorithm aes 256\n  rekey retransmit 40 number 3\n  rekey transport unicast\n\
+          \  authorization identity GET-DOMAIN\n  sa ipsec 60\n   profile GET-IPSEC\n\
+          \   match address ipv4 LAB-GDOI\n   replay time window-size 20\n   no tag\n\
+          \  address ipv4 10.10.0.10\n  no pfs\n!\n!\ncrypto map GET-MAP local-address\
+          \ Loopback0\ncrypto map GET-MAP 10 gdoi\n set group LAB-GDOI\n!\n!\n!\n\
+          !\n!\n!\ninterface Loopback0\n description Go fuck yourself San Diego\n\
+          \ ip address 10.10.0.10 255.255.255.255\n!\ninterface Ethernet0/0\n ip address\
+          \ 10.10.1.3 255.255.255.248\n!\ninterface Ethernet0/1\n no ip address\n\
+          \ shutdown\n!\ninterface Ethernet0/2\n no ip address\n shutdown\n!\ninterface\
+          \ Ethernet0/3\n no ip address\n shutdown\n!\ninterface Ethernet1/0\n no\
+          \ ip address\n shutdown\n!\ninterface Ethernet1/1\n no ip address\n shutdown\n\
+          !\ninterface Ethernet1/2\n no ip address\n shutdown\n!\ninterface Ethernet1/3\n\
+          \ no ip address\n shutdown\n!\n!\nrouter eigrp GW1\n !\n address-family\
+          \ ipv4 unicast autonomous-system 65000\n  !\n  af-interface default\n  \
+          \ passive-interface\n  exit-af-interface\n  !\n  af-interface Ethernet0/0\n\
+          \   no passive-interface\n  exit-af-interface\n  !\n  topology base\n  exit-af-topology\n\
+          \  network 10.10.0.0 0.0.255.255\n  eigrp router-id 10.10.0.10\n  eigrp\
+          \ stub connected summary\n exit-address-family\n!\nrouter bgp 65000\n bgp\
+          \ router-id 10.10.0.10\n bgp log-neighbor-changes\n bgp listen range 10.30.0.0/16\
+          \ peer-group iBGP\n bgp listen range 10.10.0.0/16 peer-group iBGP\n no bgp\
+          \ default ipv4-unicast\n timers bgp 15 45\n neighbor iBGP peer-group\n neighbor\
+          \ iBGP remote-as 65000\n neighbor iBGP ao BGP_TCPAO include-tcp-options\n\
+          \ neighbor iBGP update-source Loopback0\n !\n address-family ipv4\n exit-address-family\n\
+          \ !\n address-family vpnv4\n  neighbor iBGP activate\n  neighbor iBGP send-community\
+          \ both\n  neighbor iBGP route-reflector-client\n exit-address-family\n!\n\
+          ip forward-protocol nd\nip forward-protocol udp\n!\nip bgp-community new-format\n\
+          !\nip http server\nip http secure-server\nip tftp source-interface Loopback0\n\
+          ip ssh bulk-mode 131072\n!\nip access-list extended LAB-GDOI\n 10 deny esp\
+          \ any any\n 20 deny udp any eq isakmp any eq isakmp\n 30 deny udp any eq\
+          \ 848 any eq 848\n 40 permit tcp host 10.10.0.10 eq bgp any\n 50 deny tcp\
+          \ any any eq bgp\n 60 deny tcp any eq bgp any\n 70 deny tcp any any eq tacacs\n\
+          \ 80 deny tcp any eq tacacs any\n 90 deny tcp any any eq 22\n 100 deny tcp\
+          \ any eq 22 any\n 110 deny tcp any any eq 443\n 120 deny tcp any eq 443\
+          \ any\n 130 deny eigrp any any\n 140 deny ospf any any\n 150 deny udp any\
+          \ any eq ntp\n 160 deny udp any eq ntp any\n 170 deny udp any any eq syslog\n\
+          \ 180 deny udp any eq syslog any\n 190 permit gre any any\n 200 permit ip\
+          \ 10.0.0.0 0.255.255.255 10.0.0.0 0.255.255.255\nno logging btrace\nlogging\
+          \ source-interface Loopback0\nlogging host 10.0.0.84\n!\n!\n!\n!\n!\ncontrol-plane\n\
+          !\n!\nalias exec q exit\n!\nline con 0\n exec-timeout 0 0\n logging synchronous\n\
+          line aux 0\nline vty 0 4\n exec-timeout 0 0\n logging synchronous\n transport\
+          \ input ssh\n!\nntp logging\nntp server 10.10.10.1 prefer\n!\n!\n!\nend"
+    cpu_limit: 80
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n1
+    image_definition: null
+    label: rr1-1
+    node_definition: iol-xe
+    parameters: {}
+    ram: null
+    tags: []
+    x: -400
+    y: -680
+    interfaces:
+      - id: i0
+        label: Loopback0
+        mac_address: null
+        type: loopback
+      - id: i1
+        label: Ethernet0/0
+        mac_address: null
+        type: physical
+        slot: 0
+      - id: i2
+        label: Ethernet0/1
+        mac_address: null
+        type: physical
+        slot: 1
+      - id: i3
+        label: Ethernet0/2
+        mac_address: null
+        type: physical
+        slot: 2
+      - id: i4
+        label: Ethernet0/3
+        mac_address: null
+        type: physical
+        slot: 3
+      - id: i5
+        label: Ethernet1/0
+        mac_address: null
+        type: physical
+        slot: 4
+      - id: i6
+        label: Ethernet1/1
+        mac_address: null
+        type: physical
+        slot: 5
+      - id: i7
+        label: Ethernet1/2
+        mac_address: null
+        type: physical
+        slot: 6
+      - id: i8
+        label: Ethernet1/3
+        mac_address: null
+        type: physical
+        slot: 7
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: "Building configuration...\n\nCurrent configuration : 4837 bytes\n\
+          !\n! Last configuration change at 19:56:13 UTC Tue Jan 13 2026 by cisco\n\
+          !\nversion 17.16\nservice timestamps debug datetime msec\nservice timestamps\
+          \ log datetime msec\nservice password-encryption\n!\nhostname sp-1\n!\n\
+          boot-start-marker\nboot-end-marker\n!\n!\nno logging console\naaa new-model\n\
+          !\n!\naaa group server tacacs+ LAB\n server-private 10.0.0.84 key 7 020B1D480E051D2458450C00\n\
+          \ ip tacacs source-interface Loopback10\n!\naaa authentication login default\
+          \ group LAB local\naaa authentication login no_tacacs local\naaa authorization\
+          \ config-commands\naaa authorization exec default group LAB local\naaa authorization\
+          \ commands 1 default group LAB if-authenticated\naaa authorization commands\
+          \ 15 default group LAB if-authenticated\naaa accounting exec default start-stop\
+          \ group LAB\naaa accounting commands 1 default start-stop group LAB\naaa\
+          \ accounting commands 15 default start-stop group LAB\naaa accounting connection\
+          \ default start-stop group LAB\n!\naaa session-id common\n!\n!\n!\n!\n!\n\
+          !\n!\n!\n!\n!\n!\n!\n!\nno ip domain lookup\nip domain name cml.lab\nip\
+          \ cef\nlogin on-success log\nno ipv6 cef\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n\
+          crypto pki trustpoint TP-self-signed-131184643\n enrollment selfsigned\n\
+          \ subject-name cn=IOS-Self-Signed-Certificate-131184643\n revocation-check\
+          \ none\n rsakeypair TP-self-signed-131184643\n hash sha256\n!\n!\ncrypto\
+          \ pki certificate chain TP-self-signed-131184643\n certificate self-signed\
+          \ 01\n  3082032E 30820216 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030\n\
+          \  30312E30 2C060355 04030C25 494F532D 53656C66 2D536967 6E65642D 43657274\n\
+          \  69666963 6174652D 31333131 38343634 33301E17 0D323430 37323130 35313131\n\
+          \  395A170D 33343037 32313035 31313139 5A303031 2E302C06 03550403 0C25494F\n\
+          \  532D5365 6C662D53 69676E65 642D4365 72746966 69636174 652D3133 31313834\n\
+          \  36343330 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 82010A02\n\
+          \  82010100 98ED2160 64C93F96 07E4D8CD 22B4C715 2C1726B4 076BCF9D E0AAA490\n\
+          \  47EA1E6F EB67DCCC 63468404 542ED3E5 6A98D124 F7697A46 BAF4E301 749454A2\n\
+          \  3EEC7438 8A9ECD30 E73F4D02 4505CB91 7F0B6996 95C2D114 EE5F4659 51552FDF\n\
+          \  490CB376 EB257809 2B81F5DC 0F94B9BA 9AB3FECC 2F8F5523 4A479CFF 6319E0AA\n\
+          \  EAA56B64 4E854D0E CC77D69F 262EF1F2 FD08165E 5B15189F B6EF62B3 E9C46ED4\n\
+          \  AC39E2A1 87BEFDE8 F3D269EA D72D40FA 4162F9FA 4A5CF53C 6A8636F1 06D1B1FD\n\
+          \  737C7B07 9B704377 20320D46 D14F68CB D3C95BCB B4F20CFB BB246546 39045C77\n\
+          \  9DFF95BB 3ACAEBC3 6E81D4D5 7EE82134 ACE6BFE1 14CB2003 6A1438D3 30B0D493\n\
+          \  13CF2E17 02030100 01A35330 51301D06 03551D0E 04160414 B36A0EDF 32F674F7\n\
+          \  9C1BF236 7E2BBCA5 1DB7B12B 301F0603 551D2304 18301680 14B36A0E DF32F674\n\
+          \  F79C1BF2 367E2BBC A51DB7B1 2B300F06 03551D13 0101FF04 05300301 01FF300D\n\
+          \  06092A86 4886F70D 01010B05 00038201 01007F1D 9DB2EC69 2F51AB54 CBB8AC01\n\
+          \  2FD4935C 66CF1A03 92AB799A C9E476FF 4018DC15 21D92529 870422C6 C86091BD\n\
+          \  18E2FD43 9A850407 03ED165B 78891998 833EE548 303832D4 6A5878B1 C1A0F9BA\n\
+          \  D923230C 3797F592 D5010FDE B0C2E70B 17A3D59C 2C42C713 782ECF66 FDC83C2A\n\
+          \  4C88F286 F28B5A4E F866EA91 4DCFC212 631D67E8 6BD9D993 2794E893 93013F1B\n\
+          \  5364DF66 C0AFA16A 73D8CCDB 6FD83E1A 388ACFCA 89AA5C99 50DE54B2 6ACB8F55\n\
+          \  3173CC14 1B975555 867FD8A7 990B9E45 CE371C92 AAFA8EA9 103C6642 1F84D348\n\
+          \  7212F1B2 FDDE7432 2641C480 21ACB748 35F03AB4 62BA5652 4A06708F 598C3309\n\
+          \  FA2292C8 5C351D87 1D9BB15C 8088EDF0 FB13\n  \tquit\n!\n!\nmemory free\
+          \ low-watermark processor 81225\n!\n!\nspanning-tree mode rapid-pvst\n!\n\
+          !\nusername cisco privilege 15 password 7 094F471A1A0A\n!\n!\n!\n!\n!\n\
+          !\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\ninterface Loopback0\n description\
+          \ Go fuck yourself San Diego\n ip address 172.18.0.1 255.255.255.255\n!\n\
+          interface Ethernet0/0\n ip address 172.18.1.1 255.255.255.252\n!\ninterface\
+          \ Ethernet0/1\n no ip address\n shutdown\n!\ninterface Ethernet0/2\n ip\
+          \ address 172.18.1.5 255.255.255.252\n!\ninterface Ethernet0/3\n no ip address\n\
+          \ shutdown\n!\ninterface Ethernet1/0\n no ip address\n shutdown\n!\ninterface\
+          \ Ethernet1/1\n no ip address\n shutdown\n!\ninterface Ethernet1/2\n no\
+          \ ip address\n shutdown\n!\ninterface Ethernet1/3\n no ip address\n shutdown\n\
+          !\nrouter bgp 100\n bgp router-id 172.18.0.1\n bgp log-neighbor-changes\n\
+          \ neighbor 172.18.1.2 remote-as 65000\n neighbor 172.18.1.6 remote-as 65000\n\
+          \ !\n address-family ipv4\n  network 172.18.0.1 mask 255.255.255.255\n \
+          \ aggregate-address 172.18.0.0 255.255.0.0\n  neighbor 172.18.1.2 activate\n\
+          \  neighbor 172.18.1.6 activate\n exit-address-family\n!\nip forward-protocol\
+          \ nd\nip forward-protocol udp\n!\nip bgp-community new-format\n!\nip http\
+          \ server\nip http secure-server\nip tftp source-interface Loopback0\nip\
+          \ ssh bulk-mode 131072\nno logging btrace\nlogging source-interface Loopback0\n\
+          logging host 10.0.0.24\nlogging host 10.0.0.84\n!\n!\n!\n!\n!\ncontrol-plane\n\
+          !\n!\nalias exec q exit\n!\nline con 0\n exec-timeout 0 0\n logging synchronous\n\
+          line aux 0\nline vty 0 4\n exec-timeout 0 0\n logging synchronous\n transport\
+          \ input ssh\n!\nntp logging\nntp server 10.10.10.1 prefer\n!\n!\n!\nend"
+    cpu_limit: 80
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n2
+    image_definition: null
+    label: sp-1
+    node_definition: iol-xe
+    parameters: {}
+    ram: null
+    tags: []
+    x: -520
+    y: -360
+    interfaces:
+      - id: i0
+        label: Loopback0
+        mac_address: null
+        type: loopback
+      - id: i1
+        label: Ethernet0/0
+        mac_address: null
+        type: physical
+        slot: 0
+      - id: i2
+        label: Ethernet0/1
+        mac_address: null
+        type: physical
+        slot: 1
+      - id: i3
+        label: Ethernet0/2
+        mac_address: null
+        type: physical
+        slot: 2
+      - id: i4
+        label: Ethernet0/3
+        mac_address: null
+        type: physical
+        slot: 3
+      - id: i5
+        label: Ethernet1/0
+        mac_address: null
+        type: physical
+        slot: 4
+      - id: i6
+        label: Ethernet1/1
+        mac_address: null
+        type: physical
+        slot: 5
+      - id: i7
+        label: Ethernet1/2
+        mac_address: null
+        type: physical
+        slot: 6
+      - id: i8
+        label: Ethernet1/3
+        mac_address: null
+        type: physical
+        slot: 7
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: "Building configuration...\n\nCurrent configuration : 4779 bytes\n\
+          !\n! Last configuration change at 19:56:13 UTC Tue Jan 13 2026 by cisco\n\
+          !\nversion 17.16\nservice timestamps debug datetime msec\nservice timestamps\
+          \ log datetime msec\nservice password-encryption\n!\nhostname sp-2\n!\n\
+          boot-start-marker\nboot-end-marker\n!\n!\nno logging console\naaa new-model\n\
+          !\n!\naaa group server tacacs+ LAB\n server-private 10.0.0.84 key 7 011E1F175E08140A35474B10\n\
+          \ ip tacacs source-interface Loopback10\n!\naaa authentication login default\
+          \ group LAB local\naaa authentication login no_tacacs local\naaa authorization\
+          \ config-commands\naaa authorization exec default group LAB local\naaa authorization\
+          \ commands 1 default group LAB if-authenticated\naaa authorization commands\
+          \ 15 default group LAB if-authenticated\naaa accounting exec default start-stop\
+          \ group LAB\naaa accounting commands 1 default start-stop group LAB\naaa\
+          \ accounting commands 15 default start-stop group LAB\naaa accounting connection\
+          \ default start-stop group LAB\n!\naaa session-id common\n!\n!\n!\n!\n!\n\
+          !\n!\n!\n!\n!\n!\n!\n!\nno ip domain lookup\nip domain name cml.lab\nip\
+          \ cef\nlogin on-success log\nno ipv6 cef\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n\
+          crypto pki trustpoint TP-self-signed-131184642\n enrollment selfsigned\n\
+          \ subject-name cn=IOS-Self-Signed-Certificate-131184642\n revocation-check\
+          \ none\n rsakeypair TP-self-signed-131184642\n hash sha256\n!\n!\ncrypto\
+          \ pki certificate chain TP-self-signed-131184642\n certificate self-signed\
+          \ 01\n  3082032E 30820216 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030\n\
+          \  30312E30 2C060355 04030C25 494F532D 53656C66 2D536967 6E65642D 43657274\n\
+          \  69666963 6174652D 31333131 38343634 32301E17 0D323430 38323330 34303734\n\
+          \  385A170D 33343038 32333034 30373438 5A303031 2E302C06 03550403 0C25494F\n\
+          \  532D5365 6C662D53 69676E65 642D4365 72746966 69636174 652D3133 31313834\n\
+          \  36343230 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 82010A02\n\
+          \  82010100 BAE0FB3D DD079E53 726308B3 AE4B937F 265722F8 4BCA1F3B BA5CED0B\n\
+          \  5DAB76AA B7CF4E87 88A50D92 020B1E4B 47342416 8D7AF8E5 D24BB3FD 113701F7\n\
+          \  13A9321C CAA98769 DD6F88E6 0B462A26 CDA0FEFB 063F6438 AC457C78 6D65C677\n\
+          \  7783EADB 19C7FAB7 EA673068 607062C0 B3F2A765 CB91373D EAC0405D 6A7E6F38\n\
+          \  B9E49B52 73D42F3B 998EDABD CDEE80B0 365BD4AD 72A58D3B 029FE48A 004813C5\n\
+          \  A8677D94 988E4C90 5431DF68 51FD5134 EE875679 4FF45649 9CDFEA1C 448371D0\n\
+          \  0BF5DFDE C0D4C944 EBD285C7 8BDCFA0E EDD5AEDD 3F1E0B84 FFC566B8 4442D89F\n\
+          \  A223D851 4170633B 5D9E7E4B 7DC1EE92 8C08CF4C 2704D873 A599DBB7 B5ED8713\n\
+          \  45667377 02030100 01A35330 51301D06 03551D0E 04160414 BEC0A846 9F9507AE\n\
+          \  CC62CCBB 47F5EB35 43C823A9 301F0603 551D2304 18301680 14BEC0A8 469F9507\n\
+          \  AECC62CC BB47F5EB 3543C823 A9300F06 03551D13 0101FF04 05300301 01FF300D\n\
+          \  06092A86 4886F70D 01010B05 00038201 01009829 B0B4CE0B 5A1507B5 6E9024DA\n\
+          \  7592EC87 6C8CCAD2 4256BFBC F009527C 9DB676E8 349BB5D4 E296EF5C C6F495A0\n\
+          \  14A8454A D5CC9967 BA2BCB65 EA29D181 6E225917 705A5BBF 05DE10F3 40FC959D\n\
+          \  6DCC7576 12EAE67B 27D39F26 44653D12 F8E6E326 979E7E98 E7820BB0 28720A2A\n\
+          \  4CD5C284 2973C95D E4A276CC 04007726 95FB5C0D ED448041 5EE17384 51360321\n\
+          \  11E8F025 957B3838 F0C0237D 1298205B 1AA42CCD 2DE42A91 6D16390D 235B4E44\n\
+          \  38FADC4E 1C2CAFB4 0ECEA68F AFF78BCD A47E80B1 86FB8B5C C8F96CF9 3CD870A6\n\
+          \  1B39264B 6BA4B1D6 7A50CF1B 5B5EBF22 827CBF7C B9D85078 47CE3028 CCFFDB25\n\
+          \  21A0659B DB9C1135 41F409A6 DA1656F3 EEDE\n  \tquit\n!\n!\nmemory free\
+          \ low-watermark processor 81225\n!\n!\nspanning-tree mode rapid-pvst\n!\n\
+          !\nusername cisco privilege 15 password 7 094F471A1A0A\n!\n!\n!\n!\n!\n\
+          !\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\ninterface Loopback0\n description\
+          \ Go fuck yourself San Diego\n ip address 172.19.0.1 255.255.255.255\n!\n\
+          interface Ethernet0/0\n ip address 172.19.1.1 255.255.255.252\n!\ninterface\
+          \ Ethernet0/1\n no ip address\n shutdown\n!\ninterface Ethernet0/2\n ip\
+          \ address 172.19.1.5 255.255.255.252\n!\ninterface Ethernet0/3\n no ip address\n\
+          \ shutdown\n!\ninterface Ethernet1/0\n no ip address\n shutdown\n!\ninterface\
+          \ Ethernet1/1\n no ip address\n shutdown\n!\ninterface Ethernet1/2\n no\
+          \ ip address\n shutdown\n!\ninterface Ethernet1/3\n no ip address\n shutdown\n\
+          !\nrouter bgp 200\n bgp router-id 172.19.0.1\n bgp log-neighbor-changes\n\
+          \ neighbor 172.19.1.2 remote-as 65000\n neighbor 172.19.1.6 remote-as 65000\n\
+          \ !\n address-family ipv4\n  network 172.19.0.1 mask 255.255.255.255\n \
+          \ aggregate-address 172.19.0.0 255.255.0.0\n  neighbor 172.19.1.2 activate\n\
+          \  neighbor 172.19.1.6 activate\n exit-address-family\n!\nip forward-protocol\
+          \ nd\nip forward-protocol udp\n!\nip bgp-community new-format\n!\nip http\
+          \ server\nip http secure-server\nip ssh bulk-mode 131072\nno logging btrace\n\
+          logging source-interface Loopback0\nlogging host 10.0.0.84\n!\n!\n!\n!\n\
+          !\ncontrol-plane\n!\n!\nalias exec q exit\n!\nline con 0\n exec-timeout\
+          \ 0 0\n logging synchronous\nline aux 0\nline vty 0 4\n exec-timeout 0 0\n\
+          \ logging synchronous\n transport input ssh\n!\nntp logging\nntp server\
+          \ 10.10.10.1 prefer\n!\n!\n!\nend"
+    cpu_limit: 80
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n3
+    image_definition: null
+    label: sp-2
+    node_definition: iol-xe
+    parameters: {}
+    ram: null
+    tags: []
+    x: -279
+    y: -360
+    interfaces:
+      - id: i0
+        label: Loopback0
+        mac_address: null
+        type: loopback
+      - id: i1
+        label: Ethernet0/0
+        mac_address: null
+        type: physical
+        slot: 0
+      - id: i2
+        label: Ethernet0/1
+        mac_address: null
+        type: physical
+        slot: 1
+      - id: i3
+        label: Ethernet0/2
+        mac_address: null
+        type: physical
+        slot: 2
+      - id: i4
+        label: Ethernet0/3
+        mac_address: null
+        type: physical
+        slot: 3
+      - id: i5
+        label: Ethernet1/0
+        mac_address: null
+        type: physical
+        slot: 4
+      - id: i6
+        label: Ethernet1/1
+        mac_address: null
+        type: physical
+        slot: 5
+      - id: i7
+        label: Ethernet1/2
+        mac_address: null
+        type: physical
+        slot: 6
+      - id: i8
+        label: Ethernet1/3
+        mac_address: null
+        type: physical
+        slot: 7
+  - boot_disk_size: null
+    configuration: []
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n4
+    image_definition: null
+    label: usw1
+    node_definition: unmanaged_switch
+    parameters: {}
+    ram: null
+    tags: []
+    x: -400
+    y: -600
+    interfaces:
+      - id: i0
+        label: port0
+        mac_address: null
+        type: physical
+        slot: 0
+      - id: i1
+        label: port1
+        mac_address: null
+        type: physical
+        slot: 1
+      - id: i2
+        label: port2
+        mac_address: null
+        type: physical
+        slot: 2
+      - id: i3
+        label: port3
+        mac_address: null
+        type: physical
+        slot: 3
+      - id: i4
+        label: port4
+        mac_address: null
+        type: physical
+        slot: 4
+      - id: i5
+        label: port5
+        mac_address: null
+        type: physical
+        slot: 5
+      - id: i6
+        label: port6
+        mac_address: null
+        type: physical
+        slot: 6
+      - id: i7
+        label: port7
+        mac_address: null
+        type: physical
+        slot: 7
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: "Building configuration...\n\nCurrent configuration : 7079 bytes\n\
+          !\n! Last configuration change at 19:56:13 UTC Tue Jan 13 2026 by cisco\n\
+          ! NVRAM config last updated at 19:23:02 UTC Tue Jan 13 2026 by cisco\n!\n\
+          version 17.16\nservice timestamps debug datetime msec\nservice timestamps\
+          \ log datetime msec\nservice password-encryption\n!\nhostname ssw1-1\n!\n\
+          boot-start-marker\nboot-end-marker\n!\n!\nno logging console\naaa new-model\n\
+          !\n!\naaa group server tacacs+ LAB\n server-private 10.0.0.84 key 7 011E1F175E08140A35474B10\n\
+          \ ip tacacs source-interface Loopback10\n!\naaa group server radius ISE-SVR\n\
+          \ server name ISE1\n!\naaa authentication login default group LAB local\n\
+          aaa authentication login no_tacacs local\naaa authentication dot1x group\
+          \ group ISE-SVR\naaa authorization config-commands\naaa authorization exec\
+          \ default group LAB local\naaa authorization commands 1 default group LAB\
+          \ if-authenticated\naaa authorization commands 15 default group LAB if-authenticated\n\
+          aaa authorization network default group ISE-SVR\naaa accounting dot1x default\
+          \ start-stop group ISE-SVR\naaa accounting exec default start-stop group\
+          \ LAB\naaa accounting commands 1 default start-stop group LAB\naaa accounting\
+          \ commands 15 default start-stop group LAB\naaa accounting connection default\
+          \ start-stop group LAB\n!\n!\naaa server radius dynamic-author\n client\
+          \ 10.0.0.84 server-key 7 01100F175804475E731F\n auth-type all\n!\naaa session-id\
+          \ common\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\nip audit notify log\nip\
+          \ audit po max-events 100\nno ip domain lookup\nip domain name cml.lab\n\
+          ip multicast-routing\nip cef\nlogin on-success log\nno ipv6 cef\n!\n!\n\
+          !\n!\n!\n!\n!\nvtp domain LAB\nvtp mode off\n!\ncrypto pki trustpoint TP-self-signed-131184646\n\
+          \ enrollment selfsigned\n subject-name cn=IOS-Self-Signed-Certificate-131184646\n\
+          \ revocation-check none\n rsakeypair TP-self-signed-131184646\n hash sha256\n\
+          !\n!\ncrypto pki certificate chain TP-self-signed-131184646\n certificate\
+          \ self-signed 01\n  3082032E 30820216 A0030201 02020101 300D0609 2A864886\
+          \ F70D0101 0B050030\n  30312E30 2C060355 04030C25 494F532D 53656C66 2D536967\
+          \ 6E65642D 43657274\n  69666963 6174652D 31333131 38343634 36301E17 0D323430\
+          \ 38303431 32323030\n  315A170D 33343038 30343132 32303031 5A303031 2E302C06\
+          \ 03550403 0C25494F\n  532D5365 6C662D53 69676E65 642D4365 72746966 69636174\
+          \ 652D3133 31313834\n  36343630 82012230 0D06092A 864886F7 0D010101 05000382\
+          \ 010F0030 82010A02\n  82010100 E39ABCCB D6EFB4EC 1D7C4C51 D095505D 02A291C9\
+          \ 13DB9417 7F52ABD4\n  C61584F3 799ADC84 B921E805 A76AFB64 68365E31 B301D39D\
+          \ DA61E601 825FEF89\n  2194457C 986478A9 3F378E25 4B7AEAE8 753B7AF4 32BEFDF4\
+          \ 08E1FDBB EBAFC988\n  93EE5466 919EA55D DED4A01F 0F1CEACD 550820D6 E070C397\
+          \ EAA55DB4 78C07E3A\n  EF8BD710 417B2D13 154DC178 A5684440 C2CE25B1 412E4AAF\
+          \ BC50B2D5 C5D2D407\n  F40EE6A2 3E27F35F FAD2FA0B ECF79226 9C981D84 63FA8D19\
+          \ 1FAF0D31 0B658EF6\n  756A2D89 089D7F15 CB6121DB 1B9A5095 D8C7E29D 57AF6AAE\
+          \ 2C792F70 C5E830A7\n  FF2B0E9F D1437489 7ED5EB4D E80C2E54 7BB0FD16 7D2EE02B\
+          \ 1C8DC539 8781DD0C\n  46946E39 02030100 01A35330 51301D06 03551D0E 04160414\
+          \ 0CC5AA64 33BDC98A\n  2559BB89 B0C4F2B9 388824F7 301F0603 551D2304 18301680\
+          \ 140CC5AA 6433BDC9\n  8A2559BB 89B0C4F2 B9388824 F7300F06 03551D13 0101FF04\
+          \ 05300301 01FF300D\n  06092A86 4886F70D 01010B05 00038201 0100C9C3 6633400F\
+          \ F60D74BC 921F653E\n  6E6C8340 80404F77 4B36DB95 3D38A19B 9E4839A6 EDD48DD6\
+          \ 5F2147F3 7F036E1A\n  E8E2E809 793B225E 59B3D8DE 55F33FBA 3E48F324 71103AD4\
+          \ C21E0393 46E82D88\n  06BA3AAD 7B35620F 2EDD615A 23E92158 4CAF0C38 56CB8FA4\
+          \ AD9ED150 7CB9D29A\n  21EF4449 4C4A0643 F0B99F7C 5079C03B AB432F3F E45C2B39\
+          \ 28D2AE88 72416A18\n  2C689091 ACD21C1D D6BFD9FA 7CD4DA41 894B3DFF E7DEC270\
+          \ F92B5D4C C391BA8C\n  DFA4A14C 3609E2BC 13F263BA 9EE7CB47 A0AD86C6 AD31D59D\
+          \ FBA2B10E 990BA58C\n  6CC74CAC B22B60BA 3780021F 353A3E3E F4C43AE0 7678E030\
+          \ 71BF76A4 D6B23D67\n  5CDB84B5 4A8BA457 E485C606 61161375 1332\n  \tquit\n\
+          !\n!\nmemory free low-watermark processor 80589\n!\n!\nspanning-tree mode\
+          \ mst\nspanning-tree loopguard default\nspanning-tree portfast default\n\
+          spanning-tree portfast bpduguard default\nspanning-tree extend system-id\n\
+          spanning-tree uplinkfast\nspanning-tree pathcost method long\n!\nspanning-tree\
+          \ mst configuration\n name SingleInstance\n revision 1\n instance 1 vlan\
+          \ 1-4094\n!\nspanning-tree mst 0-1 priority 0\ndot1x system-auth-control\n\
+          !\n!\nusername cisco privilege 15 password 7 094F471A1A0A\n!\nvlan internal\
+          \ allocation policy ascending\n!\nvlan 10,99\n!\nvlan 200\n name HOSTS\n\
+          !\nvlan 1110\n!\nlldp run\n!\n!\n!\n!\ninterface Loopback0\n description\
+          \ Go fuck yourself San Diego\n ip address 10.30.0.10 255.255.255.255\n!\n\
+          interface Port-channel6\n switchport trunk encapsulation dot1q\n switchport\
+          \ trunk native vlan 99\n switchport trunk allowed vlan 99,1110\n switchport\
+          \ mode trunk\n!\ninterface Tunnel99\n ip address 192.168.10.2 255.255.255.252\n\
+          \ ip tcp adjust-mss 1280\n tunnel source 10.30.100.1\n tunnel destination\
+          \ 10.0.0.84\n!\ninterface Ethernet0/0\n switchport access vlan 10\n switchport\
+          \ mode access\n!\ninterface Ethernet0/1\n switchport access vlan 10\n switchport\
+          \ mode access\n!\ninterface Ethernet0/2\n switchport access vlan 200\n switchport\
+          \ mode access\n authentication control-direction in\n authentication event\
+          \ server dead action authorize vlan 200\n authentication event server dead\
+          \ action authorize voice\n authentication event server alive action reinitialize\n\
+          \ authentication host-mode multi-auth\n authentication order mab dot1x\n\
+          \ authentication port-control auto\n authentication periodic\n authentication\
+          \ timer reauthenticate server\n authentication timer inactivity server dynamic\n\
+          \ authentication violation restrict\n dot1x pae authenticator\n dot1x timeout\
+          \ tx-period 10\n spanning-tree portfast\n!\ninterface Ethernet0/3\n switchport\
+          \ trunk encapsulation dot1q\n switchport trunk native vlan 99\n switchport\
+          \ trunk allowed vlan 99,1110\n switchport mode trunk\n channel-group 6 mode\
+          \ active\n!\ninterface Ethernet1/0\n switchport trunk encapsulation dot1q\n\
+          \ switchport trunk native vlan 99\n switchport trunk allowed vlan 99,1110\n\
+          \ switchport mode trunk\n channel-group 6 mode active\n!\ninterface Ethernet1/1\n\
+          !\ninterface Ethernet1/2\n!\ninterface Ethernet1/3\n!\ninterface Vlan10\n\
+          \ ip address 10.30.100.1 255.255.255.248\n!\ninterface Vlan99\n ip address\
+          \ 10.30.25.1 255.255.255.0\n!\ninterface Vlan200\n ip address 10.30.200.1\
+          \ 255.255.255.0\n!\ninterface Vlan1110\n ip address 10.30.111.1 255.255.255.252\n\
+          !\n!\nrouter eigrp 7\n network 10.0.0.0\n passive-interface default\n no\
+          \ passive-interface Vlan1110\n no passive-interface Vlan10\n!\nip forward-protocol\
+          \ nd\nip forward-protocol udp\n!\n!\nip http server\nip http secure-server\n\
+          ip ssh bulk-mode 131072\nip scp server enable\nip route 10.30.0.0 255.255.0.0\
+          \ Null0 tag 999\n!\nno logging btrace\nlogging source-interface Loopback0\n\
+          logging host 10.0.0.84\n!\n!\nradius-server retransmit 5\nradius-server\
+          \ deadtime 10\nradius-server key 7 070C285F4D0658544541\n!\nradius server\
+          \ ISE1\n address ipv4 10.0.0.84 auth-port 1812 acct-port 1813\n timeout\
+          \ 10\n automate-tester username testuser ignore-acct-port probe-on\n key\
+          \ 7 02050D4808094E701E1D\n!\n!\n!\ncontrol-plane\n!\n!\nalias exec q exit\n\
+          !\nline con 0\n exec-timeout 0 0\n logging synchronous\nline aux 0\nline\
+          \ vty 0 4\n exec-timeout 0 0\n logging synchronous\n transport input ssh\n\
+          !\nntp logging\nntp server 10.10.0.1 prefer\n!\nend"
+    cpu_limit: 80
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n5
+    image_definition: null
+    label: ssw1-1
+    node_definition: ioll2-xe
+    parameters: {}
+    ram: null
+    tags: []
+    x: -400
+    y: -80
+    interfaces:
+      - id: i0
+        label: Loopback0
+        mac_address: null
+        type: loopback
+      - id: i1
+        label: Ethernet0/0
+        mac_address: null
+        type: physical
+        slot: 0
+      - id: i2
+        label: Ethernet0/1
+        mac_address: null
+        type: physical
+        slot: 1
+      - id: i3
+        label: Ethernet0/2
+        mac_address: null
+        type: physical
+        slot: 2
+      - id: i4
+        label: Ethernet0/3
+        mac_address: null
+        type: physical
+        slot: 3
+      - id: i5
+        label: Ethernet1/0
+        mac_address: null
+        type: physical
+        slot: 4
+      - id: i6
+        label: Ethernet1/1
+        mac_address: null
+        type: physical
+        slot: 5
+      - id: i7
+        label: Ethernet1/2
+        mac_address: null
+        type: physical
+        slot: 6
+      - id: i8
+        label: Ethernet1/3
+        mac_address: null
+        type: physical
+        slot: 7
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: "Building configuration...\n\nCurrent configuration : 7138 bytes\n\
+          !\n! Last configuration change at 19:56:13 UTC Tue Jan 13 2026 by cisco\n\
+          !\nversion 17.16\nservice timestamps debug datetime msec\nservice timestamps\
+          \ log datetime msec\nservice password-encryption\n!\nhostname sr1-1\n!\n\
+          boot-start-marker\nboot-end-marker\n!\n!\nvrf definition LAB\n rd 10.30.0.0:1\n\
+          \ !\n address-family ipv4\n  route-target export 65000:1\n  route-target\
+          \ import 65000:1\n exit-address-family\n!\nno logging console\naaa new-model\n\
+          !\n!\naaa group server tacacs+ LAB\n server-private 10.0.0.84 key 7 011E1F175E08140A35474B10\n\
+          \ ip tacacs source-interface Loopback10\n!\naaa authentication login default\
+          \ group LAB local\naaa authentication login no_tacacs local\naaa authorization\
+          \ config-commands\naaa authorization exec default group LAB local\naaa authorization\
+          \ commands 1 default group LAB if-authenticated\naaa authorization commands\
+          \ 15 default group LAB if-authenticated\naaa accounting exec default start-stop\
+          \ group LAB\naaa accounting commands 1 default start-stop group LAB\naaa\
+          \ accounting commands 15 default start-stop group LAB\naaa accounting connection\
+          \ default start-stop group LAB\n!\naaa session-id common\n!\n!\n!\n!\n!\n\
+          !\n!\n!\n!\n!\n!\n!\n!\nno ip domain lookup\nip domain name cml.lab\nip\
+          \ cef\nlogin on-success log\nno ipv6 cef\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n\
+          key chain BGP_TCPAO tcp\n key 42\n  send-id 1\n  recv-id 1\n  include-tcp-options\n\
+          \  cryptographic-algorithm hmac-sha-256\n  key-string 7 030752180500\npassword\
+          \ encryption aes\n!\ncrypto pki trustpoint TP-self-signed-131184663\n enrollment\
+          \ selfsigned\n subject-name cn=IOS-Self-Signed-Certificate-131184663\n revocation-check\
+          \ none\n rsakeypair TP-self-signed-131184663\n hash sha256\n!\n!\ncrypto\
+          \ pki certificate chain TP-self-signed-131184663\n certificate self-signed\
+          \ 01\n  3082032E 30820216 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030\n\
+          \  30312E30 2C060355 04030C25 494F532D 53656C66 2D536967 6E65642D 43657274\n\
+          \  69666963 6174652D 31333131 38343636 33301E17 0D323430 38323330 34303735\n\
+          \  315A170D 33343038 32333034 30373531 5A303031 2E302C06 03550403 0C25494F\n\
+          \  532D5365 6C662D53 69676E65 642D4365 72746966 69636174 652D3133 31313834\n\
+          \  36363330 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 82010A02\n\
+          \  82010100 C607418B 3D6F9A07 5834A04E 2AC9A1D0 B948FE70 DD1F6E8D 4E14D80A\n\
+          \  371D900A AAF19DC9 60EC9F15 0AB6CFFC 24108768 65F022ED DD6D3E28 68BFDE14\n\
+          \  9784C213 AA96F704 59EACD52 069DF7BF 13D5F3F8 77904D99 E3082CEB 1CD9BE48\n\
+          \  31A79ABF 18534C15 7DBB5E78 544ED12C 545CB739 52D3653E 608C5A08 9D9646AE\n\
+          \  48327516 AEC39804 8C7888FA 44B6A2A2 F0281F0D 24840E66 6157D698 0149132C\n\
+          \  CEC23DA4 3057AD8C D9CF6B49 DE9AB0BD A0684147 78FD9D4B 9B1621C2 6BE500F6\n\
+          \  98BBAB98 5C064642 8A0F49D4 C9BCEB04 65E2AE4C C028FF9A 02FC291F EE36CE49\n\
+          \  93E7A34B 05AFE14C 103B5C1D 4C26809B 068F4585 55664B13 35419315 B2517CE7\n\
+          \  EEE911A9 02030100 01A35330 51301D06 03551D0E 04160414 75AE307D F26582D7\n\
+          \  A37A428D 607E1C81 A3ED2D10 301F0603 551D2304 18301680 1475AE30 7DF26582\n\
+          \  D7A37A42 8D607E1C 81A3ED2D 10300F06 03551D13 0101FF04 05300301 01FF300D\n\
+          \  06092A86 4886F70D 01010B05 00038201 01007E6B 7C6CAC97 0FFD32D2 F4C14DD9\n\
+          \  5B7B5CEA AAB6C5A1 7B97DA4D 2F456F29 5F17BBC7 5699F6FA CB18A281 62A08722\n\
+          \  1CD960AD 9D794C88 0AA9D386 26529AD2 7C1C6E40 5190366B 7F7C1D50 C7C5E157\n\
+          \  5AFBC22F B93BE636 B2374CA2 CA6CE5A2 B9C4E0C4 1AA3151F 548CEF5D 95D05314\n\
+          \  14F79C69 9C507FBD B9DCC327 BF546FF0 EADF852C 89851920 E3F074DB 6472564A\n\
+          \  9C79FD81 EF52DF0B F3A9305D 18E61649 73CE5B1C 88BC5B80 B9B5D52E FFADB363\n\
+          \  F4721A83 35612495 2CD2797F 8F9F724E 2A9A9BFC 96C57949 66E59FDF 9E51F1AB\n\
+          \  71C721E2 7554F5BA 31ED4C96 ABF5B3B4 3CACB87B 22BE1667 D759CCE6 B6EA2AB5\n\
+          \  864B3BB2 9CE5262C 7DCCEE2D C0CFEEE5 CB92\n  \tquit\n!\n!\nmemory free\
+          \ low-watermark processor 81225\n!\n!\nspanning-tree mode rapid-pvst\n!\n\
+          !\nusername cisco privilege 15 password 7 14141B180F0B\n!\n!\n!\n!\n!\n\
+          !\n!\n!\n!\n!\n!\n!\n!\ncrypto isakmp policy 1\n encryption aes 256\n hash\
+          \ sha512\n authentication pre-share\n group 14\n lifetime 1200\ncrypto isakmp\
+          \ key cisco address 0.0.0.0\n!\n!\n!\n!\ncrypto gdoi group LAB-GDOI\n identity\
+          \ number 10\n server address ipv4 10.10.0.10\n client registration interface\
+          \ Loopback10\n!\n!\ncrypto map GET-MAP 10 gdoi\n set group LAB-GDOI\n!\n\
+          !\n!\n!\n!\n!\ninterface Loopback0\n description Go fuck yourself San Diego\n\
+          \ vrf forwarding LAB\n ip address 10.30.0.1 255.255.255.255\n!\ninterface\
+          \ Loopback10\n ip address 10.30.10.1 255.255.255.255\n!\ninterface Ethernet0/0\n\
+          \ vrf forwarding LAB\n ip address 10.30.100.2 255.255.255.248\n!\ninterface\
+          \ Ethernet0/1\n ip address 172.18.1.6 255.255.255.252\n crypto map GET-MAP\n\
+          !\ninterface Ethernet0/2\n no ip address\n shutdown\n!\ninterface Ethernet0/3\n\
+          \ no ip address\n shutdown\n!\ninterface Ethernet1/0\n no ip address\n shutdown\n\
+          !\ninterface Ethernet1/1\n no ip address\n shutdown\n!\ninterface Ethernet1/2\n\
+          \ no ip address\n shutdown\n!\ninterface Ethernet1/3\n no ip address\n shutdown\n\
+          !\nl3vpn encapsulation ip RR-IN__LAB\n transport ipv4 source Loopback10\n\
+          \ protocol gre key 9999999\n mpls mtu max\n!\nrouter eigrp LAB\n !\n address-family\
+          \ ipv4 unicast vrf LAB autonomous-system 7\n  !\n  af-interface default\n\
+          \   passive-interface\n  exit-af-interface\n  !\n  af-interface Ethernet0/0\n\
+          \   no passive-interface\n  exit-af-interface\n  !\n  topology base\n  \
+          \ redistribute bgp 65000 metric 10000 100 255 1 1400 route-map DENY_10888\n\
+          \   redistribute static metric 10000 100 255 1 1400\n  exit-af-topology\n\
+          \  network 10.0.0.0\n exit-address-family\n!\nrouter bgp 65000\n bgp router-id\
+          \ 10.30.10.1\n bgp always-compare-med\n bgp log-neighbor-changes\n bgp bestpath\
+          \ med missing-as-worst\n bgp bestpath cost-community ignore\n no bgp default\
+          \ ipv4-unicast\n timers bgp 15 45\n neighbor iBGP peer-group\n neighbor\
+          \ iBGP remote-as 65000\n neighbor iBGP ao BGP_TCPAO include-tcp-options\n\
+          \ neighbor iBGP update-source Loopback10\n neighbor 10.10.0.10 peer-group\
+          \ iBGP\n neighbor 172.18.1.5 remote-as 100\n !\n address-family ipv4\n \
+          \ network 10.30.10.1 mask 255.255.255.255\n  neighbor 172.18.1.5 activate\n\
+          \  neighbor 172.18.1.5 send-community standard\n  neighbor 172.18.1.5 allowas-in\
+          \ 1\n  neighbor 172.18.1.5 soft-reconfiguration inbound\n exit-address-family\n\
+          \ !\n address-family vpnv4\n  neighbor iBGP send-community both\n  neighbor\
+          \ iBGP route-map RR-IN__LAB in\n  neighbor 10.10.0.10 activate\n exit-address-family\n\
+          \ !\n address-family ipv4 vrf LAB\n  bgp router-id 10.30.0.1\n  network\
+          \ 10.30.0.0 mask 255.255.0.0\n  network 10.30.0.1 mask 255.255.255.255\n\
+          \  network 10.30.0.10 mask 255.255.255.255\n  network 10.30.100.0 mask 255.255.255.248\n\
+          \ exit-address-family\n!\nip forward-protocol nd\nip forward-protocol udp\n\
+          !\nip bgp-community new-format\n!\nip http server\nip http secure-server\n\
+          ip route vrf LAB 0.0.0.0 0.0.0.0 Null0\nip ssh bulk-mode 131072\nip scp\
+          \ server enable\n!\nip prefix-list DENY_10888 seq 10 permit 10.8.8.8/32\n\
+          no logging btrace\nlogging source-interface Loopback10\nlogging host 10.0.0.84\n\
+          route-map DENY_10888 deny 10\n match ip address prefix-list DENY_10888\n\
+          !\nroute-map DENY_10888 permit 20\n!\nroute-map RR-IN__LAB permit 10\n set\
+          \ ip next-hop encapsulate l3vpn RR-IN__LAB\n!\n!\n!\n!\n!\n!\ncontrol-plane\n\
+          !\n!\nalias exec q exit\n!\nline con 0\n exec-timeout 0 0\n logging synchronous\n\
+          \ stopbits 1\nline aux 0\nline vty 0 4\n exec-timeout 0 0\n logging synchronous\n\
+          \ transport input ssh\n!\nntp logging\nntp server 10.10.10.1 prefer\n!\n\
+          !\n!\nend"
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n6
+    image_definition: null
+    label: sr1-1
+    node_definition: iol-xe
+    parameters: {}
+    ram: null
+    tags: []
+    x: -520
+    y: -160
+    interfaces:
+      - id: i0
+        label: Loopback0
+        mac_address: null
+        type: loopback
+      - id: i1
+        label: Ethernet0/0
+        mac_address: null
+        type: physical
+        slot: 0
+      - id: i2
+        label: Ethernet0/1
+        mac_address: null
+        type: physical
+        slot: 1
+      - id: i3
+        label: Ethernet0/2
+        mac_address: null
+        type: physical
+        slot: 2
+      - id: i4
+        label: Ethernet0/3
+        mac_address: null
+        type: physical
+        slot: 3
+      - id: i5
+        label: Ethernet1/0
+        mac_address: null
+        type: physical
+        slot: 4
+      - id: i6
+        label: Ethernet1/1
+        mac_address: null
+        type: physical
+        slot: 5
+      - id: i7
+        label: Ethernet1/2
+        mac_address: null
+        type: physical
+        slot: 6
+      - id: i8
+        label: Ethernet1/3
+        mac_address: null
+        type: physical
+        slot: 7
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: "Building configuration...\n\nCurrent configuration : 7146 bytes\n\
+          !\n! Last configuration change at 19:56:13 UTC Tue Jan 13 2026 by cisco\n\
+          ! NVRAM config last updated at 19:22:29 UTC Tue Jan 13 2026 by cisco\n!\n\
+          version 17.16\nservice timestamps debug datetime msec\nservice timestamps\
+          \ log datetime msec\nservice password-encryption\n!\nhostname sr1-2\n!\n\
+          boot-start-marker\nboot-end-marker\n!\n!\nvrf definition LAB\n rd 10.30.0.0:2\n\
+          \ !\n address-family ipv4\n  route-target export 65000:1\n  route-target\
+          \ import 65000:1\n exit-address-family\n!\nno logging console\naaa new-model\n\
+          !\n!\naaa group server tacacs+ LAB\n server-private 10.0.0.84 key 7 011E1F175E08140A35474B10\n\
+          \ ip tacacs source-interface Loopback10\n!\naaa authentication login default\
+          \ group LAB local\naaa authentication login no_tacacs local\naaa authorization\
+          \ config-commands\naaa authorization exec default group LAB local\naaa authorization\
+          \ commands 1 default group LAB if-authenticated\naaa authorization commands\
+          \ 15 default group LAB if-authenticated\naaa accounting exec default start-stop\
+          \ group LAB\naaa accounting commands 1 default start-stop group LAB\naaa\
+          \ accounting commands 15 default start-stop group LAB\naaa accounting connection\
+          \ default start-stop group LAB\n!\naaa session-id common\n!\n!\n!\n!\n!\n\
+          !\n!\n!\n!\n!\n!\n!\n!\nno ip domain lookup\nip domain name cml.lab\nip\
+          \ cef\nlogin on-success log\nno ipv6 cef\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n\
+          key chain BGP_TCPAO tcp\n key 42\n  send-id 1\n  recv-id 1\n  include-tcp-options\n\
+          \  cryptographic-algorithm hmac-sha-256\n  key-string 7 104D000A0618\npassword\
+          \ encryption aes\n!\ncrypto pki trustpoint TP-self-signed-131184664\n enrollment\
+          \ selfsigned\n subject-name cn=IOS-Self-Signed-Certificate-131184664\n revocation-check\
+          \ none\n rsakeypair TP-self-signed-131184664\n hash sha256\n!\n!\ncrypto\
+          \ pki certificate chain TP-self-signed-131184664\n certificate self-signed\
+          \ 01\n  3082032E 30820216 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030\n\
+          \  30312E30 2C060355 04030C25 494F532D 53656C66 2D536967 6E65642D 43657274\n\
+          \  69666963 6174652D 31333131 38343636 34301E17 0D323430 38323330 34303735\n\
+          \  345A170D 33343038 32333034 30373534 5A303031 2E302C06 03550403 0C25494F\n\
+          \  532D5365 6C662D53 69676E65 642D4365 72746966 69636174 652D3133 31313834\n\
+          \  36363430 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 82010A02\n\
+          \  82010100 B8BC50AA 16385CEE C4F979EF EEF6886F 9A0DDC15 1D672923 3E52C3A1\n\
+          \  2B6C6E45 E5B40BC6 9297746C 8CFA9C06 391A86ED CA67DA2E C292E9A9 73332245\n\
+          \  74A113EB 7DFABF7A 88A2C802 40DD2115 EB9CD6A2 47B67411 6C98C002 3E1CB93E\n\
+          \  9C0DB92D 656B4B4E 8DAB2391 7B50C7DF 6DC49EF2 3D2361AC 9B91D542 8C59D4C2\n\
+          \  2A13A3AF 447C3AA9 4B867D13 26D4096E 5C059B49 CA001221 78A0CD9D 935620F9\n\
+          \  CB25B39E CB290135 8E6EBA92 A0FC6A67 52EDCBDD EB0ECF1A FE24D1AC 5D06FBE1\n\
+          \  A4806350 4EA8AB54 A6222B22 ED7EB3A2 F740E274 F92B2066 C4192E0C D5AE5FA7\n\
+          \  D7AEB4B7 8AC83599 902BDB0D BF1B7DAD 9426E8FE 9E7EE12C EDD5E127 438A062E\n\
+          \  3CD556A1 02030100 01A35330 51301D06 03551D0E 04160414 D4EF4229 53F45F26\n\
+          \  9CFE15A8 0AFD4CA7 5031FAF3 301F0603 551D2304 18301680 14D4EF42 2953F45F\n\
+          \  269CFE15 A80AFD4C A75031FA F3300F06 03551D13 0101FF04 05300301 01FF300D\n\
+          \  06092A86 4886F70D 01010B05 00038201 01008D8B F1ED6E7B 1215D497 D6687681\n\
+          \  7B8AE928 5ED52CA4 25BA0BB2 AAD35403 6E1F128A B0623650 BEA2462D BA5F24D5\n\
+          \  642406B2 3DDDE212 38360E9D B81E31FB 04318DDE F5FBA83C 2C95A1A7 2C121004\n\
+          \  B5CD0C61 FA36EBF3 E6DED39F 887227AA 23EC7CE2 FC878B4F 3565C9E2 13DE4640\n\
+          \  7EA913B6 37013713 260A58C3 A3019FB4 D9DD2143 D7FB276E B97970C4 D7089AE8\n\
+          \  4D483677 17D4252F 41A08CF6 F119ACD0 DBDC10B5 BB0D7BE1 462BECF9 735A06B2\n\
+          \  9E16B586 78ACB82C D6AD2B9B 3B6B1CAB D160FD38 DEF03525 D125518C F9C45D65\n\
+          \  8B7C826E 9B0510C0 1AB53DD1 948CE226 A2B8F0C8 28823CE3 7AD35F40 C0A77415\n\
+          \  EE08B554 930204B4 07E5B50C A4BB9C77 C713\n  \tquit\n!\n!\nmemory free\
+          \ low-watermark processor 81225\n!\n!\nspanning-tree mode rapid-pvst\n!\n\
+          !\nusername cisco privilege 15 password 7 094F471A1A0A\n!\n!\n!\n!\n!\n\
+          !\n!\n!\n!\n!\n!\n!\n!\ncrypto isakmp policy 1\n encryption aes 256\n hash\
+          \ sha512\n authentication pre-share\n group 14\n lifetime 1200\ncrypto isakmp\
+          \ key cisco address 0.0.0.0\n!\n!\n!\n!\ncrypto gdoi group LAB-GDOI\n identity\
+          \ number 10\n server address ipv4 10.10.0.10\n client registration interface\
+          \ Loopback10\n!\n!\ncrypto map GET-MAP 10 gdoi\n set group LAB-GDOI\n!\n\
+          !\n!\n!\n!\n!\ninterface Loopback0\n description Go fuck yourself San Diego\n\
+          \ vrf forwarding LAB\n ip address 10.30.0.2 255.255.255.255\n!\ninterface\
+          \ Loopback10\n ip address 10.30.10.2 255.255.255.255\n!\ninterface Ethernet0/0\n\
+          \ vrf forwarding LAB\n ip address 10.30.100.3 255.255.255.248\n!\ninterface\
+          \ Ethernet0/1\n ip address 172.19.1.6 255.255.255.252\n crypto map GET-MAP\n\
+          !\ninterface Ethernet0/2\n no ip address\n shutdown\n!\ninterface Ethernet0/3\n\
+          \ no ip address\n shutdown\n!\ninterface Ethernet1/0\n no ip address\n shutdown\n\
+          !\ninterface Ethernet1/1\n no ip address\n shutdown\n!\ninterface Ethernet1/2\n\
+          \ no ip address\n shutdown\n!\ninterface Ethernet1/3\n no ip address\n shutdown\n\
+          !\nl3vpn encapsulation ip RR-IN__LAB\n transport ipv4 source Loopback10\n\
+          \ protocol gre key 9999999\n mpls mtu max\n!\nrouter eigrp LAB\n !\n address-family\
+          \ ipv4 unicast vrf LAB autonomous-system 7\n  !\n  af-interface default\n\
+          \   passive-interface\n  exit-af-interface\n  !\n  af-interface Ethernet0/0\n\
+          \   no passive-interface\n  exit-af-interface\n  !\n  topology base\n  \
+          \ redistribute bgp 65000 metric 10000 100 255 1 1400 route-map DENY_10888\n\
+          \   redistribute static metric 10000 100 255 1 1400\n  exit-af-topology\n\
+          \  network 10.0.0.0\n exit-address-family\n!\nrouter bgp 65000\n bgp router-id\
+          \ 10.30.10.2\n bgp log-neighbor-changes\n bgp bestpath med missing-as-worst\n\
+          \ bgp bestpath cost-community ignore\n no bgp default ipv4-unicast\n timers\
+          \ bgp 15 45\n neighbor iBGP peer-group\n neighbor iBGP remote-as 65000\n\
+          \ neighbor iBGP ao BGP_TCPAO include-tcp-options\n neighbor iBGP update-source\
+          \ Loopback10\n neighbor 10.10.0.10 peer-group iBGP\n neighbor 172.19.1.5\
+          \ remote-as 200\n !\n address-family ipv4\n  network 10.30.10.2 mask 255.255.255.255\n\
+          \  neighbor 172.19.1.5 activate\n  neighbor 172.19.1.5 send-community both\n\
+          \  neighbor 172.19.1.5 allowas-in 1\n  neighbor 172.19.1.5 soft-reconfiguration\
+          \ inbound\n exit-address-family\n !\n address-family vpnv4\n  neighbor iBGP\
+          \ send-community both\n  neighbor iBGP route-map RR-IN__LAB in\n  neighbor\
+          \ 10.10.0.10 activate\n exit-address-family\n !\n address-family ipv4 vrf\
+          \ LAB\n  bgp router-id 10.30.0.2\n  network 10.30.0.0 mask 255.255.0.0\n\
+          \  network 10.30.0.2 mask 255.255.255.255\n  network 10.30.0.10 mask 255.255.255.255\n\
+          \  network 10.30.100.0 mask 255.255.255.248\n exit-address-family\n!\nip\
+          \ forward-protocol nd\nip forward-protocol udp\n!\nip bgp-community new-format\n\
+          !\nip http server\nip http secure-server\nip route vrf LAB 0.0.0.0 0.0.0.0\
+          \ Null0\nip ssh bulk-mode 131072\n!\nip prefix-list DENY_10888 seq 10 permit\
+          \ 10.8.8.8/32\nno logging btrace\nlogging source-interface Loopback10\n\
+          logging host 10.0.0.84\nroute-map DENY_10888 deny 10\n match ip address\
+          \ prefix-list DENY_10888\n!\nroute-map DENY_10888 permit 20\n!\nroute-map\
+          \ RR-IN__LAB permit 10\n set ip next-hop encapsulate l3vpn RR-IN__LAB\n\
+          !\n!\n!\n!\n!\n!\ncontrol-plane\n!\n!\nalias exec q exit\n!\nline con 0\n\
+          \ exec-timeout 0 0\n logging synchronous\nline aux 0\nline vty 0 4\n exec-timeout\
+          \ 0 0\n logging synchronous\n transport input ssh\n!\nntp logging\nntp server\
+          \ 10.10.10.1 prefer\n!\n!\n!\nend"
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n7
+    image_definition: null
+    label: sr1-2
+    node_definition: iol-xe
+    parameters: {}
+    ram: null
+    tags: []
+    x: -280
+    y: -160
+    interfaces:
+      - id: i0
+        label: Loopback0
+        mac_address: null
+        type: loopback
+      - id: i1
+        label: Ethernet0/0
+        mac_address: null
+        type: physical
+        slot: 0
+      - id: i2
+        label: Ethernet0/1
+        mac_address: null
+        type: physical
+        slot: 1
+      - id: i3
+        label: Ethernet0/2
+        mac_address: null
+        type: physical
+        slot: 2
+      - id: i4
+        label: Ethernet0/3
+        mac_address: null
+        type: physical
+        slot: 3
+      - id: i5
+        label: Ethernet1/0
+        mac_address: null
+        type: physical
+        slot: 4
+      - id: i6
+        label: Ethernet1/1
+        mac_address: null
+        type: physical
+        slot: 5
+      - id: i7
+        label: Ethernet1/2
+        mac_address: null
+        type: physical
+        slot: 6
+      - id: i8
+        label: Ethernet1/3
+        mac_address: null
+        type: physical
+        slot: 7
+  - boot_disk_size: null
+    configuration:
+      - name: iosxe_config.txt
+        content: "Building configuration...\n\nCurrent configuration : 16199 bytes\n\
+          !\n! Last configuration change at 19:56:13 UTC Tue Jan 13 2026 by cisco\n\
+          !\nversion 17.16\nservice timestamps debug datetime msec\nservice timestamps\
+          \ log datetime msec\nservice password-encryption\nplatform qfp utilization\
+          \ monitor load 80\nplatform sslvpn use-pd\nplatform console serial\n!\n\
+          hostname cr1-1\n!\nboot-start-marker\nboot-end-marker\n!\n!\nvrf definition\
+          \ LAB\n rd 10.10.0.0:1\n !\n address-family ipv4\n  route-target export\
+          \ 65000:1\n  route-target import 65000:1\n exit-address-family\n!\nno logging\
+          \ console\naaa new-model\n!\n!\naaa group server tacacs+ LAB\n server-private\
+          \ 10.0.0.84 key 7 03094218030C33495A021C1C\n ip tacacs source-interface\
+          \ Loopback10\n!\naaa authentication login default group LAB local\naaa authentication\
+          \ login no_tacacs local\naaa authorization config-commands\naaa authorization\
+          \ exec default group LAB local\naaa authorization commands 1 default group\
+          \ LAB if-authenticated\naaa authorization commands 15 default group LAB\
+          \ if-authenticated\naaa accounting exec default start-stop group LAB\naaa\
+          \ accounting commands 1 default start-stop group LAB\naaa accounting commands\
+          \ 15 default start-stop group LAB\naaa accounting connection default start-stop\
+          \ group LAB\n!\n!\naaa session-id common\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n\
+          !\n!\nno ip domain lookup\nip domain name cml.lab\n!\n!\n!\nlogin on-success\
+          \ log\n!\n!\nsubscriber templating\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n\
+          !\n!\nkey chain BGP_TCPAO tcp\n key 42\n  send-id 1\n  recv-id 1\n  include-tcp-options\n\
+          \  cryptographic-algorithm hmac-sha-256\n  key-string 7 01100F175804\npassword\
+          \ encryption aes\n!\n!\ncrypto pki trustpoint SLA-TrustPoint\n enrollment\
+          \ pkcs12\n revocation-check crl\n hash sha256\n!\ncrypto pki trustpoint\
+          \ TP-self-signed-775287226\n enrollment selfsigned\n subject-name cn=IOS-Self-Signed-Certificate-775287226\n\
+          \ revocation-check none\n rsakeypair TP-self-signed-775287226\n hash sha256\n\
+          !\ncrypto pki trustpoint LAB\n enrollment url http://10.0.0.84:8080\n serial-number\n\
+          \ fqdn cr1-1.cml.lab\n subject-name CN=cr1-1,O=cml.lab\n subject-alt-name\
+          \ cr1-1.cml.lab\n revocation-check none\n rsakeypair cr1-1.cml.lab\n hash\
+          \ sha256\n!\n!\ncrypto pki certificate chain SLA-TrustPoint\n certificate\
+          \ ca 01\n  30820321 30820209 A0030201 02020101 300D0609 2A864886 F70D0101\
+          \ 0B050030\n  32310E30 0C060355 040A1305 43697363 6F312030 1E060355 04031317\
+          \ 43697363\n  6F204C69 63656E73 696E6720 526F6F74 20434130 1E170D31 33303533\
+          \ 30313934\n  3834375A 170D3338 30353330 31393438 34375A30 32310E30 0C060355\
+          \ 040A1305\n  43697363 6F312030 1E060355 04031317 43697363 6F204C69 63656E73\
+          \ 696E6720\n  526F6F74 20434130 82012230 0D06092A 864886F7 0D010101 05000382\
+          \ 010F0030\n  82010A02 82010100 A6BCBD96 131E05F7 145EA72C 2CD686E6 17222EA1\
+          \ F1EFF64D\n  CBB4C798 212AA147 C655D8D7 9471380D 8711441E 1AAF071A 9CAE6388\
+          \ 8A38E520\n  1C394D78 462EF239 C659F715 B98C0A59 5BBB5CBD 0CFEBEA3 700A8BF7\
+          \ D8F256EE\n  4AA4E80D DB6FD1C9 60B1FD18 FFC69C96 6FA68957 A2617DE7 104FDC5F\
+          \ EA2956AC\n  7390A3EB 2B5436AD C847A2C5 DAB553EB 69A9A535 58E9F3E3 C0BD23CF\
+          \ 58BD7188\n  68E69491 20F320E7 948E71D7 AE3BCC84 F10684C7 4BC8E00F 539BA42B\
+          \ 42C68BB7\n  C7479096 B4CB2D62 EA2F505D C7B062A4 6811D95B E8250FC4 5D5D5FB8\
+          \ 8F27D191\n  C55F0D76 61F9A4CD 3D992327 A8BB03BD 4E6D7069 7CBADF8B DF5F4368\
+          \ 95135E44\n  DFC7C6CF 04DD7FD1 02030100 01A34230 40300E06 03551D0F 0101FF04\
+          \ 04030201\n  06300F06 03551D13 0101FF04 05300301 01FF301D 0603551D 0E041604\
+          \ 1449DC85\n  4B3D31E5 1B3E6A17 606AF333 3D3B4C73 E8300D06 092A8648 86F70D01\
+          \ 010B0500\n  03820101 00507F24 D3932A66 86025D9F E838AE5C 6D4DF6B0 49631C78\
+          \ 240DA905\n  604EDCDE FF4FED2B 77FC460E CD636FDB DD44681E 3A5673AB 9093D3B1\
+          \ 6C9E3D8B\n  D98987BF E40CBD9E 1AECA0C2 2189BB5C 8FA85686 CD98B646 5575B146\
+          \ 8DFC66A8\n  467A3DF4 4D565700 6ADF0F0D CF835015 3C04FF7C 21E878AC 11BA9CD2\
+          \ 55A9232C\n  7CA7B7E6 C1AF74F6 152E99B7 B1FCF9BB E973DE7F 5BDDEB86 C71E3B49\
+          \ 1765308B\n  5FB0DA06 B92AFE7F 494E8A9E 07B85737 F3A58BE1 1A48A229 C37C1E69\
+          \ 39F08678\n  80DDCD16 D6BACECA EEBC7CF9 8428787B 35202CDC 60E4616A B623CDBD\
+          \ 230E3AFB\n  418616A9 4093E049 4D10AB75 27E86F73 932E35B5 8862FDAE 0275156F\
+          \ 719BB2F0\n  D697DF7F 28\n  \tquit\ncrypto pki certificate chain TP-self-signed-775287226\n\
+          \ certificate self-signed 01\n  3082032E 30820216 A0030201 02020101 300D0609\
+          \ 2A864886 F70D0101 0B050030\n  30312E30 2C060355 04030C25 494F532D 53656C66\
+          \ 2D536967 6E65642D 43657274\n  69666963 6174652D 37373532 38373232 36301E17\
+          \ 0D323430 38323331 36313231\n  335A170D 33343038 32333136 31323133 5A303031\
+          \ 2E302C06 03550403 0C25494F\n  532D5365 6C662D53 69676E65 642D4365 72746966\
+          \ 69636174 652D3737 35323837\n  32323630 82012230 0D06092A 864886F7 0D010101\
+          \ 05000382 010F0030 82010A02\n  82010100 E3D46D19 21E56F60 0308D41C 5BECA25E\
+          \ DFB25113 3798B931 AF0F869B\n  C758980F 84027F6E 06E772F3 EFCD5F7F 31E7B3FF\
+          \ BF9DC561 94276D87 A4931E08\n  EF26E436 CB330BF1 E5C55498 B0A95313 F7A977D4\
+          \ A88F0D11 0313C454 2D17BC39\n  50943419 2F0BF16D 9EA9CF04 4142ED8F 6B385AB5\
+          \ 4C2C81DB CAA3E94C 4F435EC1\n  B148FDEF EB90C1C4 0CC412C8 21DA58CF 15B68D9C\
+          \ C128629B 8E824943 549C1AAE\n  430C3E4C 7C01B714 11D89642 C2697B3F 4A9E316B\
+          \ 443F6FBC B018F92A AC2A173D\n  7E5C6467 5E204139 F71D3D30 0277219F D0737FB4\
+          \ 580A4839 10AED8A3 601834FB\n  5F51C861 EB241958 874C94D3 BDF82178 1988596E\
+          \ 506C9EDC 202253BD 831BC340\n  DA99344B 02030100 01A35330 51301D06 03551D0E\
+          \ 04160414 DDDFF9F2 CEF8C823\n  06FAA5DB E24B74F1 8A6E965B 301F0603 551D2304\
+          \ 18301680 14DDDFF9 F2CEF8C8\n  2306FAA5 DBE24B74 F18A6E96 5B300F06 03551D13\
+          \ 0101FF04 05300301 01FF300D\n  06092A86 4886F70D 01010B05 00038201 0100B5F3\
+          \ 6114D2CC 4CEE6390 81919033\n  E1CC0CBE A4DDAFE6 29970355 07C4FCFF EF065C98\
+          \ 9D2D4AD4 9D2DD85F 73EEBCDD\n  4AE1D6CC 9C2939FA 0AA0914C 3D93BACD 4391DDB6\
+          \ 1E1BE36C 36947613 967FB3A0\n  3A4092F5 8ED6DC4D EB8D424D 2CC2F0F8 D76B8026\
+          \ 0B14D06D 4B3CADE3 D4125394\n  3E13B131 FDEDB1D8 61F57B8D DB97FD2F F7EFA14D\
+          \ E8EFD93C 9DADB434 1E652A62\n  D00DCD65 1EC0EF00 DB038B66 7ACCFAF0 AA7ADD7B\
+          \ CB83387A 62A7B732 A593A386\n  07EF89F5 E91A3C58 621D2265 0D03D8A4 3D7AE986\
+          \ 56CDCBF2 109BFA56 6E8AA7CF\n  57585E1F CADD47F4 D2B7314D 6508D911 F2F5FB95\
+          \ 96823CE5 FAEE3D32 77E36270\n  AE7313A7 18882540 B70124B1 3DF47521 8CAA\n\
+          \  \tquit\ncrypto pki certificate chain LAB\n certificate ca 6EA70F157CA299FA31E6F18E9D49A3D64B713C15\n\
+          \  308205AD 30820395 A0030201 0202146E A70F157C A299FA31 E6F18E9D 49A3D64B\n\
+          \  713C1530 0D06092A 864886F7 0D01010B 05003066 310B3009 06035504 06130255\n\
+          \  53311330 11060355 04080C0A 43616C69 666F726E 69613111 300F0603 5504070C\n\
+          \  0853616E 204A6F73 65310E30 0C060355 040A0C05 4D794F72 67310B30 09060355\n\
+          \  040B0C02 49543112 30100603 5504030C 096C6F63 616C686F 7374301E 170D3234\n\
+          \  31323238 32323536 30395A17 0D333431 32323632 32353630 395A3066 310B3009\n\
+          \  06035504 06130255 53311330 11060355 04080C0A 43616C69 666F726E 69613111\n\
+          \  300F0603 5504070C 0853616E 204A6F73 65310E30 0C060355 040A0C05 4D794F72\n\
+          \  67310B30 09060355 040B0C02 49543112 30100603 5504030C 096C6F63 616C686F\n\
+          \  73743082 0222300D 06092A86 4886F70D 01010105 00038202 0F003082 020A0282\n\
+          \  020100AD 1441814B C53757FA 2C8F3327 106ED20C 097FADB6 CBB5F648 8D1B1E5D\n\
+          \  25167FB0 571F67B3 389C08AE C75D7897 C577A5E0 E66D05D6 B4BC0736 71C5E5E1\n\
+          \  2A088E5B C237B36C E5797358 E84EDB16 95FEFAAF D405CAA4 39A8430B 6FFFF6AE\n\
+          \  D31B6A43 82095943 308ADEAC 1F41191E 7526C571 0A2800BC 11468DEF CE2D45D2\n\
+          \  A763AFF5 3DA3F462 92B1F7D5 E1157A9A 54D1AF39 62D1B50F F4C14CC8 FF028637\n\
+          \  2595F6A7 2C5B53AA 7979AC14 EB386A35 A4E418C7 650684A6 06803205 756882CF\n\
+          \  B1D319AD 89E83816 E6352844 FB77AD94 F228150A 20DD9F15 6CCDA8C2 D64E3318\n\
+          \  23389975 6F9B4C11 9FE623B8 0EBCE54C A9989713 897EE1E0 5E1A7E32 840FDE61\n\
+          \  30827615 2844D4DC A951BD48 13C097E3 C36D830F 62E15B5D 2B59EE5D E454E637\n\
+          \  AA3A57A9 2D603773 F228D722 95772E59 08D7CE27 2525BBC2 C3E0CA8B 6A592BB8\n\
+          \  F8A02ABA 0ECF543A 05874D84 5A06D43E D8AC03C5 6132BB90 47FA5A4A 4F2EF9B7\n\
+          \  932DEFD3 9F617566 462AA348 6F321C5E 7D0B9289 3CC3F09C 44F4579A 8F2B17D6\n\
+          \  8AB70086 DD340C5A 0A029D3A FD5DEE6F 39C38863 E6B91DF5 E7BCB64F 0D617D97\n\
+          \  1ADF1C11 5610D1F2 FFC681BD D383F8F9 514BAA06 91814335 38E944EB 1C4702D3\n\
+          \  DC2B6995 8AE0EB5D 8F513969 72B3D867 048A0E1A DD99E5EB 1F97C2D2 9A56BE13\n\
+          \  E47C9A1D FBF2231A B690589D 0A5F5ACD B7BAB137 11C5E00B F4941A50 4CC0A709\n\
+          \  BD8D9902 03010001 A3533051 301D0603 551D0E04 160414E6 79531D27 CFA576DE\n\
+          \  E24CFE8D 06E04992 1D3A7F30 1F060355 1D230418 30168014 E679531D 27CFA576\n\
+          \  DEE24CFE 8D06E049 921D3A7F 300F0603 551D1301 01FF0405 30030101 FF300D06\n\
+          \  092A8648 86F70D01 010B0500 03820201 00770BA6 6EF08475 D7060D37 C91D57D5\n\
+          \  C35D7BA6 CDF15854 9F72354B 56A1359E BC36C689 62BBBBA5 F362AD71 2A2407BD\n\
+          \  C5B1CA74 BFCD3FBB 7C2BA742 9062F06C 27B3DC4D 7D6A4F6F 7FEFE683 633F9459\n\
+          \  B9384F7C 5BF0F7D1 ACA5EDAD AD888FED 97609030 68ACEB94 1C704BBF 3F6D73D4\n\
+          \  08EA9D09 3C77B9A2 83DF27B3 AB960DC8 18F3DA79 FCD9B939 E93C4BA6 614CC669\n\
+          \  59B01F1E 71740207 FA30BF0E D0B0742E 73697E12 CEE34930 A5AA8BEB 1964AC67\n\
+          \  1B19A6EE 364C76B4 47FC3DB4 AF977DD2 0170456A 24E30EC3 C45EC0F8 C90BA7C8\n\
+          \  75647FD0 B55C11AB 97B33633 8166C16E 9430ECA2 99EE7C4E 8BFDBE3C 35F7B313\n\
+          \  61D21EE0 0CFAA48A AED46177 88B9DF25 39045DB5 6148C3B9 8A303C8A 7C658F4F\n\
+          \  9EE056FC BAC427A6 86ADB09D 7866864B 44B9187F 9D499260 4DA0AE05 C0C44904\n\
+          \  678CB604 9DBAAB19 E177DA08 F0CC99FA D39D3103 D935CC29 E57354FE 5F53CE68\n\
+          \  2345E287 824CE0C2 C57C8E3B 0F106317 E12CCA2D CFC4FCDF 2CAD9087 0880B040\n\
+          \  EA9CE39D 52AD5D5E 54FA3F2B 938CB023 2BA1D0FA 8ED03898 B2EC1746 AFFC3C2B\n\
+          \  8F894652 7D93BE3C 38BD9815 91D3007D 47B544F4 1FE80A4F A8056EF7 400920DE\n\
+          \  EB9DD581 8CCEDBD8 90A08BA5 8E6F4D85 AFF42910 B5099FE7 3E4FEEA5 87BF79FB\n\
+          \  B58B5716 4A10DCED D32F0C84 E7FA6443 7D92763D 2384B2D5 73701006 E98855FB\n\
+          \  E3F82639 FE6C7F41 F9C2958D 1175736E 2E\n  \tquit\n!\n!\n!\n!\n!\n!\n\
+          !\n!\n!\nlicense udi pid C8000V sn 9XZVQNUTNIW\nlicense boot level network-advantage\
+          \ addon dna-advantage\nmemory free low-watermark processor 201711\ndiagnostic\
+          \ bootup level minimal\n!\n!\nspanning-tree extend system-id\n!\n!\n!\n\
+          username cisco privilege 15 password 7 030752180500\n!\nredundancy\n!\n\
+          !\n!\n!\n!\n!\n!\ncdp run\n!\n!\nclass-map match-any PORT-9999\n match access-group\
+          \ name PORT_9999\n!\npolicy-map QOS-INBOUND-MARKING\n class PORT-9999\n\
+          \  set dscp af31\n!\n!\n!\n!\n!\n!\n!\n!\n!\ncrypto isakmp policy 1\n encryption\
+          \ aes 256\n hash sha512\n authentication pre-share\n group 14\n lifetime\
+          \ 1200\ncrypto isakmp key cisco address 0.0.0.0\n!\n!\n!\n!\ncrypto gdoi\
+          \ group LAB-GDOI\n identity number 10\n server address ipv4 10.10.0.10\n\
+          \ client registration interface Loopback10\n!\n!\ncrypto map GET-MAP 10\
+          \ gdoi\n set group LAB-GDOI\n!\n!\n!\n!\n!\n!\n!\n!\ninterface Loopback0\n\
+          \ description Go fuck yourself San Diego\n vrf forwarding LAB\n ip address\
+          \ 10.10.0.1 255.255.255.255\n!\ninterface Loopback8\n vrf forwarding LAB\n\
+          \ ip address 10.8.8.8 255.255.255.255\n!\ninterface Loopback10\n ip address\
+          \ 10.10.10.1 255.255.255.255\n!\ninterface VirtualPortGroup0\n ip address\
+          \ 192.168.255.1 255.255.255.0\n ip nat inside\n!\ninterface GigabitEthernet1\n\
+          \ ip address 10.10.1.4 255.255.255.248 secondary\n ip address 10.10.1.1\
+          \ 255.255.255.248\n ip nat outside\n negotiation auto\n cdp enable\n!\n\
+          interface GigabitEthernet2\n vrf forwarding LAB\n ip address 10.10.2.1 255.255.255.252\n\
+          \ negotiation auto\n cdp enable\n!\ninterface GigabitEthernet3\n ip address\
+          \ 172.18.1.2 255.255.255.252\n negotiation auto\n cdp enable\n crypto map\
+          \ GET-MAP\n!\ninterface GigabitEthernet4\n no ip address\n shutdown\n negotiation\
+          \ auto\n cdp enable\n!\ninterface GigabitEthernet5\n no ip address\n shutdown\n\
+          \ negotiation auto\n cdp enable\n!\ninterface GigabitEthernet6\n no ip address\n\
+          \ shutdown\n negotiation auto\n cdp enable\n!\ninterface GigabitEthernet7\n\
+          \ no ip address\n shutdown\n negotiation auto\n cdp enable\n!\ninterface\
+          \ GigabitEthernet8\n ip address 10.0.0.248 255.255.255.0\n negotiation auto\n\
+          \ cdp enable\n service-policy input QOS-INBOUND-MARKING\n!\ninterface vasileft1\n\
+          \ ip address 192.168.1.1 255.255.255.252\n no keepalive\n!\ninterface vasiright1\n\
+          \ vrf forwarding LAB\n ip address 192.168.1.2 255.255.255.252\n no keepalive\n\
+          !\nl3vpn encapsulation ip RR-IN__LAB\n transport ipv4 source Loopback10\n\
+          \ protocol gre key 9999999\n mpls mtu max\n!\nrouter eigrp GW1\n !\n address-family\
+          \ ipv4 unicast autonomous-system 65000\n  !\n  af-interface default\n  \
+          \ passive-interface\n  exit-af-interface\n  !\n  af-interface GigabitEthernet1\n\
+          \   no passive-interface\n  exit-af-interface\n  !\n  topology base\n  \
+          \ redistribute bgp 65000 metric 10000000 1000 255 1 1500\n  exit-af-topology\n\
+          \  network 10.0.0.0 0.0.0.255\n  network 10.10.0.0 0.0.255.255\n  eigrp\
+          \ router-id 10.10.0.1\n exit-address-family\n!\nrouter bgp 65000\n bgp router-id\
+          \ 10.10.10.1\n bgp always-compare-med\n bgp log-neighbor-changes\n bgp bestpath\
+          \ med missing-as-worst\n bgp bestpath cost-community ignore\n no bgp default\
+          \ ipv4-unicast\n timers bgp 15 45\n neighbor iBGP peer-group\n neighbor\
+          \ iBGP remote-as 65000\n neighbor iBGP ao BGP_TCPAO include-tcp-options\n\
+          \ neighbor iBGP update-source Loopback10\n neighbor 10.10.0.10 peer-group\
+          \ iBGP\n neighbor 172.18.1.1 remote-as 100\n neighbor 192.168.1.2 remote-as\
+          \ 65100\n neighbor 192.168.1.2 local-as 65200 no-prepend replace-as\n !\n\
+          \ address-family ipv4\n  network 10.0.0.0 mask 255.255.255.0\n  network\
+          \ 10.10.0.10 mask 255.255.255.255\n  network 10.10.10.1 mask 255.255.255.255\n\
+          \  network 10.10.10.2 mask 255.255.255.255\n  network 172.18.1.0 mask 255.255.255.252\n\
+          \  neighbor 172.18.1.1 activate\n  neighbor 172.18.1.1 send-community standard\n\
+          \  neighbor 172.18.1.1 allowas-in 1\n  neighbor 172.18.1.1 soft-reconfiguration\
+          \ inbound\n  neighbor 192.168.1.2 activate\n  neighbor 192.168.1.2 send-community\
+          \ both\n  neighbor 192.168.1.2 soft-reconfiguration inbound\n  neighbor\
+          \ 192.168.1.2 route-map LAB_NET out\n  maximum-paths 2\n  maximum-paths\
+          \ ibgp 2\n  default-information originate\n exit-address-family\n !\n address-family\
+          \ vpnv4\n  neighbor iBGP send-community both\n  neighbor iBGP route-map\
+          \ RR-IN__LAB in\n  neighbor 10.10.0.10 activate\n exit-address-family\n\
+          \ !\n address-family ipv4 vrf LAB\n  bgp router-id 10.10.0.1\n  network\
+          \ 10.8.8.8 mask 255.255.255.255\n  network 10.10.0.1 mask 255.255.255.255\n\
+          \  network 10.10.1.0 mask 255.255.255.248\n  network 10.10.2.0 mask 255.255.255.252\n\
+          \  neighbor 10.10.2.2 remote-as 64002\n  neighbor 10.10.2.2 local-as 64001\
+          \ no-prepend replace-as\n  neighbor 10.10.2.2 activate\n  neighbor 10.10.2.2\
+          \ send-community both\n  neighbor 10.10.2.2 allowas-in 1\n  neighbor 10.10.2.2\
+          \ soft-reconfiguration inbound\n  neighbor 192.168.1.1 remote-as 65200\n\
+          \  neighbor 192.168.1.1 local-as 65100 no-prepend replace-as\n  neighbor\
+          \ 192.168.1.1 activate\n  neighbor 192.168.1.1 send-community both\n  neighbor\
+          \ 192.168.1.1 soft-reconfiguration inbound\n  neighbor 192.168.1.1 route-map\
+          \ VRF_NET out\n  default-information originate\n exit-address-family\n!\n\
+          iox\nip forward-protocol nd\nip forward-protocol udp\n!\nip bgp-community\
+          \ new-format\nip http server\nip http secure-server\nip http secure-client-auth\n\
+          ip route 0.0.0.0 0.0.0.0 10.0.0.1\nip nat inside source static 192.168.255.2\
+          \ 10.10.1.4\nip ssh bulk-mode 131072\nip scp server enable\n!\nip prefix-list\
+          \ DENY_LO8 seq 10 permit 10.8.8.8/32\n!\nip prefix-list LAB_NET seq 10 permit\
+          \ 10.0.0.0/24\n!\nip prefix-list VRF_NET seq 10 permit 10.30.0.0/16\n!\n\
+          ip access-list extended PORT_9999\n 10 permit tcp any any eq 9999\n 20 permit\
+          \ tcp any eq 9999 any\nlogging source-interface Loopback10\nlogging host\
+          \ 10.0.0.24\nlogging host 10.0.0.84\nroute-map VRF_NET permit 10\n match\
+          \ ip address prefix-list VRF_NET\n!\nroute-map LAB_NET permit 10\n match\
+          \ ip address prefix-list LAB_NET\n!\nroute-map RR-IN__LAB permit 10\n set\
+          \ ip next-hop encapsulate l3vpn RR-IN__LAB\n!\nsnmp-server community public\
+          \ RO\nsnmp-server enable traps syslog\nsnmp-server host 10.0.0.84 public\
+          \  snmp\n!\n!\n!\n!\n!\ncontrol-plane\n!\n!\nmgcp behavior rsip-range tgcp-only\n\
+          mgcp behavior comedia-role none\nmgcp behavior comedia-check-media-src disable\n\
+          mgcp behavior comedia-sdp-force disable\n!\nmgcp profile default\n!\n!\n\
+          !\n!\n!\nalias exec q exit\n!\nline con 0\n exec-timeout 0 0\n logging synchronous\n\
+          \ login authentication no_tacacs\n stopbits 1\nline aux 0\nline vty 0 4\n\
+          \ exec-timeout 0 0\n logging synchronous\n transport input ssh\n!\nntp logging\n\
+          ntp master 4\nntp server 132.163.96.1 source GigabitEthernet8\nntp server\
+          \ 132.163.96.2 source GigabitEthernet8\nntp server 132.163.96.3 source GigabitEthernet8\n\
+          ntp server 132.163.96.6 prefer source GigabitEthernet8\n!\n!\n!\n!\n!\n\
+          !\napp-hosting appid guestshell\n app-vnic gateway0 virtualportgroup 0 guest-interface\
+          \ 0\n  guest-ipaddress 192.168.255.2 netmask 255.255.255.0\n app-default-gateway\
+          \ 192.168.255.1 guest-interface 0\n start\nrestconf\nend"
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n8
+    image_definition: null
+    label: cr1-1
+    node_definition: cat8000v
+    parameters: {}
+    ram: null
+    tags: []
+    x: -520
+    y: -520
+    interfaces:
+      - id: i0
+        label: Loopback0
+        mac_address: null
+        type: loopback
+      - id: i1
+        label: GigabitEthernet1
+        mac_address: null
+        type: physical
+        slot: 0
+      - id: i2
+        label: GigabitEthernet2
+        mac_address: null
+        type: physical
+        slot: 1
+      - id: i3
+        label: GigabitEthernet3
+        mac_address: null
+        type: physical
+        slot: 2
+      - id: i4
+        label: GigabitEthernet4
+        mac_address: null
+        type: physical
+        slot: 3
+      - id: i5
+        label: GigabitEthernet5
+        mac_address: null
+        type: physical
+        slot: 4
+      - id: i6
+        label: GigabitEthernet6
+        mac_address: null
+        type: physical
+        slot: 5
+      - id: i7
+        label: GigabitEthernet7
+        mac_address: null
+        type: physical
+        slot: 6
+      - id: i8
+        label: GigabitEthernet8
+        mac_address: null
+        type: physical
+        slot: 7
+  - boot_disk_size: null
+    configuration:
+      - name: iosxe_config.txt
+        content: "Building configuration...\n\nCurrent configuration : 11609 bytes\n\
+          !\n! Last configuration change at 19:56:13 UTC Tue Jan 13 2026 by cisco\n\
+          !\nversion 17.16\nservice timestamps debug datetime msec\nservice timestamps\
+          \ log datetime msec\nservice password-encryption\nplatform qfp utilization\
+          \ monitor load 80\nplatform sslvpn use-pd\nplatform console serial\n!\n\
+          hostname cr1-2\n!\nboot-start-marker\nboot-end-marker\n!\n!\nvrf definition\
+          \ LAB\n rd 10.10.0.0:2\n !\n address-family ipv4\n  route-target export\
+          \ 65000:1\n  route-target import 65000:1\n exit-address-family\n!\nno logging\
+          \ console\naaa new-model\n!\n!\naaa group server tacacs+ LAB\n server-private\
+          \ 10.0.0.84 key 7 045612150A225E4B1D12000E\n ip tacacs source-interface\
+          \ Loopback10\n!\naaa authentication login default group LAB local\naaa authentication\
+          \ login no_tacacs local\naaa authorization config-commands\naaa authorization\
+          \ exec default group LAB local\naaa authorization commands 1 default group\
+          \ LAB if-authenticated\naaa authorization commands 15 default group LAB\
+          \ if-authenticated\naaa accounting exec default start-stop group LAB\naaa\
+          \ accounting commands 1 default start-stop group LAB\naaa accounting commands\
+          \ 15 default start-stop group LAB\naaa accounting connection default start-stop\
+          \ group LAB\n!\n!\naaa session-id common\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n\
+          !\n!\nno ip domain lookup\nip domain name cml.lab\n!\n!\n!\nlogin on-success\
+          \ log\n!\n!\nsubscriber templating\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n\
+          !\n!\nkey chain BGP_TCPAO tcp\n key 42\n  send-id 1\n  recv-id 1\n  include-tcp-options\n\
+          \  cryptographic-algorithm hmac-sha-256\n  key-string 7 060506324F41\npassword\
+          \ encryption aes\n!\n!\ncrypto pki trustpoint SLA-TrustPoint\n enrollment\
+          \ pkcs12\n revocation-check crl\n hash sha256\n!\ncrypto pki trustpoint\
+          \ TP-self-signed-3339622006\n enrollment selfsigned\n subject-name cn=IOS-Self-Signed-Certificate-3339622006\n\
+          \ revocation-check none\n rsakeypair TP-self-signed-3339622006\n hash sha256\n\
+          !\n!\ncrypto pki certificate chain SLA-TrustPoint\n certificate ca 01\n\
+          \  30820321 30820209 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030\n\
+          \  32310E30 0C060355 040A1305 43697363 6F312030 1E060355 04031317 43697363\n\
+          \  6F204C69 63656E73 696E6720 526F6F74 20434130 1E170D31 33303533 30313934\n\
+          \  3834375A 170D3338 30353330 31393438 34375A30 32310E30 0C060355 040A1305\n\
+          \  43697363 6F312030 1E060355 04031317 43697363 6F204C69 63656E73 696E6720\n\
+          \  526F6F74 20434130 82012230 0D06092A 864886F7 0D010101 05000382 010F0030\n\
+          \  82010A02 82010100 A6BCBD96 131E05F7 145EA72C 2CD686E6 17222EA1 F1EFF64D\n\
+          \  CBB4C798 212AA147 C655D8D7 9471380D 8711441E 1AAF071A 9CAE6388 8A38E520\n\
+          \  1C394D78 462EF239 C659F715 B98C0A59 5BBB5CBD 0CFEBEA3 700A8BF7 D8F256EE\n\
+          \  4AA4E80D DB6FD1C9 60B1FD18 FFC69C96 6FA68957 A2617DE7 104FDC5F EA2956AC\n\
+          \  7390A3EB 2B5436AD C847A2C5 DAB553EB 69A9A535 58E9F3E3 C0BD23CF 58BD7188\n\
+          \  68E69491 20F320E7 948E71D7 AE3BCC84 F10684C7 4BC8E00F 539BA42B 42C68BB7\n\
+          \  C7479096 B4CB2D62 EA2F505D C7B062A4 6811D95B E8250FC4 5D5D5FB8 8F27D191\n\
+          \  C55F0D76 61F9A4CD 3D992327 A8BB03BD 4E6D7069 7CBADF8B DF5F4368 95135E44\n\
+          \  DFC7C6CF 04DD7FD1 02030100 01A34230 40300E06 03551D0F 0101FF04 04030201\n\
+          \  06300F06 03551D13 0101FF04 05300301 01FF301D 0603551D 0E041604 1449DC85\n\
+          \  4B3D31E5 1B3E6A17 606AF333 3D3B4C73 E8300D06 092A8648 86F70D01 010B0500\n\
+          \  03820101 00507F24 D3932A66 86025D9F E838AE5C 6D4DF6B0 49631C78 240DA905\n\
+          \  604EDCDE FF4FED2B 77FC460E CD636FDB DD44681E 3A5673AB 9093D3B1 6C9E3D8B\n\
+          \  D98987BF E40CBD9E 1AECA0C2 2189BB5C 8FA85686 CD98B646 5575B146 8DFC66A8\n\
+          \  467A3DF4 4D565700 6ADF0F0D CF835015 3C04FF7C 21E878AC 11BA9CD2 55A9232C\n\
+          \  7CA7B7E6 C1AF74F6 152E99B7 B1FCF9BB E973DE7F 5BDDEB86 C71E3B49 1765308B\n\
+          \  5FB0DA06 B92AFE7F 494E8A9E 07B85737 F3A58BE1 1A48A229 C37C1E69 39F08678\n\
+          \  80DDCD16 D6BACECA EEBC7CF9 8428787B 35202CDC 60E4616A B623CDBD 230E3AFB\n\
+          \  418616A9 4093E049 4D10AB75 27E86F73 932E35B5 8862FDAE 0275156F 719BB2F0\n\
+          \  D697DF7F 28\n  \tquit\ncrypto pki certificate chain TP-self-signed-3339622006\n\
+          \ certificate self-signed 01\n  30820330 30820218 A0030201 02020101 300D0609\
+          \ 2A864886 F70D0101 0B050030\n  31312F30 2D060355 04030C26 494F532D 53656C66\
+          \ 2D536967 6E65642D 43657274\n  69666963 6174652D 33333339 36323230 3036301E\
+          \ 170D3234 30383233 31383234\n  32375A17 0D333430 38323331 38323432 375A3031\
+          \ 312F302D 06035504 030C2649\n  4F532D53 656C662D 5369676E 65642D43 65727469\
+          \ 66696361 74652D33 33333936\n  32323030 36308201 22300D06 092A8648 86F70D01\
+          \ 01010500 0382010F 00308201\n  0A028201 0100A0D6 77EB51EE 31A760FF C63B91F6\
+          \ 5D51A0DA 004A4F7B 666F699B\n  3E2F1074 EB00DF3A 75AB9679 4465E323 CFB222CF\
+          \ 85B24DD1 83BB6B57 D2EC2EE8\n  6F085419 76497788 A0DA1A3E FE5AF231 5E037271\
+          \ F2D257F4 92168505 A4FA3982\n  604D769C AFB51B73 B03B3696 397AE5F9 1E54CD49\
+          \ D142FDAE 73497434 409DFD1C\n  2946349D A02D5667 79537352 A790EB48 D728F1BA\
+          \ 3FBE5949 0308773A D9161D87\n  22E9DCE1 EB2C5210 6E268531 AE858B76 21FBFDDE\
+          \ 675C7169 BF823282 D22BDA1A\n  9852D765 CEB863B7 3F10CCB3 B17DC0C8 4C4FF11B\
+          \ 396C035B 2BA41B8E CC530FE3\n  72D0C1F1 C21E421A 7FD69471 FD019C84 A0632BA4\
+          \ 08F7ADCA 745B3959 84648817\n  AC35EC0D E4F50203 010001A3 53305130 1D060355\
+          \ 1D0E0416 0414E0BF 61040330\n  094828A3 CA833B80 2128FD99 228A301F 0603551D\
+          \ 23041830 168014E0 BF610403\n  30094828 A3CA833B 802128FD 99228A30 0F060355\
+          \ 1D130101 FF040530 030101FF\n  300D0609 2A864886 F70D0101 0B050003 82010100\
+          \ 4930F408 86420407 79B73286\n  FACCC243 C3AF9751 2341B5EE 5A1537E3 F2BAF246\
+          \ E03629FA EC4AC093 8E4765E8\n  7712B1A4 65411B87 43B794BC 3B805C9E F49107A2\
+          \ B114BEFB 1C05A95F 025D8EE9\n  D851BA24 9E4D38FC FBF7137B 29340CF9 59EDBD28\
+          \ 8A885206 540E76ED A8E00A0C\n  E78406A2 A93B8861 093A9029 27A8AF53 284CF8AD\
+          \ ECDB747A CE7906B7 DD145ADE\n  06F78B1E CA41A335 15380527 0610B61B 289B7123\
+          \ A506E0F3 349D0783 36FEEB7F\n  A5EFA27B D277E7FD 83A7FFE9 AD5997D4 CD68A7E3\
+          \ F7ED6E17 AB05290E 2B368286\n  DDC9E5B0 87A2BC6B B281CB6D 3BFFCBBB 157CE120\
+          \ 9BBF75D4 C8B59C3C 8F636D6F\n  B4A582CB 7D22081D B2247542 7C6F84AB CF33340C\n\
+          \  \tquit\n!\n!\n!\n!\n!\n!\n!\n!\n!\nlicense udi pid C8000V sn 9505CW297BF\n\
+          license boot level network-advantage addon dna-advantage\nmemory free low-watermark\
+          \ processor 201711\ndiagnostic bootup level minimal\n!\n!\nspanning-tree\
+          \ extend system-id\n!\n!\n!\nusername cisco privilege 15 password 7 030752180500\n\
+          !\nredundancy\n!\n!\n!\n!\n!\n!\n!\ncdp run\n!\n!\n!\n!\n!\n!\n!\n!\n!\n\
+          crypto isakmp policy 1\n encryption aes 256\n hash sha512\n authentication\
+          \ pre-share\n group 14\n lifetime 1200\ncrypto isakmp key cisco address\
+          \ 0.0.0.0\n!\n!\n!\n!\ncrypto gdoi group LAB-GDOI\n identity number 10\n\
+          \ server address ipv4 10.10.0.10\n client registration interface Loopback10\n\
+          !\n!\ncrypto map GET-MAP 10 gdoi\n set group LAB-GDOI\n!\n!\n!\n!\n!\n!\n\
+          !\n!\ninterface Loopback0\n description Go fuck yourself San Diego\n vrf\
+          \ forwarding LAB\n ip address 10.10.0.2 255.255.255.255\n!\ninterface Loopback10\n\
+          \ ip address 10.10.10.2 255.255.255.255\n!\ninterface VirtualPortGroup0\n\
+          \ ip address 192.168.255.1 255.255.255.0\n ip nat inside\n!\ninterface GigabitEthernet1\n\
+          \ ip address 10.10.1.5 255.255.255.248 secondary\n ip address 10.10.1.2\
+          \ 255.255.255.248\n ip nat outside\n negotiation auto\n cdp enable\n!\n\
+          interface GigabitEthernet2\n vrf forwarding LAB\n ip address 10.10.2.2 255.255.255.252\n\
+          \ negotiation auto\n cdp enable\n!\ninterface GigabitEthernet3\n ip address\
+          \ 172.19.1.2 255.255.255.252\n negotiation auto\n cdp enable\n crypto map\
+          \ GET-MAP\n!\ninterface GigabitEthernet4\n no ip address\n shutdown\n negotiation\
+          \ auto\n cdp enable\n!\ninterface GigabitEthernet5\n no ip address\n shutdown\n\
+          \ negotiation auto\n cdp enable\n!\ninterface GigabitEthernet6\n no ip address\n\
+          \ shutdown\n negotiation auto\n cdp enable\n!\ninterface GigabitEthernet7\n\
+          \ no ip address\n shutdown\n negotiation auto\n cdp enable\n!\ninterface\
+          \ GigabitEthernet8\n no ip address\n shutdown\n negotiation auto\n cdp enable\n\
+          !\ninterface vasileft1\n ip address 192.168.1.1 255.255.255.252\n no keepalive\n\
+          !\ninterface vasiright1\n vrf forwarding LAB\n ip address 192.168.1.2 255.255.255.252\n\
+          \ no keepalive\n!\nl3vpn encapsulation ip RR-IN__LAB\n transport ipv4 source\
+          \ Loopback10\n protocol gre key 9999999\n mpls mtu max\n!\nrouter eigrp\
+          \ GW1\n !\n address-family ipv4 unicast autonomous-system 65000\n  !\n \
+          \ af-interface default\n   passive-interface\n  exit-af-interface\n  !\n\
+          \  af-interface GigabitEthernet1\n   no passive-interface\n  exit-af-interface\n\
+          \  !\n  topology base\n   redistribute bgp 65000 metric 10000000 1000 255\
+          \ 1 1500\n  exit-af-topology\n  network 10.10.0.0 0.0.255.255\n  eigrp router-id\
+          \ 10.10.0.2\n exit-address-family\n!\nrouter bgp 65000\n bgp router-id 10.10.10.2\n\
+          \ bgp always-compare-med\n bgp log-neighbor-changes\n bgp bestpath med missing-as-worst\n\
+          \ bgp bestpath cost-community ignore\n no bgp default ipv4-unicast\n timers\
+          \ bgp 15 45\n neighbor iBGP peer-group\n neighbor iBGP remote-as 65000\n\
+          \ neighbor iBGP ao BGP_TCPAO include-tcp-options\n neighbor iBGP update-source\
+          \ Loopback10\n neighbor 10.10.0.10 peer-group iBGP\n neighbor 172.19.1.1\
+          \ remote-as 200\n neighbor 192.168.1.2 remote-as 65100\n neighbor 192.168.1.2\
+          \ local-as 65200 no-prepend replace-as\n !\n address-family ipv4\n  network\
+          \ 10.0.0.0 mask 255.255.255.0\n  network 10.10.0.10 mask 255.255.255.255\n\
+          \  network 10.10.10.1 mask 255.255.255.255\n  network 10.10.10.2 mask 255.255.255.255\n\
+          \  network 172.19.1.0 mask 255.255.255.252\n  neighbor 172.19.1.1 activate\n\
+          \  neighbor 172.19.1.1 send-community both\n  neighbor 172.19.1.1 allowas-in\
+          \ 1\n  neighbor 172.19.1.1 soft-reconfiguration inbound\n  neighbor 192.168.1.2\
+          \ activate\n  neighbor 192.168.1.2 send-community both\n  neighbor 192.168.1.2\
+          \ soft-reconfiguration inbound\n  neighbor 192.168.1.2 route-map LAB_NET\
+          \ out\n  maximum-paths 2\n  maximum-paths ibgp 2\n exit-address-family\n\
+          \ !\n address-family vpnv4\n  neighbor iBGP send-community both\n  neighbor\
+          \ iBGP route-map RR-IN__LAB in\n  neighbor 10.10.0.10 activate\n exit-address-family\n\
+          \ !\n address-family ipv4 vrf LAB\n  bgp router-id 10.10.0.2\n  network\
+          \ 0.0.0.0\n  network 10.0.0.0 mask 255.255.255.0\n  network 10.10.0.2 mask\
+          \ 255.255.255.255\n  network 10.10.1.0 mask 255.255.255.248\n  network 10.10.2.0\
+          \ mask 255.255.255.252\n  neighbor 10.10.2.1 remote-as 64001\n  neighbor\
+          \ 10.10.2.1 local-as 64002 no-prepend replace-as\n  neighbor 10.10.2.1 activate\n\
+          \  neighbor 10.10.2.1 send-community both\n  neighbor 10.10.2.1 allowas-in\
+          \ 1\n  neighbor 10.10.2.1 soft-reconfiguration inbound\n  neighbor 192.168.1.1\
+          \ remote-as 65200\n  neighbor 192.168.1.1 local-as 65100 no-prepend replace-as\n\
+          \  neighbor 192.168.1.1 activate\n  neighbor 192.168.1.1 send-community\
+          \ both\n  neighbor 192.168.1.1 soft-reconfiguration inbound\n  neighbor\
+          \ 192.168.1.1 route-map VRF_NET out\n exit-address-family\n!\niox\nip forward-protocol\
+          \ nd\nip forward-protocol udp\n!\nip bgp-community new-format\nno ip http\
+          \ server\nip http secure-server\nip tacacs source-interface Loopback10\n\
+          ip nat inside source static 192.168.255.2 10.10.1.5\nip ssh bulk-mode 131072\n\
+          !\nip prefix-list LAB_NET seq 10 permit 10.0.0.0/24\n!\nip prefix-list VRF_NET\
+          \ seq 10 permit 10.30.0.0/16\n!\nlogging source-interface Loopback10\nlogging\
+          \ host 10.0.0.24\nlogging host 10.0.0.84\nroute-map VRF_NET permit 10\n\
+          \ match ip address prefix-list VRF_NET\n!\nroute-map LAB_NET permit 10\n\
+          \ match ip address prefix-list LAB_NET\n!\nroute-map RR-IN__LAB permit 10\n\
+          \ set ip next-hop encapsulate l3vpn RR-IN__LAB\n!\n!\n!\n!\n!\n!\ncontrol-plane\n\
+          !\n!\nmgcp behavior rsip-range tgcp-only\nmgcp behavior comedia-role none\n\
+          mgcp behavior comedia-check-media-src disable\nmgcp behavior comedia-sdp-force\
+          \ disable\n!\nmgcp profile default\n!\n!\n!\n!\n!\nalias exec q exit\n!\n\
+          line con 0\n exec-timeout 0 0\n logging synchronous\n stopbits 1\nline aux\
+          \ 0\nline vty 0 4\n exec-timeout 0 0\n logging synchronous\n transport input\
+          \ ssh\n!\nntp logging\nntp server 10.10.10.1 prefer\n!\n!\n!\n!\n!\n!\n\
+          app-hosting appid guestshell\n app-vnic gateway0 virtualportgroup 0 guest-interface\
+          \ 0\n  guest-ipaddress 192.168.255.2 netmask 255.255.255.0\n app-default-gateway\
+          \ 192.168.255.1 guest-interface 0\n start\nrestconf\nend"
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n9
+    image_definition: null
+    label: cr1-2
+    node_definition: cat8000v
+    parameters: {}
+    ram: null
+    tags: []
+    x: -280
+    y: -520
+    interfaces:
+      - id: i0
+        label: Loopback0
+        mac_address: null
+        type: loopback
+      - id: i1
+        label: GigabitEthernet1
+        mac_address: null
+        type: physical
+        slot: 0
+      - id: i2
+        label: GigabitEthernet2
+        mac_address: null
+        type: physical
+        slot: 1
+      - id: i3
+        label: GigabitEthernet3
+        mac_address: null
+        type: physical
+        slot: 2
+      - id: i4
+        label: GigabitEthernet4
+        mac_address: null
+        type: physical
+        slot: 3
+      - id: i5
+        label: GigabitEthernet5
+        mac_address: null
+        type: physical
+        slot: 4
+      - id: i6
+        label: GigabitEthernet6
+        mac_address: null
+        type: physical
+        slot: 5
+      - id: i7
+        label: GigabitEthernet7
+        mac_address: null
+        type: physical
+        slot: 6
+      - id: i8
+        label: GigabitEthernet8
+        mac_address: null
+        type: physical
+        slot: 7
+  - boot_disk_size: null
+    configuration: []
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n10
+    image_definition: null
+    label: h1
+    node_definition: ubuntu
+    parameters: {}
+    ram: null
+    tags: []
+    x: -400
+    y: 80
+    interfaces:
+      - id: i0
+        label: ens2
+        mac_address: null
+        type: physical
+        slot: 0
+      - id: i1
+        label: ens3
+        mac_address: null
+        type: physical
+        slot: 1
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: "Building configuration...\n\nCurrent configuration : 5457 bytes\n\
+          !\n! Last configuration change at 19:56:14 UTC Tue Jan 13 2026 by cisco\n\
+          !\nversion 17.16\nservice timestamps debug datetime msec\nservice timestamps\
+          \ log datetime msec\nservice password-encryption\n!\nhostname ssw1-2\n!\n\
+          boot-start-marker\nboot-end-marker\n!\n!\nno logging console\naaa new-model\n\
+          !\n!\naaa group server tacacs+ LAB\n server-private 10.0.0.84 key 7 011E1F175E08140A35474B10\n\
+          \ ip tacacs source-interface Loopback10\n!\naaa authentication login default\
+          \ group LAB local\naaa authentication login no_tacacs local\naaa authentication\
+          \ dot1x group group radius\naaa authorization config-commands\naaa authorization\
+          \ exec default group LAB local\naaa authorization commands 1 default group\
+          \ LAB if-authenticated\naaa authorization commands 15 default group LAB\
+          \ if-authenticated\naaa accounting exec default start-stop group LAB\naaa\
+          \ accounting commands 1 default start-stop group LAB\naaa accounting commands\
+          \ 15 default start-stop group LAB\naaa accounting connection default start-stop\
+          \ group LAB\n!\n!\naaa session-id common\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n\
+          !\n!\n!\nip audit notify log\nip audit po max-events 100\nno ip domain lookup\n\
+          ip domain name cml.lab\nip cef\nlogin on-success log\nno ipv6 cef\n!\n!\n\
+          !\n!\n!\nudld enable\n\nudld message time 7\n\n!\n!\nvtp domain LAB\nvtp\
+          \ mode off\n!\ncrypto pki trustpoint TP-self-signed-131184646\n enrollment\
+          \ selfsigned\n subject-name cn=IOS-Self-Signed-Certificate-131184646\n revocation-check\
+          \ none\n rsakeypair TP-self-signed-131184646\n hash sha256\n!\n!\ncrypto\
+          \ pki certificate chain TP-self-signed-131184646\n certificate self-signed\
+          \ 01\n  3082032E 30820216 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030\n\
+          \  30312E30 2C060355 04030C25 494F532D 53656C66 2D536967 6E65642D 43657274\n\
+          \  69666963 6174652D 31333131 38343634 36301E17 0D323430 38303431 32323030\n\
+          \  315A170D 33343038 30343132 32303031 5A303031 2E302C06 03550403 0C25494F\n\
+          \  532D5365 6C662D53 69676E65 642D4365 72746966 69636174 652D3133 31313834\n\
+          \  36343630 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 82010A02\n\
+          \  82010100 E39ABCCB D6EFB4EC 1D7C4C51 D095505D 02A291C9 13DB9417 7F52ABD4\n\
+          \  C61584F3 799ADC84 B921E805 A76AFB64 68365E31 B301D39D DA61E601 825FEF89\n\
+          \  2194457C 986478A9 3F378E25 4B7AEAE8 753B7AF4 32BEFDF4 08E1FDBB EBAFC988\n\
+          \  93EE5466 919EA55D DED4A01F 0F1CEACD 550820D6 E070C397 EAA55DB4 78C07E3A\n\
+          \  EF8BD710 417B2D13 154DC178 A5684440 C2CE25B1 412E4AAF BC50B2D5 C5D2D407\n\
+          \  F40EE6A2 3E27F35F FAD2FA0B ECF79226 9C981D84 63FA8D19 1FAF0D31 0B658EF6\n\
+          \  756A2D89 089D7F15 CB6121DB 1B9A5095 D8C7E29D 57AF6AAE 2C792F70 C5E830A7\n\
+          \  FF2B0E9F D1437489 7ED5EB4D E80C2E54 7BB0FD16 7D2EE02B 1C8DC539 8781DD0C\n\
+          \  46946E39 02030100 01A35330 51301D06 03551D0E 04160414 0CC5AA64 33BDC98A\n\
+          \  2559BB89 B0C4F2B9 388824F7 301F0603 551D2304 18301680 140CC5AA 6433BDC9\n\
+          \  8A2559BB 89B0C4F2 B9388824 F7300F06 03551D13 0101FF04 05300301 01FF300D\n\
+          \  06092A86 4886F70D 01010B05 00038201 0100C9C3 6633400F F60D74BC 921F653E\n\
+          \  6E6C8340 80404F77 4B36DB95 3D38A19B 9E4839A6 EDD48DD6 5F2147F3 7F036E1A\n\
+          \  E8E2E809 793B225E 59B3D8DE 55F33FBA 3E48F324 71103AD4 C21E0393 46E82D88\n\
+          \  06BA3AAD 7B35620F 2EDD615A 23E92158 4CAF0C38 56CB8FA4 AD9ED150 7CB9D29A\n\
+          \  21EF4449 4C4A0643 F0B99F7C 5079C03B AB432F3F E45C2B39 28D2AE88 72416A18\n\
+          \  2C689091 ACD21C1D D6BFD9FA 7CD4DA41 894B3DFF E7DEC270 F92B5D4C C391BA8C\n\
+          \  DFA4A14C 3609E2BC 13F263BA 9EE7CB47 A0AD86C6 AD31D59D FBA2B10E 990BA58C\n\
+          \  6CC74CAC B22B60BA 3780021F 353A3E3E F4C43AE0 7678E030 71BF76A4 D6B23D67\n\
+          \  5CDB84B5 4A8BA457 E485C606 61161375 1332\n  \tquit\n!\n!\nmemory free\
+          \ low-watermark processor 80589\n!\n!\nspanning-tree mode mst\nspanning-tree\
+          \ loopguard default\nspanning-tree portfast default\nspanning-tree portfast\
+          \ bpduguard default\nspanning-tree extend system-id\nspanning-tree uplinkfast\n\
+          spanning-tree pathcost method long\n!\nspanning-tree mst configuration\n\
+          \ name SingleInstance\n revision 1\n instance 1 vlan 1-4094\n!\nspanning-tree\
+          \ mst 0-1 priority 4096\ndot1x system-auth-control\n!\n!\nusername cisco\
+          \ privilege 15 password 7 094F471A1A0A\n!\nvlan internal allocation policy\
+          \ ascending\n!\nvlan 99,218,1110\n!\n!\n!\n!\n!\ninterface Loopback0\n description\
+          \ Go fuck yourself San Diego\n ip address 10.30.0.11 255.255.255.255\n!\n\
+          interface Port-channel6\n switchport trunk encapsulation dot1q\n switchport\
+          \ trunk native vlan 99\n switchport mode trunk\n!\ninterface Ethernet0/0\n\
+          \ switchport trunk encapsulation dot1q\n switchport trunk native vlan 99\n\
+          \ switchport mode trunk\n channel-group 6 mode active\n!\ninterface Ethernet0/1\n\
+          \ switchport access vlan 218\n switchport mode access\n!\ninterface Ethernet0/2\n\
+          \ switchport trunk encapsulation dot1q\n switchport trunk native vlan 99\n\
+          \ switchport mode trunk\n channel-group 6 mode active\n!\ninterface Ethernet0/3\n\
+          !\ninterface Ethernet1/0\n!\ninterface Ethernet1/1\n!\ninterface Ethernet1/2\n\
+          !\ninterface Ethernet1/3\n!\ninterface Vlan99\n ip address 10.30.25.2 255.255.255.0\n\
+          !\ninterface Vlan218\n ip address 10.30.218.1 255.255.255.0\n!\ninterface\
+          \ Vlan1110\n ip address 10.30.111.2 255.255.255.252\n!\n!\nrouter eigrp\
+          \ 7\n network 10.0.0.0\n passive-interface default\n no passive-interface\
+          \ Vlan1110\n!\nip forward-protocol nd\nip forward-protocol udp\n!\n!\nip\
+          \ http server\nip http secure-server\nip ssh bulk-mode 131072\nip scp server\
+          \ enable\nip route 0.0.0.0 0.0.0.0 10.30.25.1\n!\nno logging btrace\nlogging\
+          \ source-interface Loopback0\nlogging host 10.0.0.84\n!\n!\n!\n!\n!\ncontrol-plane\n\
+          !\n!\nalias exec q exit\n!\nline con 0\n exec-timeout 0 0\n logging synchronous\n\
+          line aux 0\nline vty 0 4\n exec-timeout 0 0\n logging synchronous\n transport\
+          \ input ssh\n!\nntp logging\nntp server 10.10.0.1 prefer\n!\nend"
+    cpu_limit: 80
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n11
+    image_definition: null
+    label: ssw1-2
+    node_definition: ioll2-xe
+    parameters: {}
+    ram: null
+    tags: []
+    x: -120
+    y: -80
+    interfaces:
+      - id: i0
+        label: Loopback0
+        mac_address: null
+        type: loopback
+      - id: i1
+        label: Ethernet0/0
+        mac_address: null
+        type: physical
+        slot: 0
+      - id: i2
+        label: Ethernet0/1
+        mac_address: null
+        type: physical
+        slot: 1
+      - id: i3
+        label: Ethernet0/2
+        mac_address: null
+        type: physical
+        slot: 2
+      - id: i4
+        label: Ethernet0/3
+        mac_address: null
+        type: physical
+        slot: 3
+      - id: i5
+        label: Ethernet1/0
+        mac_address: null
+        type: physical
+        slot: 4
+      - id: i6
+        label: Ethernet1/1
+        mac_address: null
+        type: physical
+        slot: 5
+      - id: i7
+        label: Ethernet1/2
+        mac_address: null
+        type: physical
+        slot: 6
+      - id: i8
+        label: Ethernet1/3
+        mac_address: null
+        type: physical
+        slot: 7
+  - boot_disk_size: null
+    configuration:
+      - name: user-data
+        content: |-
+          #cloud-config
+          hostname: inserthostname-here
+          manage_etc_hosts: True
+          system_info:
+            default_user:
+              name: cisco
+          password: cisco
+          chpasswd: { expire: False }
+          ssh_pwauth: True
+          ssh_authorized_keys:
+            - your-ssh-pubkey-line-goes-here
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n12
+    image_definition: null
+    label: h2
+    node_definition: ubuntu
+    parameters: {}
+    ram: null
+    tags: []
+    x: -120
+    y: 80
+    interfaces:
+      - id: i0
+        label: ens2
+        mac_address: null
+        type: physical
+        slot: 0
+      - id: i1
+        label: ens3
+        mac_address: null
+        type: physical
+        slot: 1
+links:
+  - id: l0
+    n1: n1
+    n2: n4
+    i1: i1
+    i2: i2
+    conditioning: {}
+    label: rr1-1-Ethernet0/0<->usw1-port2
+  - id: l1
+    n1: n6
+    n2: n2
+    i1: i2
+    i2: i3
+    conditioning: {}
+    label: sr1-1-Ethernet0/1<->sp-1-Ethernet0/2
+  - id: l2
+    n1: n6
+    n2: n5
+    i1: i1
+    i2: i1
+    conditioning: {}
+    label: sr1-1-Ethernet0/0<->ssw1-1-Ethernet0/0
+  - id: l3
+    n1: n7
+    n2: n3
+    i1: i2
+    i2: i3
+    conditioning: {}
+    label: sr1-2-Ethernet0/1<->sp-2-Ethernet0/2
+  - id: l4
+    n1: n7
+    n2: n5
+    i1: i1
+    i2: i2
+    conditioning: {}
+    label: sr1-2-Ethernet0/0<->ssw1-1-Ethernet0/1
+  - id: l5
+    n1: n8
+    n2: n0
+    i1: i8
+    i2: i0
+    conditioning: {}
+    label: cr1-1-GigabitEthernet8<->ext-conn-0-port
+  - id: l6
+    n1: n8
+    n2: n4
+    i1: i1
+    i2: i0
+    conditioning: {}
+    label: cr1-1-GigabitEthernet1<->usw1-port0
+  - id: l7
+    n1: n8
+    n2: n2
+    i1: i3
+    i2: i1
+    conditioning: {}
+    label: cr1-1-GigabitEthernet3<->sp-1-Ethernet0/0
+  - id: l8
+    n1: n9
+    n2: n4
+    i1: i1
+    i2: i1
+    conditioning: {}
+    label: cr1-2-GigabitEthernet1<->usw1-port1
+  - id: l9
+    n1: n9
+    n2: n8
+    i1: i2
+    i2: i2
+    conditioning: {}
+    label: cr1-2-GigabitEthernet2<->cr1-1-GigabitEthernet2
+  - id: l10
+    n1: n9
+    n2: n3
+    i1: i3
+    i2: i1
+    conditioning: {}
+    label: cr1-2-GigabitEthernet3<->sp-2-Ethernet0/0
+  - id: l11
+    n1: n10
+    n2: n5
+    i1: i0
+    i2: i3
+    conditioning: {}
+    label: h1-ens2<->ssw1-1-Ethernet0/2
+  - id: l12
+    n1: n5
+    n2: n11
+    i1: i4
+    i2: i1
+    conditioning: {}
+    label: ssw1-1-Ethernet0/3<->ssw1-2-Ethernet0/0
+  - id: l13
+    n1: n11
+    n2: n12
+    i1: i2
+    i2: i0
+    conditioning: {}
+    label: ssw1-2-Ethernet0/1<->h2-ens2
+  - id: l14
+    n1: n5
+    n2: n11
+    i1: i5
+    i2: i3
+    conditioning: {}
+    label: ssw1-1-Ethernet1/0<->ssw1-2-Ethernet0/2
+lab:
+  description: ''
+  notes: ''
+  title: iBGP Overlay Lab
+  version: 0.3.0
