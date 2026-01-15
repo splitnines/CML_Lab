@@ -29,22 +29,22 @@ annotations:
     x1: -400.0
     y1: 40.0
     z_index: 0
+smart_annotations: []
 nodes:
   - boot_disk_size: null
     configuration:
       - name: iosxe_config.txt
-        content: "Building configuration...\n\nCurrent configuration : 7510 bytes\n\
-          !\n! Last configuration change at 18:24:01 UTC Thu Sep 18 2025\n!\nversion\
-          \ 17.13\nservice timestamps debug datetime msec\nservice timestamps log\
+        content: "Building configuration...\n\nCurrent configuration : 7486 bytes\n\
+          !\n! Last configuration change at 19:28:06 UTC Thu Jan 15 2026\n!\nversion\
+          \ 17.16\nservice timestamps debug datetime msec\nservice timestamps log\
           \ datetime msec\nservice password-encryption\nplatform qfp utilization monitor\
-          \ load 80\nplatform punt-keepalive disable-kernel-core\nplatform sslvpn\
-          \ use-pd\nplatform console serial\n!\nhostname qos-r1\n!\nboot-start-marker\n\
-          boot-end-marker\n!\n!\nno logging console\nno aaa new-model\n!\n!\n!\n!\n\
-          !\n!\n!\n!\n!\n!\n!\n!\nno ip domain lookup\nip domain name cml.lab\n!\n\
-          !\n!\nlogin on-success log\n!\n!\nsubscriber templating\n!\npae\n!\n!\n\
-          crypto pki trustpoint SLA-TrustPoint\n enrollment pkcs12\n revocation-check\
-          \ crl\n hash sha256\n!\ncrypto pki trustpoint TP-self-signed-2477503210\n\
-          \ enrollment selfsigned\n subject-name cn=IOS-Self-Signed-Certificate-2477503210\n\
+          \ load 80\nplatform sslvpn use-pd\nplatform console serial\n!\nhostname\
+          \ qos-r1\n!\nboot-start-marker\nboot-end-marker\n!\n!\nno logging console\n\
+          no aaa new-model\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\nno ip domain lookup\n\
+          ip domain name cml.lab\n!\n!\n!\nlogin on-success log\n!\n!\nsubscriber\
+          \ templating\n!\n!\n!\ncrypto pki trustpoint SLA-TrustPoint\n enrollment\
+          \ pkcs12\n revocation-check crl\n hash sha256\n!\ncrypto pki trustpoint\
+          \ TP-self-signed-2477503210\n enrollment selfsigned\n subject-name cn=IOS-Self-Signed-Certificate-2477503210\n\
           \ revocation-check none\n rsakeypair TP-self-signed-2477503210\n hash sha256\n\
           !\n!\ncrypto pki certificate chain SLA-TrustPoint\n certificate ca 01\n\
           \  30820321 30820209 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030\n\
@@ -99,42 +99,42 @@ nodes:
           \ B8026FC4 2B75CADC 2A62F031\n  9EA87313 FCA9C289 0B94759C 84D95C7F E5108BE6\
           \ 09A1757E 9026092A 8282A35B\n  E5438490 145A5D5D 30552B6E 03D58A0C 4880C918\
           \ DEC081CC D0574853 88B6822F\n  E80301E5 FE36A65E B772F685 1CA87949 288D0E0E\n\
-          \  \tquit\n!\n!\nlicense udi pid C8000V sn 9DZRDN38I7V\nmemory free low-watermark\
+          \  \tquit\n!\n!\nlicense udi pid C8000V sn 9RP7WOZXKK1\nmemory free low-watermark\
           \ processor 201711\ndiagnostic bootup level minimal\n!\n!\n!\nusername cisco\
-          \ privilege 15 password 7 02050D480809\n!\nredundancy\n!\n!\n!\n!\nclass-map\
-          \ match-any PORT_9030\n match access-group name PORT_9030\n match dscp default\n\
-          class-map match-any PORT_9020\n match access-group name PORT_9020\n match\
-          \ dscp ef\nclass-map match-any PORT_9010\n match dscp af42\n match access-group\
-          \ name PORT_9010\n!\npolicy-map QOS-INGRESS\n class PORT_9010\n  set dscp\
-          \ af42\n class PORT_9020\n  set dscp ef\n class PORT_9030\n  set dscp default\n\
-          policy-map QOS-EGRESS\n class PORT_9010\n  bandwidth percent 25\n class\
-          \ PORT_9020\n  priority percent 50\n class class-default\n  bandwidth percent\
-          \ 25\n  queue-limit 128 packets\n  random-detect dscp-based\npolicy-map\
-          \ QOS-SHAPER\n class class-default\n  shape average 2000000\n  service-policy\
-          \ QOS-EGRESS\n!\n!\n!\n!\n!\n!\ninterface Loopback0\n ip address 10.254.0.1\
-          \ 255.255.255.255\n!\ninterface GigabitEthernet1\n ip address 10.100.0.1\
-          \ 255.255.255.0\n load-interval 30\n negotiation auto\n service-policy input\
-          \ QOS-INGRESS\n!\ninterface GigabitEthernet2\n bandwidth 2000\n ip address\
-          \ 10.255.0.1 255.255.255.252\n ip ospf network point-to-point\n load-interval\
-          \ 30\n negotiation auto\n service-policy output QOS-SHAPER\n!\ninterface\
-          \ GigabitEthernet3\n ip address 10.0.0.248 255.255.255.0\n negotiation auto\n\
-          \ service-policy output QOS-SHAPER\n!\ninterface GigabitEthernet4\n no ip\
-          \ address\n shutdown\n negotiation auto\n!\ninterface GigabitEthernet5\n\
+          \ privilege 15 password 7 02050D480809\n!\nredundancy\n!\n!\n!\n!\n!\n!\n\
+          class-map match-any PORT_9030\n match access-group name PORT_9030\n match\
+          \ dscp default\nclass-map match-any PORT_9020\n match access-group name\
+          \ PORT_9020\n match dscp ef\nclass-map match-any PORT_9010\n match dscp\
+          \ af42\n match access-group name PORT_9010\n!\npolicy-map QOS-INGRESS\n\
+          \ class PORT_9010\n  set dscp af42\n class PORT_9020\n  set dscp ef\n class\
+          \ PORT_9030\n  set dscp default\npolicy-map QOS-EGRESS\n class PORT_9010\n\
+          \  bandwidth percent 25\n class PORT_9020\n  priority percent 50\n class\
+          \ class-default\n  bandwidth percent 25\n  queue-limit 128 packets\n  random-detect\
+          \ dscp-based\npolicy-map QOS-SHAPER\n class class-default\n  shape average\
+          \ 2000000\n  service-policy QOS-EGRESS\n!\n!\n!\n!\n!\n!\ninterface Loopback0\n\
+          \ ip address 10.254.0.1 255.255.255.255\n!\ninterface GigabitEthernet1\n\
+          \ ip address 10.100.0.1 255.255.255.0\n load-interval 30\n negotiation auto\n\
+          \ service-policy input QOS-INGRESS\n!\ninterface GigabitEthernet2\n bandwidth\
+          \ 2000\n ip address 10.255.0.1 255.255.255.252\n ip ospf network point-to-point\n\
+          \ load-interval 30\n negotiation auto\n service-policy output QOS-SHAPER\n\
+          !\ninterface GigabitEthernet3\n ip address 10.0.0.248 255.255.255.0\n negotiation\
+          \ auto\n service-policy output QOS-SHAPER\n!\ninterface GigabitEthernet4\n\
+          \ no ip address\n shutdown\n negotiation auto\n!\ninterface GigabitEthernet5\n\
           \ no ip address\n shutdown\n negotiation auto\n!\ninterface GigabitEthernet6\n\
           \ no ip address\n shutdown\n negotiation auto\n!\ninterface GigabitEthernet7\n\
           \ no ip address\n shutdown\n negotiation auto\n!\ninterface GigabitEthernet8\n\
           \ no ip address\n shutdown\n negotiation auto\n!\nrouter ospf 1\n router-id\
           \ 10.254.0.1\n passive-interface GigabitEthernet1\n passive-interface GigabitEthernet3\n\
-          \ network 10.0.0.0 0.255.255.255 area 0\n!\nip forward-protocol nd\n!\n\
-          no ip http server\nip http secure-server\nip ssh bulk-mode 131072\n!\n!\n\
-          ip access-list extended PORT_9010\n 10 permit tcp any eq 9010 any\n 20 permit\
-          \ tcp any any eq 9010\n 30 permit udp any eq 9010 any\n 40 permit udp any\
-          \ any eq 9010\nip access-list extended PORT_9020\n 10 permit tcp any eq\
-          \ 9020 any\n 20 permit tcp any any eq 9020\n 30 permit udp any eq 9020 any\n\
-          \ 40 permit udp any any eq 9020\nip access-list extended PORT_9030\n 10\
-          \ permit tcp any eq 9030 any\n 20 permit tcp any any eq 9030\n 30 permit\
+          \ network 10.0.0.0 0.255.255.255 area 0\n!\nip forward-protocol nd\nip forward-protocol\
+          \ udp\n!\nno ip http server\nip http secure-server\nip ssh bulk-mode 131072\n\
+          !\nip access-list extended PORT_9010\n 10 permit tcp any eq 9010 any\n 20\
+          \ permit tcp any any eq 9010\n 30 permit udp any eq 9010 any\n 40 permit\
+          \ udp any any eq 9010\nip access-list extended PORT_9020\n 10 permit tcp\
+          \ any eq 9020 any\n 20 permit tcp any any eq 9020\n 30 permit udp any eq\
+          \ 9020 any\n 40 permit udp any any eq 9020\nip access-list extended PORT_9030\n\
+          \ 10 permit tcp any eq 9030 any\n 20 permit tcp any any eq 9030\n 30 permit\
           \ udp any eq 9030 any\n 40 permit udp any any eq 9030\nlogging host 10.0.0.84\n\
-          !\n!\n!\ncontrol-plane\n!\nalias exec q exit\n!\nline con 0\n exec-timeout\
+          !\n!\ncontrol-plane\n!\nalias exec q exit\n!\nline con 0\n exec-timeout\
           \ 0 0\n logging synchronous\n stopbits 1\nline aux 0\nline vty 0 4\n exec-timeout\
           \ 0 0\n logging synchronous\n login local\n transport input ssh\n!\n!\n\
           !\n!\n!\n!\n!\nend"
@@ -154,39 +154,48 @@ nodes:
     interfaces:
       - id: i0
         label: Loopback0
+        mac_address: null
         type: loopback
       - id: i1
         label: GigabitEthernet1
-        slot: 0
+        mac_address: null
         type: physical
+        slot: 0
       - id: i2
         label: GigabitEthernet2
-        slot: 1
+        mac_address: null
         type: physical
+        slot: 1
       - id: i3
         label: GigabitEthernet3
-        slot: 2
+        mac_address: null
         type: physical
+        slot: 2
       - id: i4
         label: GigabitEthernet4
-        slot: 3
+        mac_address: null
         type: physical
+        slot: 3
       - id: i5
         label: GigabitEthernet5
-        slot: 4
+        mac_address: null
         type: physical
+        slot: 4
       - id: i6
         label: GigabitEthernet6
-        slot: 5
+        mac_address: null
         type: physical
+        slot: 5
       - id: i7
         label: GigabitEthernet7
-        slot: 6
+        mac_address: null
         type: physical
+        slot: 6
       - id: i8
         label: GigabitEthernet8
-        slot: 7
+        mac_address: null
         type: physical
+        slot: 7
   - boot_disk_size: null
     configuration: []
     cpu_limit: null
@@ -205,8 +214,9 @@ nodes:
     interfaces:
       - id: i0
         label: ens2
-        slot: 0
+        mac_address: null
         type: physical
+        slot: 0
   - boot_disk_size: null
     configuration: []
     cpu_limit: null
@@ -225,8 +235,9 @@ nodes:
     interfaces:
       - id: i0
         label: ens2
-        slot: 0
+        mac_address: null
         type: physical
+        slot: 0
   - boot_disk_size: null
     configuration: []
     cpu_limit: null
@@ -245,36 +256,44 @@ nodes:
     interfaces:
       - id: i0
         label: port0
-        slot: 0
+        mac_address: null
         type: physical
+        slot: 0
       - id: i1
         label: port1
-        slot: 1
+        mac_address: null
         type: physical
+        slot: 1
       - id: i2
         label: port2
-        slot: 2
+        mac_address: null
         type: physical
+        slot: 2
       - id: i3
         label: port3
-        slot: 3
+        mac_address: null
         type: physical
+        slot: 3
       - id: i4
         label: port4
-        slot: 4
+        mac_address: null
         type: physical
+        slot: 4
       - id: i5
         label: port5
-        slot: 5
+        mac_address: null
         type: physical
+        slot: 5
       - id: i6
         label: port6
-        slot: 6
+        mac_address: null
         type: physical
+        slot: 6
       - id: i7
         label: port7
-        slot: 7
+        mac_address: null
         type: physical
+        slot: 7
   - boot_disk_size: null
     configuration: []
     cpu_limit: null
@@ -293,36 +312,44 @@ nodes:
     interfaces:
       - id: i0
         label: port0
-        slot: 0
+        mac_address: null
         type: physical
+        slot: 0
       - id: i1
         label: port1
-        slot: 1
+        mac_address: null
         type: physical
+        slot: 1
       - id: i2
         label: port2
-        slot: 2
+        mac_address: null
         type: physical
+        slot: 2
       - id: i3
         label: port3
-        slot: 3
+        mac_address: null
         type: physical
+        slot: 3
       - id: i4
         label: port4
-        slot: 4
+        mac_address: null
         type: physical
+        slot: 4
       - id: i5
         label: port5
-        slot: 5
+        mac_address: null
         type: physical
+        slot: 5
       - id: i6
         label: port6
-        slot: 6
+        mac_address: null
         type: physical
+        slot: 6
       - id: i7
         label: port7
-        slot: 7
+        mac_address: null
         type: physical
+        slot: 7
   - boot_disk_size: null
     configuration: []
     cpu_limit: null
@@ -341,8 +368,9 @@ nodes:
     interfaces:
       - id: i0
         label: ens2
-        slot: 0
+        mac_address: null
         type: physical
+        slot: 0
   - boot_disk_size: null
     configuration: []
     cpu_limit: null
@@ -361,8 +389,9 @@ nodes:
     interfaces:
       - id: i0
         label: ens2
-        slot: 0
+        mac_address: null
         type: physical
+        slot: 0
   - boot_disk_size: null
     configuration: []
     cpu_limit: null
@@ -381,8 +410,9 @@ nodes:
     interfaces:
       - id: i0
         label: ens2
-        slot: 0
+        mac_address: null
         type: physical
+        slot: 0
   - boot_disk_size: null
     configuration: []
     cpu_limit: null
@@ -401,23 +431,23 @@ nodes:
     interfaces:
       - id: i0
         label: ens2
-        slot: 0
+        mac_address: null
         type: physical
+        slot: 0
   - boot_disk_size: null
     configuration:
       - name: iosxe_config.txt
-        content: "Building configuration...\n\nCurrent configuration : 5882 bytes\n\
-          !\n! Last configuration change at 18:24:01 UTC Thu Sep 18 2025\n!\nversion\
-          \ 17.13\nservice timestamps debug datetime msec\nservice timestamps log\
+        content: "Building configuration...\n\nCurrent configuration : 5845 bytes\n\
+          !\n! Last configuration change at 19:28:09 UTC Thu Jan 15 2026\n!\nversion\
+          \ 17.16\nservice timestamps debug datetime msec\nservice timestamps log\
           \ datetime msec\nservice password-encryption\nplatform qfp utilization monitor\
-          \ load 80\nplatform punt-keepalive disable-kernel-core\nplatform sslvpn\
-          \ use-pd\nplatform console serial\n!\nhostname inserthostname-here\n!\n\
-          boot-start-marker\nboot-end-marker\n!\n!\nno logging console\nno aaa new-model\n\
-          !\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\nno ip domain lookup\nip domain name\
-          \ cml.lab\n!\n!\n!\nlogin on-success log\n!\n!\nsubscriber templating\n\
-          !\npae\n!\n!\ncrypto pki trustpoint SLA-TrustPoint\n enrollment pkcs12\n\
-          \ revocation-check crl\n hash sha256\n!\ncrypto pki trustpoint TP-self-signed-3312903482\n\
-          \ enrollment selfsigned\n subject-name cn=IOS-Self-Signed-Certificate-3312903482\n\
+          \ load 80\nplatform sslvpn use-pd\nplatform console serial\n!\nhostname\
+          \ qos-r2\n!\nboot-start-marker\nboot-end-marker\n!\n!\nno logging console\n\
+          no aaa new-model\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\nno ip domain lookup\n\
+          ip domain name cml.lab\n!\n!\n!\nlogin on-success log\n!\n!\nsubscriber\
+          \ templating\n!\n!\n!\ncrypto pki trustpoint SLA-TrustPoint\n enrollment\
+          \ pkcs12\n revocation-check crl\n hash sha256\n!\ncrypto pki trustpoint\
+          \ TP-self-signed-3312903482\n enrollment selfsigned\n subject-name cn=IOS-Self-Signed-Certificate-3312903482\n\
           \ revocation-check none\n rsakeypair TP-self-signed-3312903482\n hash sha256\n\
           !\n!\ncrypto pki certificate chain SLA-TrustPoint\n certificate ca 01\n\
           \  30820321 30820209 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030\n\
@@ -472,21 +502,22 @@ nodes:
           \ 2D07D20B 3AA6501D 6D609BF3\n  B2EEF347 6D6610E0 76872EE8 74199C80 A5FCAD14\
           \ C5629A28 0A3248FF 1573FB71\n  16B4ADA6 1D31DFA0 CBAC3F50 889440F5 8621429F\
           \ 96C6ED5F 6F6C4E5C 3099D9EE\n  6657DB61 7184E7D6 89E2FCDA FAC7918E 54D53C2E\n\
-          \  \tquit\n!\n!\nlicense udi pid C8000V sn 9PQXIRATZ9J\nmemory free low-watermark\
+          \  \tquit\n!\n!\nlicense udi pid C8000V sn 9AP0TE0IJPG\nmemory free low-watermark\
           \ processor 201711\ndiagnostic bootup level minimal\n!\n!\n!\nusername cisco\
           \ privilege 15 password 7 030752180500\n!\nredundancy\n!\n!\n!\n!\n!\n!\n\
-          !\n!\ninterface Loopback0\n ip address 10.254.0.2 255.255.255.255\n!\ninterface\
-          \ GigabitEthernet1\n ip address 10.255.0.2 255.255.255.252\n ip ospf network\
-          \ point-to-point\n negotiation auto\n!\ninterface GigabitEthernet2\n ip\
-          \ address 10.100.1.1 255.255.255.0\n negotiation auto\n!\ninterface GigabitEthernet3\n\
+          !\n!\n!\n!\ninterface Loopback0\n ip address 10.254.0.2 255.255.255.255\n\
+          !\ninterface GigabitEthernet1\n ip address 10.255.0.2 255.255.255.252\n\
+          \ ip ospf network point-to-point\n negotiation auto\n!\ninterface GigabitEthernet2\n\
+          \ ip address 10.100.1.1 255.255.255.0\n negotiation auto\n!\ninterface GigabitEthernet3\n\
           \ no ip address\n shutdown\n negotiation auto\n!\ninterface GigabitEthernet4\n\
           \ no ip address\n shutdown\n negotiation auto\n!\nrouter ospf 1\n router-id\
           \ 10.254.0.2\n passive-interface GigabitEthernet2\n network 10.0.0.0 0.255.255.255\
-          \ area 0\n!\nip forward-protocol nd\n!\nno ip http server\nip http secure-server\n\
-          ip ssh bulk-mode 131072\n!\n!\nlogging host 10.0.0.84\n!\n!\n!\ncontrol-plane\n\
-          !\nalias exec q exit\n!\nline con 0\n exec-timeout 0 0\n logging synchronous\n\
-          \ stopbits 1\nline aux 0\nline vty 0 4\n exec-timeout 0 0\n logging synchronous\n\
-          \ login local\n transport input ssh\n!\n!\n!\n!\n!\n!\n!\nend"
+          \ area 0\n!\nip forward-protocol nd\nip forward-protocol udp\n!\nno ip http\
+          \ server\nip http secure-server\nip ssh bulk-mode 131072\n!\nlogging host\
+          \ 10.0.0.84\n!\n!\ncontrol-plane\n!\nalias exec q exit\n!\nline con 0\n\
+          \ exec-timeout 0 0\n logging synchronous\n stopbits 1\nline aux 0\nline\
+          \ vty 0 4\n exec-timeout 0 0\n logging synchronous\n login local\n transport\
+          \ input ssh\n!\n!\n!\n!\n!\n!\n!\nend"
     cpu_limit: null
     cpus: null
     data_volume: null
@@ -503,23 +534,28 @@ nodes:
     interfaces:
       - id: i0
         label: Loopback0
+        mac_address: null
         type: loopback
       - id: i1
         label: GigabitEthernet1
-        slot: 0
+        mac_address: null
         type: physical
+        slot: 0
       - id: i2
         label: GigabitEthernet2
-        slot: 1
+        mac_address: null
         type: physical
+        slot: 1
       - id: i3
         label: GigabitEthernet3
-        slot: 2
+        mac_address: null
         type: physical
+        slot: 2
       - id: i4
         label: GigabitEthernet4
-        slot: 3
+        mac_address: null
         type: physical
+        slot: 3
   - boot_disk_size: null
     configuration:
       - name: default
@@ -540,8 +576,9 @@ nodes:
     interfaces:
       - id: i0
         label: port
-        slot: 0
+        mac_address: null
         type: physical
+        slot: 0
   - boot_disk_size: null
     configuration: []
     cpu_limit: null
@@ -560,36 +597,44 @@ nodes:
     interfaces:
       - id: i0
         label: port0
-        slot: 0
+        mac_address: null
         type: physical
+        slot: 0
       - id: i1
         label: port1
-        slot: 1
+        mac_address: null
         type: physical
+        slot: 1
       - id: i2
         label: port2
-        slot: 2
+        mac_address: null
         type: physical
+        slot: 2
       - id: i3
         label: port3
-        slot: 3
+        mac_address: null
         type: physical
+        slot: 3
       - id: i4
         label: port4
-        slot: 4
+        mac_address: null
         type: physical
+        slot: 4
       - id: i5
         label: port5
-        slot: 5
+        mac_address: null
         type: physical
+        slot: 5
       - id: i6
         label: port6
-        slot: 6
+        mac_address: null
         type: physical
+        slot: 6
       - id: i7
         label: port7
-        slot: 7
+        mac_address: null
         type: physical
+        slot: 7
 links:
   - id: l0
     n1: n1
@@ -672,4 +717,4 @@ lab:
   description: ''
   notes: ''
   title: QOS Lab
-  version: 0.2.2
+  version: 0.3.0
