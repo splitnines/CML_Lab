@@ -3,6 +3,7 @@ annotations:
     border_radius: 0
     border_style: ''
     color: '#242424FF'
+    rotation: 0
     thickness: 5
     type: rectangle
     x1: -286.0
@@ -14,6 +15,7 @@ annotations:
     border_radius: 0
     border_style: ''
     color: '#242424FF'
+    rotation: 0
     thickness: 5
     type: rectangle
     x1: -1280.0
@@ -25,6 +27,7 @@ annotations:
     border_radius: 0
     border_style: ''
     color: '#242424FF'
+    rotation: 0
     thickness: 5
     type: rectangle
     x1: -1014.0
@@ -36,6 +39,7 @@ annotations:
     border_radius: 0
     border_style: ''
     color: '#242424FF'
+    rotation: 0
     thickness: 5
     type: rectangle
     x1: -532.0
@@ -47,6 +51,7 @@ annotations:
     border_radius: 0
     border_style: ''
     color: '#242424FF'
+    rotation: 0
     thickness: 5
     type: rectangle
     x1: -135.0
@@ -58,6 +63,7 @@ annotations:
     border_radius: 0
     border_style: ''
     color: '#242424FF'
+    rotation: 0
     thickness: 5
     type: rectangle
     x1: -1174.0
@@ -155,6 +161,7 @@ annotations:
     x1: -989.0
     y1: -223.0
     z_index: 1
+smart_annotations: []
 nodes:
   - boot_disk_size: null
     configuration:
@@ -163,7 +170,7 @@ nodes:
     cpu_limit: null
     cpus: null
     data_volume: null
-    hide_links: true
+    hide_links: false
     id: n0
     image_definition: null
     label: ext-conn-0
@@ -171,20 +178,22 @@ nodes:
     parameters: {}
     ram: null
     tags: []
-    x: -520
-    y: -840
+    x: 240
+    y: -680
     interfaces:
       - id: i0
         label: port
-        slot: 0
+        mac_address: null
         type: physical
+        slot: 0
   - boot_disk_size: null
     configuration:
       - name: ios_config.txt
-        content: "Building configuration...\n\n\n\n\nCurrent configuration : 10289\
-          \ bytes\n!\n! Last configuration change at 17:03:17 PDT Tue Jun 18 2024\n\
-          !\nversion 15.9\nservice timestamps debug datetime msec\nservice timestamps\
-          \ log datetime msec\nservice password-encryption\n!\nhostname r1\n!\nboot-start-marker\n\
+        content: "Building configuration...\n\n\nCurrent configuration : 10352 bytes\n\
+          !\n! Last configuration change at 12:48:48 PST Mon Jan 26 2026\n! NVRAM\
+          \ config last updated at 10:31:32 PST Mon Jan 26 2026\n!\nversion 15.9\n\
+          service timestamps debug datetime msec\nservice timestamps log datetime\
+          \ msec\nservice password-encryption\n!\nhostname r1\n!\nboot-start-marker\n\
           boot-end-marker\n!\n!\nno logging console\n!\nno aaa new-model\n!\n!\n!\n\
           clock timezone PST -8 0\nclock summer-time PDT recurring\nmmi polling-interval\
           \ 60\nno mmi auto-configure\nno mmi pvc\nmmi snmp-timeout 180\n!\n!\n!\n\
@@ -268,7 +277,7 @@ nodes:
           \ permit 10\n match ip address 10\n set community 65001:1\n!\nsnmp-server\
           \ community cisco RO\nsnmp-server chassis-id\nsnmp-server manager\n!\naccess-list\
           \ 1 permit 10.255.0.0 0.0.255.255\naccess-list 10 permit any\n!\ncontrol-plane\n\
-          !\nbanner exec ^C\n**************************************************************************\n\
+          !\nbanner exec ^CC\n**************************************************************************\n\
           * IOSv is strictly limited to use for evaluation, demonstration and IOS\
           \  *\n* education. IOSv is provided as-is and is not supported by Cisco's\
           \      *\n* Technical Advisory Center. Any use or disclosure, in whole or\
@@ -276,7 +285,7 @@ nodes:
           \ for any       *\n* purposes is expressly prohibited except as otherwise\
           \ authorized by     *\n* Cisco in writing.                             \
           \                         *\n**************************************************************************^C\n\
-          banner incoming ^C\n**************************************************************************\n\
+          banner incoming ^CC\n**************************************************************************\n\
           * IOSv is strictly limited to use for evaluation, demonstration and IOS\
           \  *\n* education. IOSv is provided as-is and is not supported by Cisco's\
           \      *\n* Technical Advisory Center. Any use or disclosure, in whole or\
@@ -284,7 +293,7 @@ nodes:
           \ for any       *\n* purposes is expressly prohibited except as otherwise\
           \ authorized by     *\n* Cisco in writing.                             \
           \                         *\n**************************************************************************^C\n\
-          banner login ^C\n**************************************************************************\n\
+          banner login ^CC\n**************************************************************************\n\
           * IOSv is strictly limited to use for evaluation, demonstration and IOS\
           \  *\n* education. IOSv is provided as-is and is not supported by Cisco's\
           \      *\n* Technical Advisory Center. Any use or disclosure, in whole or\
@@ -340,44 +349,53 @@ nodes:
     interfaces:
       - id: i0
         label: Loopback0
+        mac_address: null
         type: loopback
       - id: i1
         label: GigabitEthernet0/0
-        slot: 0
+        mac_address: null
         type: physical
+        slot: 0
       - id: i2
         label: GigabitEthernet0/1
-        slot: 1
+        mac_address: null
         type: physical
+        slot: 1
       - id: i3
         label: GigabitEthernet0/2
-        slot: 2
+        mac_address: null
         type: physical
+        slot: 2
       - id: i4
         label: GigabitEthernet0/3
-        slot: 3
+        mac_address: null
         type: physical
+        slot: 3
       - id: i5
         label: GigabitEthernet0/4
-        slot: 4
+        mac_address: null
         type: physical
+        slot: 4
       - id: i6
         label: GigabitEthernet0/5
-        slot: 5
+        mac_address: null
         type: physical
+        slot: 5
       - id: i7
         label: GigabitEthernet0/6
-        slot: 6
+        mac_address: null
         type: physical
+        slot: 6
       - id: i8
         label: GigabitEthernet0/7
-        slot: 7
+        mac_address: null
         type: physical
+        slot: 7
   - boot_disk_size: null
     configuration:
       - name: ios_config.txt
-        content: "Building configuration...\n\nCurrent configuration : 9503 bytes\n\
-          !\n! Last configuration change at 17:03:17 PDT Tue Jun 18 2024\n!\nversion\
+        content: "Building configuration...\n\n\nCurrent configuration : 7818 bytes\n\
+          !\n! Last configuration change at 12:48:43 PST Mon Jan 26 2026\n!\nversion\
           \ 15.9\nservice timestamps debug datetime msec\nservice timestamps log datetime\
           \ msec\nservice password-encryption\n!\nhostname r2\n!\nboot-start-marker\n\
           boot-end-marker\n!\n!\nno logging console\n!\nno aaa new-model\n!\n!\n!\n\
@@ -389,69 +407,46 @@ nodes:
           \ 10.254.1.2\n subject-name CN=r2,O=lab.local\n revocation-check none\n\
           \ rsakeypair r2.lab.local\n!\ncrypto pki trustpoint mevo_ca\n enrollment\
           \ terminal\n revocation-check none\n!\n!\ncrypto pki certificate chain Trusted-CA\n\
-          \ certificate 02\n  308202C1 3082022A A0030201 02020102 300D0609 2A864886\
-          \ F70D0101 05050030\n  21311230 10060355 040A1309 6C61622E 6C6F6361 6C310B30\
-          \ 09060355 04031302\n  7231301E 170D3234 30353234 31393434 32385A17 0D323530\
-          \ 35323431 39343432\n  385A3057 31123010 06035504 0A13096C 61622E6C 6F63616C\
-          \ 310B3009 06035504\n  03130272 32313430 1706092A 864886F7 0D010908 130A3130\
-          \ 2E323534 2E312E32\n  30190609 2A864886 F70D0109 02160C72 322E6C61 622E6C6F\
-          \ 63616C30 82012230\n  0D06092A 864886F7 0D010101 05000382 010F0030 82010A02\
-          \ 82010100 C2BCAC1E\n  75020D37 360E90C8 FB675646 52D87004 4F2072C3 889342AE\
-          \ 5DBDDFDC 331A35C8\n  EE46D154 A464B6D0 3DDCC49E 3168F1E0 0EAB15F2 818C49AD\
-          \ 9363D2A4 113C2D47\n  915C0C03 145641FF 7FB4D4A0 84770D52 2D3F015B 4C579868\
-          \ 17D935F6 C746B7E4\n  572B334F 1FA7F1A8 A381A327 9F97875C 9809A0A3 5434B03F\
-          \ ADE225F7 740C4E6F\n  560CDAD9 F635CBE4 0A22308B F5BF9F35 7CF18E37 D5B795A9\
-          \ 7FA02BDF 008C7426\n  14B04ABF BA0ACD94 870F3AA2 FDBB84DE 0E0630ED 6BD4CE1F\
-          \ E3EAD2EB 14C991B0\n  16CC3695 4350975A 84BC9F1B AE319CBE 3A1D07B2 1FE1CB80\
-          \ 777FE699 43E64F5A\n  D231A07F D03C4CB2 33B11131 EB147777 1460B6D8 4599AC19\
-          \ 3DA78EE1 02030100\n  01A34F30 4D300B06 03551D0F 04040302 05A0301F 0603551D\
-          \ 23041830 16801446\n  AF8B6922 CA9EB03A A5043647 0AD7481F 9F692C30 1D060355\
-          \ 1D0E0416 0414ADF0\n  D9B39746 3E3A1C4D DDCC436F 59FBAE78 BDAD300D 06092A86\
-          \ 4886F70D 01010505\n  00038181 009FAA38 52A10397 BC0F0188 99718E25 F8D7CE12\
-          \ CEEA98F4 51780000\n  DE16C996 81270E02 D3C4D56E 425D2EFF 77CEEFCD DFBB90A9\
-          \ C4B1BD73 3AB7831A\n  8E02CDBC D10EFBAD 5ABC1631 EE8FA66C ACD412D3 4F1F59C6\
-          \ 70283A3E AA00DA08\n  A92E7299 EC6D8A49 B0148061 A0665C83 E96FEA8B AED6E08E\
-          \ FFAE58DE 006896FC\n  A60A0346 43\n  \tquit\n certificate ca 01\n  3082021B\
-          \ 30820184 A0030201 02020101 300D0609 2A864886 F70D0101 04050030\n  21311230\
-          \ 10060355 040A1309 6C61622E 6C6F6361 6C310B30 09060355 04031302\n  7231301E\
-          \ 170D3234 30353234 31393337 31365A17 0D323730 35323431 39333731\n  365A3021\
-          \ 31123010 06035504 0A13096C 61622E6C 6F63616C 310B3009 06035504\n  03130272\
-          \ 3130819F 300D0609 2A864886 F70D0101 01050003 818D0030 81890281\n  8100AC5E\
-          \ 318110A1 DD499857 A70928BC 018BC1A7 D84ED423 0FC17673 C22F6BEA\n  885F3980\
-          \ 3AA38924 FC1378D8 B9D45781 704C33AD F8BA0CE9 6CA060D8 EB4D0128\n  E690CFDE\
-          \ 01F2AB68 86230D30 586578B4 F4963871 0932D97B D0C2EF72 FFC68B54\n  D29CD7CE\
-          \ B0B8EA03 EF611388 677C8874 ABA9DAE2 AF3F5F1E BD6A3983 BF9E5AC7\n  1FC30203\
-          \ 010001A3 63306130 0F060355 1D130101 FF040530 030101FF 300E0603\n  551D0F01\
-          \ 01FF0404 03020186 301F0603 551D2304 18301680 1446AF8B 6922CA9E\n  B03AA504\
-          \ 36470AD7 481F9F69 2C301D06 03551D0E 04160414 46AF8B69 22CA9EB0\n  3AA50436\
-          \ 470AD748 1F9F692C 300D0609 2A864886 F70D0101 04050003 818100A9\n  FC8CF228\
-          \ D05550BE 6DFD858E 5AD47875 3F4BAAC9 C4DA381A 1DE6F9C0 1B0E7D29\n  7402B80A\
-          \ 16EC608D 732D8D34 EC309881 3C41AA8B 6CA5A025 FDF8B145 5C951673\n  F791D30F\
-          \ 76364E48 D3F05824 1784C77E 565CFFF1 73AE7074 B8E6CBC2 952712E0\n  3B389E6E\
-          \ 0DC8C606 7EFDFA94 BC62DD2A 2F592CF4 54EC79EA 8A0819C9 4D1E5A\n  \tquit\n\
-          crypto pki certificate chain mevo_ca\n certificate ca 01\n  3082021B 30820184\
-          \ A0030201 02020101 300D0609 2A864886 F70D0101 04050030\n  21311230 10060355\
-          \ 040A1309 6C61622E 6C6F6361 6C310B30 09060355 04031302\n  7231301E 170D3234\
-          \ 30353234 31393337 31365A17 0D323730 35323431 39333731\n  365A3021 31123010\
-          \ 06035504 0A13096C 61622E6C 6F63616C 310B3009 06035504\n  03130272 3130819F\
-          \ 300D0609 2A864886 F70D0101 01050003 818D0030 81890281\n  8100AC5E 318110A1\
-          \ DD499857 A70928BC 018BC1A7 D84ED423 0FC17673 C22F6BEA\n  885F3980 3AA38924\
-          \ FC1378D8 B9D45781 704C33AD F8BA0CE9 6CA060D8 EB4D0128\n  E690CFDE 01F2AB68\
-          \ 86230D30 586578B4 F4963871 0932D97B D0C2EF72 FFC68B54\n  D29CD7CE B0B8EA03\
-          \ EF611388 677C8874 ABA9DAE2 AF3F5F1E BD6A3983 BF9E5AC7\n  1FC30203 010001A3\
-          \ 63306130 0F060355 1D130101 FF040530 030101FF 300E0603\n  551D0F01 01FF0404\
-          \ 03020186 301F0603 551D2304 18301680 1446AF8B 6922CA9E\n  B03AA504 36470AD7\
-          \ 481F9F69 2C301D06 03551D0E 04160414 46AF8B69 22CA9EB0\n  3AA50436 470AD748\
-          \ 1F9F692C 300D0609 2A864886 F70D0101 04050003 818100A9\n  FC8CF228 D05550BE\
-          \ 6DFD858E 5AD47875 3F4BAAC9 C4DA381A 1DE6F9C0 1B0E7D29\n  7402B80A 16EC608D\
-          \ 732D8D34 EC309881 3C41AA8B 6CA5A025 FDF8B145 5C951673\n  F791D30F 76364E48\
-          \ D3F05824 1784C77E 565CFFF1 73AE7074 B8E6CBC2 952712E0\n  3B389E6E 0DC8C606\
-          \ 7EFDFA94 BC62DD2A 2F592CF4 54EC79EA 8A0819C9 4D1E5A\n  \tquit\nusername\
-          \ cisco privilege 15 password 7 121A0C041104\n!\nredundancy\n!\nlldp run\n\
-          !\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\ninterface Loopback0\n ip address\
-          \ 10.254.1.2 255.255.255.255\n!\ninterface GigabitEthernet0/0\n ip address\
-          \ 10.255.0.1 255.255.255.254\n duplex auto\n speed auto\n media-type rj45\n\
-          !\ninterface GigabitEthernet0/1\n ip address 10.255.1.3 255.255.255.224\n\
+          \ certificate ca 01\n  3082021B 30820184 A0030201 02020101 300D0609 2A864886\
+          \ F70D0101 04050030\n  21311230 10060355 040A1309 6C61622E 6C6F6361 6C310B30\
+          \ 09060355 04031302\n  7231301E 170D3234 30353234 31393337 31365A17 0D323730\
+          \ 35323431 39333731\n  365A3021 31123010 06035504 0A13096C 61622E6C 6F63616C\
+          \ 310B3009 06035504\n  03130272 3130819F 300D0609 2A864886 F70D0101 01050003\
+          \ 818D0030 81890281\n  8100AC5E 318110A1 DD499857 A70928BC 018BC1A7 D84ED423\
+          \ 0FC17673 C22F6BEA\n  885F3980 3AA38924 FC1378D8 B9D45781 704C33AD F8BA0CE9\
+          \ 6CA060D8 EB4D0128\n  E690CFDE 01F2AB68 86230D30 586578B4 F4963871 0932D97B\
+          \ D0C2EF72 FFC68B54\n  D29CD7CE B0B8EA03 EF611388 677C8874 ABA9DAE2 AF3F5F1E\
+          \ BD6A3983 BF9E5AC7\n  1FC30203 010001A3 63306130 0F060355 1D130101 FF040530\
+          \ 030101FF 300E0603\n  551D0F01 01FF0404 03020186 301F0603 551D2304 18301680\
+          \ 1446AF8B 6922CA9E\n  B03AA504 36470AD7 481F9F69 2C301D06 03551D0E 04160414\
+          \ 46AF8B69 22CA9EB0\n  3AA50436 470AD748 1F9F692C 300D0609 2A864886 F70D0101\
+          \ 04050003 818100A9\n  FC8CF228 D05550BE 6DFD858E 5AD47875 3F4BAAC9 C4DA381A\
+          \ 1DE6F9C0 1B0E7D29\n  7402B80A 16EC608D 732D8D34 EC309881 3C41AA8B 6CA5A025\
+          \ FDF8B145 5C951673\n  F791D30F 76364E48 D3F05824 1784C77E 565CFFF1 73AE7074\
+          \ B8E6CBC2 952712E0\n  3B389E6E 0DC8C606 7EFDFA94 BC62DD2A 2F592CF4 54EC79EA\
+          \ 8A0819C9 4D1E5A\n  \tquit\ncrypto pki certificate chain mevo_ca\n certificate\
+          \ ca 01\n  3082021B 30820184 A0030201 02020101 300D0609 2A864886 F70D0101\
+          \ 04050030\n  21311230 10060355 040A1309 6C61622E 6C6F6361 6C310B30 09060355\
+          \ 04031302\n  7231301E 170D3234 30353234 31393337 31365A17 0D323730 35323431\
+          \ 39333731\n  365A3021 31123010 06035504 0A13096C 61622E6C 6F63616C 310B3009\
+          \ 06035504\n  03130272 3130819F 300D0609 2A864886 F70D0101 01050003 818D0030\
+          \ 81890281\n  8100AC5E 318110A1 DD499857 A70928BC 018BC1A7 D84ED423 0FC17673\
+          \ C22F6BEA\n  885F3980 3AA38924 FC1378D8 B9D45781 704C33AD F8BA0CE9 6CA060D8\
+          \ EB4D0128\n  E690CFDE 01F2AB68 86230D30 586578B4 F4963871 0932D97B D0C2EF72\
+          \ FFC68B54\n  D29CD7CE B0B8EA03 EF611388 677C8874 ABA9DAE2 AF3F5F1E BD6A3983\
+          \ BF9E5AC7\n  1FC30203 010001A3 63306130 0F060355 1D130101 FF040530 030101FF\
+          \ 300E0603\n  551D0F01 01FF0404 03020186 301F0603 551D2304 18301680 1446AF8B\
+          \ 6922CA9E\n  B03AA504 36470AD7 481F9F69 2C301D06 03551D0E 04160414 46AF8B69\
+          \ 22CA9EB0\n  3AA50436 470AD748 1F9F692C 300D0609 2A864886 F70D0101 04050003\
+          \ 818100A9\n  FC8CF228 D05550BE 6DFD858E 5AD47875 3F4BAAC9 C4DA381A 1DE6F9C0\
+          \ 1B0E7D29\n  7402B80A 16EC608D 732D8D34 EC309881 3C41AA8B 6CA5A025 FDF8B145\
+          \ 5C951673\n  F791D30F 76364E48 D3F05824 1784C77E 565CFFF1 73AE7074 B8E6CBC2\
+          \ 952712E0\n  3B389E6E 0DC8C606 7EFDFA94 BC62DD2A 2F592CF4 54EC79EA 8A0819C9\
+          \ 4D1E5A\n  \tquit\nusername cisco privilege 15 password 7 121A0C041104\n\
+          !\nredundancy\n!\nlldp run\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\ninterface\
+          \ Loopback0\n ip address 10.254.1.2 255.255.255.255\n!\ninterface GigabitEthernet0/0\n\
+          \ ip address 10.255.0.1 255.255.255.254\n duplex auto\n speed auto\n media-type\
+          \ rj45\n!\ninterface GigabitEthernet0/1\n ip address 10.255.1.3 255.255.255.224\n\
           \ duplex auto\n speed auto\n media-type rj45\n!\ninterface GigabitEthernet0/2\n\
           \ ip address 10.255.0.4 255.255.255.254\n duplex auto\n speed auto\n media-type\
           \ rj45\n!\ninterface GigabitEthernet0/3\n no ip address\n shutdown\n duplex\
@@ -478,7 +473,7 @@ nodes:
           \ ioam timestamp\n!\nroute-map UNSUP_iBGP permit 10\n match ip address prefix-list\
           \ UNSUP_iBGP\n!\nroute-map REDIS_CON permit 10\n match ip address 1\n!\n\
           !\naccess-list 1 permit 10.255.0.0 0.0.255.255\n!\ncontrol-plane\n!\nbanner\
-          \ exec ^C\n**************************************************************************\n\
+          \ exec ^CC\n**************************************************************************\n\
           * IOSv is strictly limited to use for evaluation, demonstration and IOS\
           \  *\n* education. IOSv is provided as-is and is not supported by Cisco's\
           \      *\n* Technical Advisory Center. Any use or disclosure, in whole or\
@@ -486,7 +481,7 @@ nodes:
           \ for any       *\n* purposes is expressly prohibited except as otherwise\
           \ authorized by     *\n* Cisco in writing.                             \
           \                         *\n**************************************************************************^C\n\
-          banner incoming ^C\n**************************************************************************\n\
+          banner incoming ^CC\n**************************************************************************\n\
           * IOSv is strictly limited to use for evaluation, demonstration and IOS\
           \  *\n* education. IOSv is provided as-is and is not supported by Cisco's\
           \      *\n* Technical Advisory Center. Any use or disclosure, in whole or\
@@ -494,7 +489,7 @@ nodes:
           \ for any       *\n* purposes is expressly prohibited except as otherwise\
           \ authorized by     *\n* Cisco in writing.                             \
           \                         *\n**************************************************************************^C\n\
-          banner login ^C\n**************************************************************************\n\
+          banner login ^CC\n**************************************************************************\n\
           * IOSv is strictly limited to use for evaluation, demonstration and IOS\
           \  *\n* education. IOSv is provided as-is and is not supported by Cisco's\
           \      *\n* Technical Advisory Center. Any use or disclosure, in whole or\
@@ -523,49 +518,58 @@ nodes:
     interfaces:
       - id: i0
         label: Loopback0
+        mac_address: null
         type: loopback
       - id: i1
         label: GigabitEthernet0/0
-        slot: 0
+        mac_address: null
         type: physical
+        slot: 0
       - id: i2
         label: GigabitEthernet0/1
-        slot: 1
+        mac_address: null
         type: physical
+        slot: 1
       - id: i3
         label: GigabitEthernet0/2
-        slot: 2
+        mac_address: null
         type: physical
+        slot: 2
       - id: i4
         label: GigabitEthernet0/3
-        slot: 3
+        mac_address: null
         type: physical
+        slot: 3
       - id: i5
         label: GigabitEthernet0/4
-        slot: 4
+        mac_address: null
         type: physical
+        slot: 4
       - id: i6
         label: GigabitEthernet0/5
-        slot: 5
+        mac_address: null
         type: physical
+        slot: 5
       - id: i7
         label: GigabitEthernet0/6
-        slot: 6
+        mac_address: null
         type: physical
+        slot: 6
       - id: i8
         label: GigabitEthernet0/7
-        slot: 7
+        mac_address: null
         type: physical
+        slot: 7
   - boot_disk_size: null
     configuration:
       - name: ios_config.txt
         content: |-
           Building configuration...
 
-
-          Current configuration : 5264 bytes
+          Current configuration : 5327 bytes
           !
-          ! Last configuration change at 17:03:17 PDT Tue Jun 18 2024
+          ! Last configuration change at 12:48:44 PST Mon Jan 26 2026
+          ! NVRAM config last updated at 12:46:25 PST Mon Jan 26 2026
           !
           version 15.9
           service timestamps debug datetime msec
@@ -746,7 +750,7 @@ nodes:
           !
           control-plane
           !
-          banner exec ^C
+          banner exec ^CC
           **************************************************************************
           * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
           * education. IOSv is provided as-is and is not supported by Cisco's      *
@@ -755,7 +759,7 @@ nodes:
           * purposes is expressly prohibited except as otherwise authorized by     *
           * Cisco in writing.                                                      *
           **************************************************************************^C
-          banner incoming ^C
+          banner incoming ^CC
           **************************************************************************
           * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
           * education. IOSv is provided as-is and is not supported by Cisco's      *
@@ -764,7 +768,7 @@ nodes:
           * purposes is expressly prohibited except as otherwise authorized by     *
           * Cisco in writing.                                                      *
           **************************************************************************^C
-          banner login ^C
+          banner login ^CC
           **************************************************************************
           * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
           * education. IOSv is provided as-is and is not supported by Cisco's      *
@@ -809,48 +813,58 @@ nodes:
     interfaces:
       - id: i0
         label: Loopback0
+        mac_address: null
         type: loopback
       - id: i1
         label: GigabitEthernet0/0
-        slot: 0
+        mac_address: null
         type: physical
+        slot: 0
       - id: i2
         label: GigabitEthernet0/1
-        slot: 1
+        mac_address: null
         type: physical
+        slot: 1
       - id: i3
         label: GigabitEthernet0/2
-        slot: 2
+        mac_address: null
         type: physical
+        slot: 2
       - id: i4
         label: GigabitEthernet0/3
-        slot: 3
+        mac_address: null
         type: physical
+        slot: 3
       - id: i5
         label: GigabitEthernet0/4
-        slot: 4
+        mac_address: null
         type: physical
+        slot: 4
       - id: i6
         label: GigabitEthernet0/5
-        slot: 5
+        mac_address: null
         type: physical
+        slot: 5
       - id: i7
         label: GigabitEthernet0/6
-        slot: 6
+        mac_address: null
         type: physical
+        slot: 6
       - id: i8
         label: GigabitEthernet0/7
-        slot: 7
+        mac_address: null
         type: physical
+        slot: 7
   - boot_disk_size: null
     configuration:
       - name: ios_config.txt
         content: |-
           Building configuration...
 
-          Current configuration : 4166 bytes
+
+          Current configuration : 4169 bytes
           !
-          ! Last configuration change at 17:03:17 PDT Tue Jun 18 2024
+          ! Last configuration change at 12:48:44 PST Mon Jan 26 2026
           !
           version 15.9
           service timestamps debug datetime msec
@@ -1001,7 +1015,7 @@ nodes:
           !
           control-plane
           !
-          banner exec ^C
+          banner exec ^CC
           **************************************************************************
           * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
           * education. IOSv is provided as-is and is not supported by Cisco's      *
@@ -1010,7 +1024,7 @@ nodes:
           * purposes is expressly prohibited except as otherwise authorized by     *
           * Cisco in writing.                                                      *
           **************************************************************************^C
-          banner incoming ^C
+          banner incoming ^CC
           **************************************************************************
           * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
           * education. IOSv is provided as-is and is not supported by Cisco's      *
@@ -1019,7 +1033,7 @@ nodes:
           * purposes is expressly prohibited except as otherwise authorized by     *
           * Cisco in writing.                                                      *
           **************************************************************************^C
-          banner login ^C
+          banner login ^CC
           **************************************************************************
           * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
           * education. IOSv is provided as-is and is not supported by Cisco's      *
@@ -1064,48 +1078,58 @@ nodes:
     interfaces:
       - id: i0
         label: Loopback0
+        mac_address: null
         type: loopback
       - id: i1
         label: GigabitEthernet0/0
-        slot: 0
+        mac_address: null
         type: physical
+        slot: 0
       - id: i2
         label: GigabitEthernet0/1
-        slot: 1
+        mac_address: null
         type: physical
+        slot: 1
       - id: i3
         label: GigabitEthernet0/2
-        slot: 2
+        mac_address: null
         type: physical
+        slot: 2
       - id: i4
         label: GigabitEthernet0/3
-        slot: 3
+        mac_address: null
         type: physical
+        slot: 3
       - id: i5
         label: GigabitEthernet0/4
-        slot: 4
+        mac_address: null
         type: physical
+        slot: 4
       - id: i6
         label: GigabitEthernet0/5
-        slot: 5
+        mac_address: null
         type: physical
+        slot: 5
       - id: i7
         label: GigabitEthernet0/6
-        slot: 6
+        mac_address: null
         type: physical
+        slot: 6
       - id: i8
         label: GigabitEthernet0/7
-        slot: 7
+        mac_address: null
         type: physical
+        slot: 7
   - boot_disk_size: null
     configuration:
       - name: ios_config.txt
         content: |-
           Building configuration...
 
-          Current configuration : 5631 bytes
+
+          Current configuration : 5634 bytes
           !
-          ! Last configuration change at 17:03:18 PDT Tue Jun 18 2024
+          ! Last configuration change at 12:44:10 PST Mon Jan 26 2026
           !
           version 15.9
           service timestamps debug datetime msec
@@ -1305,7 +1329,7 @@ nodes:
           !
           control-plane
           !
-          banner exec ^C
+          banner exec ^CC
           **************************************************************************
           * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
           * education. IOSv is provided as-is and is not supported by Cisco's      *
@@ -1314,7 +1338,7 @@ nodes:
           * purposes is expressly prohibited except as otherwise authorized by     *
           * Cisco in writing.                                                      *
           **************************************************************************^C
-          banner incoming ^C
+          banner incoming ^CC
           **************************************************************************
           * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
           * education. IOSv is provided as-is and is not supported by Cisco's      *
@@ -1323,7 +1347,7 @@ nodes:
           * purposes is expressly prohibited except as otherwise authorized by     *
           * Cisco in writing.                                                      *
           **************************************************************************^C
-          banner login ^C
+          banner login ^CC
           **************************************************************************
           * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
           * education. IOSv is provided as-is and is not supported by Cisco's      *
@@ -1368,39 +1392,48 @@ nodes:
     interfaces:
       - id: i0
         label: Loopback0
+        mac_address: null
         type: loopback
       - id: i1
         label: GigabitEthernet0/0
-        slot: 0
+        mac_address: null
         type: physical
+        slot: 0
       - id: i2
         label: GigabitEthernet0/1
-        slot: 1
+        mac_address: null
         type: physical
+        slot: 1
       - id: i3
         label: GigabitEthernet0/2
-        slot: 2
+        mac_address: null
         type: physical
+        slot: 2
       - id: i4
         label: GigabitEthernet0/3
-        slot: 3
+        mac_address: null
         type: physical
+        slot: 3
       - id: i5
         label: GigabitEthernet0/4
-        slot: 4
+        mac_address: null
         type: physical
+        slot: 4
       - id: i6
         label: GigabitEthernet0/5
-        slot: 5
+        mac_address: null
         type: physical
+        slot: 5
       - id: i7
         label: GigabitEthernet0/6
-        slot: 6
+        mac_address: null
         type: physical
+        slot: 6
       - id: i8
         label: GigabitEthernet0/7
-        slot: 7
+        mac_address: null
         type: physical
+        slot: 7
   - boot_disk_size: null
     configuration:
       - name: ios_config.txt
@@ -1408,9 +1441,9 @@ nodes:
           Building configuration...
 
 
-          Current configuration : 4797 bytes
+          Current configuration : 4800 bytes
           !
-          ! Last configuration change at 17:03:17 PDT Tue Jun 18 2024
+          ! Last configuration change at 12:48:44 PST Mon Jan 26 2026
           !
           version 15.9
           service timestamps debug datetime msec
@@ -1580,7 +1613,7 @@ nodes:
           !
           control-plane
           !
-          banner exec ^C
+          banner exec ^CC
           **************************************************************************
           * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
           * education. IOSv is provided as-is and is not supported by Cisco's      *
@@ -1589,7 +1622,7 @@ nodes:
           * purposes is expressly prohibited except as otherwise authorized by     *
           * Cisco in writing.                                                      *
           **************************************************************************^C
-          banner incoming ^C
+          banner incoming ^CC
           **************************************************************************
           * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
           * education. IOSv is provided as-is and is not supported by Cisco's      *
@@ -1598,7 +1631,7 @@ nodes:
           * purposes is expressly prohibited except as otherwise authorized by     *
           * Cisco in writing.                                                      *
           **************************************************************************^C
-          banner login ^C
+          banner login ^CC
           **************************************************************************
           * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
           * education. IOSv is provided as-is and is not supported by Cisco's      *
@@ -1627,34 +1660,6 @@ nodes:
           ntp server 10.0.0.248 prefer
           !
           end
-      - name: lab_bootstrap-confg
-        content: |-
-          hostname inserthostname-here
-          service password-encryption
-          !
-          no ip domain lookup
-          ip domain name lab.local
-          !
-          ip ssh version 2
-          !
-          username cisco privilege 15 password 7 094F471A1A0A
-          !
-          line con 0
-           exec-timeout 0 0
-           logging synchronous
-          line aux 0
-          line vty 0 4
-           exec-timeout 0 0
-           logging synchronous
-           login local
-           transport input ssh
-          line vty 5 15
-           exec-timeout 0 0
-           logging synchronous
-           login local
-           transport input ssh
-          !
-          end
     cpu_limit: null
     cpus: null
     data_volume: null
@@ -1671,39 +1676,48 @@ nodes:
     interfaces:
       - id: i0
         label: Loopback0
+        mac_address: null
         type: loopback
       - id: i1
         label: GigabitEthernet0/0
-        slot: 0
+        mac_address: null
         type: physical
+        slot: 0
       - id: i2
         label: GigabitEthernet0/1
-        slot: 1
+        mac_address: null
         type: physical
+        slot: 1
       - id: i3
         label: GigabitEthernet0/2
-        slot: 2
+        mac_address: null
         type: physical
+        slot: 2
       - id: i4
         label: GigabitEthernet0/3
-        slot: 3
+        mac_address: null
         type: physical
+        slot: 3
       - id: i5
         label: GigabitEthernet0/4
-        slot: 4
+        mac_address: null
         type: physical
+        slot: 4
       - id: i6
         label: GigabitEthernet0/5
-        slot: 5
+        mac_address: null
         type: physical
+        slot: 5
       - id: i7
         label: GigabitEthernet0/6
-        slot: 6
+        mac_address: null
         type: physical
+        slot: 6
       - id: i8
         label: GigabitEthernet0/7
-        slot: 7
+        mac_address: null
         type: physical
+        slot: 7
   - boot_disk_size: null
     configuration:
       - name: ios_config.txt
@@ -1711,9 +1725,9 @@ nodes:
           Building configuration...
 
 
-          Current configuration : 4447 bytes
+          Current configuration : 4450 bytes
           !
-          ! Last configuration change at 17:03:24 PDT Tue Jun 18 2024
+          ! Last configuration change at 12:45:40 PST Mon Jan 26 2026
           !
           version 15.9
           service timestamps debug datetime msec
@@ -1871,7 +1885,7 @@ nodes:
           !
           control-plane
           !
-          banner exec ^C
+          banner exec ^CC
           **************************************************************************
           * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
           * education. IOSv is provided as-is and is not supported by Cisco's      *
@@ -1880,7 +1894,7 @@ nodes:
           * purposes is expressly prohibited except as otherwise authorized by     *
           * Cisco in writing.                                                      *
           **************************************************************************^C
-          banner incoming ^C
+          banner incoming ^CC
           **************************************************************************
           * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
           * education. IOSv is provided as-is and is not supported by Cisco's      *
@@ -1889,7 +1903,7 @@ nodes:
           * purposes is expressly prohibited except as otherwise authorized by     *
           * Cisco in writing.                                                      *
           **************************************************************************^C
-          banner login ^C
+          banner login ^CC
           **************************************************************************
           * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
           * education. IOSv is provided as-is and is not supported by Cisco's      *
@@ -1934,39 +1948,48 @@ nodes:
     interfaces:
       - id: i0
         label: Loopback0
+        mac_address: null
         type: loopback
       - id: i1
         label: GigabitEthernet0/0
-        slot: 0
+        mac_address: null
         type: physical
+        slot: 0
       - id: i2
         label: GigabitEthernet0/1
-        slot: 1
+        mac_address: null
         type: physical
+        slot: 1
       - id: i3
         label: GigabitEthernet0/2
-        slot: 2
+        mac_address: null
         type: physical
+        slot: 2
       - id: i4
         label: GigabitEthernet0/3
-        slot: 3
+        mac_address: null
         type: physical
+        slot: 3
       - id: i5
         label: GigabitEthernet0/4
-        slot: 4
+        mac_address: null
         type: physical
+        slot: 4
       - id: i6
         label: GigabitEthernet0/5
-        slot: 5
+        mac_address: null
         type: physical
+        slot: 5
       - id: i7
         label: GigabitEthernet0/6
-        slot: 6
+        mac_address: null
         type: physical
+        slot: 6
       - id: i8
         label: GigabitEthernet0/7
-        slot: 7
+        mac_address: null
         type: physical
+        slot: 7
   - boot_disk_size: null
     configuration: []
     cpu_limit: null
@@ -1985,36 +2008,44 @@ nodes:
     interfaces:
       - id: i0
         label: port0
-        slot: 0
+        mac_address: null
         type: physical
+        slot: 0
       - id: i1
         label: port1
-        slot: 1
+        mac_address: null
         type: physical
+        slot: 1
       - id: i2
         label: port2
-        slot: 2
+        mac_address: null
         type: physical
+        slot: 2
       - id: i3
         label: port3
-        slot: 3
+        mac_address: null
         type: physical
+        slot: 3
       - id: i4
         label: port4
-        slot: 4
+        mac_address: null
         type: physical
+        slot: 4
       - id: i5
         label: port5
-        slot: 5
+        mac_address: null
         type: physical
+        slot: 5
       - id: i6
         label: port6
-        slot: 6
+        mac_address: null
         type: physical
+        slot: 6
       - id: i7
         label: port7
-        slot: 7
+        mac_address: null
         type: physical
+        slot: 7
   - boot_disk_size: null
     configuration:
       - name: ios_config.txt
@@ -2022,9 +2053,10 @@ nodes:
           Building configuration...
 
 
-          Current configuration : 5133 bytes
+          Current configuration : 5196 bytes
           !
-          ! Last configuration change at 17:03:17 PDT Tue Jun 18 2024
+          ! Last configuration change at 12:48:44 PDT Mon Jan 26 2026
+          ! NVRAM config last updated at 12:47:38 PDT Mon Jan 26 2026
           !
           version 15.9
           service timestamps debug datetime msec
@@ -2206,7 +2238,7 @@ nodes:
           !
           control-plane
           !
-          banner exec ^C
+          banner exec ^CC
           **************************************************************************
           * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
           * education. IOSv is provided as-is and is not supported by Cisco's      *
@@ -2215,7 +2247,7 @@ nodes:
           * purposes is expressly prohibited except as otherwise authorized by     *
           * Cisco in writing.                                                      *
           **************************************************************************^C
-          banner incoming ^C
+          banner incoming ^CC
           **************************************************************************
           * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
           * education. IOSv is provided as-is and is not supported by Cisco's      *
@@ -2224,7 +2256,7 @@ nodes:
           * purposes is expressly prohibited except as otherwise authorized by     *
           * Cisco in writing.                                                      *
           **************************************************************************^C
-          banner login ^C
+          banner login ^CC
           **************************************************************************
           * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
           * education. IOSv is provided as-is and is not supported by Cisco's      *
@@ -2269,49 +2301,58 @@ nodes:
     interfaces:
       - id: i0
         label: Loopback0
+        mac_address: null
         type: loopback
       - id: i1
         label: GigabitEthernet0/0
-        slot: 0
+        mac_address: null
         type: physical
+        slot: 0
       - id: i2
         label: GigabitEthernet0/1
-        slot: 1
+        mac_address: null
         type: physical
+        slot: 1
       - id: i3
         label: GigabitEthernet0/2
-        slot: 2
+        mac_address: null
         type: physical
+        slot: 2
       - id: i4
         label: GigabitEthernet0/3
-        slot: 3
+        mac_address: null
         type: physical
+        slot: 3
       - id: i5
         label: GigabitEthernet0/4
-        slot: 4
+        mac_address: null
         type: physical
+        slot: 4
       - id: i6
         label: GigabitEthernet0/5
-        slot: 5
+        mac_address: null
         type: physical
+        slot: 5
       - id: i7
         label: GigabitEthernet0/6
-        slot: 6
+        mac_address: null
         type: physical
+        slot: 6
       - id: i8
         label: GigabitEthernet0/7
-        slot: 7
+        mac_address: null
         type: physical
+        slot: 7
   - boot_disk_size: null
     configuration:
       - name: ios_config.txt
         content: |-
           Building configuration...
 
-
-          Current configuration : 4192 bytes
+          Current configuration : 4255 bytes
           !
-          ! Last configuration change at 17:03:17 PDT Tue Jun 18 2024
+          ! Last configuration change at 12:48:44 PST Mon Jan 26 2026
+          ! NVRAM config last updated at 12:44:41 PST Mon Jan 26 2026
           !
           version 15.9
           service timestamps debug datetime msec
@@ -2460,7 +2501,7 @@ nodes:
           !
           control-plane
           !
-          banner exec ^C
+          banner exec ^CC
           **************************************************************************
           * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
           * education. IOSv is provided as-is and is not supported by Cisco's      *
@@ -2469,7 +2510,7 @@ nodes:
           * purposes is expressly prohibited except as otherwise authorized by     *
           * Cisco in writing.                                                      *
           **************************************************************************^C
-          banner incoming ^C
+          banner incoming ^CC
           **************************************************************************
           * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
           * education. IOSv is provided as-is and is not supported by Cisco's      *
@@ -2478,7 +2519,7 @@ nodes:
           * purposes is expressly prohibited except as otherwise authorized by     *
           * Cisco in writing.                                                      *
           **************************************************************************^C
-          banner login ^C
+          banner login ^CC
           **************************************************************************
           * IOSv is strictly limited to use for evaluation, demonstration and IOS  *
           * education. IOSv is provided as-is and is not supported by Cisco's      *
@@ -2524,39 +2565,48 @@ nodes:
     interfaces:
       - id: i0
         label: Loopback0
+        mac_address: null
         type: loopback
       - id: i1
         label: GigabitEthernet0/0
-        slot: 0
+        mac_address: null
         type: physical
+        slot: 0
       - id: i2
         label: GigabitEthernet0/1
-        slot: 1
+        mac_address: null
         type: physical
+        slot: 1
       - id: i3
         label: GigabitEthernet0/2
-        slot: 2
+        mac_address: null
         type: physical
+        slot: 2
       - id: i4
         label: GigabitEthernet0/3
-        slot: 3
+        mac_address: null
         type: physical
+        slot: 3
       - id: i5
         label: GigabitEthernet0/4
-        slot: 4
+        mac_address: null
         type: physical
+        slot: 4
       - id: i6
         label: GigabitEthernet0/5
-        slot: 5
+        mac_address: null
         type: physical
+        slot: 5
       - id: i7
         label: GigabitEthernet0/6
-        slot: 6
+        mac_address: null
         type: physical
+        slot: 6
       - id: i8
         label: GigabitEthernet0/7
-        slot: 7
+        mac_address: null
         type: physical
+        slot: 7
 links:
   - id: l0
     n1: n1
@@ -2648,8 +2698,8 @@ links:
     i2: i4
     conditioning:
       latency: 12
-      enabled: true
       jitter: 4
+      enabled: true
     label: r5-GigabitEthernet0/0<->r1-GigabitEthernet0/3
   - id: l12
     n1: n9
@@ -2675,5 +2725,5 @@ links:
 lab:
   description: ''
   notes: ''
-  title: BGP Lab
-  version: 0.2.2
+  title: BGP Lab II
+  version: 0.3.0
