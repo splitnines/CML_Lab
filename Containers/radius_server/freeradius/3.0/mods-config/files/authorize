@@ -1,0 +1,19 @@
+507c6f31774b Cleartext-Password := "507c6f31774b"
+        Reply-Message := "LINUX VM",
+        Tunnel-Type := VLAN,
+        Tunnel-Medium-Type := IEEE-802,
+        Tunnel-Private-Group-Id := "L3-USER-PC"
+
+00074dab7d01 Cleartext-Password := "00074dab7d01"
+        Reply-Message := "ZEBRA PRINTER",
+        Tunnel-Type := VLAN,
+        Tunnel-Medium-Type := IEEE-802,
+        Tunnel-Private-Group-Id := "L3-USER-PC"
+
+0050568433c4 Cleartext-Password := "0050568433c4"
+        Reply-Message := "LINUX VM",
+        Tunnel-Type := VLAN,
+        Tunnel-Medium-Type := IEEE-802,
+        Tunnel-Private-Group-Id := "L3-USER-PC"
+
+DEFAULT Auth-Type := Accept

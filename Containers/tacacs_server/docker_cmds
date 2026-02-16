@@ -1,0 +1,12 @@
+# build the container
+docker build -t tacacs_server .
+
+# start the container and tacacs+ server
+docker run -d -p 49:49 --name tacacs_server --restart unless-stopped tacacs_server
+
+# start and stop the container
+docker start tacacs_server
+docker stop tacacs_server
+
+# access the shell of the container
+docker exec -it tacacs_server bash

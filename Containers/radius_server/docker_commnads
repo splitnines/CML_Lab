@@ -1,0 +1,17 @@
+docker build -t radius_server .
+
+# run in detached mode
+docker run -it -d --name radius_server --restart unless-stopped -p 1812:1812/udp -p 1813:1813/udp radius_server
+
+# run in debug mode
+docker run -it --name radius_server   -p 1812:1812/udp -p 1813:1813/udp   radius_server
+
+# generate certs
+docker run --rm -it freeradius/freeradius-server bash
+cd /etc/freeradius/3.0/certs
+make
+
+# copy the certs to the host machine (check that the directories match)
+docker cp radius_server:/etc/freeradius/3.0/certs/ca.pem freeradius/3.0/certs/
+docker cp radius_server:/etc/freeradius/3.0/certs/server.pem freeradius/3.0/certs/
+docker cp radius_server:/etc/freeradius/3.0/certs/server.key freeradius/3.0/certs/

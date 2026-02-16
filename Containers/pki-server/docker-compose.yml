@@ -1,0 +1,23 @@
+services:
+  step-ca:
+    image: smallstep/step-ca:latest
+    container_name: step-ca
+    hostname: step-ca
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - ./step:/home/step
+    environment:
+      - DOCKER_STEPCA_INIT_NAME=Lab CA
+      - DOCKER_STEPCA_INIT_DNS_NAMES=localhost,step-ca,10.0.0.149
+      - DOCKER_STEPCA_INIT_ADDRESS=:9000
+      - DOCKER_STEPCA_INIT_PROVISIONER_NAME=admin
+      - DOCKER_STEPCA_INIT_PASSWORD=cisco123
+    healthcheck:
+      test: ["CMD", "step", "ca", "health", "--ca-url", "https://step-ca:9000", "--root", "/home/step/certs/root_ca.crt"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+    restart: unless-stopped

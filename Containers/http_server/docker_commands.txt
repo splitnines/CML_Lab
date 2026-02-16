@@ -1,0 +1,2 @@
+docker build -t http_server .
+docker run -d -p 9999:80 --name http_server http_server

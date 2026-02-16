@@ -1,0 +1,149 @@
+no snmp-server enable traps snmp authentication linkdown linkup coldstart warmstart
+no snmp-server enable traps vrrp
+no snmp-server enable traps flowmon
+no snmp-server enable traps pfr
+no snmp-server enable traps ds1
+no snmp-server enable traps sdwan security policy system omp bfd
+no snmp-server enable traps entity-perf throughput-notif
+no snmp-server enable traps call-home message-send-fail server-fail
+no snmp-server enable traps tty
+no snmp-server enable traps ospf state-change
+no snmp-server enable traps ospf errors
+no snmp-server enable traps ospf retransmit
+no snmp-server enable traps ospf lsa
+no snmp-server enable traps ospf cisco-specific state-change nssa-trans-change
+no snmp-server enable traps ospf cisco-specific state-change shamlink interface
+no snmp-server enable traps ospf cisco-specific state-change shamlink neighbor
+no snmp-server enable traps ospf cisco-specific errors
+no snmp-server enable traps ospf cisco-specific retransmit
+no snmp-server enable traps ospf cisco-specific lsa
+no snmp-server enable traps eigrp
+no snmp-server enable traps casa
+no snmp-server enable traps xgcp
+no snmp-server enable traps cef resource-failure peer-state-change peer-fib-state-change inconsistency
+no snmp-server enable traps smart-license
+no snmp-server enable traps diameter
+no snmp-server enable traps entity-qfp mem-res-thresh throughput-notif
+no snmp-server enable traps entity-state
+no snmp-server enable traps ethernet cfm cc mep-up mep-down cross-connect loop config
+no snmp-server enable traps ethernet cfm crosscheck mep-missing mep-unknown service-up
+no snmp-server enable traps ether-oam
+no snmp-server enable traps ethernet evc status create delete
+no snmp-server enable traps aaa_server
+no snmp-server enable traps config-copy
+no snmp-server enable traps config
+no snmp-server enable traps config-ctid
+no snmp-server enable traps memory bufferpeak
+no snmp-server enable traps fru-ctrl
+no snmp-server enable traps entity-sensor
+no snmp-server enable traps resource-policy
+no snmp-server enable traps flash insertion removal lowspace
+no snmp-server enable traps hsrp
+no snmp-server enable traps entity
+no snmp-server enable traps ip local pool
+no snmp-server enable traps cpu threshold
+no snmp-server enable traps auth-framework sec-violation
+no snmp-server enable traps atm subif
+no snmp-server enable traps frame-relay
+no snmp-server enable traps frame-relay subif
+no snmp-server enable traps bgp
+no snmp-server enable traps bgp cbgp2
+no snmp-server enable traps pim neighbor-change rp-mapping-change invalid-pim-message
+no snmp-server enable traps ipmulticast
+no snmp-server enable traps msdp
+no snmp-server enable traps mvpn
+no snmp-server enable traps rsvp
+no snmp-server enable traps isis
+no snmp-server enable traps dhcp
+no snmp-server enable traps nhrp nhs
+no snmp-server enable traps nhrp nhc
+no snmp-server enable traps nhrp nhp
+no snmp-server enable traps nhrp quota-exceeded
+no snmp-server enable traps ipsla
+no snmp-server enable traps bfd
+no snmp-server enable traps cnpd
+no snmp-server enable traps event-manager
+no snmp-server enable traps dlsw
+no snmp-server enable traps ospfv3 state-change
+no snmp-server enable traps ospfv3 errors
+no snmp-server enable traps pppoe
+no snmp-server enable traps l2tun session
+no snmp-server enable traps l2tun pseudowire status
+no snmp-server enable traps l2tun tunnel
+no snmp-server enable traps pki
+no snmp-server enable traps pimstdmib neighbor-loss invalid-register invalid-join-prune rp-mapping-change interface-election
+no snmp-server enable traps adslline
+no snmp-server enable traps entity-diag boot-up-fail hm-test-recover hm-thresh-reached scheduled-test-fail
+no snmp-server enable traps vdsl2line
+no snmp-server enable traps vtp
+no snmp-server enable traps vlancreate
+no snmp-server enable traps vlandelete
+no snmp-server enable traps port-security
+no snmp-server enable traps isdn call-information
+no snmp-server enable traps isdn layer2
+no snmp-server enable traps isdn chan-not-avail
+no snmp-server enable traps isdn ietf
+no snmp-server enable traps c3g
+no snmp-server enable traps LTE
+no snmp-server enable traps lisp
+no snmp-server enable traps firewall serverstatus
+no snmp-server enable traps ike policy add
+no snmp-server enable traps ike policy delete
+no snmp-server enable traps ike tunnel start
+no snmp-server enable traps ike tunnel stop
+no snmp-server enable traps ipsec cryptomap add
+no snmp-server enable traps ipsec cryptomap delete
+no snmp-server enable traps ipsec cryptomap attach
+no snmp-server enable traps ipsec cryptomap detach
+no snmp-server enable traps ipsec tunnel start
+no snmp-server enable traps ipsec tunnel stop
+no snmp-server enable traps ipsec too-many-sas
+no snmp-server enable traps gdoi gm-start-registration
+no snmp-server enable traps gdoi gm-registration-complete
+no snmp-server enable traps gdoi gm-re-register
+no snmp-server enable traps gdoi gm-rekey-rcvd
+no snmp-server enable traps gdoi gm-rekey-fail
+no snmp-server enable traps gdoi ks-rekey-pushed
+no snmp-server enable traps gdoi gm-incomplete-cfg
+no snmp-server enable traps gdoi ks-no-rsa-keys
+no snmp-server enable traps gdoi ks-new-registration
+no snmp-server enable traps gdoi ks-reg-complete
+no snmp-server enable traps gdoi ks-role-change
+no snmp-server enable traps gdoi ks-gm-deleted
+no snmp-server enable traps gdoi ks-peer-reachable
+no snmp-server enable traps gdoi ks-peer-unreachable
+no snmp-server enable traps mpls rfc ldp
+no snmp-server enable traps mpls ldp
+no snmp-server enable traps mpls rfc traffic-eng
+no snmp-server enable traps mpls traffic-eng
+no snmp-server enable traps mpls fast-reroute protected
+no snmp-server enable traps otn
+no snmp-server enable traps pw vc
+no snmp-server enable traps frame-relay multilink bundle-mismatch
+no snmp-server enable traps dial
+no snmp-server enable traps dsp card-status
+no snmp-server enable traps dsp oper-state
+no snmp-server enable traps dsp video-usage
+no snmp-server enable traps dsp video-out-of-resource
+no snmp-server enable traps syslog
+no snmp-server enable traps sbc adj-status
+no snmp-server enable traps sbc blacklist
+no snmp-server enable traps sbc congestion-alarm
+no snmp-server enable traps sbc h248-ctrlr-status
+no snmp-server enable traps sbc media-source
+no snmp-server enable traps sbc radius-conn-status
+no snmp-server enable traps sbc sla-violation
+no snmp-server enable traps sbc sla-violation-rev1
+no snmp-server enable traps sbc svc-state
+no snmp-server enable traps sbc qos-statistics
+no snmp-server enable traps bulkstat collection transfer
+no snmp-server enable traps ethernet cfm alarm
+no snmp-server enable traps alarms informational
+no snmp-server enable traps transceiver all
+no snmp-server enable traps rf
+no snmp-server enable traps vrfmib vrf-up vrf-down vnet-trunk-up vnet-trunk-down
+no snmp-server enable traps ccme
+no snmp-server enable traps srst
+no snmp-server enable traps mpls vpn
+no snmp-server enable traps mpls rfc vpn
+no snmp-server enable traps voice
