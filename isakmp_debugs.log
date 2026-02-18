@@ -1,0 +1,231 @@
+Feb 11 19:34:36.940: ISAKMP-PAK: (0):received packet from 10.4.2.1 dport 500 sport 500 Global (N) NEW SA
+Feb 11 19:34:36.940: ISAKMP: (0):Created a peer struct for 10.4.2.1, peer port 500
+Feb 11 19:34:36.940: ISAKMP: (0):New peer created peer = 0x800076FE12EDB618 peer_handle = 0x8000000040000047
+Feb 11 19:34:36.940: ISAKMP: (0):Locking peer struct 0x800076FE12EDB618, refcount 1 for crypto_isakmp_process_block
+Feb 11 19:34:36.940: ISAKMP: (0):local port 500, remote port 500
+Feb 11 19:34:36.940: ISAKMP: (0):Find a dup sa in the avl tree during calling isadb_insert sa = 800076FE090211D8
+Feb 11 19:34:36.940: ISAKMP: (0):Input = IKE_MESG_FROM_PEER, IKE_MM_EXCH
+Feb 11 19:34:36.940: ISAKMP: (0):Old State = IKE_READY  New State = IKE_R_MM1
+
+Feb 11 19:34:36.940: ISAKMP: (0):processing SA payload. message ID = 0
+Feb 11 19:34:36.940: ISAKMP: (0):processing vendor id payload
+Feb 11 19:34:36.940: ISAKMP: (0):vendor ID seems Unity/DPD but major 69 mismatch
+Feb 11 19:34:36.940: ISAKMP: (0):vendor ID is NAT-T RFC 3947
+Feb 11 19:34:36.940: ISAKMP: (0):processing vendor id payload
+Feb 11 19:34:36.940: ISAKMP: (0):vendor ID seems Unity/DPD but major 245 mismatch
+Feb 11 19:34:36.940: ISAKMP: (0):vendor ID is NAT-T v7
+Feb 11 19:34:36.940: ISAKMP: (0):processing vendor id payload
+Feb 11 19:34:36.940: ISAKMP: (0):vendor ID seems Unity/DPD but major 157 mismatch
+Feb 11 19:34:36.940: ISAKMP: (0):vendor ID is NAT-T v3
+Feb 11 19:34:36.940: ISAKMP: (0):processing vendor id payload
+Feb 11 19:34:36.940: ISAKMP: (0):vendor ID seems Unity/DPD but major 123 mismatch
+Feb 11 19:34:36.940: ISAKMP: (0):vendor ID is NAT-T v2
+Feb 11 19:34:36.940: ISAKMP: (0):Scanning profiles for xauth ...
+Feb 11 19:34:36.940: ISAKMP: (0):IKE->PKI Get configured TrustPoints state (R) MM_NO_STATE (peer 10.4.2.1)
+Feb 11 19:34:36.940: ISAKMP: (0):PKI->IKE Got configured TrustPoints state (R) MM_NO_STATE (peer 10.4.2.1)
+Feb 11 19:34:36.940: ISAKMP: (0):Checking ISAKMP transform 1 against priority 10 policy
+Feb 11 19:34:36.940: ISAKMP: (0):      encryption AES-CBC
+Feb 11 19:34:36.940: ISAKMP: (0):      keylength of 256
+Feb 11 19:34:36.940: ISAKMP: (0):      hash SHA256
+Feb 11 19:34:36.940: ISAKMP: (0):      default group 14
+Feb 11 19:34:36.940: ISAKMP: (0):      auth RSA sig
+Feb 11 19:34:36.940: ISAKMP: (0):      life type in seconds
+Feb 11 19:34:36.940: ISAKMP:      life duration (VPI) of  0x0 0x1 0x51 0x80
+Feb 11 19:34:36.946: ISAKMP: (0):atts are acceptable. Next payload is 0
+Feb 11 19:34:36.946: ISAKMP: (0):Acceptable atts:actual life: 86400
+Feb 11 19:34:36.946: ISAKMP: (0):Acceptable atts:life: 0
+Feb 11 19:34:36.947: ISAKMP: (0):Fill atts in sa vpi_length:4
+Feb 11 19:34:36.947: ISAKMP: (0):Fill atts in sa life_in_seconds:86400
+Feb 11 19:34:36.947: ISAKMP: (0):IKE->PKI Start PKI Session state (R) MM_NO_STATE (peer 10.4.2.1)
+Feb 11 19:34:36.947: ISAKMP: (0):PKI->IKE Started PKI Session state (R) MM_NO_STATE (peer 10.4.2.1)
+Feb 11 19:34:36.947: ISAKMP: (0):Returning Actual lifetime: 86400
+Feb 11 19:34:36.947: ISAKMP: (0):Started lifetime timer: 86400.
+
+Feb 11 19:34:36.962: ISAKMP: (0):processing vendor id payload
+Feb 11 19:34:36.962: ISAKMP: (0):vendor ID seems Unity/DPD but major 69 mismatch
+Feb 11 19:34:36.962: ISAKMP: (0):vendor ID is NAT-T RFC 3947
+Feb 11 19:34:36.962: ISAKMP: (0):processing vendor id payload
+Feb 11 19:34:36.962: ISAKMP: (0):vendor ID seems Unity/DPD but major 245 mismatch
+Feb 11 19:34:36.962: ISAKMP: (0):vendor ID is NAT-T v7
+Feb 11 19:34:36.962: ISAKMP: (0):processing vendor id payload
+Feb 11 19:34:36.962: ISAKMP: (0):vendor ID seems Unity/DPD but major 157 mismatch
+Feb 11 19:34:36.962: ISAKMP: (0):vendor ID is NAT-T v3
+Feb 11 19:34:36.962: ISAKMP: (0):processing vendor id payload
+Feb 11 19:34:36.962: ISAKMP: (0):vendor ID seems Unity/DPD but major 123 mismatch
+Feb 11 19:34:36.962: ISAKMP: (0):vendor ID is NAT-T v2
+Feb 11 19:34:36.962: ISAKMP: (0):Input = IKE_MESG_INTERNAL, IKE_PROCESS_MAIN_MODE
+Feb 11 19:34:36.962: ISAKMP: (0):Old State = IKE_R_MM1  New State = IKE_R_MM1
+
+Feb 11 19:34:36.962: ISAKMP: (0):constructed NAT-T vendor-rfc3947 ID
+Feb 11 19:34:36.962: ISAKMP-PAK: (0):sending packet to 10.4.2.1 my_port 500 peer_port 500 (R) MM_SA_SETUP
+Feb 11 19:34:36.962: ISAKMP: (0):Sending an IKE IPv4 Packet.
+Feb 11 19:34:36.963: ISAKMP: (0):Input = IKE_MESG_INTERNAL, IKE_PROCESS_COMPLETE
+Feb 11 19:34:36.963: ISAKMP: (0):Old State = IKE_R_MM1  New State = IKE_R_MM2
+
+Feb 11 19:34:36.980: ISAKMP-PAK: (0):received packet from 10.4.2.1 dport 500 sport 500 Global (R) MM_SA_SETUP
+Feb 11 19:34:36.980: ISAKMP: (0):Input = IKE_MESG_FROM_PEER, IKE_MM_EXCH
+Feb 11 19:34:36.980: ISAKMP: (0):Old State = IKE_R_MM2  New State = IKE_R_MM3
+
+Feb 11 19:34:36.980: ISAKMP: (0):processing KE payload. message ID = 0
+Feb 11 19:34:36.989: ISAKMP: (0):processing NONCE payload. message ID = 0
+Feb 11 19:34:36.989: ISAKMP: (1057):processing vendor id payload
+Feb 11 19:34:36.989: ISAKMP: (1057):vendor ID is DPD
+Feb 11 19:34:36.989: ISAKMP: (1057):processing vendor id payload
+Feb 11 19:34:36.989: ISAKMP: (1057):speaking to another IOS box!
+Feb 11 19:34:36.989: ISAKMP: (1057):processing vendor id payload
+Feb 11 19:34:36.989: ISAKMP: (1057):vendor ID seems Unity/DPD but major 211 mismatch
+Feb 11 19:34:36.989: ISAKMP: (1057):vendor ID is XAUTH
+Feb 11 19:34:36.989: ISAKMP: (1057):received payload type 20
+Feb 11 19:34:36.989: ISAKMP: (1057):His hash no match - this node outside NAT
+Feb 11 19:34:36.989: ISAKMP: (1057):received payload type 20
+Feb 11 19:34:36.989: ISAKMP: (1057):No NAT Found for self or peer
+Feb 11 19:34:36.989: ISAKMP: (1057):Input = IKE_MESG_INTERNAL, IKE_PROCESS_MAIN_MODE
+Feb 11 19:34:36.989: ISAKMP: (1057):Old State = IKE_R_MM3  New State = IKE_R_MM3
+
+Feb 11 19:34:36.989: ISAKMP: (1057):IKE->PKI Get configured TrustPoints state (R) MM_KEY_EXCH (peer 10.4.2.1)
+Feb 11 19:34:36.989: ISAKMP: (1057):PKI->IKE Got configured TrustPoints state (R) MM_KEY_EXCH (peer 10.4.2.1)
+Feb 11 19:34:36.989: ISAKMP: (1057):IKE->PKI Get IssuerNames state (R) MM_KEY_EXCH (peer 10.4.2.1)
+Feb 11 19:34:36.989: ISAKMP: (1057):PKI->IKE Got IssuerNames state (R) MM_KEY_EXCH (peer 10.4.2.1)
+Feb 11 19:34:36.989: ISAKMP: (1057):constructing CERT_REQ for issuer cn=CA,o=cml.lab
+Feb 11 19:34:36.989: ISAKMP: (1057):constructing CERT_REQ for issuer cn=Cisco Licensing Root CA,o=Cisco
+Feb 11 19:34:36.989: ISAKMP-PAK: (1057):sending packet to 10.4.2.1 my_port 500 peer_port 500 (R) MM_KEY_EXCH
+Feb 11 19:34:36.989: ISAKMP: (1057):Sending an IKE IPv4 Packet.
+Feb 11 19:34:36.990: ISAKMP: (1057):Input = IKE_MESG_INTERNAL, IKE_PROCESS_COMPLETE
+Feb 11 19:34:36.990: ISAKMP: (1057):Old State = IKE_R_MM3  New State = IKE_R_MM4
+
+Feb 11 19:34:37.017: ISAKMP-PAK: (1057):received packet from 10.4.2.1 dport 500 sport 500 Global (R) MM_KEY_EXCH
+Feb 11 19:34:37.017: ISAKMP: (1057):Input = IKE_MESG_FROM_PEER, IKE_MM_EXCH
+Feb 11 19:34:37.017: ISAKMP: (1057):Old State = IKE_R_MM4  New State = IKE_R_MM5
+
+Feb 11 19:34:37.017: ISAKMP: (1057):processing ID payload. message ID = 0
+Feb 11 19:34:37.017: ISAKMP: (1057):ID payload
+        next-payload : 6
+        type         : 2
+Feb 11 19:34:37.017: ISAKMP: (1057):    FQDN name    : r4.cml.lab
+Feb 11 19:34:37.017: ISAKMP: (1057):    protocol     : 17
+        port         : 500
+        length       : 18
+Feb 11 19:34:37.017: ISAKMP: (0):peer matches *none* of the profiles
+Feb 11 19:34:37.017: ISAKMP: (1057):processing CERT payload. message ID = 0
+Feb 11 19:34:37.017: ISAKMP: (1057):processing a CT_X509_SIGNATURE cert
+Feb 11 19:34:37.017: ISAKMP: (1057):IKE->PKI Add peer's certificate state (R) MM_KEY_EXCH (peer 10.4.2.1)
+Feb 11 19:34:37.018: ISAKMP: (1057):PKI->IKE Added peer's certificate state (R) MM_KEY_EXCH (peer 10.4.2.1)
+Feb 11 19:34:37.018: ISAKMP: (1057):IKE->PKI Get PeerCertificateChain state (R) MM_KEY_EXCH (peer 10.4.2.1)
+Feb 11 19:34:37.018: ISAKMP: (1057):PKI->IKE Got PeerCertificateChain state (R) MM_KEY_EXCH (peer 10.4.2.1)
+Feb 11 19:34:37.018: ISAKMP: (1057):peer's pubkey isn't cached
+Feb 11 19:34:37.018: ISAKMP: (0):peer matches *none* of the profiles
+Feb 11 19:34:37.018: ISAKMP: (1057):IKE->PKI Validate certificate chain state (R) MM_KEY_EXCH (peer 10.4.2.1)
+Feb 11 19:34:37.020: ISAKMP: (1057):PKI->IKE Validate certificate chain state (R) MM_KEY_EXCH (peer 10.4.2.1)
+Feb 11 19:34:37.020: ISAKMP-ERROR: (1057):Unable to get DN from certificate!
+Feb 11 19:34:37.022: ISAKMP: (1057):processing SIG payload. message ID = 0
+Feb 11 19:34:37.023: ISAKMP: (1057):processing NOTIFY INITIAL_CONTACT protocol 1
+        spi 0, message ID = 0, sa = 0x800076FE090211D8
+Feb 11 19:34:37.023: ISAKMP: (1057):SA authentication status:
+        authenticated
+Feb 11 19:34:37.023: ISAKMP: (1057):SA has been authenticated with 10.4.2.1
+Feb 11 19:34:37.023: ISAKMP: (1057):SA authentication status:
+        authenticated
+Feb 11 19:34:37.023: ISAKMP: (1057):Process initial contact,
+bring down existing phase 1 and 2 SA's with local 10.2.2.1 remote 10.4.2.1 remote port 500
+Feb 11 19:34:37.023: ISAKMP: (0):Trying to insert a peer 10.2.2.1/10.4.2.1/500/,
+Feb 11 19:34:37.023: ISAKMP: (0): and inserted successfully 800076FE12EDB618.
+Feb 11 19:34:37.023: ISAKMP: (1057):Input = IKE_MESG_INTERNAL, IKE_PROCESS_MAIN_MODE
+Feb 11 19:34:37.023: ISAKMP: (1057):Old State = IKE_R_MM5  New State = IKE_R_MM5
+
+Feb 11 19:34:37.023: ISAKMP: (1057):processing CERT_REQ payload. message ID = 0
+Feb 11 19:34:37.023: ISAKMP: (1057):peer wants a CT_X509_SIGNATURE cert
+Feb 11 19:34:37.023: ISAKMP: (1057):peer wants cert issued by cn=CA,o=cml.lab
+Feb 11 19:34:37.023: ISAKMP: (0):Choosing trustpoint CA-Client as issuer
+Feb 11 19:34:37.023: ISAKMP: (1057):processing CERT_REQ payload. message ID = 0
+Feb 11 19:34:37.023: ISAKMP: (1057):peer wants a CT_X509_SIGNATURE cert
+Feb 11 19:34:37.023: ISAKMP: (1057):peer wants cert issued by cn=Cisco Licensing Root CA,o=Cisco
+Feb 11 19:34:37.023: ISAKMP: (1057):IKE->PKI Get self CertificateChain state (R) MM_KEY_EXCH (peer 10.4.2.1)
+Feb 11 19:34:37.023: ISAKMP: (1057):PKI->IKE Got self CertificateChain state (R) MM_KEY_EXCH (peer 10.4.2.1)
+Feb 11 19:34:37.023: ISAKMP: (1057):IKE->PKI Get SubjectName state (R) MM_KEY_EXCH (peer 10.4.2.1)
+Feb 11 19:34:37.024: ISAKMP: (1057):PKI->IKE Got SubjectName state (R) MM_KEY_EXCH (peer 10.4.2.1)
+Feb 11 19:34:37.024: ISAKMP-ERROR: (1057):My ID configured as IPv4 Addr, but Addr not in Cert!
+Feb 11 19:34:37.024: ISAKMP-ERROR: (1057):Using FQDN as My ID
+Feb 11 19:34:37.025: ISAKMP: (1057):SA is doing
+Feb 11 19:34:37.025: ISAKMP: (1057):RSA signature authentication using id type ID_FQDN
+Feb 11 19:34:37.025: ISAKMP: (1057):ID payload
+        next-payload : 6
+        type         : 2
+Feb 11 19:34:37.025: ISAKMP: (1057):    FQDN name    : r2.cml.lab
+Feb 11 19:34:37.025: ISAKMP: (1057):    protocol     : 17
+        port         : 500
+        length       : 18
+Feb 11 19:34:37.025: ISAKMP: (1057):Total payload length: 18
+Feb 11 19:34:37.025: ISAKMP: (1057):IKE->PKI Get CertificateChain to be sent to peer state (R) MM_KEY_EXCH (peer 10.4.2.1)
+Feb 11 19:34:37.025: ISAKMP: (1057):PKI->IKE Got CertificateChain to be sent to peer state (R) MM_KEY_EXCH (peer 10.4.2.1)
+Feb 11 19:34:37.026: ISAKMP: (1057):constructing CERT payload for serialNumber=9WE5QHS10R7+ipaddress=10.2.0.1+hostname=r2.cml.lab,cn=r2,o=cml.lab
+Feb 11 19:34:37.026: ISAKMP: (1057):using the CA-Client trustpoint's keypair to sign
+Feb 11 19:34:37.041: ISAKMP: (0):growing send buffer from 1024 to 3072
+Feb 11 19:34:37.042: ISAKMP-PAK: (1057):sending packet to 10.4.2.1 my_port 500 peer_port 500 (R) MM_KEY_EXCH
+Feb 11 19:34:37.042: ISAKMP: (1057):Sending an IKE IPv4 Packet.
+Feb 11 19:34:37.042: ISAKMP: (1057):Input = IKE_MESG_INTERNAL, IKE_PROCESS_COMPLETE
+Feb 11 19:34:37.042: ISAKMP: (1057):Old State = IKE_R_MM5  New State = IKE_R_MM5
+
+Feb 11 19:34:37.042: ISAKMP: (1057):Input = IKE_MESG_INTERNAL, IKE_FETCH_USER_ATTR
+Feb 11 19:34:37.043: ISAKMP: (1057):Old State = IKE_R_MM5  New State = IKE_P1_COMPLETE
+
+Feb 11 19:34:37.043: ISAKMP: (1057):IKE->PKI End PKI Session state (R) QM_IDLE       (peer 10.4.2.1)
+Feb 11 19:34:37.043: ISAKMP: (1057):PKI->IKE Ended PKI session state (R) QM_IDLE       (peer 10.4.2.1)
+Feb 11 19:34:37.043: ISAKMP: (1057):Input = IKE_MESG_INTERNAL, IKE_PHASE1_COMPLETE
+Feb 11 19:34:37.043: ISAKMP: (1057):Old State = IKE_P1_COMPLETE  New State = IKE_P1_COMPLETE
+
+Feb 11 19:34:37.052: ISAKMP-PAK: (1057):received packet from 10.4.2.1 dport 500 sport 500 Global (R) QM_IDLE
+Feb 11 19:34:37.052: ISAKMP: (1057):set new node 1007276285 to QM_IDLE
+Feb 11 19:34:37.052: ISAKMP: (1057):processing HASH payload. message ID = 1007276285
+Feb 11 19:34:37.052: ISAKMP: (1057):processing SA payload. message ID = 1007276285
+Feb 11 19:34:37.052: ISAKMP: (1057):Checking IPSec proposal 1
+Feb 11 19:34:37.052: ISAKMP: (1057):transform 1, ESP_AES
+Feb 11 19:34:37.052: ISAKMP: (1057):   attributes in transform:
+Feb 11 19:34:37.052: ISAKMP: (1057):      encaps is 1 (Tunnel)
+Feb 11 19:34:37.052: ISAKMP: (1057):      SA life type in seconds
+Feb 11 19:34:37.052: ISAKMP: (1057):      SA life duration (basic) of 3600
+Feb 11 19:34:37.052: ISAKMP: (1057):      SA life type in kilobytes
+Feb 11 19:34:37.052: ISAKMP:      SA life duration (VPI) of  0x0 0x46 0x50 0x0
+Feb 11 19:34:37.052: ISAKMP: (1057):      authenticator is HMAC-SHA256
+Feb 11 19:34:37.052: ISAKMP: (1057):      key length is 256
+Feb 11 19:34:37.052: ISAKMP: (1057):atts are acceptable.
+Feb 11 19:34:37.052: ISAKMP: (1057):processing NONCE payload. message ID = 1007276285
+Feb 11 19:34:37.052: ISAKMP: (1057):processing ID payload. message ID = 1007276285
+Feb 11 19:34:37.052: ISAKMP: (1057):processing ID payload. message ID = 1007276285
+Feb 11 19:34:37.052: ISAKMP: (1057):QM Responder gets spi
+Feb 11 19:34:37.052: ISAKMP: (1057):Node 1007276285, Input = IKE_MESG_FROM_PEER, IKE_QM_EXCH
+Feb 11 19:34:37.052: ISAKMP: (1057):Old State = IKE_QM_READY  New State = IKE_QM_SPI_STARVE
+Feb 11 19:34:37.052: ISAKMP: (1057):Node 1007276285, Input = IKE_MESG_INTERNAL, IKE_GOT_SPI
+Feb 11 19:34:37.052: ISAKMP: (1057):Old State = IKE_QM_SPI_STARVE  New State = IKE_QM_IPSEC_INSTALL_AWAIT
+Feb 11 19:34:37.055: ISAKMP-ERROR: (0):Failed to find peer index node to update peer_info_list
+Feb 11 19:34:37.055: ISAKMP: (1057):Received IPSec Install callback... proceeding with the negotiation
+Feb 11 19:34:37.055: ISAKMP: (1057):Successfully installed IPSEC SA (SPI:0xCAD43DE7) on Tunnel1
+Feb 11 19:34:37.055: ISAKMP-PAK: (1057):sending packet to 10.4.2.1 my_port 500 peer_port 500 (R) QM_IDLE
+Feb 11 19:34:37.055: ISAKMP: (1057):Sending an IKE IPv4 Packet.
+Feb 11 19:34:37.056: ISAKMP: (1057):Node 1007276285, Input = IKE_MESG_FROM_IPSEC, IPSEC_INSTALL_DONE
+Feb 11 19:34:37.056: ISAKMP: (1057):Old State = IKE_QM_IPSEC_INSTALL_AWAIT  New State = IKE_QM_R_QM2
+Feb 11 19:34:37.081: ISAKMP-PAK: (1057):received packet from 10.4.2.1 dport 500 sport 500 Global (R) QM_IDLE
+Feb 11 19:34:37.081: ISAKMP: (1057):deleting node 1007276285 error FALSE reason "QM done (await)"
+Feb 11 19:34:37.081: ISAKMP: (1057):Node 1007276285, Input = IKE_MESG_FROM_PEER, IKE_QM_EXCH
+Feb 11 19:34:37.081: ISAKMP: (1057):Old State = IKE_QM_R_QM2  New State = IKE_QM_PHASE2_COMPLETE
+Feb 11 19:34:37.089: %LINEPROTO-5-UPDOWN: Line protocol on Interface Tunnel1, changed state to up
+r2#
+Feb 11 19:34:37.119: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on Tunnel1 from DOWN to INIT, Received Hello
+Feb 11 19:34:37.119: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on Tunnel1 from INIT to 2WAY, 2-Way Received
+Feb 11 19:34:37.119: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on Tunnel1 from 2WAY to EXSTART, AdjOK?
+Feb 11 19:34:37.123: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on Tunnel1 from EXSTART to EXCHANGE, Negotiation Done
+Feb 11 19:34:37.127: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on Tunnel1 from EXCHANGE to LOADING, Exchange Done
+Feb 11 19:34:37.129: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on Tunnel1 from LOADING to FULL, Loading Done
+r2#
+Feb 11 19:34:45.208: ISAKMP: (1055):purging node 2637037508
+Feb 11 19:34:45.232: ISAKMP: (1055):purging node 3010779782
+r2#
+Feb 11 19:34:50.246: ISAKMP: (1056):purging node 3002386558
+r2#
+Feb 11 19:34:55.235: ISAKMP: (1055):purging SA., sa=800076FE12F24EE8, delme=800076FE12F24EE8
+r2#
+Feb 11 19:35:16.099: ISAKMP: (1056):purging node 2484167991
+Feb 11 19:35:16.112: ISAKMP: (1056):purging node 4109546929
+r2#
+Feb 11 19:35:26.122: ISAKMP: (1056):purging SA., sa=800076FDA0EB4CA8, delme=800076FDA0EB4CA8
+Feb 11 19:35:27.082: ISAKMP: (1057):purging node 1007276285
+

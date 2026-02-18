@@ -18,21 +18,56 @@ This project runs `step-ca` in Docker and is configured for Cisco router SCEP en
 
 Use this when you want to keep the same CA identity (same root/intermediate, same trust chain).
 
-1. Copy the full project directory, including `step/`:
+### A. Copy to the same path on the new host
+
+Important path note:
+- On the host, this project lives at `~/Containers/pki-server` (for example, `/home/rickey/Containers/pki-server`).
+- Inside the container, `./step` is bind-mounted to `/home/step`.
+
+So `/home/step` is a container path, not the host project path.
 
 ```bash
 rsync -av ~/Containers/pki-server/ <user>@<new-server>:~/Containers/pki-server/
 ```
 
-2. On the new server:
+### B. On the new host, fix mount permissions before first start
 
 ```bash
+mkdir -p ~/Containers
 cd ~/Containers/pki-server
-docker compose up -d
-docker compose ps
+sudo chown -R $USER:$USER ./step
+chmod -R u+rwX,go+rX ./step
+chmod u+rwx ./step/db
 ```
 
-3. Verify SCEP endpoint:
+Ubuntu 22.04 note:
+- No SELinux relabel step is needed.
+- Leave the volume mount as `./step:/home/step`.
+
+Only on SELinux hosts (RHEL/CentOS/Fedora), relabel the bind mount by changing this in `docker-compose.yml`:
+
+```yaml
+volumes:
+  - ./step:/home/step:Z
+```
+
+### C. Start and verify
+
+```bash
+docker compose up -d
+docker compose ps
+docker logs --tail 100 step-ca
+```
+
+If you see `permission denied` for `/home/step/config/defaults.json` or `/home/step/db/LOCK`, run:
+
+```bash
+sudo chown -R 1000:1000 ./step
+docker compose restart step-ca
+docker logs --tail 100 step-ca
+```
+
+### D. Validate SCEP endpoint
 
 ```bash
 curl -s "http://127.0.0.1:9001/scep/scep?operation=GetCACaps"

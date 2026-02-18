@@ -184,77 +184,81 @@ nodes:
   - boot_disk_size: null
     configuration:
       - name: iosxe_config.txt
-        content: "Building configuration...\n\nCurrent configuration : 6452 bytes\n\
-          !\n! Last configuration change at 14:55:49 UTC Fri Feb 6 2026\n! NVRAM config\
-          \ last updated at 20:51:19 UTC Wed Feb 4 2026 by cisco\n!\nversion 17.16\n\
-          service timestamps debug datetime msec\nservice timestamps log datetime\
-          \ msec\nservice password-encryption\nplatform qfp utilization monitor load\
-          \ 80\nplatform sslvpn use-pd\nplatform console serial\n!\nhostname r1\n\
-          !\nboot-start-marker\nboot-end-marker\n!\n!\nno logging console\nno aaa\
-          \ new-model\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\nno ip domain lookup\nip\
-          \ domain name cml.lab\n!\n!\n!\nlogin on-success log\n!\n!\nsubscriber templating\n\
-          !\n!\n!\ncrypto pki server CA\n no database archive\n issuer-name cn=CA,O=cml.lab\n\
-          \ grant auto\n!\ncrypto pki trustpoint SLA-TrustPoint\n enrollment pkcs12\n\
-          \ revocation-check crl\n hash sha256\n!\ncrypto pki trustpoint CA\n revocation-check\
-          \ crl\n rsakeypair CA\n hash sha512\n!\n!\ncrypto pki certificate chain\
-          \ SLA-TrustPoint\n certificate ca 01\n  30820321 30820209 A0030201 02020101\
-          \ 300D0609 2A864886 F70D0101 0B050030\n  32310E30 0C060355 040A1305 43697363\
-          \ 6F312030 1E060355 04031317 43697363\n  6F204C69 63656E73 696E6720 526F6F74\
-          \ 20434130 1E170D31 33303533 30313934\n  3834375A 170D3338 30353330 31393438\
-          \ 34375A30 32310E30 0C060355 040A1305\n  43697363 6F312030 1E060355 04031317\
-          \ 43697363 6F204C69 63656E73 696E6720\n  526F6F74 20434130 82012230 0D06092A\
-          \ 864886F7 0D010101 05000382 010F0030\n  82010A02 82010100 A6BCBD96 131E05F7\
-          \ 145EA72C 2CD686E6 17222EA1 F1EFF64D\n  CBB4C798 212AA147 C655D8D7 9471380D\
-          \ 8711441E 1AAF071A 9CAE6388 8A38E520\n  1C394D78 462EF239 C659F715 B98C0A59\
-          \ 5BBB5CBD 0CFEBEA3 700A8BF7 D8F256EE\n  4AA4E80D DB6FD1C9 60B1FD18 FFC69C96\
-          \ 6FA68957 A2617DE7 104FDC5F EA2956AC\n  7390A3EB 2B5436AD C847A2C5 DAB553EB\
-          \ 69A9A535 58E9F3E3 C0BD23CF 58BD7188\n  68E69491 20F320E7 948E71D7 AE3BCC84\
-          \ F10684C7 4BC8E00F 539BA42B 42C68BB7\n  C7479096 B4CB2D62 EA2F505D C7B062A4\
-          \ 6811D95B E8250FC4 5D5D5FB8 8F27D191\n  C55F0D76 61F9A4CD 3D992327 A8BB03BD\
-          \ 4E6D7069 7CBADF8B DF5F4368 95135E44\n  DFC7C6CF 04DD7FD1 02030100 01A34230\
-          \ 40300E06 03551D0F 0101FF04 04030201\n  06300F06 03551D13 0101FF04 05300301\
-          \ 01FF301D 0603551D 0E041604 1449DC85\n  4B3D31E5 1B3E6A17 606AF333 3D3B4C73\
-          \ E8300D06 092A8648 86F70D01 010B0500\n  03820101 00507F24 D3932A66 86025D9F\
-          \ E838AE5C 6D4DF6B0 49631C78 240DA905\n  604EDCDE FF4FED2B 77FC460E CD636FDB\
-          \ DD44681E 3A5673AB 9093D3B1 6C9E3D8B\n  D98987BF E40CBD9E 1AECA0C2 2189BB5C\
-          \ 8FA85686 CD98B646 5575B146 8DFC66A8\n  467A3DF4 4D565700 6ADF0F0D CF835015\
-          \ 3C04FF7C 21E878AC 11BA9CD2 55A9232C\n  7CA7B7E6 C1AF74F6 152E99B7 B1FCF9BB\
-          \ E973DE7F 5BDDEB86 C71E3B49 1765308B\n  5FB0DA06 B92AFE7F 494E8A9E 07B85737\
-          \ F3A58BE1 1A48A229 C37C1E69 39F08678\n  80DDCD16 D6BACECA EEBC7CF9 8428787B\
-          \ 35202CDC 60E4616A B623CDBD 230E3AFB\n  418616A9 4093E049 4D10AB75 27E86F73\
-          \ 932E35B5 8862FDAE 0275156F 719BB2F0\n  D697DF7F 28\n  \tquit\ncrypto pki\
-          \ certificate chain CA\n certificate ca 01\n  3082031C 30820204 A0030201\
-          \ 02020101 300D0609 2A864886 F70D0101 0D050030\n  1F311030 0E060355 040A1307\
-          \ 636D6C2E 6C616231 0B300906 03550403 13024341\n  301E170D 32363032 30343230\
-          \ 35303035 5A170D32 39303230 33323035 3030355A\n  301F3110 300E0603 55040A13\
-          \ 07636D6C 2E6C6162 310B3009 06035504 03130243\n  41308201 22300D06 092A8648\
-          \ 86F70D01 01010500 0382010F 00308201 0A028201\n  01008F96 4542186A F3C815ED\
-          \ A56FD69B F00EF589 62F15101 F12BCAAE E410C308\n  763724B3 304A2971 11371C67\
-          \ B05127CE 1A1315A3 D9F18C65 37203969 85ED21A2\n  A07988B6 1C3A1D59 3EB7501D\
-          \ E0895395 2D398918 F22E1CB5 635909FF 8644FEF2\n  505A49B0 E8D9FBC1 F3788C9F\
-          \ 84D23197 FAB3C87D B15282FE 5C71CC75 03EF798D\n  D875D25E AD9D47BD 8EE67EBD\
-          \ 9B764EDC 5B5C9A73 7F4E041F 7A14D951 F46F9209\n  E6FBDA9B 4F400FF5 1E44FEB0\
-          \ B4AA3497 120CD6BA 8D619C29 1DE5A0D9 39E7F809\n  F39D32F1 0A748C6B 55C5DA2A\
-          \ 54ACB72D D5DB06FA 76392859 ED49C409 A8C4B83B\n  5EF26F7E 4CE58EB1 80BCC886\
-          \ C827B6E6 4096E4D4 FE308EFC E305D60D B63D7697\n  FC950203 010001A3 63306130\
-          \ 0F060355 1D130101 FF040530 030101FF 300E0603\n  551D0F01 01FF0404 03020186\
-          \ 301F0603 551D2304 18301680 14386FBB C0F1C716\n  C052EE1A BE8C5D39 D4F559B6\
-          \ EF301D06 03551D0E 04160414 386FBBC0 F1C716C0\n  52EE1ABE 8C5D39D4 F559B6EF\
-          \ 300D0609 2A864886 F70D0101 0D050003 82010100\n  8CA2AA55 76F5761A 257E15BE\
-          \ DD3A7554 59CAC8D8 90716E19 3E3F835D CED30CF0\n  A985BA76 CE95A645 94E991A1\
-          \ 3D465F4E F065171F 5CE0F60F B55168C3 C6F9327F\n  4B43CF24 BE6DF6BF 127D414F\
-          \ CB40E9F1 543E01A9 D5048FBB 9DD2B046 499D7EC4\n  8E991C6E 92591570 83C0FAC9\
-          \ F5A3F340 826E93AF 8B01A524 959A15DD D232EB95\n  6C10B7C0 C5A4DBBE A51A75AE\
-          \ 0BA7E7D3 1229021E 01E06FC1 0D9D7006 6FB06746\n  16CD9237 928A0BBC 24E4E311\
-          \ C62FBB2B AA5DF015 1E9BEA77 530D5BF4 24AE7894\n  68B83E16 BDF946B7 3C8999DE\
-          \ 0349B5E8 5E3570E3 4F4D528C 0421606F 02879C38\n  1D490B33 4184DEC3 DDFDAD38\
-          \ A086B7C0 B011F830 47E9C36B F1E2723F 19B50324\n  \tquit\n!\n!\nlicense\
-          \ udi pid C8000V sn 9NJ7LFO9TTY\nmemory free low-watermark processor 201711\n\
-          diagnostic bootup level minimal\n!\n!\n!\nusername cisco privilege 15 password\
-          \ 7 110A1016141D\n!\nredundancy\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\ninterface\
-          \ Loopback0\n ip address 10.1.0.1 255.255.255.255\n!\ninterface GigabitEthernet1\n\
-          \ ip address 10.0.0.248 255.255.255.0\n negotiation auto\n!\ninterface GigabitEthernet2\n\
-          \ ip address 10.1.2.1 255.255.255.252\n negotiation auto\n!\ninterface GigabitEthernet3\n\
+        content: "Building configuration...\n\nCurrent configuration : 6702 bytes\n\
+          !\n! Last configuration change at 20:27:44 UTC Sun Feb 15 2026\n! NVRAM\
+          \ config last updated at 05:16:47 UTC Sat Feb 14 2026 by cisco\n!\nversion\
+          \ 17.16\nservice timestamps debug datetime msec\nservice timestamps log\
+          \ datetime msec\nservice password-encryption\nplatform qfp utilization monitor\
+          \ load 80\nplatform sslvpn use-pd\nplatform console serial\n!\nhostname\
+          \ r1\n!\nboot-start-marker\nboot-end-marker\n!\n!\nno logging console\n\
+          no aaa new-model\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\nno ip domain lookup\n\
+          ip domain name cml.lab\n!\n!\n!\nlogin on-success log\n!\n!\nsubscriber\
+          \ templating\n!\n!\n!\ncrypto pki server CA\n no database archive\n issuer-name\
+          \ cn=r1,o=cml.lab\n grant auto\n!\ncrypto pki trustpoint SLA-TrustPoint\n\
+          \ enrollment pkcs12\n revocation-check crl\n hash sha256\n!\ncrypto pki\
+          \ trustpoint ca-server\n serial-number\n fqdn r1.cml.lab\n ip-address 10.1.0.1\n\
+          \ subject-name cn=r1,o=cml.lab\n subject-alt-name r1.cml.lab\n revocation-check\
+          \ crl\n rsakeypair ca-server 2048\n hash sha512\n!\ncrypto pki trustpoint\
+          \ CA\n revocation-check crl\n rsakeypair CA\n hash sha512\n!\n!\ncrypto\
+          \ pki certificate chain SLA-TrustPoint\n certificate ca 01\n  30820321 30820209\
+          \ A0030201 02020101 300D0609 2A864886 F70D0101 0B050030\n  32310E30 0C060355\
+          \ 040A1305 43697363 6F312030 1E060355 04031317 43697363\n  6F204C69 63656E73\
+          \ 696E6720 526F6F74 20434130 1E170D31 33303533 30313934\n  3834375A 170D3338\
+          \ 30353330 31393438 34375A30 32310E30 0C060355 040A1305\n  43697363 6F312030\
+          \ 1E060355 04031317 43697363 6F204C69 63656E73 696E6720\n  526F6F74 20434130\
+          \ 82012230 0D06092A 864886F7 0D010101 05000382 010F0030\n  82010A02 82010100\
+          \ A6BCBD96 131E05F7 145EA72C 2CD686E6 17222EA1 F1EFF64D\n  CBB4C798 212AA147\
+          \ C655D8D7 9471380D 8711441E 1AAF071A 9CAE6388 8A38E520\n  1C394D78 462EF239\
+          \ C659F715 B98C0A59 5BBB5CBD 0CFEBEA3 700A8BF7 D8F256EE\n  4AA4E80D DB6FD1C9\
+          \ 60B1FD18 FFC69C96 6FA68957 A2617DE7 104FDC5F EA2956AC\n  7390A3EB 2B5436AD\
+          \ C847A2C5 DAB553EB 69A9A535 58E9F3E3 C0BD23CF 58BD7188\n  68E69491 20F320E7\
+          \ 948E71D7 AE3BCC84 F10684C7 4BC8E00F 539BA42B 42C68BB7\n  C7479096 B4CB2D62\
+          \ EA2F505D C7B062A4 6811D95B E8250FC4 5D5D5FB8 8F27D191\n  C55F0D76 61F9A4CD\
+          \ 3D992327 A8BB03BD 4E6D7069 7CBADF8B DF5F4368 95135E44\n  DFC7C6CF 04DD7FD1\
+          \ 02030100 01A34230 40300E06 03551D0F 0101FF04 04030201\n  06300F06 03551D13\
+          \ 0101FF04 05300301 01FF301D 0603551D 0E041604 1449DC85\n  4B3D31E5 1B3E6A17\
+          \ 606AF333 3D3B4C73 E8300D06 092A8648 86F70D01 010B0500\n  03820101 00507F24\
+          \ D3932A66 86025D9F E838AE5C 6D4DF6B0 49631C78 240DA905\n  604EDCDE FF4FED2B\
+          \ 77FC460E CD636FDB DD44681E 3A5673AB 9093D3B1 6C9E3D8B\n  D98987BF E40CBD9E\
+          \ 1AECA0C2 2189BB5C 8FA85686 CD98B646 5575B146 8DFC66A8\n  467A3DF4 4D565700\
+          \ 6ADF0F0D CF835015 3C04FF7C 21E878AC 11BA9CD2 55A9232C\n  7CA7B7E6 C1AF74F6\
+          \ 152E99B7 B1FCF9BB E973DE7F 5BDDEB86 C71E3B49 1765308B\n  5FB0DA06 B92AFE7F\
+          \ 494E8A9E 07B85737 F3A58BE1 1A48A229 C37C1E69 39F08678\n  80DDCD16 D6BACECA\
+          \ EEBC7CF9 8428787B 35202CDC 60E4616A B623CDBD 230E3AFB\n  418616A9 4093E049\
+          \ 4D10AB75 27E86F73 932E35B5 8862FDAE 0275156F 719BB2F0\n  D697DF7F 28\n\
+          \  \tquit\ncrypto pki certificate chain ca-server\ncrypto pki certificate\
+          \ chain CA\n certificate ca 01\n  3082031C 30820204 A0030201 02020101 300D0609\
+          \ 2A864886 F70D0101 0D050030\n  1F311030 0E060355 040A1307 636D6C2E 6C616231\
+          \ 0B300906 03550403 13027231\n  301E170D 32363032 31343034 32373338 5A170D32\
+          \ 39303231 33303432 3733385A\n  301F3110 300E0603 55040A13 07636D6C 2E6C6162\
+          \ 310B3009 06035504 03130272\n  31308201 22300D06 092A8648 86F70D01 01010500\
+          \ 0382010F 00308201 0A028201\n  0100BFFB 53259CDB FB28E5A2 5A8834C1 DA66D35B\
+          \ 149144DB 05B2FE58 109CF440\n  0EA657A1 77A3498F 668A1169 4A4E90EB 58DE05D6\
+          \ 14E49222 51DB9072 718B3A8B\n  24BEF5F9 51131C9C 09854EB0 CE006DCE DD4D793D\
+          \ 9A63AAC7 DA4C5586 DD40DC84\n  3C96B2FE E6BBFFA1 9F09FB9B DA31FE76 81A86E4D\
+          \ AE3436A1 C99C4CBB F22C6861\n  6238A373 7824A0A7 FACEF3CE 5656BE6F 6E192493\
+          \ 28848C06 A063C942 B3549121\n  90D7C798 78BF0BB2 091E5FF9 CE2A832E 56A1B898\
+          \ EC911014 35B21E6A E8854386\n  E5E63FAD 71C63CD1 C0EB4DB4 CB2EB1C7 30234B8F\
+          \ 3B7D1FFC D98FB83C 52E1D413\n  4B6E3A29 74777E99 715D165D EFCDF1C3 32A633DD\
+          \ 081D57E6 8D6CE3B9 969A99E9\n  25CF0203 010001A3 63306130 0F060355 1D130101\
+          \ FF040530 030101FF 300E0603\n  551D0F01 01FF0404 03020186 301F0603 551D2304\
+          \ 18301680 140B88E6 99432AAC\n  25FBF09D 49AD2A41 E9DF61B9 F8301D06 03551D0E\
+          \ 04160414 0B88E699 432AAC25\n  FBF09D49 AD2A41E9 DF61B9F8 300D0609 2A864886\
+          \ F70D0101 0D050003 82010100\n  8031049E 2440839A 048AA21A 7AB16875 CED6832D\
+          \ B4F321AE 5F7A7D8D 6E76C226\n  4226059D 807CD470 A44A451A 49B58B78 DCB14FAE\
+          \ 425E41D0 8717956A 2982D57D\n  A3E20AC5 191E648E 555897B9 70EF3856 87E893D1\
+          \ 3E91FF6F 175E13C6 C23D12DC\n  794717F0 5CA22A97 C335271B 62DC90F0 83DC8523\
+          \ C9AD75B0 34E82AD6 FC0CF6C4\n  B7191416 74E71DE7 DE6C1579 10104D6C 0EC3A620\
+          \ BD6A5C35 3D4437F4 98AE30A4\n  4A356705 C6D2D1D5 8083206B 480BA408 2164391D\
+          \ AFAFA2A4 47D1F254 92EB0644\n  DF9B200E CAC96890 050017F4 C446883B F0545302\
+          \ 6425FDC5 85984543 E691A3EA\n  9AA07D4C D883528D B253796E 27F3A001 408A2A3D\
+          \ 6858CE65 5F773C30 FA7BA6C6\n  \tquit\n!\n!\nlicense udi pid C8000V sn\
+          \ 94GIV5LQ4KS\nmemory free low-watermark processor 201711\ndiagnostic bootup\
+          \ level minimal\n!\n!\n!\nusername cisco privilege 15 password 7 110A1016141D\n\
+          !\nredundancy\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\ninterface Loopback0\n ip address\
+          \ 10.1.0.1 255.255.255.255\n!\ninterface GigabitEthernet1\n ip address 10.0.0.248\
+          \ 255.255.255.0\n negotiation auto\n!\ninterface GigabitEthernet2\n ip address\
+          \ 10.1.2.1 255.255.255.252\n negotiation auto\n!\ninterface GigabitEthernet3\n\
           \ ip address 10.1.3.1 255.255.255.252\n negotiation auto\n!\ninterface GigabitEthernet4\n\
           \ no ip address\n shutdown\n negotiation auto\n!\ninterface GigabitEthernet5\n\
           \ no ip address\n shutdown\n negotiation auto\n!\ninterface GigabitEthernet6\n\
@@ -268,9 +272,9 @@ nodes:
           \ activate\n  neighbor 10.1.3.2 activate\n exit-address-family\n!\nip forward-protocol\
           \ nd\nip forward-protocol udp\n!\nip http server\nno ip http secure-server\n\
           ip route 0.0.0.0 0.0.0.0 GigabitEthernet1 10.0.0.1\nip ssh bulk-mode 131072\n\
-          !\nlogging host 10.0.0.84\n!\n!\ncontrol-plane\n!\nalias exec q exit\n!\n\
-          line con 0\n exec-timeout 0 0\n logging synchronous\n stopbits 1\nline aux\
-          \ 0\nline vty 0 4\n exec-timeout 0 0\n logging synchronous\n login local\n\
+          !\nlogging host 10.0.0.149\n!\n!\ncontrol-plane\n!\nalias exec q exit\n\
+          !\nline con 0\n exec-timeout 0 0\n logging synchronous\n stopbits 1\nline\
+          \ aux 0\nline vty 0 4\n exec-timeout 0 0\n logging synchronous\n login local\n\
           \ transport input ssh\n!\nntp source Loopback0\nntp master 3\nntp server\
           \ 132.163.96.1 prefer source GigabitEthernet1\n!\n!\n!\n!\n!\n!\nend"
     cpu_limit: null
@@ -334,8 +338,8 @@ nodes:
   - boot_disk_size: null
     configuration:
       - name: iosxe_config.txt
-        content: "Building configuration...\n\nCurrent configuration : 6359 bytes\n\
-          !\n! Last configuration change at 14:55:49 UTC Fri Feb 6 2026\n!\nversion\
+        content: "Building configuration...\n\nCurrent configuration : 6360 bytes\n\
+          !\n! Last configuration change at 20:27:44 UTC Sun Feb 15 2026\n!\nversion\
           \ 17.16\nservice timestamps debug datetime msec\nservice timestamps log\
           \ datetime msec\nservice password-encryption\nplatform qfp utilization monitor\
           \ load 80\nplatform sslvpn use-pd\nplatform console serial\n!\nhostname\
@@ -399,7 +403,7 @@ nodes:
           \ 7635B2F4 92C5B119 B578185C\n  AC2CD49F 175513B1 635C4A5D ACAC887E 19994F74\
           \ 8C1E0FAC B87E65BA A6B963DF\n  B4059B59 6601D904 C5ECCAF1 07310C46 8026EF61\
           \ 41CA7ECF CA617ECE 7C9449ED\n  D6058005 48130179 3B54E650 372B327E 995577EA\n\
-          \  \tquit\n!\n!\nlicense udi pid C8000V sn 9VOCZCMSM1D\nmemory free low-watermark\
+          \  \tquit\n!\n!\nlicense udi pid C8000V sn 9U60VR71BE8\nmemory free low-watermark\
           \ processor 201711\ndiagnostic bootup level minimal\n!\n!\n!\nusername cisco\
           \ privilege 15 password 7 05080F1C2243\n!\nredundancy\n!\n!\n!\n!\n!\n!\n\
           !\n!\n!\n!\ninterface Loopback0\n ip address 10.3.0.1 255.255.255.255\n\
@@ -484,141 +488,141 @@ nodes:
     configuration:
       - name: iosxe_config.txt
         content: "Building configuration...\n\nCurrent configuration : 9838 bytes\n\
-          !\n! Last configuration change at 14:55:49 UTC Fri Feb 6 2026\n! NVRAM config\
-          \ last updated at 18:18:36 UTC Thu Feb 5 2026 by cisco\n!\nversion 17.16\n\
-          service timestamps debug datetime msec\nservice timestamps log datetime\
-          \ msec\nservice password-encryption\nplatform qfp utilization monitor load\
-          \ 80\nplatform sslvpn use-pd\nplatform console serial\n!\nhostname r2\n\
-          !\nboot-start-marker\nboot-end-marker\n!\n!\nno logging console\nno aaa\
-          \ new-model\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\nno ip domain lookup\nip\
-          \ domain name cml.lab\n!\n!\n!\nlogin on-success log\n!\n!\nsubscriber templating\n\
-          ipv6 unicast-routing\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\ncrypto\
-          \ pki trustpoint SLA-TrustPoint\n enrollment pkcs12\n revocation-check crl\n\
-          \ hash sha256\n!\ncrypto pki trustpoint CA-Client\n enrollment url http://10.1.0.1:80\n\
-          \ serial-number\n fqdn r2.cml.lab\n ip-address 10.2.0.1\n subject-name CN=r2,O=cml.lab\n\
-          \ subject-alt-name r2.cml.lab\n revocation-check none\n rsakeypair CA-Cert\n\
-          \ hash sha512\n!\n!\ncrypto pki certificate chain SLA-TrustPoint\n certificate\
-          \ ca 01\n  30820321 30820209 A0030201 02020101 300D0609 2A864886 F70D0101\
-          \ 0B050030\n  32310E30 0C060355 040A1305 43697363 6F312030 1E060355 04031317\
-          \ 43697363\n  6F204C69 63656E73 696E6720 526F6F74 20434130 1E170D31 33303533\
-          \ 30313934\n  3834375A 170D3338 30353330 31393438 34375A30 32310E30 0C060355\
-          \ 040A1305\n  43697363 6F312030 1E060355 04031317 43697363 6F204C69 63656E73\
-          \ 696E6720\n  526F6F74 20434130 82012230 0D06092A 864886F7 0D010101 05000382\
-          \ 010F0030\n  82010A02 82010100 A6BCBD96 131E05F7 145EA72C 2CD686E6 17222EA1\
-          \ F1EFF64D\n  CBB4C798 212AA147 C655D8D7 9471380D 8711441E 1AAF071A 9CAE6388\
-          \ 8A38E520\n  1C394D78 462EF239 C659F715 B98C0A59 5BBB5CBD 0CFEBEA3 700A8BF7\
-          \ D8F256EE\n  4AA4E80D DB6FD1C9 60B1FD18 FFC69C96 6FA68957 A2617DE7 104FDC5F\
-          \ EA2956AC\n  7390A3EB 2B5436AD C847A2C5 DAB553EB 69A9A535 58E9F3E3 C0BD23CF\
-          \ 58BD7188\n  68E69491 20F320E7 948E71D7 AE3BCC84 F10684C7 4BC8E00F 539BA42B\
-          \ 42C68BB7\n  C7479096 B4CB2D62 EA2F505D C7B062A4 6811D95B E8250FC4 5D5D5FB8\
-          \ 8F27D191\n  C55F0D76 61F9A4CD 3D992327 A8BB03BD 4E6D7069 7CBADF8B DF5F4368\
-          \ 95135E44\n  DFC7C6CF 04DD7FD1 02030100 01A34230 40300E06 03551D0F 0101FF04\
-          \ 04030201\n  06300F06 03551D13 0101FF04 05300301 01FF301D 0603551D 0E041604\
-          \ 1449DC85\n  4B3D31E5 1B3E6A17 606AF333 3D3B4C73 E8300D06 092A8648 86F70D01\
-          \ 010B0500\n  03820101 00507F24 D3932A66 86025D9F E838AE5C 6D4DF6B0 49631C78\
-          \ 240DA905\n  604EDCDE FF4FED2B 77FC460E CD636FDB DD44681E 3A5673AB 9093D3B1\
-          \ 6C9E3D8B\n  D98987BF E40CBD9E 1AECA0C2 2189BB5C 8FA85686 CD98B646 5575B146\
-          \ 8DFC66A8\n  467A3DF4 4D565700 6ADF0F0D CF835015 3C04FF7C 21E878AC 11BA9CD2\
-          \ 55A9232C\n  7CA7B7E6 C1AF74F6 152E99B7 B1FCF9BB E973DE7F 5BDDEB86 C71E3B49\
-          \ 1765308B\n  5FB0DA06 B92AFE7F 494E8A9E 07B85737 F3A58BE1 1A48A229 C37C1E69\
-          \ 39F08678\n  80DDCD16 D6BACECA EEBC7CF9 8428787B 35202CDC 60E4616A B623CDBD\
-          \ 230E3AFB\n  418616A9 4093E049 4D10AB75 27E86F73 932E35B5 8862FDAE 0275156F\
-          \ 719BB2F0\n  D697DF7F 28\n  \tquit\ncrypto pki certificate chain CA-Client\n\
-          \ certificate 08\n  30820365 3082024D A0030201 02020108 300D0609 2A864886\
-          \ F70D0101 0D050030\n  1F311030 0E060355 040A1307 636D6C2E 6C616231 0B300906\
-          \ 03550403 13024341\n  301E170D 32363032 30353138 30333230 5A170D32 37303230\
-          \ 35313830 3332305A\n  30653110 300E0603 55040A13 07636D6C 2E6C6162 310B3009\
-          \ 06035504 03130272\n  32314430 12060355 0405130B 39574535 51485331 30523730\
-          \ 1506092A 864886F7\n  0D010908 13083130 2E322E30 2E313017 06092A86 4886F70D\
-          \ 01090216 0A72322E\n  636D6C2E 6C616230 82012230 0D06092A 864886F7 0D010101\
-          \ 05000382 010F0030\n  82010A02 82010100 E217825A 10F4B7AE 23190ED2 9D2CCA30\
-          \ 13D23BF4 70628788\n  DBDD160C A2FEB262 8FB483F3 5825FBD8 A6BAEC0E BED6F1D0\
-          \ D26D5F46 72AA4977\n  45907173 E4BE1CE9 02880328 1FD95C2E 951752AC 6231A181\
-          \ 57AD414D BC1E77C8\n  3C3C4044 42FA83AD E9301D60 F4E768B5 CF90695D A36380C0\
-          \ E171FC23 CFB4A58D\n  D8D5711D 227DA5DB 92F208CA AD4773B4 404018E4 413F4D2D\
-          \ 8FBE9A77 25233827\n  83D61739 EDAE72D5 59C9954F CD6557E1 CEBB5647 C371B200\
-          \ C886D76D CC4AB7B1\n  F7AAF6C9 9A110D79 DA0E2B82 A6C9E11F 3F4E7041 B8946703\
-          \ D7DB9FC1 0333C23F\n  1DE4F12D 0E8CA15B C4D7E832 AE71E5E3 D826E46C 9D7A861B\
-          \ C981610F ED471D48\n  93FEDABD BAC3F329 02030100 01A36630 64300B06 03551D0F\
-          \ 04040302 05A03015\n  0603551D 11040E30 0C820A72 322E636D 6C2E6C61 62301F06\
-          \ 03551D23 04183016\n  8014386F BBC0F1C7 16C052EE 1ABE8C5D 39D4F559 B6EF301D\
-          \ 0603551D 0E041604\n  14D07756 06D893B6 14BB492B ABE80544 E0D44F83 7B300D06\
-          \ 092A8648 86F70D01\n  010D0500 03820101 000AA2F5 A0A4C3F9 31D16AF1 2896AE16\
-          \ DCF53F40 7D2E6B0F\n  BEE6A441 A5137A7D 0A7927D8 16153E73 9A6E9828 C183EA1A\
-          \ F36AADBA 4FBC07FF\n  15FC6E38 2A0845A4 3590D0D7 23DD403F EE7A388A A7E13472\
-          \ F3313A0F E1ED7A0C\n  BD528604 CDD6B2E5 44D7A940 74335DE3 C9404152 0FEEE639\
-          \ 08B50905 3F9A42A6\n  18DA7AE9 356870C5 756B7E3E 6D6AB63B EF475740 18B48524\
-          \ 21F4209E 2535D594\n  61E671F4 3C2E6965 FDA4F007 8DEAC679 7FD81D79 C9240674\
-          \ 513A126B 6CBB4F48\n  518ACDAC BD828EE1 41F60A49 78531DB6 A943AA70 379C7D04\
-          \ F2444D29 91604CE5\n  D6106520 DD036816 9B353BD3 6CD156B5 D1102C06 62CAC718\
-          \ 5406FF1D 5AB5F559\n  DD0042B5 5B86AE6B 18\n  \tquit\n certificate ca 01\n\
-          \  3082031C 30820204 A0030201 02020101 300D0609 2A864886 F70D0101 0D050030\n\
-          \  1F311030 0E060355 040A1307 636D6C2E 6C616231 0B300906 03550403 13024341\n\
-          \  301E170D 32363032 30343230 35303035 5A170D32 39303230 33323035 3030355A\n\
-          \  301F3110 300E0603 55040A13 07636D6C 2E6C6162 310B3009 06035504 03130243\n\
-          \  41308201 22300D06 092A8648 86F70D01 01010500 0382010F 00308201 0A028201\n\
-          \  01008F96 4542186A F3C815ED A56FD69B F00EF589 62F15101 F12BCAAE E410C308\n\
-          \  763724B3 304A2971 11371C67 B05127CE 1A1315A3 D9F18C65 37203969 85ED21A2\n\
-          \  A07988B6 1C3A1D59 3EB7501D E0895395 2D398918 F22E1CB5 635909FF 8644FEF2\n\
-          \  505A49B0 E8D9FBC1 F3788C9F 84D23197 FAB3C87D B15282FE 5C71CC75 03EF798D\n\
-          \  D875D25E AD9D47BD 8EE67EBD 9B764EDC 5B5C9A73 7F4E041F 7A14D951 F46F9209\n\
-          \  E6FBDA9B 4F400FF5 1E44FEB0 B4AA3497 120CD6BA 8D619C29 1DE5A0D9 39E7F809\n\
-          \  F39D32F1 0A748C6B 55C5DA2A 54ACB72D D5DB06FA 76392859 ED49C409 A8C4B83B\n\
-          \  5EF26F7E 4CE58EB1 80BCC886 C827B6E6 4096E4D4 FE308EFC E305D60D B63D7697\n\
-          \  FC950203 010001A3 63306130 0F060355 1D130101 FF040530 030101FF 300E0603\n\
-          \  551D0F01 01FF0404 03020186 301F0603 551D2304 18301680 14386FBB C0F1C716\n\
-          \  C052EE1A BE8C5D39 D4F559B6 EF301D06 03551D0E 04160414 386FBBC0 F1C716C0\n\
-          \  52EE1ABE 8C5D39D4 F559B6EF 300D0609 2A864886 F70D0101 0D050003 82010100\n\
-          \  8CA2AA55 76F5761A 257E15BE DD3A7554 59CAC8D8 90716E19 3E3F835D CED30CF0\n\
-          \  A985BA76 CE95A645 94E991A1 3D465F4E F065171F 5CE0F60F B55168C3 C6F9327F\n\
-          \  4B43CF24 BE6DF6BF 127D414F CB40E9F1 543E01A9 D5048FBB 9DD2B046 499D7EC4\n\
-          \  8E991C6E 92591570 83C0FAC9 F5A3F340 826E93AF 8B01A524 959A15DD D232EB95\n\
-          \  6C10B7C0 C5A4DBBE A51A75AE 0BA7E7D3 1229021E 01E06FC1 0D9D7006 6FB06746\n\
-          \  16CD9237 928A0BBC 24E4E311 C62FBB2B AA5DF015 1E9BEA77 530D5BF4 24AE7894\n\
-          \  68B83E16 BDF946B7 3C8999DE 0349B5E8 5E3570E3 4F4D528C 0421606F 02879C38\n\
-          \  1D490B33 4184DEC3 DDFDAD38 A086B7C0 B011F830 47E9C36B F1E2723F 19B50324\n\
-          \  \tquit\n!\n!\n!\n!\n!\n!\n!\n!\n!\nlicense udi pid C8000V sn 9WE5QHS10R7\n\
-          license boot level network-advantage addon dna-advantage\nmemory free low-watermark\
-          \ processor 201711\ndiagnostic bootup level minimal\n!\n!\nspanning-tree\
-          \ extend system-id\n!\n!\nusername cisco privilege 15 password 7 13061E010803\n\
-          !\nredundancy\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\ncrypto isakmp\
-          \ policy 10\n encryption aes 256\n hash sha256\n group 14\ncrypto isakmp\
-          \ key cisco!123 address 0.0.0.0\n!\n!\ncrypto ipsec transform-set TRANSFORMER\
-          \ esp-aes 256 esp-sha256-hmac\n mode transport\n!\ncrypto ipsec profile\
-          \ IPSEC\n set transform-set TRANSFORMER\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n\
-          interface Loopback0\n ip address 10.2.0.1 255.255.255.255\n ip ospf 1 area\
-          \ 0\n!\ninterface Tunnel1\n ip address 192.168.1.2 255.255.255.252\n ip\
-          \ mtu 1400\n ip ospf 1 area 1\n tunnel source 10.2.2.1\n tunnel mode ipsec\
-          \ ipv4\n tunnel destination 10.4.2.1\n tunnel protection ipsec profile IPSEC\n\
-          !\ninterface GigabitEthernet1\n ip address 10.1.3.2 255.255.255.252\n negotiation\
-          \ auto\n!\ninterface GigabitEthernet2\n ip address 10.2.2.1 255.255.255.252\n\
-          \ ip ospf 1 area 0\n negotiation auto\n!\ninterface GigabitEthernet3\n ip\
-          \ address 10.2.3.1 255.255.255.0\n ip ospf 1 area 0\n negotiation auto\n\
-          !\ninterface GigabitEthernet4\n no ip address\n shutdown\n negotiation auto\n\
-          !\ninterface GigabitEthernet5\n no ip address\n shutdown\n negotiation auto\n\
-          !\ninterface GigabitEthernet6\n no ip address\n shutdown\n negotiation auto\n\
-          !\ninterface GigabitEthernet7\n no ip address\n shutdown\n negotiation auto\n\
-          !\ninterface GigabitEthernet8\n no ip address\n shutdown\n negotiation auto\n\
-          !\nrouter ospf 1\n router-id 2.2.2.2\n log-adjacency-changes detail\n passive-interface\
-          \ GigabitEthernet3\n passive-interface Loopback0\n default-information originate\
-          \ always\n!\nrouter bgp 65002\n bgp router-id 10.2.0.1\n bgp log-neighbor-changes\n\
-          \ neighbor 10.1.3.1 remote-as 65001\n neighbor 10.5.0.1 remote-as 65002\n\
-          \ neighbor 10.5.0.1 update-source Loopback0\n !\n address-family ipv4\n\
-          \  network 10.2.0.1 mask 255.255.255.255\n  network 10.5.0.1 mask 255.255.255.255\n\
-          \  aggregate-address 10.5.0.0 255.255.0.0 summary-only\n  aggregate-address\
-          \ 10.2.0.0 255.255.0.0 summary-only\n  neighbor 10.1.3.1 activate\n  neighbor\
-          \ 10.1.3.1 soft-reconfiguration inbound\n  neighbor 10.5.0.1 activate\n\
-          \  neighbor 10.5.0.1 next-hop-self\n exit-address-family\n!\nip forward-protocol\
-          \ nd\nip forward-protocol udp\n!\nip bgp-community new-format\nno ip http\
-          \ server\nip http secure-server\nip ssh bulk-mode 131072\n!\nlogging host\
-          \ 10.0.0.84\n!\n!\n!\ncontrol-plane\n!\n!\nmgcp behavior rsip-range tgcp-only\n\
-          mgcp behavior comedia-role none\nmgcp behavior comedia-check-media-src disable\n\
-          mgcp behavior comedia-sdp-force disable\n!\nmgcp profile default\n!\n!\n\
-          !\n!\n!\nalias exec q exit\n!\nline con 0\n exec-timeout 0 0\n logging synchronous\n\
-          \ stopbits 1\nline aux 0\nline vty 0 4\n exec-timeout 0 0\n logging synchronous\n\
-          \ login local\n length 0\n transport input ssh\n!\nntp server 10.1.0.1 prefer\
-          \ source Loopback0\nntp peer 10.5.0.1 source Loopback0\n!\n!\n!\n!\n!\n\
-          !\nend"
+          !\n! Last configuration change at 20:27:44 UTC Sun Feb 15 2026\n! NVRAM\
+          \ config last updated at 14:12:31 UTC Sat Feb 14 2026 by cisco\n!\nversion\
+          \ 17.16\nservice timestamps debug datetime msec\nservice timestamps log\
+          \ datetime msec\nservice password-encryption\nplatform qfp utilization monitor\
+          \ load 80\nplatform sslvpn use-pd\nplatform console serial\n!\nhostname\
+          \ r2\n!\nboot-start-marker\nboot-end-marker\n!\n!\nno logging console\n\
+          no aaa new-model\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\nno ip domain lookup\n\
+          ip domain name cml.lab\n!\n!\n!\nlogin on-success log\n!\n!\nsubscriber\
+          \ templating\nipv6 unicast-routing\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n\
+          !\n!\n!\ncrypto pki trustpoint SLA-TrustPoint\n enrollment pkcs12\n revocation-check\
+          \ crl\n hash sha256\n!\ncrypto pki trustpoint ca-client\n enrollment url\
+          \ http://10.1.0.1:80\n serial-number\n fqdn r2.cml.lab\n ip-address 10.2.0.1\n\
+          \ subject-name CN=r2,O=cml.lab\n subject-alt-name r2.cml.lab\n revocation-check\
+          \ none\n rsakeypair ca-client 2048\n hash sha512\n!\n!\ncrypto pki certificate\
+          \ chain SLA-TrustPoint\n certificate ca 01\n  30820321 30820209 A0030201\
+          \ 02020101 300D0609 2A864886 F70D0101 0B050030\n  32310E30 0C060355 040A1305\
+          \ 43697363 6F312030 1E060355 04031317 43697363\n  6F204C69 63656E73 696E6720\
+          \ 526F6F74 20434130 1E170D31 33303533 30313934\n  3834375A 170D3338 30353330\
+          \ 31393438 34375A30 32310E30 0C060355 040A1305\n  43697363 6F312030 1E060355\
+          \ 04031317 43697363 6F204C69 63656E73 696E6720\n  526F6F74 20434130 82012230\
+          \ 0D06092A 864886F7 0D010101 05000382 010F0030\n  82010A02 82010100 A6BCBD96\
+          \ 131E05F7 145EA72C 2CD686E6 17222EA1 F1EFF64D\n  CBB4C798 212AA147 C655D8D7\
+          \ 9471380D 8711441E 1AAF071A 9CAE6388 8A38E520\n  1C394D78 462EF239 C659F715\
+          \ B98C0A59 5BBB5CBD 0CFEBEA3 700A8BF7 D8F256EE\n  4AA4E80D DB6FD1C9 60B1FD18\
+          \ FFC69C96 6FA68957 A2617DE7 104FDC5F EA2956AC\n  7390A3EB 2B5436AD C847A2C5\
+          \ DAB553EB 69A9A535 58E9F3E3 C0BD23CF 58BD7188\n  68E69491 20F320E7 948E71D7\
+          \ AE3BCC84 F10684C7 4BC8E00F 539BA42B 42C68BB7\n  C7479096 B4CB2D62 EA2F505D\
+          \ C7B062A4 6811D95B E8250FC4 5D5D5FB8 8F27D191\n  C55F0D76 61F9A4CD 3D992327\
+          \ A8BB03BD 4E6D7069 7CBADF8B DF5F4368 95135E44\n  DFC7C6CF 04DD7FD1 02030100\
+          \ 01A34230 40300E06 03551D0F 0101FF04 04030201\n  06300F06 03551D13 0101FF04\
+          \ 05300301 01FF301D 0603551D 0E041604 1449DC85\n  4B3D31E5 1B3E6A17 606AF333\
+          \ 3D3B4C73 E8300D06 092A8648 86F70D01 010B0500\n  03820101 00507F24 D3932A66\
+          \ 86025D9F E838AE5C 6D4DF6B0 49631C78 240DA905\n  604EDCDE FF4FED2B 77FC460E\
+          \ CD636FDB DD44681E 3A5673AB 9093D3B1 6C9E3D8B\n  D98987BF E40CBD9E 1AECA0C2\
+          \ 2189BB5C 8FA85686 CD98B646 5575B146 8DFC66A8\n  467A3DF4 4D565700 6ADF0F0D\
+          \ CF835015 3C04FF7C 21E878AC 11BA9CD2 55A9232C\n  7CA7B7E6 C1AF74F6 152E99B7\
+          \ B1FCF9BB E973DE7F 5BDDEB86 C71E3B49 1765308B\n  5FB0DA06 B92AFE7F 494E8A9E\
+          \ 07B85737 F3A58BE1 1A48A229 C37C1E69 39F08678\n  80DDCD16 D6BACECA EEBC7CF9\
+          \ 8428787B 35202CDC 60E4616A B623CDBD 230E3AFB\n  418616A9 4093E049 4D10AB75\
+          \ 27E86F73 932E35B5 8862FDAE 0275156F 719BB2F0\n  D697DF7F 28\n  \tquit\n\
+          crypto pki certificate chain ca-client\n certificate 02\n  30820365 3082024D\
+          \ A0030201 02020102 300D0609 2A864886 F70D0101 0D050030\n  1F311030 0E060355\
+          \ 040A1307 636D6C2E 6C616231 0B300906 03550403 13027231\n  301E170D 32363032\
+          \ 31343034 33303235 5A170D32 37303231 34303433 3032355A\n  30653110 300E0603\
+          \ 55040A13 07636D6C 2E6C6162 310B3009 06035504 03130272\n  32314430 12060355\
+          \ 0405130B 39505537 36334D52 39314330 1506092A 864886F7\n  0D010908 13083130\
+          \ 2E322E30 2E313017 06092A86 4886F70D 01090216 0A72322E\n  636D6C2E 6C616230\
+          \ 82012230 0D06092A 864886F7 0D010101 05000382 010F0030\n  82010A02 82010100\
+          \ 9C1408F7 01CFA1B6 B118BA08 6F6CDB08 329F857D A862B9DF\n  3AB8CC26 BF018AEC\
+          \ F2814B26 0403E57F FE3A5C65 EB3EB5D8 D1BBCE2A DEAB13C5\n  3E4A3CEE E3920B31\
+          \ EF16DA80 B2719F6A 4E032423 D86DFC58 F01C86A1 C0581FCC\n  85101CC0 F7E12D61\
+          \ 8AC0F7D6 A1B9DA40 1164740B 84F6D8BE 82CC1B7D 90095D7B\n  23D4E7FE 327E0D9F\
+          \ 2CC28471 6D5B3306 B3715B2C 0D0F7C18 DDC951B2 A006B05A\n  695B8BE2 E4260D97\
+          \ B269E0D8 DE3B70FE 86F09E99 5710AB03 E3F5F8FA AB68C10E\n  ED9CF631 8341930E\
+          \ 6ADB6B8B 84E46262 EED66368 A647B27F EACCCF9D F35379D4\n  93AD7C63 762372D3\
+          \ BB1E79BD C9150A09 1F1F72D1 F1108E25 0CE62DF1 9F572B25\n  62DDD434 2AF07DD5\
+          \ 02030100 01A36630 64300B06 03551D0F 04040302 05A03015\n  0603551D 11040E30\
+          \ 0C820A72 322E636D 6C2E6C61 62301F06 03551D23 04183016\n  80140B88 E699432A\
+          \ AC25FBF0 9D49AD2A 41E9DF61 B9F8301D 0603551D 0E041604\n  14FFD89A 3B2D9270\
+          \ FF6C9014 FBFEAFF9 A4CB972E A1300D06 092A8648 86F70D01\n  010D0500 03820101\
+          \ 00423464 418FF7C1 19523706 E8E4BFB2 ED26B88E 451A06AF\n  1B872010 570791A7\
+          \ CB715B06 A05C7B83 8626739E E1265AFC DA5327DA FA71614B\n  6AE3DB99 CDD0FE71\
+          \ E8D0F216 0D00FC65 0A50737D C8F82440 D2BC0DB7 F34F2D4D\n  1222B7B1 C59A8054\
+          \ 896BC619 E05FCEAA A77FADD0 D064560A C5ED382C 88C8DB4D\n  8983A601 7BE51DD0\
+          \ 49CD7CE3 3274F452 0D0CF43C BBA3C4FB EEE16D94 61120AD0\n  A427CC4D 41FB0286\
+          \ 05D29726 1B411CE8 4F95F48F 06F2E7D1 133B2C3C 29327D3B\n  BC496ABA 36CB3393\
+          \ 1B2F46D1 01250383 34A0F4AD 53A4C386 3C1D60B6 F7E3D995\n  8606E104 0D96420A\
+          \ 0850D2EC E11B11B3 ECEDF67B 940AC4E5 46187C93 50A26E72\n  88FA620D E8C17C0E\
+          \ F0\n  \tquit\n certificate ca 01\n  3082031C 30820204 A0030201 02020101\
+          \ 300D0609 2A864886 F70D0101 0D050030\n  1F311030 0E060355 040A1307 636D6C2E\
+          \ 6C616231 0B300906 03550403 13027231\n  301E170D 32363032 31343034 32373338\
+          \ 5A170D32 39303231 33303432 3733385A\n  301F3110 300E0603 55040A13 07636D6C\
+          \ 2E6C6162 310B3009 06035504 03130272\n  31308201 22300D06 092A8648 86F70D01\
+          \ 01010500 0382010F 00308201 0A028201\n  0100BFFB 53259CDB FB28E5A2 5A8834C1\
+          \ DA66D35B 149144DB 05B2FE58 109CF440\n  0EA657A1 77A3498F 668A1169 4A4E90EB\
+          \ 58DE05D6 14E49222 51DB9072 718B3A8B\n  24BEF5F9 51131C9C 09854EB0 CE006DCE\
+          \ DD4D793D 9A63AAC7 DA4C5586 DD40DC84\n  3C96B2FE E6BBFFA1 9F09FB9B DA31FE76\
+          \ 81A86E4D AE3436A1 C99C4CBB F22C6861\n  6238A373 7824A0A7 FACEF3CE 5656BE6F\
+          \ 6E192493 28848C06 A063C942 B3549121\n  90D7C798 78BF0BB2 091E5FF9 CE2A832E\
+          \ 56A1B898 EC911014 35B21E6A E8854386\n  E5E63FAD 71C63CD1 C0EB4DB4 CB2EB1C7\
+          \ 30234B8F 3B7D1FFC D98FB83C 52E1D413\n  4B6E3A29 74777E99 715D165D EFCDF1C3\
+          \ 32A633DD 081D57E6 8D6CE3B9 969A99E9\n  25CF0203 010001A3 63306130 0F060355\
+          \ 1D130101 FF040530 030101FF 300E0603\n  551D0F01 01FF0404 03020186 301F0603\
+          \ 551D2304 18301680 140B88E6 99432AAC\n  25FBF09D 49AD2A41 E9DF61B9 F8301D06\
+          \ 03551D0E 04160414 0B88E699 432AAC25\n  FBF09D49 AD2A41E9 DF61B9F8 300D0609\
+          \ 2A864886 F70D0101 0D050003 82010100\n  8031049E 2440839A 048AA21A 7AB16875\
+          \ CED6832D B4F321AE 5F7A7D8D 6E76C226\n  4226059D 807CD470 A44A451A 49B58B78\
+          \ DCB14FAE 425E41D0 8717956A 2982D57D\n  A3E20AC5 191E648E 555897B9 70EF3856\
+          \ 87E893D1 3E91FF6F 175E13C6 C23D12DC\n  794717F0 5CA22A97 C335271B 62DC90F0\
+          \ 83DC8523 C9AD75B0 34E82AD6 FC0CF6C4\n  B7191416 74E71DE7 DE6C1579 10104D6C\
+          \ 0EC3A620 BD6A5C35 3D4437F4 98AE30A4\n  4A356705 C6D2D1D5 8083206B 480BA408\
+          \ 2164391D AFAFA2A4 47D1F254 92EB0644\n  DF9B200E CAC96890 050017F4 C446883B\
+          \ F0545302 6425FDC5 85984543 E691A3EA\n  9AA07D4C D883528D B253796E 27F3A001\
+          \ 408A2A3D 6858CE65 5F773C30 FA7BA6C6\n  \tquit\n!\n!\n!\n!\n!\n!\n!\n!\n\
+          !\nlicense udi pid C8000V sn 9PU763MR91C\nlicense boot level network-advantage\
+          \ addon dna-advantage\nmemory free low-watermark processor 201711\ndiagnostic\
+          \ bootup level minimal\n!\n!\nspanning-tree extend system-id\n!\n!\nusername\
+          \ cisco privilege 15 password 7 13061E010803\n!\nredundancy\n!\n!\n!\n!\n\
+          !\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\ncrypto isakmp policy 10\n encryption\
+          \ aes 256\n hash sha256\n group 14\ncrypto isakmp key cisco!123 address\
+          \ 0.0.0.0\n!\n!\ncrypto ipsec transform-set TRANSFORMER esp-aes 256 esp-sha256-hmac\n\
+          \ mode transport\n!\ncrypto ipsec profile IPSEC\n set transform-set TRANSFORMER\n\
+          !\n!\n!\n!\n!\n!\n!\n!\n!\n!\ninterface Loopback0\n ip address 10.2.0.1\
+          \ 255.255.255.255\n ip ospf 1 area 0\n!\ninterface Tunnel1\n ip address\
+          \ 192.168.1.2 255.255.255.252\n ip mtu 1400\n ip ospf 1 area 1\n tunnel\
+          \ source 10.2.2.1\n tunnel mode ipsec ipv4\n tunnel destination 10.4.2.1\n\
+          \ tunnel protection ipsec profile IPSEC\n!\ninterface GigabitEthernet1\n\
+          \ ip address 10.1.3.2 255.255.255.252\n negotiation auto\n!\ninterface GigabitEthernet2\n\
+          \ ip address 10.2.2.1 255.255.255.252\n ip ospf 1 area 0\n negotiation auto\n\
+          !\ninterface GigabitEthernet3\n ip address 10.2.3.1 255.255.255.0\n ip ospf\
+          \ 1 area 0\n negotiation auto\n!\ninterface GigabitEthernet4\n no ip address\n\
+          \ shutdown\n negotiation auto\n!\ninterface GigabitEthernet5\n no ip address\n\
+          \ shutdown\n negotiation auto\n!\ninterface GigabitEthernet6\n no ip address\n\
+          \ shutdown\n negotiation auto\n!\ninterface GigabitEthernet7\n no ip address\n\
+          \ shutdown\n negotiation auto\n!\ninterface GigabitEthernet8\n no ip address\n\
+          \ shutdown\n negotiation auto\n!\nrouter ospf 1\n router-id 2.2.2.2\n log-adjacency-changes\
+          \ detail\n passive-interface GigabitEthernet3\n passive-interface Loopback0\n\
+          \ default-information originate always\n!\nrouter bgp 65002\n bgp router-id\
+          \ 10.2.0.1\n bgp log-neighbor-changes\n neighbor 10.1.3.1 remote-as 65001\n\
+          \ neighbor 10.5.0.1 remote-as 65002\n neighbor 10.5.0.1 update-source Loopback0\n\
+          \ !\n address-family ipv4\n  network 10.2.0.1 mask 255.255.255.255\n  network\
+          \ 10.5.0.1 mask 255.255.255.255\n  aggregate-address 10.5.0.0 255.255.0.0\
+          \ summary-only\n  aggregate-address 10.2.0.0 255.255.0.0 summary-only\n\
+          \  neighbor 10.1.3.1 activate\n  neighbor 10.1.3.1 soft-reconfiguration\
+          \ inbound\n  neighbor 10.5.0.1 activate\n  neighbor 10.5.0.1 next-hop-self\n\
+          \ exit-address-family\n!\nip forward-protocol nd\nip forward-protocol udp\n\
+          !\nip bgp-community new-format\nno ip http server\nip http secure-server\n\
+          ip ssh bulk-mode 131072\n!\nlogging host 10.0.0.149\n!\n!\n!\ncontrol-plane\n\
+          !\n!\nmgcp behavior rsip-range tgcp-only\nmgcp behavior comedia-role none\n\
+          mgcp behavior comedia-check-media-src disable\nmgcp behavior comedia-sdp-force\
+          \ disable\n!\nmgcp profile default\n!\n!\n!\n!\n!\nalias exec q exit\n!\n\
+          line con 0\n exec-timeout 0 0\n logging synchronous\n stopbits 1\nline aux\
+          \ 0\nline vty 0 4\n exec-timeout 0 0\n logging synchronous\n login local\n\
+          \ transport input ssh\n!\nntp server 10.1.0.1 prefer source Loopback0\n\
+          ntp peer 10.5.0.1 source Loopback0\n!\n!\n!\n!\n!\n!\nend"
     cpu_limit: null
     cpus: null
     data_volume: null
@@ -680,14 +684,14 @@ nodes:
   - boot_disk_size: null
     configuration:
       - name: iosxe_config.txt
-        content: "Building configuration...\n\nCurrent configuration : 11799 bytes\n\
-          !\n! Last configuration change at 14:55:49 UTC Fri Feb 6 2026\n! NVRAM config\
-          \ last updated at 03:38:05 UTC Thu Feb 5 2026 by cisco\n!\nversion 17.16\n\
-          service timestamps debug datetime msec\nservice timestamps log datetime\
-          \ msec\nservice password-encryption\nplatform qfp utilization monitor load\
-          \ 80\nplatform sslvpn use-pd\nplatform console serial\n!\nhostname r4\n\
-          !\nboot-start-marker\nboot-end-marker\n!\n!\nvrf definition as65002\n description\
-          \ AS-65002 Outpost site\n !\n address-family ipv4\n exit-address-family\n\
+        content: "Building configuration...\n\nCurrent configuration : 11873 bytes\n\
+          !\n! Last configuration change at 20:27:44 UTC Sun Feb 15 2026\n! NVRAM\
+          \ config last updated at 14:12:53 UTC Sat Feb 14 2026 by cisco\n!\nversion\
+          \ 17.16\nservice timestamps debug datetime msec\nservice timestamps log\
+          \ datetime msec\nservice password-encryption\nplatform qfp utilization monitor\
+          \ load 80\nplatform sslvpn use-pd\nplatform console serial\n!\nhostname\
+          \ r4\n!\nboot-start-marker\nboot-end-marker\n!\n!\nvrf definition as65002\n\
+          \ description AS-65002 Outpost site\n !\n address-family ipv4\n exit-address-family\n\
           !\nno logging console\nno aaa new-model\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n\
           !\n!\nno ip domain lookup\nip domain name cml.lab\n!\n!\n!\nlogin on-success\
           \ log\n!\n!\nsubscriber templating\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n\
@@ -695,117 +699,118 @@ nodes:
           \ crl\n hash sha256\n!\ncrypto pki trustpoint TP-self-signed-258505760\n\
           \ enrollment selfsigned\n subject-name cn=IOS-Self-Signed-Certificate-258505760\n\
           \ revocation-check none\n rsakeypair TP-self-signed-258505760\n hash sha256\n\
-          !\ncrypto pki trustpoint CA-Client\n enrollment url http://10.1.0.1:80\n\
-          \ serial-number\n fqdn r4.cml.lab\n subject-name CN=r4,O=cml.lab\n subject-alt-name\
-          \ r4.cml.lab\n revocation-check none\n rsakeypair CA-Client\n hash sha512\n\
-          !\n!\ncrypto pki certificate chain SLA-TrustPoint\n certificate ca 01\n\
-          \  30820321 30820209 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030\n\
-          \  32310E30 0C060355 040A1305 43697363 6F312030 1E060355 04031317 43697363\n\
-          \  6F204C69 63656E73 696E6720 526F6F74 20434130 1E170D31 33303533 30313934\n\
-          \  3834375A 170D3338 30353330 31393438 34375A30 32310E30 0C060355 040A1305\n\
-          \  43697363 6F312030 1E060355 04031317 43697363 6F204C69 63656E73 696E6720\n\
-          \  526F6F74 20434130 82012230 0D06092A 864886F7 0D010101 05000382 010F0030\n\
-          \  82010A02 82010100 A6BCBD96 131E05F7 145EA72C 2CD686E6 17222EA1 F1EFF64D\n\
-          \  CBB4C798 212AA147 C655D8D7 9471380D 8711441E 1AAF071A 9CAE6388 8A38E520\n\
-          \  1C394D78 462EF239 C659F715 B98C0A59 5BBB5CBD 0CFEBEA3 700A8BF7 D8F256EE\n\
-          \  4AA4E80D DB6FD1C9 60B1FD18 FFC69C96 6FA68957 A2617DE7 104FDC5F EA2956AC\n\
-          \  7390A3EB 2B5436AD C847A2C5 DAB553EB 69A9A535 58E9F3E3 C0BD23CF 58BD7188\n\
-          \  68E69491 20F320E7 948E71D7 AE3BCC84 F10684C7 4BC8E00F 539BA42B 42C68BB7\n\
-          \  C7479096 B4CB2D62 EA2F505D C7B062A4 6811D95B E8250FC4 5D5D5FB8 8F27D191\n\
-          \  C55F0D76 61F9A4CD 3D992327 A8BB03BD 4E6D7069 7CBADF8B DF5F4368 95135E44\n\
-          \  DFC7C6CF 04DD7FD1 02030100 01A34230 40300E06 03551D0F 0101FF04 04030201\n\
-          \  06300F06 03551D13 0101FF04 05300301 01FF301D 0603551D 0E041604 1449DC85\n\
-          \  4B3D31E5 1B3E6A17 606AF333 3D3B4C73 E8300D06 092A8648 86F70D01 010B0500\n\
-          \  03820101 00507F24 D3932A66 86025D9F E838AE5C 6D4DF6B0 49631C78 240DA905\n\
-          \  604EDCDE FF4FED2B 77FC460E CD636FDB DD44681E 3A5673AB 9093D3B1 6C9E3D8B\n\
-          \  D98987BF E40CBD9E 1AECA0C2 2189BB5C 8FA85686 CD98B646 5575B146 8DFC66A8\n\
-          \  467A3DF4 4D565700 6ADF0F0D CF835015 3C04FF7C 21E878AC 11BA9CD2 55A9232C\n\
-          \  7CA7B7E6 C1AF74F6 152E99B7 B1FCF9BB E973DE7F 5BDDEB86 C71E3B49 1765308B\n\
-          \  5FB0DA06 B92AFE7F 494E8A9E 07B85737 F3A58BE1 1A48A229 C37C1E69 39F08678\n\
-          \  80DDCD16 D6BACECA EEBC7CF9 8428787B 35202CDC 60E4616A B623CDBD 230E3AFB\n\
-          \  418616A9 4093E049 4D10AB75 27E86F73 932E35B5 8862FDAE 0275156F 719BB2F0\n\
-          \  D697DF7F 28\n  \tquit\ncrypto pki certificate chain TP-self-signed-258505760\n\
-          \ certificate self-signed 01\n  3082032E 30820216 A0030201 02020101 300D0609\
-          \ 2A864886 F70D0101 0B050030\n  30312E30 2C060355 04030C25 494F532D 53656C66\
-          \ 2D536967 6E65642D 43657274\n  69666963 6174652D 32353835 30353736 30301E17\
-          \ 0D323530 39303130 31323435\n  325A170D 33353039 30313031 32343532 5A303031\
-          \ 2E302C06 03550403 0C25494F\n  532D5365 6C662D53 69676E65 642D4365 72746966\
-          \ 69636174 652D3235 38353035\n  37363030 82012230 0D06092A 864886F7 0D010101\
-          \ 05000382 010F0030 82010A02\n  82010100 C9A3E82B AA6E3F0E 54DA16B4 08DD1102\
-          \ 7A504149 590683C3 937A87D5\n  AE2D22CF 0835186B 5369966A DD0D6049 6DA6C31B\
-          \ 5ACF98BF F3DC251D 8E95A519\n  B79EA4BC 03E9112B 545B4508 180C069B 1A8ED12E\
-          \ 05095FCB C9B1E4B7 DCA1BC3A\n  26AF2D1C 5FE5AD49 1EBB6A5E 60931FAE EE5FEA61\
-          \ D2429A56 5A38DFE7 5868E2C8\n  3008EFF9 7AD018FA 976723F1 AC770255 ADEDB4EB\
-          \ A0997FA1 C60BC2BA 679E4B1C\n  24682483 0C57BAE3 F6D7941E C950B571 465E3296\
-          \ F06037A1 58C906B5 EECF954B\n  A82C2F20 08479732 C91714FE F598730D B925A5A1\
-          \ 5652D254 FCCCF161 9045B448\n  F6CB6009 A0060CE7 F78EFC98 0009E156 DAFE164F\
-          \ DACE813B 996447D4 81263621\n  A0BD1673 02030100 01A35330 51301D06 03551D0E\
-          \ 04160414 7B793AE0 FBB352CC\n  FFB589BC D4236A1D BB8E47ED 301F0603 551D2304\
-          \ 18301680 147B793A E0FBB352\n  CCFFB589 BCD4236A 1DBB8E47 ED300F06 03551D13\
-          \ 0101FF04 05300301 01FF300D\n  06092A86 4886F70D 01010B05 00038201 01002AE9\
-          \ 687DBCAE AD269DC9 32C132B8\n  A3156D4A 6D4625C4 89350F83 C42097F9 4FF33B7B\
-          \ D828B7DA 0E4A04AE 93DD3C06\n  08BE04F1 020511F9 A9126797 CBED5CE6 D6C26B57\
-          \ 45820908 60D4E677 BC4EA8EC\n  13724F1D 81A62B0D 00457975 51AF4448 4DF578B4\
-          \ B99E5AD6 A5C7ABA0 54B59B23\n  339E5A94 775D327B DAF4C624 F6C103C6 05B06980\
-          \ 298A9BAF E38FCE11 BD29ADF1\n  0E285B82 70D8F67A 672A8E55 57A13F20 900485D8\
-          \ A6842DC2 1B572557 8F6521F1\n  4D565FE1 CD2BAD05 C623C349 C1542BF5 959D12EE\
-          \ 0756C826 ABD99262 E9A8BD7C\n  DA5FFAF9 3499BB9F 75CE5680 75AEF4E3 4D10FD34\
-          \ 8386D8EF D41AA26D CDA2C03D\n  49CD988F 046A784F 75136B00 6D8E0253 0FFC\n\
-          \  \tquit\ncrypto pki certificate chain CA-Client\n certificate 03\n  3082034E\
-          \ 30820236 A0030201 02020103 300D0609 2A864886 F70D0101 0D050030\n  1F311030\
-          \ 0E060355 040A1307 636D6C2E 6C616231 0B300906 03550403 13024341\n  301E170D\
-          \ 32363032 30343230 35343533 5A170D32 37303230 34323035 3435335A\n  304E3110\
-          \ 300E0603 55040A13 07636D6C 2E6C6162 310B3009 06035504 03130272\n  34312D30\
-          \ 12060355 0405130B 3954424E 4B593159 58463030 1706092A 864886F7\n  0D010902\
-          \ 160A7234 2E636D6C 2E6C6162 30820122 300D0609 2A864886 F70D0101\n  01050003\
-          \ 82010F00 3082010A 02820101 00B42A16 7FCA357F C5F03236 ABAF5A0D\n  A3BE7E2D\
-          \ 2A488917 969C1A5B 2ABDCD01 C2B33FD8 3D46641B 179E74FC 15CEF97B\n  330AFC9C\
-          \ C736F795 10F03E49 5D79DC63 42F5A7A6 D8F44E85 A6F9D88A 0484ED4E\n  80C4C83D\
-          \ 541952F3 9EB2A1E6 34E78C6F 48ADDA3E F93A2ACD EEA98524 6FAF662A\n  1120842D\
-          \ A87B1875 A9254C67 0CCB61F4 B789B6C6 2BF0FDED 016A8A4D 64AF312E\n  1482CE76\
-          \ 753B92FE D1D9E8D2 EE60234C 47BDCC47 217272E7 4DE117DF 141F5A4B\n  8B06BAE7\
-          \ 43864593 2366397D 22E8593A A66DDC5A 45C9EBAC 2B41341A 0F4125DA\n  CB5F26FD\
-          \ 41D8F33B 07231301 1CB2AE5E D9A9DEF9 E49C2CA1 570D300C C85E0079\n  0D475531\
-          \ 1A7DE5EF C15BB206 39804051 19020301 0001A366 3064300B 0603551D\n  0F040403\
-          \ 0205A030 15060355 1D11040E 300C820A 72342E63 6D6C2E6C 6162301F\n  0603551D\
-          \ 23041830 16801438 6FBBC0F1 C716C052 EE1ABE8C 5D39D4F5 59B6EF30\n  1D060355\
-          \ 1D0E0416 0414B31F D7E9AB3A 6C09A31F 5BF8A7A5 D4CD1C1B A917300D\n  06092A86\
-          \ 4886F70D 01010D05 00038201 01007A1B A4235C63 A02FB466 2A417EFD\n  6BAB4F9E\
-          \ 56A9124E 796CB7E3 D3597367 35F8EDB9 2D1F13D4 D8249B7C 34CF11CF\n  1AE0A968\
-          \ 31E3F631 031A2011 8FD3C8BB B0B4AC6D BAA2B4BC 332791AA 0862FC2F\n  7F175C94\
-          \ A04B2928 C0AE1817 9AC481BE D5F0C154 12E43B64 49A9012F B955D0B5\n  43125719\
-          \ 57790145 2C8BFF22 13D8939D BA6598EE 513A8711 998DC2A0 C58844B4\n  B114C470\
-          \ 37EAF093 FFA1F8DB 20E186C2 E85A2C55 B2AD65D2 BC15F633 0200A30A\n  DBEE14F2\
-          \ F4162A40 2F76A15E 7CBAB97A 51AFE478 926595C6 A1FF9816 20D6C1F9\n  D9327E10\
-          \ F3DD0714 E3A0024A 8EB4C94D 4654430A 7E19B0A7 B6AF223D 82B3E708\n  CB00E1F7\
-          \ D57CF33B F6D0253E F50824F4 28D4\n  \tquit\n certificate ca 01\n  3082031C\
-          \ 30820204 A0030201 02020101 300D0609 2A864886 F70D0101 0D050030\n  1F311030\
-          \ 0E060355 040A1307 636D6C2E 6C616231 0B300906 03550403 13024341\n  301E170D\
-          \ 32363032 30343230 35303035 5A170D32 39303230 33323035 3030355A\n  301F3110\
-          \ 300E0603 55040A13 07636D6C 2E6C6162 310B3009 06035504 03130243\n  41308201\
-          \ 22300D06 092A8648 86F70D01 01010500 0382010F 00308201 0A028201\n  01008F96\
-          \ 4542186A F3C815ED A56FD69B F00EF589 62F15101 F12BCAAE E410C308\n  763724B3\
-          \ 304A2971 11371C67 B05127CE 1A1315A3 D9F18C65 37203969 85ED21A2\n  A07988B6\
-          \ 1C3A1D59 3EB7501D E0895395 2D398918 F22E1CB5 635909FF 8644FEF2\n  505A49B0\
-          \ E8D9FBC1 F3788C9F 84D23197 FAB3C87D B15282FE 5C71CC75 03EF798D\n  D875D25E\
-          \ AD9D47BD 8EE67EBD 9B764EDC 5B5C9A73 7F4E041F 7A14D951 F46F9209\n  E6FBDA9B\
-          \ 4F400FF5 1E44FEB0 B4AA3497 120CD6BA 8D619C29 1DE5A0D9 39E7F809\n  F39D32F1\
-          \ 0A748C6B 55C5DA2A 54ACB72D D5DB06FA 76392859 ED49C409 A8C4B83B\n  5EF26F7E\
-          \ 4CE58EB1 80BCC886 C827B6E6 4096E4D4 FE308EFC E305D60D B63D7697\n  FC950203\
-          \ 010001A3 63306130 0F060355 1D130101 FF040530 030101FF 300E0603\n  551D0F01\
-          \ 01FF0404 03020186 301F0603 551D2304 18301680 14386FBB C0F1C716\n  C052EE1A\
-          \ BE8C5D39 D4F559B6 EF301D06 03551D0E 04160414 386FBBC0 F1C716C0\n  52EE1ABE\
-          \ 8C5D39D4 F559B6EF 300D0609 2A864886 F70D0101 0D050003 82010100\n  8CA2AA55\
-          \ 76F5761A 257E15BE DD3A7554 59CAC8D8 90716E19 3E3F835D CED30CF0\n  A985BA76\
-          \ CE95A645 94E991A1 3D465F4E F065171F 5CE0F60F B55168C3 C6F9327F\n  4B43CF24\
-          \ BE6DF6BF 127D414F CB40E9F1 543E01A9 D5048FBB 9DD2B046 499D7EC4\n  8E991C6E\
-          \ 92591570 83C0FAC9 F5A3F340 826E93AF 8B01A524 959A15DD D232EB95\n  6C10B7C0\
-          \ C5A4DBBE A51A75AE 0BA7E7D3 1229021E 01E06FC1 0D9D7006 6FB06746\n  16CD9237\
-          \ 928A0BBC 24E4E311 C62FBB2B AA5DF015 1E9BEA77 530D5BF4 24AE7894\n  68B83E16\
-          \ BDF946B7 3C8999DE 0349B5E8 5E3570E3 4F4D528C 0421606F 02879C38\n  1D490B33\
-          \ 4184DEC3 DDFDAD38 A086B7C0 B011F830 47E9C36B F1E2723F 19B50324\n  \tquit\n\
-          !\n!\n!\n!\n!\n!\n!\n!\n!\nlicense udi pid C8000V sn 9TBNKY1YXF0\nlicense\
-          \ boot level network-advantage addon dna-advantage\nmemory free low-watermark\
+          !\ncrypto pki trustpoint ca-client\n enrollment url http://10.1.0.1:80\n\
+          \ serial-number\n fqdn r4.cml.lab\n ip-address 10.4.0.1\n subject-name CN=r4,O=cml.lab\n\
+          \ subject-alt-name r4.cml.lab\n revocation-check none\n rsakeypair ca-client\
+          \ 2048\n hash sha512\n!\n!\ncrypto pki certificate chain SLA-TrustPoint\n\
+          \ certificate ca 01\n  30820321 30820209 A0030201 02020101 300D0609 2A864886\
+          \ F70D0101 0B050030\n  32310E30 0C060355 040A1305 43697363 6F312030 1E060355\
+          \ 04031317 43697363\n  6F204C69 63656E73 696E6720 526F6F74 20434130 1E170D31\
+          \ 33303533 30313934\n  3834375A 170D3338 30353330 31393438 34375A30 32310E30\
+          \ 0C060355 040A1305\n  43697363 6F312030 1E060355 04031317 43697363 6F204C69\
+          \ 63656E73 696E6720\n  526F6F74 20434130 82012230 0D06092A 864886F7 0D010101\
+          \ 05000382 010F0030\n  82010A02 82010100 A6BCBD96 131E05F7 145EA72C 2CD686E6\
+          \ 17222EA1 F1EFF64D\n  CBB4C798 212AA147 C655D8D7 9471380D 8711441E 1AAF071A\
+          \ 9CAE6388 8A38E520\n  1C394D78 462EF239 C659F715 B98C0A59 5BBB5CBD 0CFEBEA3\
+          \ 700A8BF7 D8F256EE\n  4AA4E80D DB6FD1C9 60B1FD18 FFC69C96 6FA68957 A2617DE7\
+          \ 104FDC5F EA2956AC\n  7390A3EB 2B5436AD C847A2C5 DAB553EB 69A9A535 58E9F3E3\
+          \ C0BD23CF 58BD7188\n  68E69491 20F320E7 948E71D7 AE3BCC84 F10684C7 4BC8E00F\
+          \ 539BA42B 42C68BB7\n  C7479096 B4CB2D62 EA2F505D C7B062A4 6811D95B E8250FC4\
+          \ 5D5D5FB8 8F27D191\n  C55F0D76 61F9A4CD 3D992327 A8BB03BD 4E6D7069 7CBADF8B\
+          \ DF5F4368 95135E44\n  DFC7C6CF 04DD7FD1 02030100 01A34230 40300E06 03551D0F\
+          \ 0101FF04 04030201\n  06300F06 03551D13 0101FF04 05300301 01FF301D 0603551D\
+          \ 0E041604 1449DC85\n  4B3D31E5 1B3E6A17 606AF333 3D3B4C73 E8300D06 092A8648\
+          \ 86F70D01 010B0500\n  03820101 00507F24 D3932A66 86025D9F E838AE5C 6D4DF6B0\
+          \ 49631C78 240DA905\n  604EDCDE FF4FED2B 77FC460E CD636FDB DD44681E 3A5673AB\
+          \ 9093D3B1 6C9E3D8B\n  D98987BF E40CBD9E 1AECA0C2 2189BB5C 8FA85686 CD98B646\
+          \ 5575B146 8DFC66A8\n  467A3DF4 4D565700 6ADF0F0D CF835015 3C04FF7C 21E878AC\
+          \ 11BA9CD2 55A9232C\n  7CA7B7E6 C1AF74F6 152E99B7 B1FCF9BB E973DE7F 5BDDEB86\
+          \ C71E3B49 1765308B\n  5FB0DA06 B92AFE7F 494E8A9E 07B85737 F3A58BE1 1A48A229\
+          \ C37C1E69 39F08678\n  80DDCD16 D6BACECA EEBC7CF9 8428787B 35202CDC 60E4616A\
+          \ B623CDBD 230E3AFB\n  418616A9 4093E049 4D10AB75 27E86F73 932E35B5 8862FDAE\
+          \ 0275156F 719BB2F0\n  D697DF7F 28\n  \tquit\ncrypto pki certificate chain\
+          \ TP-self-signed-258505760\n certificate self-signed 01\n  3082032E 30820216\
+          \ A0030201 02020101 300D0609 2A864886 F70D0101 0B050030\n  30312E30 2C060355\
+          \ 04030C25 494F532D 53656C66 2D536967 6E65642D 43657274\n  69666963 6174652D\
+          \ 32353835 30353736 30301E17 0D323530 39303130 31323435\n  325A170D 33353039\
+          \ 30313031 32343532 5A303031 2E302C06 03550403 0C25494F\n  532D5365 6C662D53\
+          \ 69676E65 642D4365 72746966 69636174 652D3235 38353035\n  37363030 82012230\
+          \ 0D06092A 864886F7 0D010101 05000382 010F0030 82010A02\n  82010100 C9A3E82B\
+          \ AA6E3F0E 54DA16B4 08DD1102 7A504149 590683C3 937A87D5\n  AE2D22CF 0835186B\
+          \ 5369966A DD0D6049 6DA6C31B 5ACF98BF F3DC251D 8E95A519\n  B79EA4BC 03E9112B\
+          \ 545B4508 180C069B 1A8ED12E 05095FCB C9B1E4B7 DCA1BC3A\n  26AF2D1C 5FE5AD49\
+          \ 1EBB6A5E 60931FAE EE5FEA61 D2429A56 5A38DFE7 5868E2C8\n  3008EFF9 7AD018FA\
+          \ 976723F1 AC770255 ADEDB4EB A0997FA1 C60BC2BA 679E4B1C\n  24682483 0C57BAE3\
+          \ F6D7941E C950B571 465E3296 F06037A1 58C906B5 EECF954B\n  A82C2F20 08479732\
+          \ C91714FE F598730D B925A5A1 5652D254 FCCCF161 9045B448\n  F6CB6009 A0060CE7\
+          \ F78EFC98 0009E156 DAFE164F DACE813B 996447D4 81263621\n  A0BD1673 02030100\
+          \ 01A35330 51301D06 03551D0E 04160414 7B793AE0 FBB352CC\n  FFB589BC D4236A1D\
+          \ BB8E47ED 301F0603 551D2304 18301680 147B793A E0FBB352\n  CCFFB589 BCD4236A\
+          \ 1DBB8E47 ED300F06 03551D13 0101FF04 05300301 01FF300D\n  06092A86 4886F70D\
+          \ 01010B05 00038201 01002AE9 687DBCAE AD269DC9 32C132B8\n  A3156D4A 6D4625C4\
+          \ 89350F83 C42097F9 4FF33B7B D828B7DA 0E4A04AE 93DD3C06\n  08BE04F1 020511F9\
+          \ A9126797 CBED5CE6 D6C26B57 45820908 60D4E677 BC4EA8EC\n  13724F1D 81A62B0D\
+          \ 00457975 51AF4448 4DF578B4 B99E5AD6 A5C7ABA0 54B59B23\n  339E5A94 775D327B\
+          \ DAF4C624 F6C103C6 05B06980 298A9BAF E38FCE11 BD29ADF1\n  0E285B82 70D8F67A\
+          \ 672A8E55 57A13F20 900485D8 A6842DC2 1B572557 8F6521F1\n  4D565FE1 CD2BAD05\
+          \ C623C349 C1542BF5 959D12EE 0756C826 ABD99262 E9A8BD7C\n  DA5FFAF9 3499BB9F\
+          \ 75CE5680 75AEF4E3 4D10FD34 8386D8EF D41AA26D CDA2C03D\n  49CD988F 046A784F\
+          \ 75136B00 6D8E0253 0FFC\n  \tquit\ncrypto pki certificate chain ca-client\n\
+          \ certificate 03\n  30820365 3082024D A0030201 02020103 300D0609 2A864886\
+          \ F70D0101 0D050030\n  1F311030 0E060355 040A1307 636D6C2E 6C616231 0B300906\
+          \ 03550403 13027231\n  301E170D 32363032 31343034 33323532 5A170D32 37303231\
+          \ 34303433 3235325A\n  30653110 300E0603 55040A13 07636D6C 2E6C6162 310B3009\
+          \ 06035504 03130272\n  34314430 12060355 0405130B 39544C32 54304237 41363830\
+          \ 1506092A 864886F7\n  0D010908 13083130 2E342E30 2E313017 06092A86 4886F70D\
+          \ 01090216 0A72342E\n  636D6C2E 6C616230 82012230 0D06092A 864886F7 0D010101\
+          \ 05000382 010F0030\n  82010A02 82010100 8D5016BB 819C4FA8 67E81CC3 7B1DC0DD\
+          \ 0B365E96 CF81ABE0\n  C61A8B63 5F006A29 0D1D2168 A0D07DE3 A98DE19F ACECF8FA\
+          \ 4C5ECC76 968B2DBB\n  9D5BE871 39E94B84 1279DA58 B06A41D8 5282F304 348A44DB\
+          \ 8DC74759 41CA7512\n  398F0483 C052C88F E9FF5EBD A16C0E4C 079AFA95 A520FE37\
+          \ D7617C0F DFC03B33\n  3F271A9B E1500855 DBE8B908 33607126 B8054954 F12709DC\
+          \ FD67FA6F 8AF36496\n  E30EECCB 6B3A0951 178F213C 65D30B96 1B48313A 47EC059D\
+          \ 6EE0BE44 710A4435\n  DE3492DA 8CAD8E67 F9393F3A 3CEC3F5F 0DC49355 5FDE5885\
+          \ F586DA63 C174F638\n  0BBB21CD 8177C302 18CEC843 36C281A8 6CE84547 F810C620\
+          \ BE25A35E 009B0705\n  48610DAD 57DC4E5B 02030100 01A36630 64300B06 03551D0F\
+          \ 04040302 05A03015\n  0603551D 11040E30 0C820A72 342E636D 6C2E6C61 62301F06\
+          \ 03551D23 04183016\n  80140B88 E699432A AC25FBF0 9D49AD2A 41E9DF61 B9F8301D\
+          \ 0603551D 0E041604\n  1440F642 3693CCCD 79070310 979B3CB6 69BBA846 A5300D06\
+          \ 092A8648 86F70D01\n  010D0500 03820101 005AB2AE 3D7CB80F B3ABB2C7 616D58B4\
+          \ 95F1C828 16A33A25\n  85414AF1 8BDA97F2 96B5EB73 FC60833A 6DBD1A99 120F99B7\
+          \ FBA6DF0D 7E397A06\n  DDB8BD8C C2BDB223 C53FDDC9 0C85467F 395A8DAB 44808DBA\
+          \ A298D36D 9A42813F\n  92DE775E 6D229794 C6297737 49CD920D 723827D5 62D7FECA\
+          \ F9AE2724 F60F583A\n  46637050 2C66B29C 53AD165D 538CF5F5 30BEFEB6 2644D3C7\
+          \ F893A94C 7FCE784F\n  2E31E17A 7A177074 A2B50B5F 070C8FEA 973CF029 932113DF\
+          \ F40305B7 7D28D702\n  E85E57B6 73F9AD6B 1F093C87 C807341C 0B268B3D 3F5E22BB\
+          \ 49F58A89 F1640209\n  CF9A7F3C 489FC4E1 7AFD0A12 3632727D B4A57716 1602AFE0\
+          \ F048A9F7 24E3360D\n  DD2080CA 80F2C8C6 27\n  \tquit\n certificate ca 01\n\
+          \  3082031C 30820204 A0030201 02020101 300D0609 2A864886 F70D0101 0D050030\n\
+          \  1F311030 0E060355 040A1307 636D6C2E 6C616231 0B300906 03550403 13027231\n\
+          \  301E170D 32363032 31343034 32373338 5A170D32 39303231 33303432 3733385A\n\
+          \  301F3110 300E0603 55040A13 07636D6C 2E6C6162 310B3009 06035504 03130272\n\
+          \  31308201 22300D06 092A8648 86F70D01 01010500 0382010F 00308201 0A028201\n\
+          \  0100BFFB 53259CDB FB28E5A2 5A8834C1 DA66D35B 149144DB 05B2FE58 109CF440\n\
+          \  0EA657A1 77A3498F 668A1169 4A4E90EB 58DE05D6 14E49222 51DB9072 718B3A8B\n\
+          \  24BEF5F9 51131C9C 09854EB0 CE006DCE DD4D793D 9A63AAC7 DA4C5586 DD40DC84\n\
+          \  3C96B2FE E6BBFFA1 9F09FB9B DA31FE76 81A86E4D AE3436A1 C99C4CBB F22C6861\n\
+          \  6238A373 7824A0A7 FACEF3CE 5656BE6F 6E192493 28848C06 A063C942 B3549121\n\
+          \  90D7C798 78BF0BB2 091E5FF9 CE2A832E 56A1B898 EC911014 35B21E6A E8854386\n\
+          \  E5E63FAD 71C63CD1 C0EB4DB4 CB2EB1C7 30234B8F 3B7D1FFC D98FB83C 52E1D413\n\
+          \  4B6E3A29 74777E99 715D165D EFCDF1C3 32A633DD 081D57E6 8D6CE3B9 969A99E9\n\
+          \  25CF0203 010001A3 63306130 0F060355 1D130101 FF040530 030101FF 300E0603\n\
+          \  551D0F01 01FF0404 03020186 301F0603 551D2304 18301680 140B88E6 99432AAC\n\
+          \  25FBF09D 49AD2A41 E9DF61B9 F8301D06 03551D0E 04160414 0B88E699 432AAC25\n\
+          \  FBF09D49 AD2A41E9 DF61B9F8 300D0609 2A864886 F70D0101 0D050003 82010100\n\
+          \  8031049E 2440839A 048AA21A 7AB16875 CED6832D B4F321AE 5F7A7D8D 6E76C226\n\
+          \  4226059D 807CD470 A44A451A 49B58B78 DCB14FAE 425E41D0 8717956A 2982D57D\n\
+          \  A3E20AC5 191E648E 555897B9 70EF3856 87E893D1 3E91FF6F 175E13C6 C23D12DC\n\
+          \  794717F0 5CA22A97 C335271B 62DC90F0 83DC8523 C9AD75B0 34E82AD6 FC0CF6C4\n\
+          \  B7191416 74E71DE7 DE6C1579 10104D6C 0EC3A620 BD6A5C35 3D4437F4 98AE30A4\n\
+          \  4A356705 C6D2D1D5 8083206B 480BA408 2164391D AFAFA2A4 47D1F254 92EB0644\n\
+          \  DF9B200E CAC96890 050017F4 C446883B F0545302 6425FDC5 85984543 E691A3EA\n\
+          \  9AA07D4C D883528D B253796E 27F3A001 408A2A3D 6858CE65 5F773C30 FA7BA6C6\n\
+          \  \tquit\n!\n!\n!\n!\n!\n!\n!\n!\n!\nlicense udi pid C8000V sn 9TL2T0B7A68\n\
+          license boot level network-advantage addon dna-advantage\nmemory free low-watermark\
           \ processor 201711\ndiagnostic bootup level minimal\n!\n!\nspanning-tree\
           \ extend system-id\n!\n!\nusername cisco privilege 15 password 7 01100F175804\n\
           !\nredundancy\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\ncrypto isakmp\
@@ -834,13 +839,13 @@ nodes:
           \ 10.4.0.0 255.255.0.0 summary-only\n  neighbor 10.3.2.1 activate\n  neighbor\
           \ 10.4.2.2 activate\n exit-address-family\n!\nip forward-protocol nd\nip\
           \ forward-protocol udp\n!\nno ip http server\nip http secure-server\nip\
-          \ ssh bulk-mode 131072\n!\nlogging host 10.0.0.84\n!\n!\n!\ncontrol-plane\n\
+          \ ssh bulk-mode 131072\n!\nlogging host 10.0.0.149\n!\n!\n!\ncontrol-plane\n\
           !\n!\nmgcp behavior rsip-range tgcp-only\nmgcp behavior comedia-role none\n\
           mgcp behavior comedia-check-media-src disable\nmgcp behavior comedia-sdp-force\
           \ disable\n!\nmgcp profile default\n!\n!\n!\n!\n!\nalias exec q exit\n!\n\
           line con 0\n exec-timeout 0 0\n logging synchronous\n stopbits 1\nline aux\
           \ 0\nline vty 0 4\n exec-timeout 0 0\n logging synchronous\n login local\n\
-          \ length 0\n transport input ssh\n!\nntp server 10.1.0.1 prefer source Loopback0\n\
+          \ transport input ssh\n!\nntp server 10.1.0.1 prefer source Loopback0\n\
           ntp peer 10.2.0.1 source GigabitEthernet2\n!\n!\n!\n!\n!\n!\nend"
     cpu_limit: null
     cpus: null
@@ -903,8 +908,8 @@ nodes:
   - boot_disk_size: null
     configuration:
       - name: iosxe_config.txt
-        content: "Building configuration...\n\nCurrent configuration : 6936 bytes\n\
-          !\n! Last configuration change at 14:55:49 UTC Fri Feb 6 2026\n!\nversion\
+        content: "Building configuration...\n\nCurrent configuration : 6937 bytes\n\
+          !\n! Last configuration change at 20:27:44 UTC Sun Feb 15 2026\n!\nversion\
           \ 17.16\nservice timestamps debug datetime msec\nservice timestamps log\
           \ datetime msec\nservice password-encryption\nplatform qfp utilization monitor\
           \ load 80\nplatform sslvpn use-pd\nplatform console serial\n!\nhostname\
@@ -968,7 +973,7 @@ nodes:
           \ 9DCA4BA4 45170DA7 95881410\n  6E469BC5 D6E6BE73 92DCA7D2 E0EB6E30 6F947C12\
           \ 95807BB4 8095FFC8 3702516A\n  13E78D9B CEB844E9 12849268 BFF670DA 856E8FCA\
           \ A602FE7C 69088230 B55C4ECF\n  F2AF71E9 3ED915E4 6323734F 194964B9 56B00BEB\n\
-          \  \tquit\n!\n!\nlicense udi pid C8000V sn 9S5DWR0NW2V\nmemory free low-watermark\
+          \  \tquit\n!\n!\nlicense udi pid C8000V sn 9H0PTVBWWN3\nmemory free low-watermark\
           \ processor 201711\ndiagnostic bootup level minimal\n!\n!\n!\nusername cisco\
           \ privilege 15 password 7 094F471A1A0A\n!\nredundancy\n!\n!\n!\n!\n!\n!\n\
           !\n!\n!\n!\ninterface Loopback0\n ip address 10.5.0.1 255.255.255.255\n\
