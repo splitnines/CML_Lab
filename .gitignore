@@ -1,2 +1,19 @@
 *.zip
 cml_c9k_mcast_config.cfg
+
+# Python
+**/__pycache__/
+*.py[cod]
+**/.venv/
+**/.pytest_cache/
+**/.ruff_cache/
+**/.mypy_cache/
+
+# Logs and temp files
+*.log
+*.tmp
+
+# Editor/OS files
+.vscode/
+.idea/
+.DS_Store
