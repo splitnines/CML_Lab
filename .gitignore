@@ -1,4 +1,8 @@
 *.zip
+*.tgz
+*.tar.gz
+*.tar
+*.gz
 cml_c9k_mcast_config.cfg
 
 # Python
