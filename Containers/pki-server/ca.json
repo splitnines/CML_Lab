@@ -1,0 +1,83 @@
+{
+  "root": "/home/step/certs/root_ca.crt",
+  "federatedRoots": null,
+  "crt": "/home/step/certs/intermediate_ca.crt",
+  "key": "/home/step/secrets/intermediate_ca_key",
+  "address": ":9000",
+  "insecureAddress": ":9001",
+  "dnsNames": [
+    "localhost",
+    "step-ca",
+    "10.0.0.149"
+  ],
+  "logger": {
+    "format": "text"
+  },
+  "db": {
+    "type": "badgerv2",
+    "dataSource": "/home/step/db",
+    "badgerFileLoadingMode": ""
+  },
+  "authority": {
+    "provisioners": [
+      {
+        "type": "JWK",
+        "name": "admin",
+        "key": {
+          "use": "sig",
+          "kty": "EC",
+          "kid": "bAiIxwg3KqStfwO2h35s7paxvfSZLUUk6ueZE8evsXg",
+          "crv": "P-256",
+          "alg": "ES256",
+          "x": "B-1lV-V-gjU9_8dzzdQvTBdALHhV8HJkVdxro1_kpog",
+          "y": "GCTmehbNxtwBuEtmQFVIFRTyXvkM1caWKbdBKHGAHWM"
+        },
+        "encryptedKey": "eyJhbGciOiJQQkVTMi1IUzI1NitBMTI4S1ciLCJjdHkiOiJqd2sranNvbiIsImVuYyI6IkEyNTZHQ00iLCJwMmMiOjYwMDAwMCwicDJzIjoianY2dlJyOVdLUDZoM2xiYURja2tOdyJ9.YmR9l09J9fYpov9c_d70-aVN5yiuZv6_muYYQlni5F2-GlOjO9x-vg.MnMykPmpBdJpP90t.nqpFiNwze459ck7TpkBf0ed7LsDV0GIBZ6lyvPHNXW3kq0d0CieOg-5ASs01y_KBO2OZsU7MY_Y0Fi-8OTBVwnwK7601t29Te9dv7bg3byl9asafcHdZohVSuwzYzC4GJj9qWGxz4NBrOMf-gbfW0FhDRL7vm-6VNZaDWM5EjjuiXsRYR49ayWnp6VF6PGnB4GUd5ik3h_qwiWzZtLxURZz2Zx6QYoE5g6sYYRwe5Qv4SjqDbnxIDGpJconanfvvqilhHX-HwXRgkQE8f9_EhCDyF9dmtmcGmj_b3rxpE3EAuGAr_nITJJDQ4Wa8ap65amZOtPrrz_x_Ykv6wVk.jqyhh9x-95haExP_9m7DFQ",
+        "claims": {
+          "enableSSHCA": false,
+          "disableRenewal": false,
+          "allowRenewalAfterExpiry": false,
+          "disableSmallstepExtensions": false
+        },
+        "options": {
+          "x509": {
+            "template": "{\n  \"subject\": {{ toJson .Subject }},\n  \"sans\": {{ toJson .SANs }},\n  {{- if typeIs \"*rsa.PublicKey\" .Insecure.CR.PublicKey }}\n  \"keyUsage\": [\"digitalSignature\", \"keyEncipherment\"],\n  {{- else }}\n  {{ fail \"Key type must be RSA\" }}\n  {{- end }}\n  \"extKeyUsage\": [\"serverAuth\", \"clientAuth\"],\n  \"signatureAlgorithm\": \"SHA512-RSA\"\n}\n"
+          },
+          "ssh": {}
+        }
+      },
+      {
+        "type": "SCEP",
+        "name": "scep",
+        "minimumPublicKeyLength": 2048,
+        "decrypterCertificate": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUVxVENDQXBHZ0F3SUJBZ0lRZVRUWTl4M2lQZjJES1dEcUc2cW9vVEFOQmdrcWhraUc5dzBCQVFzRkFEQWgKTVI4d0hRWURWUVFERXhaTVlXSWdRMEVnU1c1MFpYSnRaV1JwWVhSbElFTkJNQjRYRFRJMk1ESXhOakl3TXpZegpNVm9YRFRJMk1ESXhOekl3TXpjek1Wb3dIekVkTUJzR0ExVUVBeE1VYzJObGNDMWtaV055ZVhCMFpYSXViRzlqCllXd3dnZ0VpTUEwR0NTcUdTSWIzRFFFQkFRVUFBNElCRHdBd2dnRUtBb0lCQVFES1FMYnR5a2RUcTF3UHlKUEoKM0FHRVNTQ1Rqb3pTdzhmT1gxZitKOVlRaTFLWlk5RWoxOU9CVnB4SU41d3BTZXBaL1pKaEtPKzh0NnZLbitsWgpvQmQxVWhaWFVyODVKUUttZ0k5R0MzRFlrQjF1VGJNdjh5b0FBemtoeFNNZzRTK1FRTFhCbE1JcHVwTVkyR0haCkUwUXBraFVoUlVjQ005TDNjS0ZXVDBoRC9QY0loRW0zb3Y1NVpIWXdySGloL3pNT01CNkFsMlh3MFphMWZGUGoKV1dBR3dqQmhScGZkSStRbm5XbHc1R20xVW1KS3ZmY1VlemplNitEQjUyc1NQa242YWZrK25TeUNDREpLWVE1RwpCelE5NFpYWmtOdGxFMTJhVjVBUlhXR3hpbSs2T25xS2dDTjI3UWYxS1BPNkkzalkrV1VLb2ZIdkhsQWhDMmhDCjhYSW5BZ01CQUFHamdkNHdnZHN3RGdZRFZSMFBBUUgvQkFRREFnV2dNQjBHQTFVZEpRUVdNQlFHQ0NzR0FRVUYKQndNQkJnZ3JCZ0VGQlFjREFqQWRCZ05WSFE0RUZnUVVBcFVOV1NqbUV1eTl5emlQNlZsbVN6djU4TWN3SHdZRApWUjBqQkJnd0ZvQVV5dGdiN1RrUWF3cDM2V0NQSlBXSEdHMTNSYlV3SHdZRFZSMFJCQmd3Rm9JVWMyTmxjQzFrClpXTnllWEIwWlhJdWJHOWpZV3d3U1FZTUt3WUJCQUdDcEdUR0tFQUJCRGt3TndJQkFRUUZZV1J0YVc0RUsySkIKYVVsNGQyY3pTM0ZUZEdaM1R6Sm9NelZ6TjNCaGVIWm1VMXBNVlZWck5uVmxXa1U0WlhaeldHY3dEUVlKS29aSQpodmNOQVFFTEJRQURnZ0lCQUtubTZlbUk0aW9TdWZDVTRhR2xQcXF2aCtqeDNTVFkyOHhNWCtLaDcvYVpjbnJ2CkZqUUkydllocVZLQXpzS1JqYWVPMUxNUVNZTXRCUTN3cGd5U3dpeFdBVkY4WnJYcnNkMkI3M2pRNnZkVlV6b1MKQjZYd3Ywa2xrbnZmNHFSaVdFS09CVEZSNVcvNUxTZ2V6TjBjZGxuNmZrY29ZOWxFVitLcldyUFNWZlQ5ODAzVQpOVHB6bFRqd2hxKzRuSWk3b3FYMlAwTVZaeTZoeXo0WnE2Q0MzaHlQaFdGS24wekxpRmtYbXgrZWVSMWVKSkZNCmhoUnVMV3h5aDdNa0p5dXpicWJHbXlzdXJ4V0NrNXAzOFNBbjkzVTdPTjR2Rjk5ZktMQzhPV0U5VzhISFJGRDMKQUMxWm9QL3M0VGNhYnp3QWlQZzA1clZodUZKWG54MmYxL2NwUkNkaEtSN1FsaXBKZ3luU3lHeHpiWkdKRFo2ZAo2VXR3QXcvSDZQSlpzLzE4aXpuclVWSFpsNWttQXVwb3JCQUorTm9mem5KRmdKU1dlekhUQ3hJbjFTc1A5cFMxCmJNNFJaRUVOcnZUSkRNcmlldmhySko1UTZvT0ZPRGVnVXhuaTlEbERLQ0Y0N0VySDRIMGM0QmxqQ0g3dEhSZ0EKL1FaRGI1SllXY2ZpOWVJVXZSQVRhWkxDK3ZDYk1qdnBBeFdHR0NiazRKMW5kRVhVQ0dtTWFyaFZvSG5VSEpTZApSOEdhTXpRUjA4SS84dG15aGJIY1RoTnZoT3NYQm16NXhkSlF2TTU4WWJiUnlUK3BseHNrdW5QZnhFRjFVaE1qClRpaEhMNURGTFUxNlczUHNJd2t5dEpha0ZiNEd3ZlJZWERiSjE3N3FKVExBby9PKzZCRmppZndPeHBhRQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==",
+        "decrypterKeyPEM": "LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFcEFJQkFBS0NBUUVBeWtDMjdjcEhVNnRjRDhpVHlkd0JoRWtnazQ2TTBzUEh6bDlYL2lmV0VJdFNtV1BSCkk5ZlRnVmFjU0RlY0tVbnFXZjJTWVNqdnZMZXJ5cC9wV2FBWGRWSVdWMUsvT1NVQ3BvQ1BSZ3R3MkpBZGJrMnoKTC9NcUFBTTVJY1VqSU9FdmtFQzF3WlRDS2JxVEdOaGgyUk5FS1pJVklVVkhBalBTOTNDaFZrOUlRL3ozQ0lSSgp0NkwrZVdSMk1LeDRvZjh6RGpBZWdKZGw4TkdXdFh4VDQxbGdCc0l3WVVhWDNTUGtKNTFwY09ScHRWSmlTcjMzCkZIczQzdXZnd2VkckVqNUorbW41UHAwc2dnZ3lTbUVPUmdjMFBlR1YyWkRiWlJOZG1sZVFFVjFoc1lwdnVqcDYKaW9BamR1MEg5U2p6dWlONDJQbGxDcUh4N3g1UUlRdG9RdkZ5SndJREFRQUJBb0lCQUZlNU9QNnJpVU5qcEdNZQpLdWZYZW5ydm91Y05ZY3c2NmF0NzFEVWkveWllM1YwMW02MHh2QVd4MU1oSUFuNHdGcXNnbmtCeEdvYWVuYThkCnEvOVpQa04vTHJ5Q1lmbDlzWWdaWTh0TVJBNVNkOGx6ZnlCeGxrcDZHMm9uME9RK2Q3eFlMTjJCVWJQNnZqbDkKQlBlNzhRa2MyUGhjelg5Smpod1A2SktBZ2NZbXFONzBYUkVNRFRhNmtianJhMHkyaVhjd1diRW51dGlZTDVjVwpqcDhrS3VEeDlXQVcxTjExM2JYQmpwb2s0dHRCMmZNendVTkZBYTAyTWlDS1FTQXRBOXllclRSbG1Sd1BjeWNQCnIwY1hLUEpQM1NzUzFxdGp5RmEzR2JuQ3NwOFJPTGRxUFNQcnVsNGVjUnlIV3BkWTRkUE11MlZrcEV2eFZIVWwKaG1IQk9HVUNnWUVBOWNvZjJtS1NuV3BacHh0OVRVbllkU2pmdi8xQTNXQ0kxVTdHdElrMDdMQURsV1E4MXNMUwppajl3cDBYM2ppM0tDWVV2NHE0K1QrelVYaWd6UXJ0QzdSRlZvNGlNNnhYaHdhUnprUHVJdG90d0JUZy9zNnl6CkswRnkyY3QrZEErYVJWcHV0ZDFFZUxCcTYxME5DUHB5aHE4UmMxMGdadXY5dHNUMzZRYng5WTBDZ1lFQTBxZVkKQWU3Ry9LWDY3b2xLOWJpd0oxaFBCaHd3UXkvL0RIa0ZsdDhGOWViOGNBNXd1WXgwQmROcDRpb0hlOWdLTTgrRApoNHViRzlHUERxYUsrTDVqTW43WlRWU1g1anNWdnRqZCtUbDhvWVRHb1p5TVc4QVVzVjBFeVpMMEx2Zjh4RkVuCkVoRjhDaFFKd09Mb24wdHpkZDdLZlBqdmQvRDJDc2dMY3l3OXQ0TUNnWUVBc3A2NE5WSExjT0NYMUt4U2pEZHQKT2YrQlU1bnRhTFE5M0o2S0l5dFBMZTdnTzlJRHNLTVd0R2RVTEF2WjB4YU5yQXVCZUQvZWd1RCttSXFvYmdkKwpwS0FqVjF2bDVQWWJBVW5Ndm9FOW9rT0ZIaFg1blU2VlNvc2V0dzUra0VQQ2ZrSXhFTE9EamgzUEpjcVNyWUtzCmRocUdHUXVGZjZaaTFFOGlSdFBJUlFVQ2dZQW1yeFl3REt4SUN5YjRsUWZKOWYrTFNpRkE2djVGNkZONjgrSjkKNFRqVC9uWVBFZWZMZXlwM1EycW5XTGFGSEpoTENXbUxBNjBaUDdONHFrYk5CUkZzWFhVRVNXdVhvUFFPVnY3MApYSVV4bUJOdDdEU3VTS2pFSldQU3JJVGc5ek5ZemRwUjdCb09NNzNTeVJpVTRDTTAyeFB1UFR5a2x3Qm4zSEtWCjFPTUVod0tCZ1FDZElEbnpQZzBwc2ZtTnpJWUVoanJGd2h1SG1md0RTZFFZejNFTThVUnZsQTEvWStmZlBqQk4KRDUwbGo5alp4Y2ZDdnI5Z0haY2FJVkN0ZEZTOFdXa0dVYWswdGVDdFVOYzZzK2gyWTJ2VmdRd2M3L3EyTnBFMgpsK1FOV1BscXV0cnZyc2lIU2FQTDB2eHpzdVlUbTd4elIwdDE0NHlld1hVdDlmY2NGeEVnM3c9PQotLS0tLUVORCBSU0EgUFJJVkFURSBLRVktLS0tLQo=",
+        "decrypterKeyPassword": "cisco123",
+        "options": {
+          "x509": {
+            "template": "{\n  \"rawSubject\": {{ toJson .Insecure.CR.RawSubject }},\n  \"dnsNames\": {{ toJson .Insecure.CR.DNSNames }},\n  \"ipAddresses\": {{ toJson .Insecure.CR.IPAddresses }},\n  \"emailAddresses\": {{ toJson .Insecure.CR.EmailAddresses }},\n  \"uris\": {{ toJson .Insecure.CR.URIs }},\n  {{- if typeIs \"*rsa.PublicKey\" .Insecure.CR.PublicKey }}\n  \"keyUsage\": [\"digitalSignature\", \"keyEncipherment\"],\n  {{- else }}\n  {{ fail \"Key type must be RSA\" }}\n  {{- end }}\n  \"extKeyUsage\": [\"serverAuth\", \"clientAuth\"],\n  \"signatureAlgorithm\": \"SHA512-RSA\"\n}\n"
+          },
+          "ssh": {}
+        },
+        "claims": {
+          "enableSSHCA": true,
+          "disableRenewal": false,
+          "allowRenewalAfterExpiry": false,
+          "disableSmallstepExtensions": false
+        }
+      }
+    ],
+    "template": {},
+    "backdate": "1m0s"
+  },
+  "tls": {
+    "cipherSuites": [
+      "TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256",
+      "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256"
+    ],
+    "minVersion": 1.2,
+    "maxVersion": 1.3,
+    "renegotiation": false
+  },
+  "commonName": "Step Online CA"
+}
