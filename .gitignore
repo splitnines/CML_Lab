@@ -5,6 +5,7 @@
 *.gz
 *.pcap
 cml_c9k_mcast_config.cfg
+PKI-Troubleshooting/
 
 # Python
 **/__pycache__/
