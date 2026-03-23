@@ -34,110 +34,117 @@ nodes:
   - boot_disk_size: null
     configuration:
       - name: iosxe_config.txt
-        content: "Building configuration...\n\nCurrent configuration : 7486 bytes\n\
-          !\n! Last configuration change at 19:28:06 UTC Thu Jan 15 2026\n!\nversion\
+        content: "Building configuration...\n\nCurrent configuration : 7998 bytes\n\
+          !\n! Last configuration change at 19:49:53 UTC Mon Mar 23 2026\n!\nversion\
           \ 17.16\nservice timestamps debug datetime msec\nservice timestamps log\
           \ datetime msec\nservice password-encryption\nplatform qfp utilization monitor\
           \ load 80\nplatform sslvpn use-pd\nplatform console serial\n!\nhostname\
           \ qos-r1\n!\nboot-start-marker\nboot-end-marker\n!\n!\nno logging console\n\
           no aaa new-model\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\nno ip domain lookup\n\
           ip domain name cml.lab\n!\n!\n!\nlogin on-success log\n!\n!\nsubscriber\
-          \ templating\n!\n!\n!\ncrypto pki trustpoint SLA-TrustPoint\n enrollment\
-          \ pkcs12\n revocation-check crl\n hash sha256\n!\ncrypto pki trustpoint\
-          \ TP-self-signed-2477503210\n enrollment selfsigned\n subject-name cn=IOS-Self-Signed-Certificate-2477503210\n\
-          \ revocation-check none\n rsakeypair TP-self-signed-2477503210\n hash sha256\n\
-          !\n!\ncrypto pki certificate chain SLA-TrustPoint\n certificate ca 01\n\
-          \  30820321 30820209 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030\n\
-          \  32310E30 0C060355 040A1305 43697363 6F312030 1E060355 04031317 43697363\n\
-          \  6F204C69 63656E73 696E6720 526F6F74 20434130 1E170D31 33303533 30313934\n\
-          \  3834375A 170D3338 30353330 31393438 34375A30 32310E30 0C060355 040A1305\n\
-          \  43697363 6F312030 1E060355 04031317 43697363 6F204C69 63656E73 696E6720\n\
-          \  526F6F74 20434130 82012230 0D06092A 864886F7 0D010101 05000382 010F0030\n\
-          \  82010A02 82010100 A6BCBD96 131E05F7 145EA72C 2CD686E6 17222EA1 F1EFF64D\n\
-          \  CBB4C798 212AA147 C655D8D7 9471380D 8711441E 1AAF071A 9CAE6388 8A38E520\n\
-          \  1C394D78 462EF239 C659F715 B98C0A59 5BBB5CBD 0CFEBEA3 700A8BF7 D8F256EE\n\
-          \  4AA4E80D DB6FD1C9 60B1FD18 FFC69C96 6FA68957 A2617DE7 104FDC5F EA2956AC\n\
-          \  7390A3EB 2B5436AD C847A2C5 DAB553EB 69A9A535 58E9F3E3 C0BD23CF 58BD7188\n\
-          \  68E69491 20F320E7 948E71D7 AE3BCC84 F10684C7 4BC8E00F 539BA42B 42C68BB7\n\
-          \  C7479096 B4CB2D62 EA2F505D C7B062A4 6811D95B E8250FC4 5D5D5FB8 8F27D191\n\
-          \  C55F0D76 61F9A4CD 3D992327 A8BB03BD 4E6D7069 7CBADF8B DF5F4368 95135E44\n\
-          \  DFC7C6CF 04DD7FD1 02030100 01A34230 40300E06 03551D0F 0101FF04 04030201\n\
-          \  06300F06 03551D13 0101FF04 05300301 01FF301D 0603551D 0E041604 1449DC85\n\
-          \  4B3D31E5 1B3E6A17 606AF333 3D3B4C73 E8300D06 092A8648 86F70D01 010B0500\n\
-          \  03820101 00507F24 D3932A66 86025D9F E838AE5C 6D4DF6B0 49631C78 240DA905\n\
-          \  604EDCDE FF4FED2B 77FC460E CD636FDB DD44681E 3A5673AB 9093D3B1 6C9E3D8B\n\
-          \  D98987BF E40CBD9E 1AECA0C2 2189BB5C 8FA85686 CD98B646 5575B146 8DFC66A8\n\
-          \  467A3DF4 4D565700 6ADF0F0D CF835015 3C04FF7C 21E878AC 11BA9CD2 55A9232C\n\
-          \  7CA7B7E6 C1AF74F6 152E99B7 B1FCF9BB E973DE7F 5BDDEB86 C71E3B49 1765308B\n\
-          \  5FB0DA06 B92AFE7F 494E8A9E 07B85737 F3A58BE1 1A48A229 C37C1E69 39F08678\n\
-          \  80DDCD16 D6BACECA EEBC7CF9 8428787B 35202CDC 60E4616A B623CDBD 230E3AFB\n\
-          \  418616A9 4093E049 4D10AB75 27E86F73 932E35B5 8862FDAE 0275156F 719BB2F0\n\
-          \  D697DF7F 28\n  \tquit\ncrypto pki certificate chain TP-self-signed-2477503210\n\
-          \ certificate self-signed 01\n  30820330 30820218 A0030201 02020101 300D0609\
-          \ 2A864886 F70D0101 0B050030\n  31312F30 2D060355 04030C26 494F532D 53656C66\
-          \ 2D536967 6E65642D 43657274\n  69666963 6174652D 32343737 35303332 3130301E\
-          \ 170D3235 30393136 31393139\n  32355A17 0D333530 39313631 39313932 355A3031\
-          \ 312F302D 06035504 030C2649\n  4F532D53 656C662D 5369676E 65642D43 65727469\
-          \ 66696361 74652D32 34373735\n  30333231 30308201 22300D06 092A8648 86F70D01\
-          \ 01010500 0382010F 00308201\n  0A028201 01009919 38C45893 9190A692 6F7E014A\
-          \ 070769B7 5A7F8A74 862AA408\n  63D6EFE6 D6E96EB2 4F2985E1 1E35581E C217B5BA\
-          \ 125F61B3 7A8D1F3B 8A501024\n  55F96FB8 CC8CDE51 49F2630E E2F2A533 64E4E919\
-          \ 4F8136A3 4E710B63 F31F3147\n  5597D281 BDE66CD0 A95608BF BDE7E9D5 0637C105\
-          \ A85F2113 06B00282 E979C038\n  496861BE 9C262996 084D37D0 FD527A1F 34944A02\
-          \ 03FD23FD 1895ACEA BD509141\n  1F1E916F 3EAD2281 CC75DBC8 8D9363A7 E552D7CE\
-          \ 3AE470FA D1CB3135 6BA8450B\n  4295CC3A C7A9D02C 5FBD7B7E 5523A4AC ACD0F299\
-          \ F889A4D3 C81EF336 FC71EFB8\n  FB6CB0E4 595BA984 FF4D7E5F 2E57C192 54F68C07\
-          \ B5656CA0 372D511C 7851AD4D\n  1F3C77E3 B9070203 010001A3 53305130 1D060355\
-          \ 1D0E0416 0414101E B8C4AAAF\n  D69DC627 470F4A49 4A51FD20 A50C301F 0603551D\
-          \ 23041830 16801410 1EB8C4AA\n  AFD69DC6 27470F4A 494A51FD 20A50C30 0F060355\
-          \ 1D130101 FF040530 030101FF\n  300D0609 2A864886 F70D0101 0B050003 82010100\
-          \ 226320DE 58C590FC 497D823F\n  B9CB45FC 3E3CFBB9 ADE17E76 ED4092FF D4190E8C\
-          \ EF6FB863 CC4A4D8F 5F33429B\n  9568105A E71D5332 D23FA836 4FBDDDBA 2A45A4E1\
-          \ 1E2566A5 3CDC8870 F43F3644\n  1EBFB811 40ECD2CA 3E4C0A6E EB6AB384 BAADA1E4\
-          \ D3F1C1D1 49EE2C1F 2366C63D\n  B74243CB 5DBB53EF 423EC47A 2D3043BC C1E5C11A\
-          \ ED35B7B4 1036D262 E1794183\n  40721B99 93510E2B 9AC3079D BEFFBE67 76AB5C6A\
-          \ B8026FC4 2B75CADC 2A62F031\n  9EA87313 FCA9C289 0B94759C 84D95C7F E5108BE6\
-          \ 09A1757E 9026092A 8282A35B\n  E5438490 145A5D5D 30552B6E 03D58A0C 4880C918\
-          \ DEC081CC D0574853 88B6822F\n  E80301E5 FE36A65E B772F685 1CA87949 288D0E0E\n\
-          \  \tquit\n!\n!\nlicense udi pid C8000V sn 9RP7WOZXKK1\nmemory free low-watermark\
-          \ processor 201711\ndiagnostic bootup level minimal\n!\n!\n!\nusername cisco\
-          \ privilege 15 password 7 02050D480809\n!\nredundancy\n!\n!\n!\n!\n!\n!\n\
-          class-map match-any PORT_9030\n match access-group name PORT_9030\n match\
-          \ dscp default\nclass-map match-any PORT_9020\n match access-group name\
-          \ PORT_9020\n match dscp ef\nclass-map match-any PORT_9010\n match dscp\
-          \ af42\n match access-group name PORT_9010\n!\npolicy-map QOS-INGRESS\n\
-          \ class PORT_9010\n  set dscp af42\n class PORT_9020\n  set dscp ef\n class\
-          \ PORT_9030\n  set dscp default\npolicy-map QOS-EGRESS\n class PORT_9010\n\
-          \  bandwidth percent 25\n class PORT_9020\n  priority percent 50\n class\
-          \ class-default\n  bandwidth percent 25\n  queue-limit 128 packets\n  random-detect\
-          \ dscp-based\npolicy-map QOS-SHAPER\n class class-default\n  shape average\
-          \ 2000000\n  service-policy QOS-EGRESS\n!\n!\n!\n!\n!\n!\ninterface Loopback0\n\
-          \ ip address 10.254.0.1 255.255.255.255\n!\ninterface GigabitEthernet1\n\
-          \ ip address 10.100.0.1 255.255.255.0\n load-interval 30\n negotiation auto\n\
-          \ service-policy input QOS-INGRESS\n!\ninterface GigabitEthernet2\n bandwidth\
-          \ 2000\n ip address 10.255.0.1 255.255.255.252\n ip ospf network point-to-point\n\
-          \ load-interval 30\n negotiation auto\n service-policy output QOS-SHAPER\n\
-          !\ninterface GigabitEthernet3\n ip address 10.0.0.248 255.255.255.0\n negotiation\
-          \ auto\n service-policy output QOS-SHAPER\n!\ninterface GigabitEthernet4\n\
-          \ no ip address\n shutdown\n negotiation auto\n!\ninterface GigabitEthernet5\n\
-          \ no ip address\n shutdown\n negotiation auto\n!\ninterface GigabitEthernet6\n\
-          \ no ip address\n shutdown\n negotiation auto\n!\ninterface GigabitEthernet7\n\
-          \ no ip address\n shutdown\n negotiation auto\n!\ninterface GigabitEthernet8\n\
-          \ no ip address\n shutdown\n negotiation auto\n!\nrouter ospf 1\n router-id\
-          \ 10.254.0.1\n passive-interface GigabitEthernet1\n passive-interface GigabitEthernet3\n\
-          \ network 10.0.0.0 0.255.255.255 area 0\n!\nip forward-protocol nd\nip forward-protocol\
-          \ udp\n!\nno ip http server\nip http secure-server\nip ssh bulk-mode 131072\n\
-          !\nip access-list extended PORT_9010\n 10 permit tcp any eq 9010 any\n 20\
-          \ permit tcp any any eq 9010\n 30 permit udp any eq 9010 any\n 40 permit\
-          \ udp any any eq 9010\nip access-list extended PORT_9020\n 10 permit tcp\
-          \ any eq 9020 any\n 20 permit tcp any any eq 9020\n 30 permit udp any eq\
-          \ 9020 any\n 40 permit udp any any eq 9020\nip access-list extended PORT_9030\n\
-          \ 10 permit tcp any eq 9030 any\n 20 permit tcp any any eq 9030\n 30 permit\
-          \ udp any eq 9030 any\n 40 permit udp any any eq 9030\nlogging host 10.0.0.84\n\
-          !\n!\ncontrol-plane\n!\nalias exec q exit\n!\nline con 0\n exec-timeout\
-          \ 0 0\n logging synchronous\n stopbits 1\nline aux 0\nline vty 0 4\n exec-timeout\
-          \ 0 0\n logging synchronous\n login local\n transport input ssh\n!\n!\n\
-          !\n!\n!\n!\n!\nend"
+          \ templating\n!\nflow record LAB-ipv4\n match ipv4 source address\n match\
+          \ ipv4 destination address\n match transport source-port\n match transport\
+          \ destination-port\n collect counter bytes long\n collect counter packets\
+          \ long\n collect timestamp absolute first\n collect timestamp absolute last\n\
+          !\n!\nflow exporter LAB-EXPORTER\n destination 10.0.0.149\n transport udp\
+          \ 2055\n!\n!\nflow monitor LAB-MONITOR\n exporter LAB-EXPORTER\n cache timeout\
+          \ active 60\n record LAB-ipv4\n!\n!\n!\n!\ncrypto pki trustpoint SLA-TrustPoint\n\
+          \ enrollment pkcs12\n revocation-check crl\n hash sha256\n!\ncrypto pki\
+          \ trustpoint TP-self-signed-2477503210\n enrollment selfsigned\n subject-name\
+          \ cn=IOS-Self-Signed-Certificate-2477503210\n revocation-check none\n rsakeypair\
+          \ TP-self-signed-2477503210\n hash sha256\n!\n!\ncrypto pki certificate\
+          \ chain SLA-TrustPoint\n certificate ca 01\n  30820321 30820209 A0030201\
+          \ 02020101 300D0609 2A864886 F70D0101 0B050030\n  32310E30 0C060355 040A1305\
+          \ 43697363 6F312030 1E060355 04031317 43697363\n  6F204C69 63656E73 696E6720\
+          \ 526F6F74 20434130 1E170D31 33303533 30313934\n  3834375A 170D3338 30353330\
+          \ 31393438 34375A30 32310E30 0C060355 040A1305\n  43697363 6F312030 1E060355\
+          \ 04031317 43697363 6F204C69 63656E73 696E6720\n  526F6F74 20434130 82012230\
+          \ 0D06092A 864886F7 0D010101 05000382 010F0030\n  82010A02 82010100 A6BCBD96\
+          \ 131E05F7 145EA72C 2CD686E6 17222EA1 F1EFF64D\n  CBB4C798 212AA147 C655D8D7\
+          \ 9471380D 8711441E 1AAF071A 9CAE6388 8A38E520\n  1C394D78 462EF239 C659F715\
+          \ B98C0A59 5BBB5CBD 0CFEBEA3 700A8BF7 D8F256EE\n  4AA4E80D DB6FD1C9 60B1FD18\
+          \ FFC69C96 6FA68957 A2617DE7 104FDC5F EA2956AC\n  7390A3EB 2B5436AD C847A2C5\
+          \ DAB553EB 69A9A535 58E9F3E3 C0BD23CF 58BD7188\n  68E69491 20F320E7 948E71D7\
+          \ AE3BCC84 F10684C7 4BC8E00F 539BA42B 42C68BB7\n  C7479096 B4CB2D62 EA2F505D\
+          \ C7B062A4 6811D95B E8250FC4 5D5D5FB8 8F27D191\n  C55F0D76 61F9A4CD 3D992327\
+          \ A8BB03BD 4E6D7069 7CBADF8B DF5F4368 95135E44\n  DFC7C6CF 04DD7FD1 02030100\
+          \ 01A34230 40300E06 03551D0F 0101FF04 04030201\n  06300F06 03551D13 0101FF04\
+          \ 05300301 01FF301D 0603551D 0E041604 1449DC85\n  4B3D31E5 1B3E6A17 606AF333\
+          \ 3D3B4C73 E8300D06 092A8648 86F70D01 010B0500\n  03820101 00507F24 D3932A66\
+          \ 86025D9F E838AE5C 6D4DF6B0 49631C78 240DA905\n  604EDCDE FF4FED2B 77FC460E\
+          \ CD636FDB DD44681E 3A5673AB 9093D3B1 6C9E3D8B\n  D98987BF E40CBD9E 1AECA0C2\
+          \ 2189BB5C 8FA85686 CD98B646 5575B146 8DFC66A8\n  467A3DF4 4D565700 6ADF0F0D\
+          \ CF835015 3C04FF7C 21E878AC 11BA9CD2 55A9232C\n  7CA7B7E6 C1AF74F6 152E99B7\
+          \ B1FCF9BB E973DE7F 5BDDEB86 C71E3B49 1765308B\n  5FB0DA06 B92AFE7F 494E8A9E\
+          \ 07B85737 F3A58BE1 1A48A229 C37C1E69 39F08678\n  80DDCD16 D6BACECA EEBC7CF9\
+          \ 8428787B 35202CDC 60E4616A B623CDBD 230E3AFB\n  418616A9 4093E049 4D10AB75\
+          \ 27E86F73 932E35B5 8862FDAE 0275156F 719BB2F0\n  D697DF7F 28\n  \tquit\n\
+          crypto pki certificate chain TP-self-signed-2477503210\n certificate self-signed\
+          \ 01\n  30820330 30820218 A0030201 02020101 300D0609 2A864886 F70D0101 0B050030\n\
+          \  31312F30 2D060355 04030C26 494F532D 53656C66 2D536967 6E65642D 43657274\n\
+          \  69666963 6174652D 32343737 35303332 3130301E 170D3235 30393136 31393139\n\
+          \  32355A17 0D333530 39313631 39313932 355A3031 312F302D 06035504 030C2649\n\
+          \  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D32 34373735\n\
+          \  30333231 30308201 22300D06 092A8648 86F70D01 01010500 0382010F 00308201\n\
+          \  0A028201 01009919 38C45893 9190A692 6F7E014A 070769B7 5A7F8A74 862AA408\n\
+          \  63D6EFE6 D6E96EB2 4F2985E1 1E35581E C217B5BA 125F61B3 7A8D1F3B 8A501024\n\
+          \  55F96FB8 CC8CDE51 49F2630E E2F2A533 64E4E919 4F8136A3 4E710B63 F31F3147\n\
+          \  5597D281 BDE66CD0 A95608BF BDE7E9D5 0637C105 A85F2113 06B00282 E979C038\n\
+          \  496861BE 9C262996 084D37D0 FD527A1F 34944A02 03FD23FD 1895ACEA BD509141\n\
+          \  1F1E916F 3EAD2281 CC75DBC8 8D9363A7 E552D7CE 3AE470FA D1CB3135 6BA8450B\n\
+          \  4295CC3A C7A9D02C 5FBD7B7E 5523A4AC ACD0F299 F889A4D3 C81EF336 FC71EFB8\n\
+          \  FB6CB0E4 595BA984 FF4D7E5F 2E57C192 54F68C07 B5656CA0 372D511C 7851AD4D\n\
+          \  1F3C77E3 B9070203 010001A3 53305130 1D060355 1D0E0416 0414101E B8C4AAAF\n\
+          \  D69DC627 470F4A49 4A51FD20 A50C301F 0603551D 23041830 16801410 1EB8C4AA\n\
+          \  AFD69DC6 27470F4A 494A51FD 20A50C30 0F060355 1D130101 FF040530 030101FF\n\
+          \  300D0609 2A864886 F70D0101 0B050003 82010100 226320DE 58C590FC 497D823F\n\
+          \  B9CB45FC 3E3CFBB9 ADE17E76 ED4092FF D4190E8C EF6FB863 CC4A4D8F 5F33429B\n\
+          \  9568105A E71D5332 D23FA836 4FBDDDBA 2A45A4E1 1E2566A5 3CDC8870 F43F3644\n\
+          \  1EBFB811 40ECD2CA 3E4C0A6E EB6AB384 BAADA1E4 D3F1C1D1 49EE2C1F 2366C63D\n\
+          \  B74243CB 5DBB53EF 423EC47A 2D3043BC C1E5C11A ED35B7B4 1036D262 E1794183\n\
+          \  40721B99 93510E2B 9AC3079D BEFFBE67 76AB5C6A B8026FC4 2B75CADC 2A62F031\n\
+          \  9EA87313 FCA9C289 0B94759C 84D95C7F E5108BE6 09A1757E 9026092A 8282A35B\n\
+          \  E5438490 145A5D5D 30552B6E 03D58A0C 4880C918 DEC081CC D0574853 88B6822F\n\
+          \  E80301E5 FE36A65E B772F685 1CA87949 288D0E0E\n  \tquit\n!\n!\nlicense\
+          \ udi pid C8000V sn 9S45WZXIEVJ\nmemory free low-watermark processor 201711\n\
+          diagnostic bootup level minimal\n!\n!\n!\nusername cisco privilege 15 password\
+          \ 7 02050D480809\n!\nredundancy\n!\n!\n!\n!\n!\n!\nclass-map match-any PORT_9030\n\
+          \ match access-group name PORT_9030\n match dscp default\nclass-map match-any\
+          \ PORT_9020\n match access-group name PORT_9020\n match dscp ef\nclass-map\
+          \ match-any PORT_9010\n match dscp af42\n match access-group name PORT_9010\n\
+          !\npolicy-map QOS-INGRESS\n class PORT_9010\n  set dscp af42\n class PORT_9020\n\
+          \  set dscp ef\n class PORT_9030\n  set dscp default\npolicy-map QOS-EGRESS\n\
+          \ class PORT_9010\n  bandwidth percent 25\n class PORT_9020\n  priority\
+          \ percent 50\n class class-default\n  bandwidth percent 25\n  queue-limit\
+          \ 128 packets\n  random-detect dscp-based\npolicy-map QOS-SHAPER\n class\
+          \ class-default\n  shape average 2000000\n  service-policy QOS-EGRESS\n\
+          !\n!\n!\n!\n!\n!\ninterface Loopback0\n ip address 10.254.0.1 255.255.255.255\n\
+          !\ninterface GigabitEthernet1\n ip address 10.100.0.1 255.255.255.0\n load-interval\
+          \ 30\n negotiation auto\n service-policy input QOS-INGRESS\n!\ninterface\
+          \ GigabitEthernet2\n bandwidth 2000\n ip flow monitor LAB-MONITOR input\n\
+          \ ip flow monitor LAB-MONITOR output\n ip address 10.255.0.1 255.255.255.252\n\
+          \ ip ospf network point-to-point\n load-interval 30\n negotiation auto\n\
+          \ service-policy output QOS-SHAPER\n!\ninterface GigabitEthernet3\n ip address\
+          \ 10.0.0.248 255.255.255.0\n negotiation auto\n service-policy output QOS-SHAPER\n\
+          !\ninterface GigabitEthernet4\n no ip address\n shutdown\n negotiation auto\n\
+          !\ninterface GigabitEthernet5\n no ip address\n shutdown\n negotiation auto\n\
+          !\ninterface GigabitEthernet6\n no ip address\n shutdown\n negotiation auto\n\
+          !\ninterface GigabitEthernet7\n no ip address\n shutdown\n negotiation auto\n\
+          !\ninterface GigabitEthernet8\n no ip address\n shutdown\n negotiation auto\n\
+          !\nrouter ospf 1\n router-id 10.254.0.1\n passive-interface GigabitEthernet1\n\
+          \ passive-interface GigabitEthernet3\n network 10.0.0.0 0.255.255.255 area\
+          \ 0\n!\nip forward-protocol nd\nip forward-protocol udp\n!\nno ip http server\n\
+          ip http secure-server\nip ssh bulk-mode 131072\n!\nip access-list extended\
+          \ PORT_9010\n 10 permit tcp any eq 9010 any\n 20 permit tcp any any eq 9010\n\
+          \ 30 permit udp any eq 9010 any\n 40 permit udp any any eq 9010\nip access-list\
+          \ extended PORT_9020\n 10 permit tcp any eq 9020 any\n 20 permit tcp any\
+          \ any eq 9020\n 30 permit udp any eq 9020 any\n 40 permit udp any any eq\
+          \ 9020\nip access-list extended PORT_9030\n 10 permit tcp any eq 9030 any\n\
+          \ 20 permit tcp any any eq 9030\n 30 permit udp any eq 9030 any\n 40 permit\
+          \ udp any any eq 9030\nlogging host 10.0.0.84\n!\n!\ncontrol-plane\n!\n\
+          alias exec q exit\n!\nline con 0\n exec-timeout 0 0\n logging synchronous\n\
+          \ stopbits 1\nline aux 0\nline vty 0 4\n exec-timeout 0 0\n logging synchronous\n\
+          \ login local\n transport input ssh\n!\n!\n!\n!\n!\n!\n!\nend"
     cpu_limit: null
     cpus: null
     data_volume: null
@@ -438,7 +445,7 @@ nodes:
     configuration:
       - name: iosxe_config.txt
         content: "Building configuration...\n\nCurrent configuration : 5845 bytes\n\
-          !\n! Last configuration change at 19:28:09 UTC Thu Jan 15 2026\n!\nversion\
+          !\n! Last configuration change at 19:49:53 UTC Mon Mar 23 2026\n!\nversion\
           \ 17.16\nservice timestamps debug datetime msec\nservice timestamps log\
           \ datetime msec\nservice password-encryption\nplatform qfp utilization monitor\
           \ load 80\nplatform sslvpn use-pd\nplatform console serial\n!\nhostname\
@@ -502,7 +509,7 @@ nodes:
           \ 2D07D20B 3AA6501D 6D609BF3\n  B2EEF347 6D6610E0 76872EE8 74199C80 A5FCAD14\
           \ C5629A28 0A3248FF 1573FB71\n  16B4ADA6 1D31DFA0 CBAC3F50 889440F5 8621429F\
           \ 96C6ED5F 6F6C4E5C 3099D9EE\n  6657DB61 7184E7D6 89E2FCDA FAC7918E 54D53C2E\n\
-          \  \tquit\n!\n!\nlicense udi pid C8000V sn 9AP0TE0IJPG\nmemory free low-watermark\
+          \  \tquit\n!\n!\nlicense udi pid C8000V sn 9CXAK3OLO2W\nmemory free low-watermark\
           \ processor 201711\ndiagnostic bootup level minimal\n!\n!\n!\nusername cisco\
           \ privilege 15 password 7 030752180500\n!\nredundancy\n!\n!\n!\n!\n!\n!\n\
           !\n!\n!\n!\ninterface Loopback0\n ip address 10.254.0.2 255.255.255.255\n\
