@@ -22,13 +22,13 @@ def parse_args() -> argparse.Namespace:
         default=830,
         help="NETCONF SSH port (default: 830)",
     )
-    parser.add_argument("--username", required=True, help="Username")
-    parser.add_argument("--password", required=True, help="Password")
-    parser.add_argument(
-        "--output",
-        default="running-config.xml",
-        help="Output file path (default: running-config.xml)",
-    )
+    # parser.add_argument("--username", required=True, help="Username")
+    # parser.add_argument("--password", required=True, help="Password")
+    # parser.add_argument(
+    #     "--output",
+    #     default="running-config.xml",
+    #     help="Output file path (default: running-config.xml)",
+    # )
     parser.add_argument(
         "--timeout",
         type=int,
@@ -46,16 +46,16 @@ def parse_args() -> argparse.Namespace:
 def get_running_config(
     host: str,
     port: int,
-    username: str,
-    password: str,
+    # username: str,
+    # password: str,
     timeout: int,
     hostkey_verify: bool,
 ) -> str:
     with manager.connect(
         host=host,
         port=port,
-        username=username,
-        password=password,
+        username="cisco",
+        password="cisco",
         hostkey_verify=hostkey_verify,
         device_params={"name": "iosxe"},
         timeout=timeout,
@@ -74,8 +74,8 @@ def main() -> int:
         config_xml = get_running_config(
             host=args.host,
             port=args.port,
-            username=args.username,
-            password=args.password,
+            # username=args.username,
+            # password=args.password,
             timeout=args.timeout,
             hostkey_verify=args.hostkey_verify,
         )
