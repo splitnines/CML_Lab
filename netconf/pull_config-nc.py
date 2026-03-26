@@ -1,64 +1,24 @@
 from __future__ import annotations
 
-import argparse
 import sys
-# from pathlib import Path
 
 from ncclient import manager
 from ncclient.operations import RPCError
-
-
-def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(
-        description="Pull running configuration from a Cisco IOS-XE router "
-        "via NETCONF."
-    )
-    parser.add_argument(
-        "--host", required=True, help="Router IP address or hostname"
-    )
-    parser.add_argument(
-        "--port",
-        type=int,
-        default=830,
-        help="NETCONF SSH port (default: 830)",
-    )
-    # parser.add_argument("--username", required=True, help="Username")
-    # parser.add_argument("--password", required=True, help="Password")
-    # parser.add_argument(
-    #     "--output",
-    #     default="running-config.xml",
-    #     help="Output file path (default: running-config.xml)",
-    # )
-    parser.add_argument(
-        "--timeout",
-        type=int,
-        default=30,
-        help="NETCONF session timeout in seconds (default: 30)",
-    )
-    parser.add_argument(
-        "--hostkey-verify",
-        action="store_true",
-        help="Enable SSH host key verification",
-    )
-    return parser.parse_args()
+from xml.etree import ElementTree as ET
+from xml.dom import minidom
 
 
 def get_running_config(
     host: str,
-    port: int,
-    # username: str,
-    # password: str,
-    timeout: int,
-    hostkey_verify: bool,
 ) -> str:
     with manager.connect(
         host=host,
-        port=port,
+        port=830,
         username="cisco",
         password="cisco",
-        hostkey_verify=hostkey_verify,
+        hostkey_verify=False,
         device_params={"name": "iosxe"},
-        timeout=timeout,
+        timeout=5,
         allow_agent=False,
         look_for_keys=False,
     ) as session:
@@ -67,28 +27,19 @@ def get_running_config(
 
 
 def main() -> int:
-    args = parse_args()
-    # output_path = Path(args.output)
-
     try:
-        config_xml = get_running_config(
-            host=args.host,
-            port=args.port,
-            # username=args.username,
-            # password=args.password,
-            timeout=args.timeout,
-            hostkey_verify=args.hostkey_verify,
-        )
-    except RPCError as exc:
-        print(f"NETCONF RPC failed: {exc}", file=sys.stderr)
+        config_xml = get_running_config(host=sys.argv[1])
+    except RPCError as e:
+        print(f"NETCONF RPC failed: {e}", file=sys.stderr)
         return 1
-    except Exception as exc:
-        print(f"Connection failed: {exc}", file=sys.stderr)
+    except Exception as e:
+        print(f"Connection failed: {e}", file=sys.stderr)
         return 1
 
-    # output_path.write_text(config_xml, encoding="utf-8")
-    print(config_xml)
-    # print(f"Saved running config XML to {output_path}")
+    root = ET.fromstring(config_xml)
+    rough = ET.tostring(root, encoding="utf-8")
+    pretty = minidom.parseString(rough).toprettyxml(indent="  ")
+    print(pretty)
     return 0
 
 

@@ -1,20 +1,11 @@
 from ncclient import manager
+import sys
 
-config = """
-<config>
-  <native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
-    <interface>
-      <GigabitEthernet>
-        <name>1</name>
-        <description>Uplink to core</description>
-      </GigabitEthernet>
-    </interface>
-  </native>
-</config>
-"""
+with open(sys.argv[2], "r") as xml:
+    config = xml.read()
 
 with manager.connect(
-    host="10.0.0.248",
+    host=sys.argv[1],
     port=830,
     username="cisco",
     password="cisco",
