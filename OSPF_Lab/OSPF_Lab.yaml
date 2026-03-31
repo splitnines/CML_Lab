@@ -4,8 +4,8 @@ nodes:
   - boot_disk_size: null
     configuration:
       - name: ios_config.txt
-        content: "Building configuration...\n\nCurrent configuration : 5297 bytes\n\
-          !\n! Last configuration change at 15:09:26 UTC Mon Mar 23 2026 by cisco\n\
+        content: "Building configuration...\n\nCurrent configuration : 5708 bytes\n\
+          !\n! Last configuration change at 15:18:21 UTC Tue Mar 31 2026 by cisco\n\
           !\nversion 17.16\nservice timestamps debug datetime msec\nservice timestamps\
           \ log datetime msec\nservice password-encryption\n!\nhostname r1\n!\nboot-start-marker\n\
           boot-end-marker\n!\n!\nno logging console\naaa new-model\n!\n!\naaa group\
@@ -72,12 +72,18 @@ nodes:
           \ router-id 10.254.0.1\n log-adjacency-changes detail\n !\n address-family\
           \ ipv4 unicast\n  passive-interface Ethernet1/0\n exit-address-family\n\
           \ !\n address-family ipv6 unicast\n  passive-interface Ethernet1/0\n exit-address-family\n\
-          !\nrouter ospf 1\n!\nip forward-protocol nd\nip forward-protocol udp\n!\n\
-          !\nip http server\nip http secure-server\nip ssh bulk-mode 131072\nno logging\
-          \ btrace\nlogging source-interface Loopback0\nlogging host 10.0.0.84\n!\n\
-          !\n!\n!\n!\ncontrol-plane\n!\n!\nalias exec q exit\n!\nline con 0\n exec-timeout\
-          \ 0 0\n logging synchronous\nline aux 0\nline vty 0 4\n exec-timeout 0 0\n\
-          \ logging synchronous\n transport input ssh\n!\n!\n!\n!\nend"
+          !\nrouter ospf 1\n router-id 10.254.0.1\n log-adjacency-changes detail\n\
+          \ auto-cost reference-bandwidth 100000\n area 0 range 10.254.0.0 255.255.0.0\n\
+          \ area 2 range 10.2.0.0 255.255.0.0\n passive-interface Ethernet1/0\n default-information\
+          \ originate\n!\nip forward-protocol nd\nip forward-protocol udp\n!\n!\n\
+          ip http server\nip http secure-server\nip route 0.0.0.0 0.0.0.0 Ethernet1/0\
+          \ 10.0.0.149\nip ssh bulk-mode 131072\nip scp server enable\n!\nip prefix-list\
+          \ OSPF_FILTER seq 10 deny 10.254.0.0/16 ge 17\nip prefix-list OSPF_FILTER\
+          \ seq 20 permit 0.0.0.0/0 le 32\nno logging btrace\nlogging source-interface\
+          \ Loopback0\nlogging host 10.0.0.84\n!\n!\n!\n!\n!\ncontrol-plane\n!\n!\n\
+          alias exec q exit\n!\nline con 0\n exec-timeout 0 0\n logging synchronous\n\
+          line aux 0\nline vty 0 4\n exec-timeout 0 0\n logging synchronous\n transport\
+          \ input ssh\n!\n!\n!\n!\nend"
     cpu_limit: null
     cpus: null
     data_volume: null
@@ -139,8 +145,8 @@ nodes:
   - boot_disk_size: null
     configuration:
       - name: ios_config.txt
-        content: "Building configuration...\n\nCurrent configuration : 5066 bytes\n\
-          !\n! Last configuration change at 15:09:26 UTC Mon Mar 23 2026 by cisco\n\
+        content: "Building configuration...\n\nCurrent configuration : 5250 bytes\n\
+          !\n! Last configuration change at 15:18:21 UTC Tue Mar 31 2026 by cisco\n\
           !\nversion 17.16\nservice timestamps debug datetime msec\nservice timestamps\
           \ log datetime msec\nservice password-encryption\n!\nhostname r3\n!\nboot-start-marker\n\
           boot-end-marker\n!\n!\nno logging console\naaa new-model\n!\n!\naaa group\
@@ -191,21 +197,24 @@ nodes:
           \ address 10.254.0.3 255.255.255.255\n ip ospf 1 area 0\n ipv6 address 2001:DB8:0:FF::3/128\n\
           \ ipv6 enable\n ospfv3 1 ipv6 area 0\n!\ninterface Ethernet0/0\n ip address\
           \ 10.254.100.9 255.255.255.252\n ip ospf network point-to-point\n ip ospf\
-          \ 1 area 0\n ipv6 address 2001:DB8:0:3::1/64\n ipv6 address 2001:DB8:0:3::3/64\n\
-          \ ipv6 enable\n ospfv3 1 ipv6 area 0\n ospfv3 1 ipv6 network point-to-point\n\
-          !\ninterface Ethernet0/1\n ip address 10.254.100.6 255.255.255.252\n ip\
-          \ ospf network point-to-point\n ip ospf 1 area 0\n ipv6 address 2001:DB8:0:2::2/64\n\
-          \ ipv6 address 2001:DB8:0:2::3/64\n ipv6 enable\n ospfv3 1 ipv6 area 0\n\
-          \ ospfv3 1 ipv6 network point-to-point\n!\ninterface Ethernet0/2\n ip address\
-          \ 10.1.100.2 255.255.255.248\n ip ospf priority 50\n ip ospf 1 area 1\n\
-          !\ninterface Ethernet0/3\n no ip address\n shutdown\n!\ninterface Ethernet1/0\n\
-          \ no ip address\n shutdown\n!\ninterface Ethernet1/1\n no ip address\n shutdown\n\
-          !\ninterface Ethernet1/2\n no ip address\n shutdown\n!\ninterface Ethernet1/3\n\
-          \ no ip address\n shutdown\n!\nrouter ospfv3 1\n router-id 10.254.0.3\n\
-          \ log-adjacency-changes detail\n !\n address-family ipv4 unicast\n exit-address-family\n\
-          \ !\n address-family ipv6 unicast\n exit-address-family\n!\nrouter ospf\
-          \ 1\n!\nip forward-protocol nd\nip forward-protocol udp\n!\n!\nip http server\n\
-          ip http secure-server\nip ssh bulk-mode 131072\nno logging btrace\nlogging\
+          \ 1 area 0\n ipv6 address 2001:DB8:0:3::3/64\n ipv6 enable\n ospfv3 1 ipv6\
+          \ area 0\n ospfv3 1 ipv6 network point-to-point\n!\ninterface Ethernet0/1\n\
+          \ ip address 10.254.100.6 255.255.255.252\n ip ospf network point-to-point\n\
+          \ ip ospf 1 area 0\n ipv6 address 2001:DB8:0:2::3/64\n ipv6 enable\n ospfv3\
+          \ 1 ipv6 area 0\n ospfv3 1 ipv6 network point-to-point\n!\ninterface Ethernet0/2\n\
+          \ ip address 10.1.100.2 255.255.255.248\n ip ospf priority 50\n ip ospf\
+          \ 1 area 1\n!\ninterface Ethernet0/3\n no ip address\n shutdown\n!\ninterface\
+          \ Ethernet1/0\n no ip address\n shutdown\n!\ninterface Ethernet1/1\n no\
+          \ ip address\n shutdown\n!\ninterface Ethernet1/2\n no ip address\n shutdown\n\
+          !\ninterface Ethernet1/3\n no ip address\n shutdown\n!\nrouter ospfv3 1\n\
+          \ router-id 10.254.0.3\n log-adjacency-changes detail\n !\n address-family\
+          \ ipv4 unicast\n exit-address-family\n !\n address-family ipv6 unicast\n\
+          \ exit-address-family\n!\nrouter ospf 1\n router-id 10.254.0.3\n log-adjacency-changes\
+          \ detail\n auto-cost reference-bandwidth 100000\n area 1 filter-list prefix\
+          \ OSPF_FILTER in\n!\nip forward-protocol nd\nip forward-protocol udp\n!\n\
+          !\nip http server\nip http secure-server\nip ssh bulk-mode 131072\n!\nip\
+          \ prefix-list OSPF_FILTER seq 10 deny 10.254.0.0/16 ge 17\nip prefix-list\
+          \ OSPF_FILTER seq 20 permit 0.0.0.0/0 le 32\nno logging btrace\nlogging\
           \ source-interface Loopback0\nlogging host 10.0.0.84\n!\n!\n!\n!\n!\ncontrol-plane\n\
           !\n!\nalias exec q exit\n!\nline con 0\n exec-timeout 0 0\n logging synchronous\n\
           line aux 0\nline vty 0 4\n exec-timeout 0 0\n logging synchronous\n transport\
@@ -271,8 +280,8 @@ nodes:
   - boot_disk_size: null
     configuration:
       - name: ios_config.txt
-        content: "Building configuration...\n\nCurrent configuration : 5034 bytes\n\
-          !\n! Last configuration change at 15:09:26 UTC Mon Mar 23 2026 by cisco\n\
+        content: "Building configuration...\n\nCurrent configuration : 5144 bytes\n\
+          !\n! Last configuration change at 15:18:23 UTC Tue Mar 31 2026 by cisco\n\
           !\nversion 17.16\nservice timestamps debug datetime msec\nservice timestamps\
           \ log datetime msec\nservice password-encryption\n!\nhostname r2\n!\nboot-start-marker\n\
           boot-end-marker\n!\n!\nno logging console\naaa new-model\n!\n!\naaa group\
@@ -335,13 +344,14 @@ nodes:
           !\ninterface Ethernet1/3\n no ip address\n shutdown\n!\nrouter ospfv3 1\n\
           \ router-id 10.254.0.2\n log-adjacency-changes detail\n !\n address-family\
           \ ipv4 unicast\n exit-address-family\n !\n address-family ipv6 unicast\n\
-          \ exit-address-family\n!\nrouter ospf 1\n router-id 10.254.0.2\n!\nip forward-protocol\
-          \ nd\nip forward-protocol udp\n!\n!\nip http server\nip http secure-server\n\
-          ip ssh bulk-mode 131072\nno logging btrace\nlogging source-interface Loopback0\n\
-          logging host 10.0.0.84\n!\n!\n!\n!\n!\ncontrol-plane\n!\n!\nalias exec q\
-          \ exit\n!\nline con 0\n exec-timeout 0 0\n logging synchronous\nline aux\
-          \ 0\nline vty 0 4\n exec-timeout 0 0\n logging synchronous\n transport input\
-          \ ssh\n!\n!\n!\n!\nend"
+          \ exit-address-family\n!\nrouter ospf 1\n router-id 10.254.0.2\n auto-cost\
+          \ reference-bandwidth 100000\n area 0 range 10.254.0.0 255.255.0.0\n area\
+          \ 2 range 10.2.0.0 255.255.0.0\n!\nip forward-protocol nd\nip forward-protocol\
+          \ udp\n!\n!\nip http server\nip http secure-server\nip ssh bulk-mode 131072\n\
+          no logging btrace\nlogging source-interface Loopback0\nlogging host 10.0.0.84\n\
+          !\n!\n!\n!\n!\ncontrol-plane\n!\n!\nalias exec q exit\n!\nline con 0\n exec-timeout\
+          \ 0 0\n logging synchronous\nline aux 0\nline vty 0 4\n exec-timeout 0 0\n\
+          \ logging synchronous\n transport input ssh\n!\n!\n!\n!\nend"
     cpu_limit: null
     cpus: null
     data_volume: null
@@ -403,8 +413,8 @@ nodes:
   - boot_disk_size: null
     configuration:
       - name: ios_config.txt
-        content: "Building configuration...\n\nCurrent configuration : 4798 bytes\n\
-          !\n! Last configuration change at 15:09:26 UTC Mon Mar 23 2026 by cisco\n\
+        content: "Building configuration...\n\nCurrent configuration : 4932 bytes\n\
+          !\n! Last configuration change at 15:18:21 UTC Tue Mar 31 2026 by cisco\n\
           !\nversion 17.16\nservice timestamps debug datetime msec\nservice timestamps\
           \ log datetime msec\nservice password-encryption\n!\nhostname sw1-1\n!\n\
           boot-start-marker\nboot-end-marker\n!\n!\nno logging console\naaa new-model\n\
@@ -460,14 +470,16 @@ nodes:
           \ access\n spanning-tree portfast\n!\ninterface Ethernet0/3\n!\ninterface\
           \ Ethernet1/0\n!\ninterface Ethernet1/1\n!\ninterface Ethernet1/2\n!\ninterface\
           \ Ethernet1/3\n!\ninterface Vlan100\n ip address 10.1.100.3 255.255.255.248\n\
-          \ ip ospf 1 area 1\n ipv6 enable\n ospfv3 1 ipv4 area 1\n!\ninterface Vlan1000\n\
-          \ ip address 10.1.10.1 255.255.255.0\n ip ospf 1 area 1\n!\nrouter ospfv3\
-          \ 1\n router-id 10.1.1.1\n log-adjacency-changes detail\n !\n address-family\
-          \ ipv4 unicast\n exit-address-family\n !\n address-family ipv6 unicast\n\
-          \ exit-address-family\n!\nrouter ospf 1\n!\nip forward-protocol nd\nip forward-protocol\
-          \ udp\n!\n!\nip http server\nip http secure-server\nip ssh bulk-mode 131072\n\
-          !\nno logging btrace\nlogging host 10.0.0.84\n!\n!\n!\n!\n!\ncontrol-plane\n\
-          !\n!\nalias exec q exit\n!\nline con 0\n exec-timeout 0 0\n logging synchronous\n\
+          \ ip ospf 1 area 1\n ipv6 enable\n!\ninterface Vlan1000\n ip address 10.1.10.1\
+          \ 255.255.255.0\n ip ospf 1 area 1\n!\nrouter ospfv3 1\n router-id 10.1.1.1\n\
+          \ log-adjacency-changes detail\n !\n address-family ipv4 unicast\n exit-address-family\n\
+          \ !\n address-family ipv6 unicast\n exit-address-family\n!\nrouter ospf\
+          \ 1\n auto-cost reference-bandwidth 100000\n!\nip forward-protocol nd\n\
+          ip forward-protocol udp\n!\n!\nip http server\nip http secure-server\nip\
+          \ ssh bulk-mode 131072\n!\n!\nip prefix-list OSPF_FILTER seq 10 deny 10.254.0.0/16\
+          \ ge 17\nip prefix-list OSPF_FILTER seq 20 permit 0.0.0.0/0 le 32\nno logging\
+          \ btrace\nlogging host 10.0.0.84\n!\n!\n!\n!\n!\ncontrol-plane\n!\n!\nalias\
+          \ exec q exit\n!\nline con 0\n exec-timeout 0 0\n logging synchronous\n\
           line aux 0\nline vty 0 4\n exec-timeout 0 0\n logging synchronous\n transport\
           \ input ssh\n!\n!\nend"
     cpu_limit: null
@@ -593,8 +605,8 @@ nodes:
   - boot_disk_size: null
     configuration:
       - name: ios_config.txt
-        content: "Building configuration...\n\nCurrent configuration : 4582 bytes\n\
-          !\n! Last configuration change at 15:09:26 UTC Mon Mar 23 2026\n!\nversion\
+        content: "Building configuration...\n\nCurrent configuration : 4620 bytes\n\
+          !\n! Last configuration change at 15:18:21 UTC Tue Mar 31 2026\n!\nversion\
           \ 17.16\nservice timestamps debug datetime msec\nservice timestamps log\
           \ datetime msec\nservice password-encryption\n!\nhostname sw2-1\n!\nboot-start-marker\n\
           boot-end-marker\n!\n!\nno logging console\nno aaa new-model\n!\n!\n!\n!\n\
@@ -651,12 +663,13 @@ nodes:
           \ standby 1 ip 10.2.10.1\n standby 1 priority 150\n standby 1 preempt\n\
           \ ip ospf 1 area 2\n!\nrouter ospfv3 1\n router-id 10.2.1.1\n !\n address-family\
           \ ipv4 unicast\n exit-address-family\n!\nrouter ospf 1\n router-id 10.2.1.1\n\
-          \ log-adjacency-changes detail\n passive-interface Vlan1000\n!\nip forward-protocol\
-          \ nd\nip forward-protocol udp\n!\n!\nip http server\nip http secure-server\n\
-          ip ssh bulk-mode 131072\n!\nno logging btrace\nlogging host 10.0.0.84\n\
-          !\n!\n!\ncontrol-plane\n!\n!\nalias exec q exit\n!\nline con 0\n exec-timeout\
-          \ 0 0\n logging synchronous\nline aux 0\nline vty 0 4\n exec-timeout 0 0\n\
-          \ logging synchronous\n login local\n transport input ssh\n!\n!\nend"
+          \ log-adjacency-changes detail\n auto-cost reference-bandwidth 100000\n\
+          \ passive-interface Vlan1000\n!\nip forward-protocol nd\nip forward-protocol\
+          \ udp\n!\n!\nip http server\nip http secure-server\nip ssh bulk-mode 131072\n\
+          !\nno logging btrace\nlogging host 10.0.0.84\n!\n!\n!\ncontrol-plane\n!\n\
+          !\nalias exec q exit\n!\nline con 0\n exec-timeout 0 0\n logging synchronous\n\
+          line aux 0\nline vty 0 4\n exec-timeout 0 0\n logging synchronous\n login\
+          \ local\n transport input ssh\n!\n!\nend"
     cpu_limit: null
     cpus: null
     data_volume: null
@@ -718,8 +731,8 @@ nodes:
   - boot_disk_size: null
     configuration:
       - name: ios_config.txt
-        content: "Building configuration...\n\nCurrent configuration : 5147 bytes\n\
-          !\n! Last configuration change at 15:09:26 UTC Mon Mar 23 2026 by cisco\n\
+        content: "Building configuration...\n\nCurrent configuration : 5185 bytes\n\
+          !\n! Last configuration change at 15:18:20 UTC Tue Mar 31 2026 by cisco\n\
           !\nversion 17.16\nservice timestamps debug datetime msec\nservice timestamps\
           \ log datetime msec\nservice password-encryption\n!\nhostname sw2-2\n!\n\
           boot-start-marker\nboot-end-marker\n!\n!\nno logging console\naaa new-model\n\
@@ -783,13 +796,13 @@ nodes:
           \ ip ospf 1 area 2\n!\ninterface Vlan1000\n ip address 10.2.10.3 255.255.255.0\n\
           \ standby 1 ip 10.2.10.1\n ip ospf 1 area 2\n!\nrouter ospfv3 1\n router-id\
           \ 10.2.1.2\n !\n address-family ipv4 unicast\n exit-address-family\n!\n\
-          router ospf 1\n router-id 10.2.1.2\n log-adjacency-changes detail\n passive-interface\
-          \ Vlan1000\n!\nip forward-protocol nd\nip forward-protocol udp\n!\n!\nip\
-          \ http server\nip http secure-server\nip ssh bulk-mode 131072\n!\nno logging\
-          \ btrace\nlogging host 10.0.0.84\n!\n!\n!\n!\n!\ncontrol-plane\n!\n!\nalias\
-          \ exec q exit\n!\nline con 0\n exec-timeout 0 0\n logging synchronous\n\
-          line aux 0\nline vty 0 4\n exec-timeout 0 0\n logging synchronous\n transport\
-          \ input ssh\n!\n!\nend"
+          router ospf 1\n router-id 10.2.1.2\n log-adjacency-changes detail\n auto-cost\
+          \ reference-bandwidth 100000\n passive-interface Vlan1000\n!\nip forward-protocol\
+          \ nd\nip forward-protocol udp\n!\n!\nip http server\nip http secure-server\n\
+          ip ssh bulk-mode 131072\n!\nno logging btrace\nlogging host 10.0.0.84\n\
+          !\n!\n!\n!\n!\ncontrol-plane\n!\n!\nalias exec q exit\n!\nline con 0\n exec-timeout\
+          \ 0 0\n logging synchronous\nline aux 0\nline vty 0 4\n exec-timeout 0 0\n\
+          \ logging synchronous\n transport input ssh\n!\n!\nend"
     cpu_limit: null
     cpus: null
     data_volume: null
