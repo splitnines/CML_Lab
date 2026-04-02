@@ -9,7 +9,8 @@ network:
             routes:
                 - to: default
                   via: 10.100.1.1
-            match:
-                macaddress: 52:54:00:03:68:83
+            nameservers:
+              addreses:
+                - 1.1.1.1
             set-name: ens2
     version: 2

@@ -1,0 +1,38 @@
+  INSIDE NETWORK                                      OUTSIDE NETWORK
+  192.168.1.0/24                                      198.51.100.0/24
+
+    PC-A                                              Web Server
+  192.168.1.10                                        198.51.100.20
+  Inside Local                                        Outside Global
+        |                                                    ^
+        |                                                    |
+        v                                                    |
+   -----------------                                 -----------------
+   | Cisco Router  |---------------------------------|   Internet    |
+   |     NAT       |                                 -----------------
+   -----------------
+        |
+        | NAT translation
+        | 192.168.1.10  <-->  203.0.113.10
+        |
+        v
+
+   203.0.113.10
+   Inside Global
+
+Inside host seen internally  = Inside Local   = 192.168.1.10
+Inside host seen externally  = Inside Global  = 203.0.113.10
+
+Outside host real address    = Outside Global = 198.51.100.20
+Outside host as seen inside  = Outside Local  = 198.51.100.20
+
+
+============================================================================
+
+Inside host                      NAT router                     Outside host
+192.168.1.10  ---------------->  203.0.113.10  -------------->  198.51.100.20
+Inside Local                     Inside Global                  Outside Global
+
+From the inside host's perspective, the outside host is:
+198.51.100.20
+Outside Local
