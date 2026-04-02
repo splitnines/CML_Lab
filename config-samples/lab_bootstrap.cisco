@@ -13,14 +13,14 @@ username cisco privilege 15 password cisco
 line con 0
  exec-timeout 0 0
  logging synchronous
-!
+
 line vty 0 4
  exec-timeout 0 0
  logging synchronous
  login local
  transport input ssh
 !
-logging 10.0.0.84
+logging 10.0.0.149
 !
 alias exec q exit
 !
