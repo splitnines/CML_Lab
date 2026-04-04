@@ -85,9 +85,9 @@ nodes:
   - boot_disk_size: null
     configuration:
       - name: ios_config.txt
-        content: "Building configuration...\n\nCurrent configuration : 6106 bytes\n\
-          !\n! Last configuration change at 14:12:46 UTC Fri Apr 3 2026 by cisco\n\
-          ! NVRAM config last updated at 04:11:41 UTC Fri Apr 3 2026 by cisco\n!\n\
+        content: "Building configuration...\n\nCurrent configuration : 6175 bytes\n\
+          !\n! Last configuration change at 16:06:14 UTC Sat Apr 4 2026 by cisco\n\
+          ! NVRAM config last updated at 02:14:37 UTC Sat Apr 4 2026 by cisco\n!\n\
           version 17.16\nservice timestamps debug datetime msec\nservice timestamps\
           \ log datetime msec\nservice password-encryption\n!\nhostname r1\n!\nboot-start-marker\n\
           boot-end-marker\n!\n!\nno logging console\naaa new-model\n!\n!\naaa group\
@@ -100,9 +100,9 @@ nodes:
           \ group LAB\naaa accounting commands 1 default start-stop group LAB\naaa\
           \ accounting commands 15 default start-stop group LAB\naaa accounting connection\
           \ default start-stop group LAB\n!\naaa session-id common\n!\n!\n!\n!\n!\n\
-          !\n!\n!\n!\n!\n!\n!\n!\nno ip domain lookup\nip domain name cml.lab\nip\
-          \ cef\nlogin on-success log\nipv6 unicast-routing\nipv6 cef\n!\n!\n!\n!\n\
-          !\n!\n!\n!\n!\n!\ncrypto pki trustpoint TP-self-signed-131184657\n enrollment\
+          !\n!\n!\n!\n!\n!\n!\n!\nip name-server 1.1.1.1\nip domain name cml.lab\n\
+          ip cef\nlogin on-success log\nipv6 unicast-routing\nipv6 cef\n!\n!\n!\n\
+          !\n!\n!\n!\n!\n!\n!\ncrypto pki trustpoint TP-self-signed-131184657\n enrollment\
           \ selfsigned\n subject-name cn=IOS-Self-Signed-Certificate-131184657\n revocation-check\
           \ none\n rsakeypair TP-self-signed-131184657\n hash sha512\n!\n!\ncrypto\
           \ pki certificate chain TP-self-signed-131184657\n certificate self-signed\
@@ -150,21 +150,22 @@ nodes:
           \ 1 area 1\n ipv6 address 2001:BEEF:0:1::2/64\n ipv6 enable\n ospfv3 1 ipv6\
           \ area 1\n!\ninterface Ethernet1/0\n description External lab connection\n\
           \ ip address 10.0.0.248 255.255.255.0\n ip ospf 1 area 0\n ipv6 dhcp client\
-          \ request vendor\n ipv6 address autoconfig\n ospfv3 1 ipv6 area 0\n!\ninterface\
-          \ Ethernet1/1\n no ip address\n shutdown\n!\ninterface Ethernet1/2\n no\
-          \ ip address\n shutdown\n!\ninterface Ethernet1/3\n no ip address\n shutdown\n\
-          !\nrouter ospfv3 1\n router-id 10.254.0.1\n log-adjacency-changes detail\n\
-          \ !\n address-family ipv6 unicast\n  passive-interface Ethernet1/0\n  passive-interface\
-          \ Loopback0\n  auto-cost reference-bandwidth 100000\n exit-address-family\n\
-          !\nrouter ospf 1\n router-id 10.254.0.1\n log-adjacency-changes detail\n\
-          \ auto-cost reference-bandwidth 100000\n area 0 range 10.254.0.0 255.255.0.0\n\
-          \ area 2 range 10.2.0.0 255.255.0.0\n passive-interface Ethernet1/0\n default-information\
+          \ request vendor\n ipv6 address autoconfig\n ipv6 nd ra suppress\n ospfv3\
+          \ 1 ipv6 area 0\n!\ninterface Ethernet1/1\n no ip address\n shutdown\n!\n\
+          interface Ethernet1/2\n no ip address\n shutdown\n!\ninterface Ethernet1/3\n\
+          \ no ip address\n shutdown\n!\nrouter ospfv3 1\n router-id 10.254.0.1\n\
+          \ log-adjacency-changes detail\n !\n address-family ipv6 unicast\n  passive-interface\
+          \ Ethernet1/0\n  passive-interface Loopback0\n  default-information originate\n\
+          \  auto-cost reference-bandwidth 100000\n exit-address-family\n!\nrouter\
+          \ ospf 1\n router-id 10.254.0.1\n log-adjacency-changes detail\n auto-cost\
+          \ reference-bandwidth 100000\n area 0 range 10.254.0.0 255.255.0.0\n area\
+          \ 2 range 10.2.0.0 255.255.0.0\n passive-interface Ethernet1/0\n default-information\
           \ originate\n!\nip forward-protocol nd\nip forward-protocol udp\n!\n!\n\
           ip http server\nip http secure-server\nip route 0.0.0.0 0.0.0.0 Ethernet1/0\
           \ 10.0.0.149\nip ssh bulk-mode 131072\nip scp server enable\n!\nip prefix-list\
           \ OSPF_FILTER seq 10 deny 10.254.0.0/16 ge 17\nip prefix-list OSPF_FILTER\
           \ seq 20 permit 0.0.0.0/0 le 32\nno logging btrace\nlogging source-interface\
-          \ Loopback0\nlogging host 10.0.0.84\nipv6 route ::/0 Ethernet1/0 FE80::82DA:C2FF:FE8B:DECF\n\
+          \ Loopback0\nlogging host 10.0.0.84\nipv6 route ::/0 Ethernet1/0 2601:644:4380:9C20:82DA:C2FF:FE8B:DECF\n\
           !\n!\n!\n!\n!\ncontrol-plane\n!\n!\nalias exec q exit\n!\nline con 0\n exec-timeout\
           \ 0 0\n logging synchronous\nline aux 0\nline vty 0 4\n exec-timeout 0 0\n\
           \ logging synchronous\n transport input ssh\n!\nntp source Ethernet1/0\n\
@@ -232,7 +233,7 @@ nodes:
     configuration:
       - name: ios_config.txt
         content: "Building configuration...\n\nCurrent configuration : 5481 bytes\n\
-          !\n! Last configuration change at 14:12:46 UTC Fri Apr 3 2026 by cisco\n\
+          !\n! Last configuration change at 16:06:13 UTC Sat Apr 4 2026 by cisco\n\
           !\nversion 17.16\nservice timestamps debug datetime msec\nservice timestamps\
           \ log datetime msec\nservice password-encryption\n!\nhostname r3\n!\nboot-start-marker\n\
           boot-end-marker\n!\n!\nno logging console\naaa new-model\n!\n!\naaa group\
@@ -370,7 +371,7 @@ nodes:
     configuration:
       - name: ios_config.txt
         content: "Building configuration...\n\nCurrent configuration : 5443 bytes\n\
-          !\n! Last configuration change at 14:12:46 UTC Fri Apr 3 2026 by cisco\n\
+          !\n! Last configuration change at 16:06:13 UTC Sat Apr 4 2026 by cisco\n\
           ! NVRAM config last updated at 02:33:53 UTC Fri Apr 3 2026 by cisco\n!\n\
           version 17.16\nservice timestamps debug datetime msec\nservice timestamps\
           \ log datetime msec\nservice password-encryption\n!\nhostname r2\n!\nboot-start-marker\n\
@@ -508,7 +509,7 @@ nodes:
     configuration:
       - name: ios_config.txt
         content: "Building configuration...\n\nCurrent configuration : 5357 bytes\n\
-          !\n! Last configuration change at 14:12:46 UTC Fri Apr 3 2026 by cisco\n\
+          !\n! Last configuration change at 16:06:13 UTC Sat Apr 4 2026 by cisco\n\
           !\nversion 17.16\nservice timestamps debug datetime msec\nservice timestamps\
           \ log datetime msec\nservice password-encryption\n!\nhostname sw1-1\n!\n\
           boot-start-marker\nboot-end-marker\n!\n!\nno logging console\naaa new-model\n\
@@ -705,52 +706,53 @@ nodes:
   - boot_disk_size: null
     configuration:
       - name: ios_config.txt
-        content: "Building configuration...\n\nCurrent configuration : 5090 bytes\n\
-          !\n! Last configuration change at 14:12:46 UTC Fri Apr 3 2026\n!\nversion\
+        content: "Building configuration...\n\nCurrent configuration : 5121 bytes\n\
+          !\n! Last configuration change at 16:06:15 UTC Sat Apr 4 2026\n!\nversion\
           \ 17.16\nservice timestamps debug datetime msec\nservice timestamps log\
           \ datetime msec\nservice password-encryption\n!\nhostname sw2-1\n!\nboot-start-marker\n\
-          boot-end-marker\n!\n!\nno logging console\nno aaa new-model\n!\n!\n!\n!\n\
-          !\n!\n!\n!\n!\n!\n!\n!\n!\nip audit notify log\nip audit po max-events 100\n\
-          no ip domain lookup\nip domain name cml.lab\nip cef\nlogin on-success log\n\
-          ipv6 unicast-routing\nipv6 cef\n!\n!\n!\n!\n!\n!\n!\n!\ncrypto pki trustpoint\
-          \ TP-self-signed-131184658\n enrollment selfsigned\n subject-name cn=IOS-Self-Signed-Certificate-131184658\n\
-          \ revocation-check none\n rsakeypair TP-self-signed-131184658\n hash sha512\n\
-          !\n!\ncrypto pki certificate chain TP-self-signed-131184658\n certificate\
-          \ self-signed 01\n  3082032E 30820216 A0030201 02020101 300D0609 2A864886\
-          \ F70D0101 0D050030\n  30312E30 2C060355 04030C25 494F532D 53656C66 2D536967\
-          \ 6E65642D 43657274\n  69666963 6174652D 31333131 38343635 38301E17 0D323630\
-          \ 31323030 34353230\n  305A170D 33363031 32303034 35323030 5A303031 2E302C06\
-          \ 03550403 0C25494F\n  532D5365 6C662D53 69676E65 642D4365 72746966 69636174\
-          \ 652D3133 31313834\n  36353830 82012230 0D06092A 864886F7 0D010101 05000382\
-          \ 010F0030 82010A02\n  82010100 E2393756 8C2AF02F 762C1407 B1F6DAAE 496510A6\
-          \ CF1DF523 35F23EAE\n  5AF6158D 0183C379 757EF12A 84AB7159 4F07766B CB8D3FC3\
-          \ 7DC588A3 352DB3A4\n  682B4FE2 85C2DF38 1E200C23 E3F33159 F0320EFC DD5C76F8\
-          \ 1CA220A9 3A3418C2\n  1032D746 E117941A 3B24BFBB 4AA6545B 08734DB8 3CF57487\
-          \ F8017C01 29ACF533\n  072AB253 0DF41398 5799E09C 99151225 87297249 752D07C4\
-          \ F0D9E1DA 178884AC\n  399BCFAB 5A1F18EC 9A68C6F9 CA4F5082 25D684F2 928043F4\
-          \ B28E3237 C6B5AF85\n  19757224 C5FBC103 37EB5646 F485477A 98FC9DBB B6629D8A\
-          \ CDAB288A 3C07E591\n  A9E5B2B3 780D6DB8 4CECB9F9 770A5E50 5CAEDBFC F5516985\
-          \ D22BDC18 7251E90F\n  B8EC4D01 02030100 01A35330 51301D06 03551D0E 04160414\
-          \ 206A5DFA 74B78DF5\n  1EFF7AA9 E9DFA923 AAE0BAB2 301F0603 551D2304 18301680\
-          \ 14206A5D FA74B78D\n  F51EFF7A A9E9DFA9 23AAE0BA B2300F06 03551D13 0101FF04\
-          \ 05300301 01FF300D\n  06092A86 4886F70D 01010D05 00038201 0100D669 7B1AD60E\
-          \ 290FE204 E67AF6DE\n  56F75EC4 A1391F9D E6604BD9 9E9519C2 26FB6C75 61BB3A4E\
-          \ B7FBF0DA 3FEDC3DE\n  EE2F2681 91DBEB94 45C87A9A B2B6AF69 B624E7E0 BBEE6C9C\
-          \ 1FEDC5C4 685AB60B\n  DA643581 EBDF8CDE 043ABB66 AF1166CD CC3C5AF5 FF4868B3\
-          \ 1BDE8B59 2D00A5C4\n  4B537ADD D92C3BCD 553BCE7A FD78FA22 7EB1AFF4 A845B29A\
-          \ B794E421 28CF6701\n  6FFF20E9 7D95C6F9 1FB7A966 64E1C0C2 AB81F2C7 EB2707D3\
-          \ DEF3FBB1 F2B3CC0C\n  6FC53B3C AC116E5C 611F45FE D6901AC6 BFF7CD06 B9DC211B\
-          \ BDE0781D 334810FB\n  D92E33F0 DE5C49C8 B5A2864E 31CEDF31 0D71D804 BDC22A00\
-          \ 47002986 511CD2DA\n  A68E8D1B 09AECED8 8F95E0AF DE953414 10E6\n  \tquit\n\
-          !\n!\nmemory free low-watermark processor 80589\n!\n!\nspanning-tree mode\
-          \ rapid-pvst\nspanning-tree extend system-id\n!\nusername cisco privilege\
-          \ 15 password 7 094F471A1A0A\n!\nvlan internal allocation policy ascending\n\
-          !\n!\n!\n!\n!\ninterface Loopback0\n ip address 10.2.1.1 255.255.255.255\n\
-          \ ip ospf 1 area 2\n ipv6 address 2001:DEAD:0:FF::1/128\n ipv6 enable\n\
-          \ ospfv3 1 ipv6 area 2\n!\ninterface Port-channel1\n switchport trunk encapsulation\
-          \ dot1q\n switchport trunk native vlan 100\n switchport mode dynamic desirable\n\
-          !\ninterface Ethernet0/0\n no switchport\n ip address 10.2.100.2 255.255.255.252\n\
-          \ ip ospf network point-to-point\n ip ospf 1 area 2\n ipv6 address 2001:DEAD:0:1::1/64\n\
+          boot-end-marker\n!\n!\nno logging console\nno aaa new-model\n!\n!\n!\nfhrp\
+          \ version vrrp v3\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\nip audit notify log\nip\
+          \ audit po max-events 100\nno ip domain lookup\nip domain name cml.lab\n\
+          ip cef\nlogin on-success log\nipv6 unicast-routing\nipv6 cef\n!\n!\n!\n\
+          !\n!\n!\n!\n!\ncrypto pki trustpoint TP-self-signed-131184658\n enrollment\
+          \ selfsigned\n subject-name cn=IOS-Self-Signed-Certificate-131184658\n revocation-check\
+          \ none\n rsakeypair TP-self-signed-131184658\n hash sha512\n!\n!\ncrypto\
+          \ pki certificate chain TP-self-signed-131184658\n certificate self-signed\
+          \ 01\n  3082032E 30820216 A0030201 02020101 300D0609 2A864886 F70D0101 0D050030\n\
+          \  30312E30 2C060355 04030C25 494F532D 53656C66 2D536967 6E65642D 43657274\n\
+          \  69666963 6174652D 31333131 38343635 38301E17 0D323630 31323030 34353230\n\
+          \  305A170D 33363031 32303034 35323030 5A303031 2E302C06 03550403 0C25494F\n\
+          \  532D5365 6C662D53 69676E65 642D4365 72746966 69636174 652D3133 31313834\n\
+          \  36353830 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 82010A02\n\
+          \  82010100 E2393756 8C2AF02F 762C1407 B1F6DAAE 496510A6 CF1DF523 35F23EAE\n\
+          \  5AF6158D 0183C379 757EF12A 84AB7159 4F07766B CB8D3FC3 7DC588A3 352DB3A4\n\
+          \  682B4FE2 85C2DF38 1E200C23 E3F33159 F0320EFC DD5C76F8 1CA220A9 3A3418C2\n\
+          \  1032D746 E117941A 3B24BFBB 4AA6545B 08734DB8 3CF57487 F8017C01 29ACF533\n\
+          \  072AB253 0DF41398 5799E09C 99151225 87297249 752D07C4 F0D9E1DA 178884AC\n\
+          \  399BCFAB 5A1F18EC 9A68C6F9 CA4F5082 25D684F2 928043F4 B28E3237 C6B5AF85\n\
+          \  19757224 C5FBC103 37EB5646 F485477A 98FC9DBB B6629D8A CDAB288A 3C07E591\n\
+          \  A9E5B2B3 780D6DB8 4CECB9F9 770A5E50 5CAEDBFC F5516985 D22BDC18 7251E90F\n\
+          \  B8EC4D01 02030100 01A35330 51301D06 03551D0E 04160414 206A5DFA 74B78DF5\n\
+          \  1EFF7AA9 E9DFA923 AAE0BAB2 301F0603 551D2304 18301680 14206A5D FA74B78D\n\
+          \  F51EFF7A A9E9DFA9 23AAE0BA B2300F06 03551D13 0101FF04 05300301 01FF300D\n\
+          \  06092A86 4886F70D 01010D05 00038201 0100D669 7B1AD60E 290FE204 E67AF6DE\n\
+          \  56F75EC4 A1391F9D E6604BD9 9E9519C2 26FB6C75 61BB3A4E B7FBF0DA 3FEDC3DE\n\
+          \  EE2F2681 91DBEB94 45C87A9A B2B6AF69 B624E7E0 BBEE6C9C 1FEDC5C4 685AB60B\n\
+          \  DA643581 EBDF8CDE 043ABB66 AF1166CD CC3C5AF5 FF4868B3 1BDE8B59 2D00A5C4\n\
+          \  4B537ADD D92C3BCD 553BCE7A FD78FA22 7EB1AFF4 A845B29A B794E421 28CF6701\n\
+          \  6FFF20E9 7D95C6F9 1FB7A966 64E1C0C2 AB81F2C7 EB2707D3 DEF3FBB1 F2B3CC0C\n\
+          \  6FC53B3C AC116E5C 611F45FE D6901AC6 BFF7CD06 B9DC211B BDE0781D 334810FB\n\
+          \  D92E33F0 DE5C49C8 B5A2864E 31CEDF31 0D71D804 BDC22A00 47002986 511CD2DA\n\
+          \  A68E8D1B 09AECED8 8F95E0AF DE953414 10E6\n  \tquit\n!\n!\nmemory free\
+          \ low-watermark processor 80589\n!\n!\nspanning-tree mode rapid-pvst\nspanning-tree\
+          \ extend system-id\n!\nusername cisco privilege 15 password 7 094F471A1A0A\n\
+          !\nvlan internal allocation policy ascending\n!\n!\n!\n!\n!\ninterface Loopback0\n\
+          \ ip address 10.2.1.1 255.255.255.255\n ip ospf 1 area 2\n ipv6 address\
+          \ 2001:DEAD:0:FF::1/128\n ipv6 enable\n ospfv3 1 ipv6 area 2\n!\ninterface\
+          \ Port-channel1\n switchport trunk encapsulation dot1q\n switchport trunk\
+          \ native vlan 100\n switchport mode dynamic desirable\n!\ninterface Ethernet0/0\n\
+          \ no switchport\n ip address 10.2.100.2 255.255.255.252\n ip ospf network\
+          \ point-to-point\n ip ospf 1 area 2\n ipv6 address 2001:DEAD:0:1::1/64\n\
           \ ipv6 enable\n ospfv3 network point-to-point\n ospfv3 1 ipv6 area 2\n!\n\
           interface Ethernet0/1\n switchport trunk encapsulation dot1q\n switchport\
           \ trunk native vlan 100\n switchport mode dynamic desirable\n channel-group\
@@ -758,24 +760,24 @@ nodes:
           \ switchport mode access\n!\ninterface Ethernet0/3\n switchport trunk encapsulation\
           \ dot1q\n switchport trunk native vlan 100\n switchport mode dynamic desirable\n\
           \ channel-group 1 mode active\n!\ninterface Ethernet1/0\n!\ninterface Ethernet1/1\n\
-          !\ninterface Ethernet1/2\n!\ninterface Ethernet1/3\n!\ninterface Vlan100\n\
-          \ ip address 10.2.101.1 255.255.255.252\n ip ospf network point-to-point\n\
-          \ ip ospf 1 area 2\n ipv6 address 2001:DEAD:0:3::1/64\n ipv6 enable\n ospfv3\
-          \ 1 ipv6 area 2\n!\ninterface Vlan1000\n ip address 10.2.10.2 255.255.255.0\n\
-          \ standby version 2\n standby 1 ip 10.2.10.1\n standby 1 priority 150\n\
-          \ standby 1 preempt\n standby 2 ipv6 autoconfig\n standby 2 priority 150\n\
-          \ standby 2 preempt\n ip ospf 1 area 2\n ipv6 address 2001:DEAD:0:10::2/64\n\
-          \ ospfv3 1 ipv6 area 2\n!\nrouter ospfv3 1\n router-id 10.2.1.1\n !\n address-family\
-          \ ipv4 unicast\n exit-address-family\n !\n address-family ipv6 unicast\n\
-          \  passive-interface Loopback0\n  passive-interface Vlan1000\n  auto-cost\
-          \ reference-bandwidth 100000\n exit-address-family\n!\nrouter ospf 1\n router-id\
-          \ 10.2.1.1\n log-adjacency-changes detail\n auto-cost reference-bandwidth\
-          \ 100000\n passive-interface Vlan1000\n!\nip forward-protocol nd\nip forward-protocol\
-          \ udp\n!\n!\nip http server\nip http secure-server\nip ssh bulk-mode 131072\n\
-          !\nno logging btrace\nlogging host 10.0.0.84\n!\n!\n!\ncontrol-plane\n!\n\
-          !\nalias exec q exit\n!\nline con 0\n exec-timeout 0 0\n logging synchronous\n\
-          line aux 0\nline vty 0 4\n exec-timeout 0 0\n logging synchronous\n login\
-          \ local\n transport input ssh\n!\n!\nend"
+          !\ninterface Ethernet1/2\n!\ninterface Ethernet1/3\n!\ninterface Vlan10\n\
+          \ no ip address\n shutdown\n!\ninterface Vlan100\n ip address 10.2.101.1\
+          \ 255.255.255.252\n ip ospf network point-to-point\n ip ospf 1 area 2\n\
+          \ ipv6 address 2001:DEAD:0:3::1/64\n ipv6 enable\n ospfv3 1 ipv6 area 2\n\
+          !\ninterface Vlan1000\n ip address 10.2.10.2 255.255.255.0\n no ip redirects\n\
+          \ standby version 2\n standby 1 ip 10.2.10.1\n standby 1 priority 110\n\
+          \ standby 1 preempt\n ip ospf 1 area 2\n ipv6 address 2001:DEAD:0:10::2/64\n\
+          \ no ipv6 redirects\n ospfv3 1 ipv6 area 2\n!\nrouter ospfv3 1\n router-id\
+          \ 10.2.1.1\n !\n address-family ipv4 unicast\n exit-address-family\n !\n\
+          \ address-family ipv6 unicast\n  passive-interface Loopback0\n  passive-interface\
+          \ Vlan1000\n  auto-cost reference-bandwidth 100000\n exit-address-family\n\
+          !\nrouter ospf 1\n router-id 10.2.1.1\n log-adjacency-changes detail\n auto-cost\
+          \ reference-bandwidth 100000\n passive-interface Vlan1000\n!\nip forward-protocol\
+          \ nd\nip forward-protocol udp\n!\n!\nip http server\nip http secure-server\n\
+          ip ssh bulk-mode 131072\n!\nno logging btrace\nlogging host 10.0.0.84\n\
+          !\n!\n!\ncontrol-plane\n!\n!\nalias exec q exit\n!\nline con 0\n exec-timeout\
+          \ 0 0\n logging synchronous\nline aux 0\nline vty 0 4\n exec-timeout 0 0\n\
+          \ logging synchronous\n login local\n transport input ssh\n!\n!\nend"
     cpu_limit: null
     cpus: null
     data_volume: null
@@ -837,8 +839,8 @@ nodes:
   - boot_disk_size: null
     configuration:
       - name: ios_config.txt
-        content: "Building configuration...\n\nCurrent configuration : 5647 bytes\n\
-          !\n! Last configuration change at 14:12:46 UTC Fri Apr 3 2026 by cisco\n\
+        content: "Building configuration...\n\nCurrent configuration : 5740 bytes\n\
+          !\n! Last configuration change at 16:06:14 UTC Sat Apr 4 2026 by cisco\n\
           !\nversion 17.16\nservice timestamps debug datetime msec\nservice timestamps\
           \ log datetime msec\nservice password-encryption\n!\nhostname sw2-2\n!\n\
           boot-start-marker\nboot-end-marker\n!\n!\nno logging console\naaa new-model\n\
@@ -850,48 +852,49 @@ nodes:
           \ 15 default group LAB if-authenticated\naaa accounting exec default start-stop\
           \ group LAB\naaa accounting commands 1 default start-stop group LAB\naaa\
           \ accounting commands 15 default start-stop group LAB\naaa accounting connection\
-          \ default start-stop group LAB\n!\n!\naaa session-id common\n!\n!\n!\n!\n\
-          !\n!\n!\n!\n!\n!\n!\n!\n!\nip audit notify log\nip audit po max-events 100\n\
-          no ip domain lookup\nip domain name cml.lab\nip cef\nlogin on-success log\n\
-          ipv6 unicast-routing\nipv6 cef\n!\n!\n!\n!\n!\n!\n!\n!\ncrypto pki trustpoint\
-          \ TP-self-signed-131184661\n enrollment selfsigned\n subject-name cn=IOS-Self-Signed-Certificate-131184661\n\
-          \ revocation-check none\n rsakeypair TP-self-signed-131184661\n hash sha512\n\
-          !\n!\ncrypto pki certificate chain TP-self-signed-131184661\n certificate\
-          \ self-signed 01\n  3082032E 30820216 A0030201 02020101 300D0609 2A864886\
-          \ F70D0101 0D050030\n  30312E30 2C060355 04030C25 494F532D 53656C66 2D536967\
-          \ 6E65642D 43657274\n  69666963 6174652D 31333131 38343636 31301E17 0D323630\
-          \ 31323030 34353231\n  305A170D 33363031 32303034 35323130 5A303031 2E302C06\
-          \ 03550403 0C25494F\n  532D5365 6C662D53 69676E65 642D4365 72746966 69636174\
-          \ 652D3133 31313834\n  36363130 82012230 0D06092A 864886F7 0D010101 05000382\
-          \ 010F0030 82010A02\n  82010100 87E27EE1 BD241629 60E5E91D 46967A09 64B3A38D\
-          \ D02D1D2B CBF04444\n  F3128D60 19A3B846 9B1624D2 2E9A7B89 D5F0F0DE 6CF00D43\
-          \ 42B50A7A 4251072D\n  6CE1BE47 26F786BE 73EF8CCE FE2FA08F A9B96DF3 77DC7491\
-          \ CE972F99 57EE17DE\n  550B2E55 8D574607 9C22C56E E7B5BBD3 7A10AF21 2B8610CE\
-          \ 781711A8 40DF24B8\n  917C10A7 3EB5FA4F A7691339 E9A704F5 D5B1A39D DCB5B044\
-          \ ECDFC427 E738C706\n  7E187B16 EF7E065A E468B326 092A9E50 0669686A C6540C11\
-          \ 210F6C1E E910B0DD\n  5D5FF72D 492E52D9 7F30AA6B 05D0DA6E 74D408E7 E05B9092\
-          \ 4B0C0B4D BC4237EB\n  10F22CFC 7BD5C693 3CDCD69F B2C42B61 9B3023BD 1657EBB0\
-          \ 099452CB AA7345CE\n  A39EE1BB 02030100 01A35330 51301D06 03551D0E 04160414\
-          \ A7C4E5AB BCEE0139\n  5FBBC0B2 CC76BAE1 FC43FF99 301F0603 551D2304 18301680\
-          \ 14A7C4E5 ABBCEE01\n  395FBBC0 B2CC76BA E1FC43FF 99300F06 03551D13 0101FF04\
-          \ 05300301 01FF300D\n  06092A86 4886F70D 01010D05 00038201 01001D9A CFC01C1D\
-          \ AEECCA83 49EB3D2C\n  1D069931 990299F8 C1E9C795 65B791ED 9D21ED09 956C043B\
-          \ C68ABE04 1FCBBFB9\n  9A812785 050AE9C7 E33E4C88 E5ADA336 135841AB F39CE75A\
-          \ 65611E14 C48231ED\n  5120FD58 E676DA1E FC18FE9C 6525EDE6 AE2A90C6 3A27D0EB\
-          \ 5ACB88DF 36162697\n  D5C43A77 46785FB9 2647CA80 53B659AD 04538ABC C3166193\
-          \ C9F5A7E9 CA30865E\n  D07D916B 44419B27 1407E604 6EE4FA68 D20248A5 EEA3939E\
-          \ 87B01093 5CE2E10C\n  CB9898D0 6AB192A9 EC2730D3 49FA13F9 59B6E815 F97BE4E3\
-          \ 83318A0C A78496D3\n  23E3DA80 84CF8290 D6863759 CDC4A4F1 E4EBCC26 EA262D01\
-          \ CFA55E4D D600A13B\n  2BABD389 AB66CF1A BE1B4A6F DB088DCF 58FB\n  \tquit\n\
-          !\n!\nmemory free low-watermark processor 80589\n!\n!\nspanning-tree mode\
-          \ rapid-pvst\nspanning-tree extend system-id\n!\n!\nusername cisco privilege\
-          \ 15 password 7 094F471A1A0A\n!\nvlan internal allocation policy ascending\n\
-          !\n!\n!\n!\n!\ninterface Loopback0\n ip address 10.2.1.2 255.255.255.255\n\
-          \ ip ospf 1 area 2\n ipv6 address 2001:DEAD:0:FF::2/128\n ipv6 enable\n\
-          \ ospfv3 1 ipv6 area 2\n!\ninterface Port-channel1\n switchport trunk encapsulation\
-          \ dot1q\n switchport trunk native vlan 100\n switchport mode dynamic desirable\n\
-          !\ninterface Ethernet0/0\n no switchport\n ip address 10.2.102.2 255.255.255.252\n\
-          \ ip ospf network point-to-point\n ip ospf 1 area 2\n ipv6 address 2001:DEAD:0:2::1/64\n\
+          \ default start-stop group LAB\n!\n!\naaa session-id common\n!\n!\n!\nfhrp\
+          \ version vrrp v3\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\nip audit notify log\nip\
+          \ audit po max-events 100\nno ip domain lookup\nip domain name cml.lab\n\
+          ip cef\nlogin on-success log\nipv6 unicast-routing\nipv6 cef\n!\n!\n!\n\
+          !\n!\n!\n!\n!\ncrypto pki trustpoint TP-self-signed-131184661\n enrollment\
+          \ selfsigned\n subject-name cn=IOS-Self-Signed-Certificate-131184661\n revocation-check\
+          \ none\n rsakeypair TP-self-signed-131184661\n hash sha512\n!\n!\ncrypto\
+          \ pki certificate chain TP-self-signed-131184661\n certificate self-signed\
+          \ 01\n  3082032E 30820216 A0030201 02020101 300D0609 2A864886 F70D0101 0D050030\n\
+          \  30312E30 2C060355 04030C25 494F532D 53656C66 2D536967 6E65642D 43657274\n\
+          \  69666963 6174652D 31333131 38343636 31301E17 0D323630 31323030 34353231\n\
+          \  305A170D 33363031 32303034 35323130 5A303031 2E302C06 03550403 0C25494F\n\
+          \  532D5365 6C662D53 69676E65 642D4365 72746966 69636174 652D3133 31313834\n\
+          \  36363130 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 82010A02\n\
+          \  82010100 87E27EE1 BD241629 60E5E91D 46967A09 64B3A38D D02D1D2B CBF04444\n\
+          \  F3128D60 19A3B846 9B1624D2 2E9A7B89 D5F0F0DE 6CF00D43 42B50A7A 4251072D\n\
+          \  6CE1BE47 26F786BE 73EF8CCE FE2FA08F A9B96DF3 77DC7491 CE972F99 57EE17DE\n\
+          \  550B2E55 8D574607 9C22C56E E7B5BBD3 7A10AF21 2B8610CE 781711A8 40DF24B8\n\
+          \  917C10A7 3EB5FA4F A7691339 E9A704F5 D5B1A39D DCB5B044 ECDFC427 E738C706\n\
+          \  7E187B16 EF7E065A E468B326 092A9E50 0669686A C6540C11 210F6C1E E910B0DD\n\
+          \  5D5FF72D 492E52D9 7F30AA6B 05D0DA6E 74D408E7 E05B9092 4B0C0B4D BC4237EB\n\
+          \  10F22CFC 7BD5C693 3CDCD69F B2C42B61 9B3023BD 1657EBB0 099452CB AA7345CE\n\
+          \  A39EE1BB 02030100 01A35330 51301D06 03551D0E 04160414 A7C4E5AB BCEE0139\n\
+          \  5FBBC0B2 CC76BAE1 FC43FF99 301F0603 551D2304 18301680 14A7C4E5 ABBCEE01\n\
+          \  395FBBC0 B2CC76BA E1FC43FF 99300F06 03551D13 0101FF04 05300301 01FF300D\n\
+          \  06092A86 4886F70D 01010D05 00038201 01001D9A CFC01C1D AEECCA83 49EB3D2C\n\
+          \  1D069931 990299F8 C1E9C795 65B791ED 9D21ED09 956C043B C68ABE04 1FCBBFB9\n\
+          \  9A812785 050AE9C7 E33E4C88 E5ADA336 135841AB F39CE75A 65611E14 C48231ED\n\
+          \  5120FD58 E676DA1E FC18FE9C 6525EDE6 AE2A90C6 3A27D0EB 5ACB88DF 36162697\n\
+          \  D5C43A77 46785FB9 2647CA80 53B659AD 04538ABC C3166193 C9F5A7E9 CA30865E\n\
+          \  D07D916B 44419B27 1407E604 6EE4FA68 D20248A5 EEA3939E 87B01093 5CE2E10C\n\
+          \  CB9898D0 6AB192A9 EC2730D3 49FA13F9 59B6E815 F97BE4E3 83318A0C A78496D3\n\
+          \  23E3DA80 84CF8290 D6863759 CDC4A4F1 E4EBCC26 EA262D01 CFA55E4D D600A13B\n\
+          \  2BABD389 AB66CF1A BE1B4A6F DB088DCF 58FB\n  \tquit\n!\n!\nmemory free\
+          \ low-watermark processor 80589\n!\n!\nspanning-tree mode rapid-pvst\nspanning-tree\
+          \ extend system-id\n!\n!\nusername cisco privilege 15 password 7 094F471A1A0A\n\
+          !\nvlan internal allocation policy ascending\n!\n!\n!\n!\n!\ninterface Loopback0\n\
+          \ ip address 10.2.1.2 255.255.255.255\n ip ospf 1 area 2\n ipv6 address\
+          \ 2001:DEAD:0:FF::2/128\n ipv6 enable\n ospfv3 1 ipv6 area 2\n!\ninterface\
+          \ Port-channel1\n switchport trunk encapsulation dot1q\n switchport trunk\
+          \ native vlan 100\n switchport mode dynamic desirable\n!\ninterface Ethernet0/0\n\
+          \ no switchport\n ip address 10.2.102.2 255.255.255.252\n ip ospf network\
+          \ point-to-point\n ip ospf 1 area 2\n ipv6 address 2001:DEAD:0:2::1/64\n\
           \ ipv6 enable\n ospfv3 1 ipv6 area 2\n!\ninterface Ethernet0/1\n switchport\
           \ trunk encapsulation dot1q\n switchport trunk native vlan 100\n switchport\
           \ mode dynamic desirable\n channel-group 1 mode active\n!\ninterface Ethernet0/2\n\
@@ -899,22 +902,23 @@ nodes:
           \ switchport trunk encapsulation dot1q\n switchport trunk native vlan 100\n\
           \ switchport mode dynamic desirable\n channel-group 1 mode active\n!\ninterface\
           \ Ethernet1/0\n!\ninterface Ethernet1/1\n!\ninterface Ethernet1/2\n!\ninterface\
-          \ Ethernet1/3\n!\ninterface Vlan100\n ip address 10.2.101.2 255.255.255.252\n\
-          \ ip ospf network point-to-point\n ip ospf 1 area 2\n ipv6 address 2001:DEAD:0:3::2/64\n\
-          \ ipv6 enable\n ospfv3 1 ipv6 area 2\n!\ninterface Vlan1000\n ip address\
-          \ 10.2.10.3 255.255.255.0\n standby version 2\n standby 1 ip 10.2.10.1\n\
-          \ standby 2 ipv6 autoconfig\n ip ospf 1 area 2\n ipv6 address 2001:DEAD:0:10::3/64\n\
-          \ ospfv3 1 ipv6 area 2\n!\nrouter ospfv3 1\n router-id 10.2.1.2\n !\n address-family\
-          \ ipv4 unicast\n exit-address-family\n !\n address-family ipv6 unicast\n\
-          \  passive-interface Loopback0\n  passive-interface Vlan1000\n  auto-cost\
-          \ reference-bandwidth 100000\n exit-address-family\n!\nrouter ospf 1\n router-id\
-          \ 10.2.1.2\n log-adjacency-changes detail\n auto-cost reference-bandwidth\
-          \ 100000\n passive-interface Vlan1000\n!\nip forward-protocol nd\nip forward-protocol\
-          \ udp\n!\n!\nip http server\nip http secure-server\nip ssh bulk-mode 131072\n\
-          !\nno logging btrace\nlogging host 10.0.0.84\n!\n!\n!\n!\n!\ncontrol-plane\n\
-          !\n!\nalias exec q exit\n!\nline con 0\n exec-timeout 0 0\n logging synchronous\n\
-          line aux 0\nline vty 0 4\n exec-timeout 0 0\n logging synchronous\n transport\
-          \ input ssh\n!\n!\nend"
+          \ Ethernet1/3\n!\ninterface Vlan10\n no ip address\n shutdown\n!\ninterface\
+          \ Vlan100\n ip address 10.2.101.2 255.255.255.252\n ip ospf network point-to-point\n\
+          \ ip ospf 1 area 2\n ipv6 address 2001:DEAD:0:3::2/64\n ipv6 enable\n ospfv3\
+          \ 1 ipv6 area 2\n!\ninterface Vlan1000\n ip address 10.2.10.3 255.255.255.0\n\
+          \ no ip redirects\n standby version 2\n standby 1 ip 10.2.10.1\n standby\
+          \ 1 preempt\n ip ospf 1 area 2\n ipv6 address 2001:DEAD:0:10::3/64\n no\
+          \ ipv6 redirects\n ospfv3 1 ipv6 area 2\n!\nrouter ospfv3 1\n router-id\
+          \ 10.2.1.2\n !\n address-family ipv4 unicast\n exit-address-family\n !\n\
+          \ address-family ipv6 unicast\n  passive-interface Loopback0\n  passive-interface\
+          \ Vlan1000\n  auto-cost reference-bandwidth 100000\n exit-address-family\n\
+          !\nrouter ospf 1\n router-id 10.2.1.2\n log-adjacency-changes detail\n auto-cost\
+          \ reference-bandwidth 100000\n passive-interface Vlan1000\n!\nip forward-protocol\
+          \ nd\nip forward-protocol udp\n!\n!\nip http server\nip http secure-server\n\
+          ip ssh bulk-mode 131072\n!\nno logging btrace\nlogging host 10.0.0.84\n\
+          !\n!\n!\n!\n!\ncontrol-plane\n!\n!\nalias exec q exit\n!\nline con 0\n exec-timeout\
+          \ 0 0\n logging synchronous\nline aux 0\nline vty 0 4\n exec-timeout 0 0\n\
+          \ logging synchronous\n transport input ssh\n!\n!\nend"
     cpu_limit: null
     cpus: null
     data_volume: null
@@ -1147,26 +1151,26 @@ links:
     conditioning: {}
     label: asw2-1-port0<->sw2-1-Ethernet0/2
   - id: l11
-    n1: n9
-    n2: n7
-    i1: i1
-    i2: i3
-    conditioning: {}
-    label: asw2-1-port1<->sw2-2-Ethernet0/2
-  - id: l12
     n1: n8
     n2: n9
     i1: i0
     i2: i2
     conditioning: {}
     label: h2-ens2<->asw2-1-port2
-  - id: l13
+  - id: l12
     n1: n7
     n2: n6
     i1: i4
     i2: i4
     conditioning: {}
     label: sw2-2-Ethernet0/3<->sw2-1-Ethernet0/3
+  - id: l13
+    n1: n7
+    n2: n9
+    i1: i3
+    i2: i1
+    conditioning: {}
+    label: sw2-2-Ethernet0/2<->asw2-1-port1
 lab:
   description: ''
   notes: ''
