@@ -18,3 +18,9 @@ curl -k -u cisco:cisco \
 ```bash
 ssh -s cisco@10.0.0.248 -p830 netconf
 ```
+
+#### XML formating commands
+```bash
+xmllint --format running-config.xml
+xmlstarlet fo running-config.xml
+```
