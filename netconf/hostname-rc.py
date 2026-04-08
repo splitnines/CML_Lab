@@ -24,7 +24,7 @@ def main() -> None:
     if not verify_tls:
         urllib3.disable_warnings(category=InsecureRequestWarning)
 
-    url = f"https://{host}/restconf/data/Cisco-IOS-XE-native:native/hostname"
+    url = f"https://{host}/restconf/data/Cisco-IOS-XE-native:native/router"
     headers = {
         "Accept": "application/yang-data+json",
     }

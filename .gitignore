@@ -6,6 +6,7 @@
 *.pcap
 cml_c9k_mcast_config.cfg
 PKI-Troubleshooting/
+opencode/
 
 # Python
 **/__pycache__/
