@@ -30,8 +30,8 @@ nodes:
         content: |2-
 
           !Command: show running-config
-          !Running configuration last done at: Wed Apr  8 04:22:13 2026
-          !Time: Wed Apr  8 04:22:14 2026
+          !Running configuration last done at: Thu Apr  9 16:40:35 2026
+          !Time: Thu Apr  9 16:40:35 2026
 
           version 10.5(3) Bios:version
           hostname spine-1
@@ -329,8 +329,8 @@ nodes:
         content: |2-
 
           !Command: show running-config
-          !Running configuration last done at: Wed Apr  8 04:22:01 2026
-          !Time: Wed Apr  8 04:22:01 2026
+          !Running configuration last done at: Thu Apr  9 16:40:38 2026
+          !Time: Thu Apr  9 16:40:38 2026
 
           version 10.5(3) Bios:version
           hostname spine-2
@@ -628,8 +628,8 @@ nodes:
         content: |2-
 
           !Command: show running-config
-          !Running configuration last done at: Wed Apr  8 04:22:00 2026
-          !Time: Wed Apr  8 04:22:01 2026
+          !Running configuration last done at: Thu Apr  9 16:41:01 2026
+          !Time: Thu Apr  9 16:41:02 2026
 
           version 10.5(3) Bios:version
           hostname leaf-1
@@ -976,8 +976,8 @@ nodes:
         content: |2-
 
           !Command: show running-config
-          !Running configuration last done at: Wed Apr  8 04:22:10 2026
-          !Time: Wed Apr  8 04:22:10 2026
+          !Running configuration last done at: Thu Apr  9 16:40:58 2026
+          !Time: Thu Apr  9 16:40:59 2026
 
           version 10.5(3) Bios:version
           hostname leaf-2
@@ -1322,130 +1322,59 @@ nodes:
   - boot_disk_size: null
     configuration:
       - name: ios_config.txt
-        content: |-
-          Building configuration...
-
-          Current configuration : 1545 bytes
-          !
-          ! Last configuration change at 04:24:54 UTC Wed Apr 8 2026
-          !
-          version 17.16
-          service timestamps debug datetime msec
-          service timestamps log datetime msec
-          service password-encryption
-          !
-          hostname mgmt-sw
-          !
-          boot-start-marker
-          boot-end-marker
-          !
-          !
-          no logging console
-          no aaa new-model
-          !
-          !
-          !
-          !
-          !
-          !
-          !
-          !
-          !
-          !
-          !
-          !
-          !
-          ip audit notify log
-          ip audit po max-events 100
-          no ip domain lookup
-          ip domain name cml.lab
-          ip cef
-          login on-success log
-          no ipv6 cef
-          !
-          !
-          !
-          !
-          !
-          !
-          !
-          !
-          !
-          !
-          !
-          memory free low-watermark processor 79497
-          !
-          !
-          spanning-tree mode rapid-pvst
-          spanning-tree extend system-id
-          !
-          username cisco privilege 15 password 7 0822455D0A16
-          !
-          vlan internal allocation policy ascending
-          !
-          !
-          !
-          !
-          !
-          interface Loopback0
-           ip address 10.1.1.1 255.255.255.255
-          !
-          interface Ethernet0/0
-           no switchport
-           ip address 10.0.0.248 255.255.255.0
-          !
-          interface Ethernet0/1
-           switchport access vlan 100
-          !
-          interface Ethernet0/2
-           switchport access vlan 100
-          !
-          interface Ethernet0/3
-           switchport access vlan 100
-          !
-          interface Ethernet1/0
-           switchport access vlan 100
-          !
-          interface Ethernet1/1
-          !
-          interface Ethernet1/2
-          !
-          interface Ethernet1/3
-          !
-          interface Vlan100
-           ip address 10.254.0.1 255.255.255.0
-          !
-          ip forward-protocol nd
-          ip forward-protocol udp
-          !
-          !
-          ip http server
-          ip http secure-server
-          ip ssh bulk-mode 131072
-          ip route 0.0.0.0 0.0.0.0 Ethernet0/0 10.0.0.149
-          !
-          no logging btrace
-          logging host 10.0.0.149
-          !
-          !
-          !
-          control-plane
-          !
-          !
-          alias exec q exit
-          !
-          line con 0
-           exec-timeout 0 0
-           logging synchronous
-          line aux 0
-          line vty 0 4
-           exec-timeout 0 0
-           logging synchronous
-           login local
-           transport input ssh
-          !
-          !
-          end
+        content: "Building configuration...\n\nCurrent configuration : 3753 bytes\n\
+          !\n! Last configuration change at 16:43:17 UTC Thu Apr 9 2026\n!\nversion\
+          \ 17.16\nservice timestamps debug datetime msec\nservice timestamps log\
+          \ datetime msec\nservice password-encryption\n!\nhostname mgmt-sw\n!\nboot-start-marker\n\
+          boot-end-marker\n!\n!\nno logging console\nno aaa new-model\n!\n!\n!\n!\n\
+          !\n!\n!\n!\n!\n!\n!\n!\n!\nip audit notify log\nip audit po max-events 100\n\
+          no ip domain lookup\nip domain name cml.lab\nip cef\nlogin on-success log\n\
+          no ipv6 cef\n!\n!\n!\n!\n!\n!\n!\n!\ncrypto pki trustpoint TP-self-signed-131184668\n\
+          \ enrollment selfsigned\n subject-name cn=IOS-Self-Signed-Certificate-131184668\n\
+          \ revocation-check none\n rsakeypair TP-self-signed-131184668\n hash sha512\n\
+          !\n!\ncrypto pki certificate chain TP-self-signed-131184668\n certificate\
+          \ self-signed 01\n  3082032E 30820216 A0030201 02020101 300D0609 2A864886\
+          \ F70D0101 0D050030\n  30312E30 2C060355 04030C25 494F532D 53656C66 2D536967\
+          \ 6E65642D 43657274\n  69666963 6174652D 31333131 38343636 38301E17 0D323630\
+          \ 34303930 33313332\n  315A170D 33363034 30383033 31333231 5A303031 2E302C06\
+          \ 03550403 0C25494F\n  532D5365 6C662D53 69676E65 642D4365 72746966 69636174\
+          \ 652D3133 31313834\n  36363830 82012230 0D06092A 864886F7 0D010101 05000382\
+          \ 010F0030 82010A02\n  82010100 9AF00236 22E7AE7C 34ABA8D2 EF6DF74B 1A7C0168\
+          \ 16E51BDD 8059627D\n  79BE4116 6F39D897 5AB248BD FBACFE21 EE29FEC1 F0E4804E\
+          \ 88543685 7B68855B\n  8F2E4161 31B83296 9ABD49BE AD39CBF2 3C0F70CB 26EBC460\
+          \ 1C1DCFE9 691EE695\n  677EC018 7EE2E238 0E846C16 B3CA4508 78A9F66A CAFB7C26\
+          \ 39C645F8 5FAB7DD1\n  58B6B008 285CA35B 931A4059 03912565 DBFF3711 0A1B87BA\
+          \ 0FB87071 7CC9B928\n  6CB4080A 826EB5E9 3551534E 273F8460 6D178486 4915005B\
+          \ 3ACE8ADA 06268111\n  CD4BB776 82DA2D05 982FD397 5FFBD50C 17D075A4 E2EA6790\
+          \ 3D78EFC2 E196910A\n  B545D8DF B03B4522 29C1313B A74A82FD F9F033AC BA0FDFB4\
+          \ E47520F0 57512747\n  8A1345B3 02030100 01A35330 51301D06 03551D0E 04160414\
+          \ 3A5CCB0A 9313A62F\n  6CF94E95 FD28DEA5 F7065004 301F0603 551D2304 18301680\
+          \ 143A5CCB 0A9313A6\n  2F6CF94E 95FD28DE A5F70650 04300F06 03551D13 0101FF04\
+          \ 05300301 01FF300D\n  06092A86 4886F70D 01010D05 00038201 010000AB BF60831A\
+          \ B9C510BB 04B83E49\n  D2AF15DB 81911B44 F89CBCE4 6C0686E4 8947B383 FF462CDE\
+          \ 3FF3AAE5 A68491DF\n  15FAFE56 AF6041CD E2B0E6D1 A9F2FCED 584A6A58 D559CABC\
+          \ 492355EF 421070FE\n  5DBDF1A4 BEF60E34 1715EE4F 68E686E2 E55BC279 D36E6E4D\
+          \ 0CD2BEC7 C5F9E87E\n  E058CECE 0BF89F3D 98935213 59B8081E 356B65D1 632F03C4\
+          \ 88CF07C9 027E1D7F\n  CEF87984 9F78F27E 3EF255ED 46C6F1B4 F6B7F994 C688040F\
+          \ 94FC9AEF 243ED216\n  3831041D 4221F23A 6D69FC82 DCFA1539 D44FF430 8787464D\
+          \ C27496AC 9DFBA0A6\n  531AD079 D5476A4E 503C4EFA FD887FF0 1F07ECBC 3465CA40\
+          \ 6ACEDE85 E96B319F\n  32DEA77E 77A45E49 18D0985D F2F95EAF 6162\n  \tquit\n\
+          !\n!\nmemory free low-watermark processor 79497\n!\n!\nspanning-tree mode\
+          \ rapid-pvst\nspanning-tree extend system-id\n!\nusername cisco privilege\
+          \ 15 password 7 0822455D0A16\n!\nvlan internal allocation policy ascending\n\
+          !\n!\n!\n!\n!\ninterface Loopback0\n ip address 10.1.1.1 255.255.255.255\n\
+          !\ninterface Ethernet0/0\n no switchport\n ip address 10.0.0.248 255.255.255.0\n\
+          !\ninterface Ethernet0/1\n switchport access vlan 100\n!\ninterface Ethernet0/2\n\
+          \ switchport access vlan 100\n!\ninterface Ethernet0/3\n switchport access\
+          \ vlan 100\n!\ninterface Ethernet1/0\n switchport access vlan 100\n!\ninterface\
+          \ Ethernet1/1\n!\ninterface Ethernet1/2\n!\ninterface Ethernet1/3\n!\ninterface\
+          \ Vlan100\n ip address 10.254.0.1 255.255.255.0\n!\nip forward-protocol\
+          \ nd\nip forward-protocol udp\n!\n!\nip http server\nip http secure-server\n\
+          ip ssh bulk-mode 131072\nip route 0.0.0.0 0.0.0.0 Ethernet0/0 10.0.0.149\n\
+          !\nno logging btrace\nlogging host 10.0.0.149\n!\n!\n!\ncontrol-plane\n\
+          !\n!\nalias exec q exit\n!\nline con 0\n exec-timeout 0 0\n logging synchronous\n\
+          line aux 0\nline vty 0 4\n exec-timeout 0 0\n logging synchronous\n login\
+          \ local\n transport input ssh\n!\n!\nend"
     cpu_limit: null
     cpus: null
     data_volume: null
