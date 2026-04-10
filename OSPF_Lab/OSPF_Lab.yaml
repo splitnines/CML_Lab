@@ -85,10 +85,9 @@ nodes:
   - boot_disk_size: null
     configuration:
       - name: ios_config.txt
-        content: "Building configuration...\n\nCurrent configuration : 6860 bytes\n\
-          !\n! Last configuration change at 03:15:46 UTC Mon Apr 6 2026 by cisco\n\
-          ! NVRAM config last updated at 02:49:31 UTC Mon Apr 6 2026 by cisco\n!\n\
-          version 17.16\nservice timestamps debug datetime msec\nservice timestamps\
+        content: "Building configuration...\n\nCurrent configuration : 6793 bytes\n\
+          !\n! Last configuration change at 13:22:26 UTC Fri Apr 10 2026 by cisco\n\
+          !\nversion 17.16\nservice timestamps debug datetime msec\nservice timestamps\
           \ log datetime msec\nservice password-encryption\n!\nhostname r1\n!\nboot-start-marker\n\
           boot-end-marker\n!\n!\nno logging console\naaa new-model\n!\n!\naaa group\
           \ server tacacs+ LAB\n server-private 10.0.0.149 key 7 03094218030C33495A021C1C\n\
@@ -242,10 +241,9 @@ nodes:
   - boot_disk_size: null
     configuration:
       - name: ios_config.txt
-        content: "Building configuration...\n\nCurrent configuration : 5550 bytes\n\
-          !\n! Last configuration change at 03:15:46 UTC Mon Apr 6 2026 by cisco\n\
-          ! NVRAM config last updated at 02:23:49 UTC Sun Apr 5 2026 by cisco\n!\n\
-          version 17.16\nservice timestamps debug datetime msec\nservice timestamps\
+        content: "Building configuration...\n\nCurrent configuration : 5483 bytes\n\
+          !\n! Last configuration change at 13:22:26 UTC Fri Apr 10 2026 by cisco\n\
+          !\nversion 17.16\nservice timestamps debug datetime msec\nservice timestamps\
           \ log datetime msec\nservice password-encryption\n!\nhostname r3\n!\nboot-start-marker\n\
           boot-end-marker\n!\n!\nno logging console\naaa new-model\n!\n!\naaa group\
           \ server tacacs+ LAB\n server-private 10.0.0.149 key 7 020B1D480E051D2458450C00\n\
@@ -381,10 +379,9 @@ nodes:
   - boot_disk_size: null
     configuration:
       - name: ios_config.txt
-        content: "Building configuration...\n\nCurrent configuration : 5444 bytes\n\
-          !\n! Last configuration change at 03:15:46 UTC Mon Apr 6 2026 by cisco\n\
-          ! NVRAM config last updated at 02:23:49 UTC Sun Apr 5 2026 by cisco\n!\n\
-          version 17.16\nservice timestamps debug datetime msec\nservice timestamps\
+        content: "Building configuration...\n\nCurrent configuration : 5377 bytes\n\
+          !\n! Last configuration change at 13:22:26 UTC Fri Apr 10 2026 by cisco\n\
+          !\nversion 17.16\nservice timestamps debug datetime msec\nservice timestamps\
           \ log datetime msec\nservice password-encryption\n!\nhostname r2\n!\nboot-start-marker\n\
           boot-end-marker\n!\n!\nno logging console\naaa new-model\n!\n!\naaa group\
           \ server tacacs+ LAB\n server-private 10.0.0.149 key 7 1043100A0014000E180F2F32\n\
@@ -519,9 +516,9 @@ nodes:
   - boot_disk_size: null
     configuration:
       - name: ios_config.txt
-        content: "Building configuration...\n\nCurrent configuration : 5426 bytes\n\
-          !\n! Last configuration change at 03:15:46 UTC Mon Apr 6 2026 by cisco\n\
-          ! NVRAM config last updated at 02:23:49 UTC Sun Apr 5 2026 by cisco\n!\n\
+        content: "Building configuration...\n\nCurrent configuration : 5590 bytes\n\
+          !\n! Last configuration change at 13:22:26 UTC Fri Apr 10 2026 by cisco\n\
+          ! NVRAM config last updated at 17:21:47 UTC Thu Apr 9 2026 by cisco\n!\n\
           version 17.16\nservice timestamps debug datetime msec\nservice timestamps\
           \ log datetime msec\nservice password-encryption\n!\nhostname sw1-1\n!\n\
           boot-start-marker\nboot-end-marker\n!\n!\nno logging console\naaa new-model\n\
@@ -589,12 +586,14 @@ nodes:
           \ 100000\n passive-interface Vlan1000\n!\nip forward-protocol nd\nip forward-protocol\
           \ udp\n!\n!\nip http server\nip http secure-server\nip ssh bulk-mode 131072\n\
           !\n!\nip prefix-list OSPF_FILTER seq 10 deny 10.254.0.0/16 ge 17\nip prefix-list\
-          \ OSPF_FILTER seq 20 permit 0.0.0.0/0 le 32\nno logging btrace\nlogging\
-          \ host 10.0.0.149\n!\n!\n!\n!\n!\ncontrol-plane\n!\n!\nalias exec q exit\n\
-          !\nline con 0\n exec-timeout 0 0\n logging synchronous\nline aux 0\nline\
-          \ vty 0 4\n exec-timeout 0 0\n logging synchronous\n transport input ssh\n\
-          !\nntp server 10.254.0.1 prefer source Loopback0\nntp server 10.254.0.2\
-          \ source Loopback0\n!\nend"
+          \ OSPF_FILTER seq 20 permit 0.0.0.0/0 le 32\nip sla 1\n icmp-jitter 10.2.1.1\
+          \ source-ip 10.1.1.1 num-packets 20\n  threshold 10\n  timeout 10000\nip\
+          \ sla schedule 1 life forever start-time now\nip sla logging traps\nno logging\
+          \ btrace\nlogging host 10.0.0.149\n!\n!\n!\n!\n!\ncontrol-plane\n!\n!\n\
+          alias exec q exit\n!\nline con 0\n exec-timeout 0 0\n logging synchronous\n\
+          line aux 0\nline vty 0 4\n exec-timeout 0 0\n logging synchronous\n transport\
+          \ input ssh\n!\nntp server 10.254.0.1 prefer source Loopback0\nntp server\
+          \ 10.254.0.2 source Loopback0\n!\nend"
     cpu_limit: null
     cpus: null
     data_volume: null
@@ -718,8 +717,8 @@ nodes:
   - boot_disk_size: null
     configuration:
       - name: ios_config.txt
-        content: "Building configuration...\n\nCurrent configuration : 5160 bytes\n\
-          !\n! Last configuration change at 03:15:46 UTC Mon Apr 6 2026\n!\nversion\
+        content: "Building configuration...\n\nCurrent configuration : 5178 bytes\n\
+          !\n! Last configuration change at 13:22:26 UTC Fri Apr 10 2026\n!\nversion\
           \ 17.16\nservice timestamps debug datetime msec\nservice timestamps log\
           \ datetime msec\nservice password-encryption\n!\nhostname sw2-1\n!\nboot-start-marker\n\
           boot-end-marker\n!\n!\nno logging console\nno aaa new-model\n!\n!\n!\nfhrp\
@@ -786,11 +785,11 @@ nodes:
           !\nrouter ospf 1\n router-id 10.2.1.1\n log-adjacency-changes detail\n auto-cost\
           \ reference-bandwidth 100000\n passive-interface Vlan1000\n!\nip forward-protocol\
           \ nd\nip forward-protocol udp\n!\n!\nip http server\nip http secure-server\n\
-          ip tacacs source-interface Loopback0\nip ssh bulk-mode 131072\n!\nno logging\
-          \ btrace\nlogging host 10.0.0.149\n!\n!\n!\ncontrol-plane\n!\n!\nalias exec\
-          \ q exit\n!\nline con 0\n exec-timeout 0 0\n logging synchronous\nline aux\
-          \ 0\nline vty 0 4\n exec-timeout 0 0\n logging synchronous\n login local\n\
-          \ transport input ssh\n!\n!\nend"
+          ip tacacs source-interface Loopback0\nip ssh bulk-mode 131072\n!\nip sla\
+          \ responder\nno logging btrace\nlogging host 10.0.0.149\n!\n!\n!\ncontrol-plane\n\
+          !\n!\nalias exec q exit\n!\nline con 0\n exec-timeout 0 0\n logging synchronous\n\
+          line aux 0\nline vty 0 4\n exec-timeout 0 0\n logging synchronous\n login\
+          \ local\n transport input ssh\n!\n!\nend"
     cpu_limit: null
     cpus: null
     data_volume: null
@@ -852,8 +851,8 @@ nodes:
   - boot_disk_size: null
     configuration:
       - name: ios_config.txt
-        content: "Building configuration...\n\nCurrent configuration : 5741 bytes\n\
-          !\n! Last configuration change at 03:15:46 UTC Mon Apr 6 2026 by cisco\n\
+        content: "Building configuration...\n\nCurrent configuration : 5742 bytes\n\
+          !\n! Last configuration change at 13:22:26 UTC Fri Apr 10 2026 by cisco\n\
           !\nversion 17.16\nservice timestamps debug datetime msec\nservice timestamps\
           \ log datetime msec\nservice password-encryption\n!\nhostname sw2-2\n!\n\
           boot-start-marker\nboot-end-marker\n!\n!\nno logging console\naaa new-model\n\
