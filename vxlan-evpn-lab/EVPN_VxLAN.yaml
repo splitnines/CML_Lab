@@ -30,8 +30,8 @@ nodes:
         content: |2-
 
           !Command: show running-config
-          !Running configuration last done at: Thu Apr  9 16:40:35 2026
-          !Time: Thu Apr  9 16:40:35 2026
+          !Running configuration last done at: Sat Apr 11 03:22:15 2026
+          !Time: Sat Apr 11 03:22:16 2026
 
           version 10.5(3) Bios:version
           hostname spine-1
@@ -42,6 +42,7 @@ nodes:
             limit-resource m4route-mem minimum 58 maximum 58
             limit-resource m6route-mem minimum 8 maximum 8
 
+          cfs eth distribute
           nv overlay evpn
           feature ospf
           feature bgp
@@ -49,6 +50,8 @@ nodes:
           feature fabric forwarding
           feature interface-vlan
           feature vn-segment-vlan-based
+          feature lacp
+          feature vpc
           feature nv overlay
 
           no password strength-check
@@ -76,6 +79,11 @@ nodes:
 
           vrf context management
             ip route 0.0.0.0/0 10.254.0.1
+          vpc domain 10
+            peer-switch
+            role priority 10
+            peer-keepalive destination 10.10.10.2 source 10.10.10.1 vrf VPC-KEEPALIVE
+            auto-recovery
 
           interface Vlan1
 
@@ -277,7 +285,7 @@ nodes:
     ram: null
     tags: []
     x: -400
-    y: -200
+    y: -240
     interfaces:
       - id: i0
         label: Loopback0
@@ -329,8 +337,8 @@ nodes:
         content: |2-
 
           !Command: show running-config
-          !Running configuration last done at: Thu Apr  9 16:40:38 2026
-          !Time: Thu Apr  9 16:40:38 2026
+          !Running configuration last done at: Sat Apr 11 03:22:20 2026
+          !Time: Sat Apr 11 03:22:20 2026
 
           version 10.5(3) Bios:version
           hostname spine-2
@@ -341,6 +349,7 @@ nodes:
             limit-resource m4route-mem minimum 58 maximum 58
             limit-resource m6route-mem minimum 8 maximum 8
 
+          cfs eth distribute
           nv overlay evpn
           feature ospf
           feature bgp
@@ -348,6 +357,8 @@ nodes:
           feature fabric forwarding
           feature interface-vlan
           feature vn-segment-vlan-based
+          feature lacp
+          feature vpc
           feature nv overlay
 
           no password strength-check
@@ -375,6 +386,11 @@ nodes:
 
           vrf context management
             ip route 0.0.0.0/0 10.254.0.1
+          vpc domain 10
+            peer-switch
+            role priority 20
+            peer-keepalive destination 10.10.10.1 source 10.10.10.2 vrf VPC-KEEPALIVE
+            auto-recovery
 
           interface Vlan1
 
@@ -575,8 +591,8 @@ nodes:
     parameters: {}
     ram: null
     tags: []
-    x: 80
-    y: -200
+    x: -80
+    y: -240
     interfaces:
       - id: i0
         label: Loopback0
@@ -628,8 +644,8 @@ nodes:
         content: |2-
 
           !Command: show running-config
-          !Running configuration last done at: Thu Apr  9 16:41:01 2026
-          !Time: Thu Apr  9 16:41:02 2026
+          !Running configuration last done at: Sat Apr 11 03:22:17 2026
+          !Time: Sat Apr 11 03:22:17 2026
 
           version 10.5(3) Bios:version
           hostname leaf-1
@@ -640,6 +656,8 @@ nodes:
             limit-resource m4route-mem minimum 58 maximum 58
             limit-resource m6route-mem minimum 8 maximum 8
 
+          feature scp-server
+          cfs eth distribute
           nv overlay evpn
           feature ospf
           feature bgp
@@ -647,6 +665,8 @@ nodes:
           feature fabric forwarding
           feature interface-vlan
           feature vn-segment-vlan-based
+          feature lacp
+          feature vpc
           feature nv overlay
 
           no password strength-check
@@ -684,8 +704,14 @@ nodes:
             address-family ipv4 unicast
               route-target both auto
               route-target both auto evpn
+          vrf context VPC
           vrf context management
             ip route 0.0.0.0/0 10.254.0.1
+          vpc domain 10
+            peer-switch
+            role priority 10
+            peer-keepalive destination 192.168.255.2 source 192.168.255.1 vrf VPC
+            auto-recovery
 
           interface Vlan1
 
@@ -705,6 +731,15 @@ nodes:
             no shutdown
             vrf member TENANT1
             ip forward
+
+          interface port-channel1
+            switchport mode trunk
+            spanning-tree port type network
+            vpc peer-link
+
+          interface port-channel10
+            switchport mode trunk
+            vpc 10
 
           interface nve1
             no shutdown
@@ -740,12 +775,22 @@ nodes:
             switchport access vlan 10
 
           interface Ethernet1/4
+            no switchport
+            vrf member VPC
+            ip address 192.168.255.1/30
+            no shutdown
 
           interface Ethernet1/5
+            switchport mode trunk
+            channel-group 1 mode active
 
           interface Ethernet1/6
+            switchport mode trunk
+            channel-group 1 mode active
 
           interface Ethernet1/7
+            switchport mode trunk
+            channel-group 10 mode active
 
           interface Ethernet1/8
 
@@ -923,8 +968,8 @@ nodes:
     parameters: {}
     ram: null
     tags: []
-    x: -240
-    y: -40
+    x: -400
+    y: -80
     interfaces:
       - id: i0
         label: Loopback0
@@ -976,8 +1021,8 @@ nodes:
         content: |2-
 
           !Command: show running-config
-          !Running configuration last done at: Thu Apr  9 16:40:58 2026
-          !Time: Thu Apr  9 16:40:59 2026
+          !Running configuration last done at: Sat Apr 11 03:22:17 2026
+          !Time: Sat Apr 11 03:22:17 2026
 
           version 10.5(3) Bios:version
           hostname leaf-2
@@ -988,6 +1033,7 @@ nodes:
             limit-resource m4route-mem minimum 58 maximum 58
             limit-resource m6route-mem minimum 8 maximum 8
 
+          cfs eth distribute
           nv overlay evpn
           feature ospf
           feature bgp
@@ -995,6 +1041,8 @@ nodes:
           feature fabric forwarding
           feature interface-vlan
           feature vn-segment-vlan-based
+          feature lacp
+          feature vpc
           feature nv overlay
 
           no password strength-check
@@ -1032,8 +1080,14 @@ nodes:
             address-family ipv4 unicast
               route-target both auto
               route-target both auto evpn
+          vrf context VPC
           vrf context management
             ip route 0.0.0.0/0 10.254.0.1
+          vpc domain 10
+            peer-switch
+            role priority 20
+            peer-keepalive destination 192.168.255.1 source 192.168.255.2 vrf VPC
+            auto-recovery
 
           interface Vlan1
 
@@ -1053,6 +1107,15 @@ nodes:
             no shutdown
             vrf member TENANT1
             ip forward
+
+          interface port-channel1
+            switchport mode trunk
+            spanning-tree port type network
+            vpc peer-link
+
+          interface port-channel10
+            switchport mode trunk
+            vpc 10
 
           interface nve1
             no shutdown
@@ -1085,16 +1148,25 @@ nodes:
             no shutdown
 
           interface Ethernet1/3
-            switchport access vlan 10
-
-          interface Ethernet1/4
             switchport access vlan 20
 
+          interface Ethernet1/4
+            no switchport
+            vrf member VPC
+            ip address 192.168.255.2/30
+            no shutdown
+
           interface Ethernet1/5
+            switchport mode trunk
+            channel-group 1 mode active
 
           interface Ethernet1/6
+            switchport mode trunk
+            channel-group 1 mode active
 
           interface Ethernet1/7
+            switchport mode trunk
+            channel-group 10 mode active
 
           interface Ethernet1/8
 
@@ -1273,7 +1345,7 @@ nodes:
     ram: null
     tags: []
     x: -80
-    y: -40
+    y: -80
     interfaces:
       - id: i0
         label: Loopback0
@@ -1322,8 +1394,8 @@ nodes:
   - boot_disk_size: null
     configuration:
       - name: ios_config.txt
-        content: "Building configuration...\n\nCurrent configuration : 3753 bytes\n\
-          !\n! Last configuration change at 16:43:17 UTC Thu Apr 9 2026\n!\nversion\
+        content: "Building configuration...\n\nCurrent configuration : 3754 bytes\n\
+          !\n! Last configuration change at 03:22:30 UTC Sat Apr 11 2026\n!\nversion\
           \ 17.16\nservice timestamps debug datetime msec\nservice timestamps log\
           \ datetime msec\nservice password-encryption\n!\nhostname mgmt-sw\n!\nboot-start-marker\n\
           boot-end-marker\n!\n!\nno logging console\nno aaa new-model\n!\n!\n!\n!\n\
@@ -1336,29 +1408,29 @@ nodes:
           \ self-signed 01\n  3082032E 30820216 A0030201 02020101 300D0609 2A864886\
           \ F70D0101 0D050030\n  30312E30 2C060355 04030C25 494F532D 53656C66 2D536967\
           \ 6E65642D 43657274\n  69666963 6174652D 31333131 38343636 38301E17 0D323630\
-          \ 34303930 33313332\n  315A170D 33363034 30383033 31333231 5A303031 2E302C06\
+          \ 34313130 32303532\n  315A170D 33363034 31303032 30353231 5A303031 2E302C06\
           \ 03550403 0C25494F\n  532D5365 6C662D53 69676E65 642D4365 72746966 69636174\
           \ 652D3133 31313834\n  36363830 82012230 0D06092A 864886F7 0D010101 05000382\
-          \ 010F0030 82010A02\n  82010100 9AF00236 22E7AE7C 34ABA8D2 EF6DF74B 1A7C0168\
-          \ 16E51BDD 8059627D\n  79BE4116 6F39D897 5AB248BD FBACFE21 EE29FEC1 F0E4804E\
-          \ 88543685 7B68855B\n  8F2E4161 31B83296 9ABD49BE AD39CBF2 3C0F70CB 26EBC460\
-          \ 1C1DCFE9 691EE695\n  677EC018 7EE2E238 0E846C16 B3CA4508 78A9F66A CAFB7C26\
-          \ 39C645F8 5FAB7DD1\n  58B6B008 285CA35B 931A4059 03912565 DBFF3711 0A1B87BA\
-          \ 0FB87071 7CC9B928\n  6CB4080A 826EB5E9 3551534E 273F8460 6D178486 4915005B\
-          \ 3ACE8ADA 06268111\n  CD4BB776 82DA2D05 982FD397 5FFBD50C 17D075A4 E2EA6790\
-          \ 3D78EFC2 E196910A\n  B545D8DF B03B4522 29C1313B A74A82FD F9F033AC BA0FDFB4\
-          \ E47520F0 57512747\n  8A1345B3 02030100 01A35330 51301D06 03551D0E 04160414\
-          \ 3A5CCB0A 9313A62F\n  6CF94E95 FD28DEA5 F7065004 301F0603 551D2304 18301680\
-          \ 143A5CCB 0A9313A6\n  2F6CF94E 95FD28DE A5F70650 04300F06 03551D13 0101FF04\
-          \ 05300301 01FF300D\n  06092A86 4886F70D 01010D05 00038201 010000AB BF60831A\
-          \ B9C510BB 04B83E49\n  D2AF15DB 81911B44 F89CBCE4 6C0686E4 8947B383 FF462CDE\
-          \ 3FF3AAE5 A68491DF\n  15FAFE56 AF6041CD E2B0E6D1 A9F2FCED 584A6A58 D559CABC\
-          \ 492355EF 421070FE\n  5DBDF1A4 BEF60E34 1715EE4F 68E686E2 E55BC279 D36E6E4D\
-          \ 0CD2BEC7 C5F9E87E\n  E058CECE 0BF89F3D 98935213 59B8081E 356B65D1 632F03C4\
-          \ 88CF07C9 027E1D7F\n  CEF87984 9F78F27E 3EF255ED 46C6F1B4 F6B7F994 C688040F\
-          \ 94FC9AEF 243ED216\n  3831041D 4221F23A 6D69FC82 DCFA1539 D44FF430 8787464D\
-          \ C27496AC 9DFBA0A6\n  531AD079 D5476A4E 503C4EFA FD887FF0 1F07ECBC 3465CA40\
-          \ 6ACEDE85 E96B319F\n  32DEA77E 77A45E49 18D0985D F2F95EAF 6162\n  \tquit\n\
+          \ 010F0030 82010A02\n  82010100 B69A2F5B 9F02C12C 441B112C 98A51A22 9929B9D6\
+          \ 7CA4EEB8 0ECDD936\n  007FC90B 6EB9BC2C AEDAAACE 447B1709 6F78AF3D 11C88143\
+          \ C3FF3B44 ABCFDF86\n  3BA4EC3D F700E619 7BD39FAA 8BDDAE38 1F66903E FD05D472\
+          \ 5DE6732A 1513D823\n  49860730 3F27C197 BAF4C73E F87F848C C4D606B9 1C2C1E9D\
+          \ 784C2AC5 1BD3907F\n  FC9B5E5C 98D36ADB 2B5DFBE1 778C1045 9E2F7739 3A9BDDD1\
+          \ AE7287D0 52968177\n  73B86E0C CB90BA58 B9E0C9DB 03F0F840 4ED77355 AEAB0F1C\
+          \ 67A5004D 616E05DD\n  81F67079 D648A960 F07A76AD B9AB43E4 4798EAB7 4D36DFAA\
+          \ 353F4055 363DFFA4\n  78F84A81 2B5062C6 B4EA320B 2F2A9D08 D21AA931 B01DC02D\
+          \ AFCFD276 2408520F\n  C8D3F7D1 02030100 01A35330 51301D06 03551D0E 04160414\
+          \ 92A17120 65E84843\n  2A0EFC8C 5E3EBF1A AA886002 301F0603 551D2304 18301680\
+          \ 1492A171 2065E848\n  432A0EFC 8C5E3EBF 1AAA8860 02300F06 03551D13 0101FF04\
+          \ 05300301 01FF300D\n  06092A86 4886F70D 01010D05 00038201 01006B58 8C07934A\
+          \ 6B8DDA80 FFF52CD0\n  365098F1 B06CECE4 C7A508BA CAE69E48 142F8939 793D0A04\
+          \ 12D59A31 95976463\n  3ABF90AA AA8D2DFD 7C85232E 4253963B 38181C39 D541BD85\
+          \ 93FFBDC1 E749DBE0\n  4091D1CA DFD0EC05 B3A50B81 D7D7809C 25CE4A17 40B1D3E0\
+          \ 0EB5471B F995FCFE\n  466B6EE9 DDFB790E 3FB286EE D98F4127 08C76CA6 A0D25F0A\
+          \ 9C3DEFAB 2BD5EA82\n  81810C1B 7D1C3EA6 7A08EAB1 81893BDC 7AA4F925 4B87B47D\
+          \ 4905120D 48A66163\n  341FE9EF 9F52AC5D C5480931 3E6EB0D7 55F49848 E7BDC2C8\
+          \ 632D9315 1077DE48\n  784D4F12 09712933 14E401CC 32B6E430 ECA14D0F 19F4F808\
+          \ 7EF508EC D2648D49\n  0070E3FC AFF4E30E A47BA1FC 0A6AC4EF 6B1C\n  \tquit\n\
           !\n!\nmemory free low-watermark processor 79497\n!\n!\nspanning-tree mode\
           \ rapid-pvst\nspanning-tree extend system-id\n!\nusername cisco privilege\
           \ 15 password 7 0822455D0A16\n!\nvlan internal allocation policy ascending\n\
@@ -1446,8 +1518,8 @@ nodes:
     parameters: {}
     ram: null
     tags: []
-    x: -240
-    y: 120
+    x: -400
+    y: 80
     interfaces:
       - id: i0
         label: eth0
@@ -1468,13 +1540,162 @@ nodes:
     ram: null
     tags: []
     x: -80
-    y: 120
+    y: 80
     interfaces:
       - id: i0
         label: eth0
         mac_address: null
         type: physical
         slot: 0
+  - boot_disk_size: null
+    configuration:
+      - name: ios_config.txt
+        content: |-
+          Building configuration...
+
+          Current configuration : 1242 bytes
+          !
+          ! Last configuration change at 03:22:30 UTC Sat Apr 11 2026
+          !
+          version 17.16
+          service timestamps debug datetime msec
+          service timestamps log datetime msec
+          !
+          hostname asw-1
+          !
+          boot-start-marker
+          boot-end-marker
+          !
+          !
+          no logging console
+          no aaa new-model
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          ip audit notify log
+          ip audit po max-events 100
+          no ip domain lookup
+          ip cef
+          login on-success log
+          no ipv6 cef
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          !
+          memory free low-watermark processor 79497
+          !
+          !
+          spanning-tree mode rapid-pvst
+          spanning-tree extend system-id
+          !
+          !
+          vlan internal allocation policy ascending
+          !
+          !
+          !
+          !
+          !
+          interface Port-channel1
+           switchport trunk encapsulation dot1q
+           switchport mode trunk
+          !
+          interface Ethernet0/0
+           switchport trunk encapsulation dot1q
+           switchport mode trunk
+           channel-group 1 mode active
+          !
+          interface Ethernet0/1
+           switchport trunk encapsulation dot1q
+           switchport mode trunk
+           channel-group 1 mode active
+          !
+          interface Ethernet0/2
+           switchport access vlan 10
+          !
+          interface Ethernet0/3
+          !
+          ip forward-protocol nd
+          ip forward-protocol udp
+          !
+          !
+          ip http server
+          ip http secure-server
+          ip ssh bulk-mode 131072
+          !
+          no logging btrace
+          !
+          !
+          !
+          control-plane
+          !
+          !
+          !
+          line con 0
+           exec-timeout 0 0
+           logging synchronous
+          line aux 0
+          line vty 0 4
+           exec-timeout 0 0
+           login
+           transport input ssh
+          !
+          !
+          end
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n8
+    image_definition: null
+    label: iol-l2-0
+    node_definition: ioll2-xe
+    parameters: {}
+    ram: null
+    tags: []
+    x: -240
+    y: 40
+    interfaces:
+      - id: i0
+        label: Loopback0
+        mac_address: null
+        type: loopback
+      - id: i1
+        label: Ethernet0/0
+        mac_address: null
+        type: physical
+        slot: 0
+      - id: i2
+        label: Ethernet0/1
+        mac_address: null
+        type: physical
+        slot: 1
+      - id: i3
+        label: Ethernet0/2
+        mac_address: null
+        type: physical
+        slot: 2
+      - id: i4
+        label: Ethernet0/3
+        mac_address: null
+        type: physical
+        slot: 3
 links:
   - id: l0
     n1: n5
@@ -1540,19 +1761,54 @@ links:
     conditioning: {}
     label: spine-2-Ethernet1/2<->leaf-2-Ethernet1/2
   - id: l9
-    n1: n6
-    n2: n3
-    i1: i0
-    i2: i4
+    n1: n4
+    n2: n7
+    i1: i4
+    i2: i0
     conditioning: {}
-    label: alpine-0-eth0<->leaf-1-Ethernet1/3
+    label: leaf-2-Ethernet1/3<->alpine-1-eth0
   - id: l10
-    n1: n7
+    n1: n3
     n2: n4
-    i1: i0
+    i1: i5
     i2: i5
     conditioning: {}
-    label: alpine-1-eth0<->leaf-2-Ethernet1/4
+    label: leaf-1-Ethernet1/4<->leaf-2-Ethernet1/4
+  - id: l11
+    n1: n3
+    n2: n4
+    i1: i6
+    i2: i6
+    conditioning: {}
+    label: leaf-1-Ethernet1/5<->leaf-2-Ethernet1/5
+  - id: l12
+    n1: n3
+    n2: n4
+    i1: i7
+    i2: i7
+    conditioning: {}
+    label: leaf-1-Ethernet1/6<->leaf-2-Ethernet1/6
+  - id: l13
+    n1: n8
+    n2: n3
+    i1: i1
+    i2: i8
+    conditioning: {}
+    label: iol-l2-0-Ethernet0/0<->leaf-1-Ethernet1/7
+  - id: l14
+    n1: n8
+    n2: n4
+    i1: i2
+    i2: i8
+    conditioning: {}
+    label: iol-l2-0-Ethernet0/1<->leaf-2-Ethernet1/7
+  - id: l15
+    n1: n6
+    n2: n8
+    i1: i0
+    i2: i3
+    conditioning: {}
+    label: alpine-0-eth0<->iol-l2-0-Ethernet0/2
 lab:
   description: ''
   notes: ''
