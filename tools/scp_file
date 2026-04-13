@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+addresses=(10.100.1.10 10.100.1.20 10.100.1.30 10.100.0.10 10.100.0.20 10.100.0.30)
+
+for address in "${addresses[@]}"; do
+	sshpass '-pcisco' \
+		scp -o  StrictHostKeyChecking=accept-new \
+		/home/rickey/scripts/client_server/client_server.py \
+		cisco@"$address":~ >/dev/null 2>&1
+	echo "$address done"
+done
