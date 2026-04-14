@@ -35,7 +35,7 @@ nodes:
     configuration:
       - name: iosxe_config.txt
         content: "Building configuration...\n\nCurrent configuration : 7998 bytes\n\
-          !\n! Last configuration change at 12:55:50 UTC Mon Apr 13 2026\n!\nversion\
+          !\n! Last configuration change at 02:04:04 UTC Tue Apr 14 2026\n!\nversion\
           \ 17.16\nservice timestamps debug datetime msec\nservice timestamps log\
           \ datetime msec\nservice password-encryption\nplatform qfp utilization monitor\
           \ load 80\nplatform sslvpn use-pd\nplatform console serial\n!\nhostname\
@@ -445,7 +445,7 @@ nodes:
     configuration:
       - name: iosxe_config.txt
         content: "Building configuration...\n\nCurrent configuration : 5845 bytes\n\
-          !\n! Last configuration change at 12:55:50 UTC Mon Apr 13 2026\n!\nversion\
+          !\n! Last configuration change at 02:04:04 UTC Tue Apr 14 2026\n!\nversion\
           \ 17.16\nservice timestamps debug datetime msec\nservice timestamps log\
           \ datetime msec\nservice password-encryption\nplatform qfp utilization monitor\
           \ load 80\nplatform sslvpn use-pd\nplatform console serial\n!\nhostname\
