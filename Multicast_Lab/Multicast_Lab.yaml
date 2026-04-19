@@ -4,14 +4,14 @@ nodes:
   - boot_disk_size: null
     configuration:
       - name: iosxe_config.txt
-        content: "Building configuration...\n\nCurrent configuration : 7873 bytes\n\
-          !\n! Last configuration change at 01:19:22 UTC Mon Jan 19 2026 by cisco\n\
+        content: "Building configuration...\n\nCurrent configuration : 7874 bytes\n\
+          !\n! Last configuration change at 14:12:57 UTC Sun Apr 19 2026 by cisco\n\
           !\nversion 17.16\nservice timestamps debug datetime msec\nservice timestamps\
           \ log datetime msec\nservice password-encryption\nplatform qfp utilization\
           \ monitor load 80\nplatform sslvpn use-pd\nplatform console serial\n!\n\
           hostname r2\n!\nboot-start-marker\nboot-end-marker\n!\n!\nno logging console\n\
-          aaa new-model\n!\n!\naaa group server tacacs+ LAB\n server-private 10.0.0.84\
-          \ key 7 082C555D0C1A17120600091D\n ip tacacs source-interface Loopback10\n\
+          aaa new-model\n!\n!\naaa group server tacacs+ LAB\n server-private 10.0.0.149\
+          \ key 7 141A0B180907382E3023362C\n ip tacacs source-interface Loopback10\n\
           !\naaa authentication login default group LAB local\naaa authentication\
           \ login no_tacacs local\naaa authorization config-commands\naaa authorization\
           \ exec default group LAB local\naaa authorization commands 1 default group\
@@ -80,7 +80,7 @@ nodes:
           \  3E7254E9 3B3E2279 1B795DCB 8AC87F47 D2A4594F C69A878F D9A080C2 B1982ABD\n\
           \  F108B6F4 2BCE01D8 8659C5E5 EE6425A5 F633DDDA A4F3D488 59DCC47D 3ABF4514\n\
           \  DAA7286F EA7B3F07 51BF8DF1 E724490A FE83CDAD\n  \tquit\n!\n!\n!\n!\n\
-          !\n!\n!\n!\n!\nlicense udi pid C8000V sn 9YZOTG4C6DS\nlicense boot level\
+          !\n!\n!\n!\n!\nlicense udi pid C8000V sn 9DL90L5H8FC\nlicense boot level\
           \ network-advantage addon dna-advantage\nmemory free low-watermark processor\
           \ 201711\ndiagnostic bootup level minimal\n!\n!\nspanning-tree extend system-id\n\
           !\n!\n!\nusername cisco privilege 15 password 7 094F471A1A0A\n!\nredundancy\n\
@@ -105,8 +105,8 @@ nodes:
           \  exit-af-interface\n  !\n  topology base\n   redistribute static\n  exit-af-topology\n\
           \  network 10.0.0.0\n exit-address-family\n!\nip forward-protocol nd\nip\
           \ forward-protocol udp\n!\nno ip http server\nip http secure-server\nip\
-          \ route 192.168.255.0 255.255.255.0 10.100.3.2\nip ssh bulk-mode 131072\n\
-          !\nlogging host 10.0.0.84\n!\n!\n!\n!\n!\ncontrol-plane\n!\n!\nmgcp behavior\
+          \ route 10.192.168.0 255.255.255.0 10.100.3.2\nip ssh bulk-mode 131072\n\
+          !\nlogging host 10.0.0.149\n!\n!\n!\n!\n!\ncontrol-plane\n!\n!\nmgcp behavior\
           \ rsip-range tgcp-only\nmgcp behavior comedia-role none\nmgcp behavior comedia-check-media-src\
           \ disable\nmgcp behavior comedia-sdp-force disable\n!\nmgcp profile default\n\
           !\n!\n!\n!\n!\nalias exec q exit\n!\nline con 0\n exec-timeout 0 0\n logging\
@@ -202,12 +202,12 @@ nodes:
     hide_links: false
     id: n2
     image_definition: null
-    label: l1
+    label: host1
     node_definition: ubuntu
     parameters: {}
     ram: null
     tags: []
-    x: 360
+    x: 440
     y: -280
     interfaces:
       - id: i0
@@ -241,7 +241,7 @@ nodes:
     hide_links: false
     id: n3
     image_definition: null
-    label: l2
+    label: host2
     node_definition: ubuntu
     parameters: {}
     ram: null
@@ -260,31 +260,10 @@ nodes:
         type: physical
         slot: 1
   - boot_disk_size: null
-    configuration: []
-    cpu_limit: null
-    cpus: null
-    data_volume: null
-    hide_links: false
-    id: n4
-    image_definition: null
-    label: l3
-    node_definition: ubuntu
-    parameters: {}
-    ram: null
-    tags: []
-    x: 240
-    y: -360
-    interfaces:
-      - id: i0
-        label: ens2
-        mac_address: null
-        type: physical
-        slot: 0
-  - boot_disk_size: null
     configuration:
       - name: iosxe_config.txt
-        content: "Building configuration...\n\nCurrent configuration : 7260 bytes\n\
-          !\n! Last configuration change at 01:19:22 UTC Mon Jan 19 2026 by cisco\n\
+        content: "Building configuration...\n\nCurrent configuration : 7394 bytes\n\
+          !\n! Last configuration change at 14:12:57 UTC Sun Apr 19 2026 by cisco\n\
           !\nversion 17.16\nservice timestamps debug datetime msec\nservice timestamps\
           \ log datetime msec\nplatform qfp utilization monitor load 80\nplatform\
           \ sslvpn use-pd\nplatform console serial\n!\nhostname r1\n!\nboot-start-marker\n\
@@ -358,7 +337,7 @@ nodes:
           \ 794F0FA8 FECE2704\n  4EEFDECB 7A2C21D7 F34D8FE0 64DDCF2C 343D95A5 19ED0B94\
           \ D0CDC4C2 B39FEE7E\n  338368F9 50BC8567 B6CC015B F73D3913 B6974137 A85A4315\
           \ A9AEFF66 3357BABD\n  A9E60A07 91CDC1EF D2CBD8E3 14B51430 D4E03705\n  \t\
-          quit\n!\n!\n!\n!\n!\n!\n!\n!\n!\nlicense udi pid C8000V sn 9ZMDJ3JAHYP\n\
+          quit\n!\n!\n!\n!\n!\n!\n!\n!\n!\nlicense udi pid C8000V sn 9PSW4YPWRB6\n\
           license boot level network-advantage addon dna-advantage\nmemory free low-watermark\
           \ processor 201711\ndiagnostic bootup level minimal\n!\n!\nspanning-tree\
           \ extend system-id\n!\n!\n!\nusername cisco privilege 15 password 0 cisco\n\
@@ -376,10 +355,12 @@ nodes:
           \   no passive-interface\n  exit-af-interface\n  !\n  topology base\n  exit-af-topology\n\
           \  network 10.0.0.0\n exit-address-family\n!\nip forward-protocol nd\nip\
           \ forward-protocol udp\n!\nip pim bsr-candidate Loopback0 16\nip pim rp-candidate\
-          \ Loopback0 priority 16\nno ip http server\nip http secure-server\nip ssh\
-          \ bulk-mode 131072\n!\nlogging host 10.0.0.84\n!\n!\n!\n!\n!\ncontrol-plane\n\
-          !\n!\nmgcp behavior rsip-range tgcp-only\nmgcp behavior comedia-role none\n\
-          mgcp behavior comedia-check-media-src disable\nmgcp behavior comedia-sdp-force\
+          \ Loopback0 priority 16\nno ip http server\nip http secure-server\nip route\
+          \ 0.0.0.0 0.0.0.0 GigabitEthernet4 10.0.0.149\nip ssh bulk-mode 131072\n\
+          !\nlogging host 10.0.0.149\nsnmp-server group LABGROUP v3 priv write LAB\n\
+          snmp-server view LAB iso included\n!\n!\n!\n!\n!\ncontrol-plane\n!\n!\n\
+          mgcp behavior rsip-range tgcp-only\nmgcp behavior comedia-role none\nmgcp\
+          \ behavior comedia-check-media-src disable\nmgcp behavior comedia-sdp-force\
           \ disable\n!\nmgcp profile default\n!\n!\n!\n!\n!\nalias exec q exit\n!\n\
           line con 0\n exec-timeout 0 0\n logging synchronous\n stopbits 1\nline aux\
           \ 0\nline vty 0 4\n exec-timeout 0 0\n logging synchronous\n transport input\
@@ -388,7 +369,7 @@ nodes:
     cpus: null
     data_volume: null
     hide_links: false
-    id: n5
+    id: n4
     image_definition: null
     label: r1
     node_definition: cat8000v
@@ -425,8 +406,8 @@ nodes:
   - boot_disk_size: null
     configuration:
       - name: iosxe_config.txt
-        content: "Building configuration...\n\nCurrent configuration : 6321 bytes\n\
-          !\n! Last configuration change at 01:19:22 UTC Mon Jan 19 2026\n!\nversion\
+        content: "Building configuration...\n\nCurrent configuration : 6318 bytes\n\
+          !\n! Last configuration change at 14:12:57 UTC Sun Apr 19 2026\n!\nversion\
           \ 17.16\nservice timestamps debug datetime msec\nservice timestamps log\
           \ datetime msec\nservice password-encryption\nplatform qfp utilization monitor\
           \ load 80\nplatform sslvpn use-pd\nplatform console serial\n!\nhostname\
@@ -491,12 +472,12 @@ nodes:
           \ 5438E690 6B1A24A3 23D12F0C\n  424B4D35 31894E2A 49206DCF 18C45688 F122AF1D\
           \ 35CF3B2C DB1BFCCC 04971A76\n  7E578909 D6B50E53 E6F6E87C 90F35340 7338CE11\
           \ E219F37B C44B0DD7 CBABC7B2\n  6AE9B0A6 DEAE6C1C BF9B57E4 0BA8FC96 A9F6543C\n\
-          \  \tquit\n!\n!\n!\n!\n!\n!\n!\n!\n!\nlicense udi pid C8000V sn 9YQDEY2KCCE\n\
+          \  \tquit\n!\n!\n!\n!\n!\n!\n!\n!\n!\nlicense udi pid C8000V sn 96NHWQEWNIX\n\
           license boot level network-advantage addon dna-advantage\nmemory free low-watermark\
           \ processor 201711\ndiagnostic bootup level minimal\n!\n!\nspanning-tree\
           \ extend system-id\n!\n!\nusername cisco privilege 15 password 7 094F471A1A0A\n\
           !\nredundancy\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n\
-          !\n!\n!\n!\n!\n!\n!\ninterface VirtualPortGroup0\n ip address 192.168.255.1\
+          !\n!\n!\n!\n!\n!\n!\ninterface VirtualPortGroup0\n ip address 10.192.168.1\
           \ 255.255.255.0\n ip pim sparse-mode\n!\ninterface GigabitEthernet1\n ip\
           \ address 10.100.3.2 255.255.255.128\n ip pim sparse-mode\n negotiation\
           \ auto\n!\ninterface GigabitEthernet2\n no ip address\n shutdown\n negotiation\
@@ -511,13 +492,13 @@ nodes:
           \ stopbits 1\nline aux 0\nline vty 0 4\n exec-timeout 0 0\n logging synchronous\n\
           \ login local\n transport input ssh\n!\n!\n!\n!\n!\n!\n!\napp-hosting appid\
           \ guestshell\n app-vnic gateway0 virtualportgroup 0 guest-interface 0\n\
-          \  guest-ipaddress 192.168.255.2 netmask 255.255.255.0\n app-default-gateway\
-          \ 192.168.255.1 guest-interface 0\n start\nend"
+          \  guest-ipaddress 10.192.168.2 netmask 255.255.255.0\n app-default-gateway\
+          \ 10.192.168.1 guest-interface 0\n start\nend"
     cpu_limit: null
     cpus: null
     data_volume: null
     hide_links: false
-    id: n6
+    id: n5
     image_definition: null
     label: guestshell
     node_definition: cat8000v
@@ -554,22 +535,22 @@ nodes:
   - boot_disk_size: null
     configuration:
       - name: ios_config.txt
-        content: "Building configuration...\n\nCurrent configuration : 4700 bytes\n\
-          !\n! Last configuration change at 01:19:24 UTC Mon Jan 19 2026 by cisco\n\
+        content: "Building configuration...\n\nCurrent configuration : 4934 bytes\n\
+          !\n! Last configuration change at 14:13:01 UTC Sun Apr 19 2026 by cisco\n\
           !\nversion 17.16\nservice timestamps debug datetime msec\nservice timestamps\
           \ log datetime msec\nservice password-encryption\n!\nhostname s1\n!\nboot-start-marker\n\
           boot-end-marker\n!\n!\nno logging console\naaa new-model\n!\n!\naaa group\
-          \ server tacacs+ LAB\n server-private 10.0.0.84 key 7 082C555D0C1A17120600091D\n\
-          \ ip tacacs source-interface Loopback10\n!\naaa authentication login default\
-          \ group LAB local\naaa authentication login no_tacacs local\naaa authorization\
-          \ config-commands\naaa authorization exec default group LAB local\naaa authorization\
-          \ commands 1 default group LAB if-authenticated\naaa authorization commands\
-          \ 15 default group LAB if-authenticated\naaa accounting exec default start-stop\
-          \ group LAB\naaa accounting commands 1 default start-stop group LAB\naaa\
-          \ accounting commands 15 default start-stop group LAB\naaa accounting connection\
-          \ default start-stop group LAB\n!\n!\naaa session-id common\n!\n!\n!\n!\n\
-          !\n!\n!\n!\n!\n!\n!\n!\n!\nip audit notify log\nip audit po max-events 100\n\
-          no ip domain lookup\nip domain name cml.lab\nip multicast-routing\nip cef\n\
+          \ server tacacs+ LAB\n server name LAB\n ip tacacs source-interface Loopback10\n\
+          !\naaa authentication login default group LAB local\naaa authentication\
+          \ login no_tacacs local\naaa authorization config-commands\naaa authorization\
+          \ exec default group LAB local if-authenticated\naaa authorization commands\
+          \ 1 default group LAB if-authenticated\naaa authorization commands 15 default\
+          \ group LAB if-authenticated\naaa accounting exec default start-stop group\
+          \ LAB\naaa accounting commands 1 default start-stop group LAB\naaa accounting\
+          \ commands 15 default start-stop group LAB\naaa accounting connection default\
+          \ start-stop group LAB\n!\n!\naaa session-id common\n!\n!\n!\n!\n!\n!\n\
+          !\n!\n!\n!\n!\n!\n!\nip audit notify log\nip audit po max-events 100\nno\
+          \ ip domain lookup\nip domain name cml.lab\nip multicast-routing\nip cef\n\
           login on-success log\nno ipv6 cef\n!\n!\n!\n!\n!\n!\n!\n!\ncrypto pki trustpoint\
           \ TP-self-signed-131184656\n enrollment selfsigned\n subject-name cn=IOS-Self-Signed-Certificate-131184656\n\
           \ revocation-check none\n rsakeypair TP-self-signed-131184656\n hash sha512\n\
@@ -606,27 +587,30 @@ nodes:
           !\n!\n!\n!\n!\ninterface Loopback0\n ip address 10.100.1.3 255.255.255.255\n\
           \ ip pim sparse-mode\n!\ninterface Ethernet0/0\n no switchport\n ip address\
           \ 10.100.2.18 255.255.255.240\n ip pim sparse-mode\n!\ninterface Ethernet0/1\n\
-          \ no switchport\n ip address 10.100.99.1 255.255.255.128\n ip pim sparse-mode\n\
-          !\ninterface Ethernet0/2\n no switchport\n ip address 10.100.2.34 255.255.255.240\n\
-          \ ip pim sparse-mode\n!\ninterface Ethernet0/3\n!\n!\nrouter eigrp LAB\n\
-          \ !\n address-family ipv4 unicast autonomous-system 65000\n  !\n  af-interface\
-          \ default\n   passive-interface\n  exit-af-interface\n  !\n  af-interface\
-          \ Ethernet0/0\n   no passive-interface\n  exit-af-interface\n  !\n  af-interface\
-          \ Ethernet0/2\n   no passive-interface\n  exit-af-interface\n  !\n  topology\
-          \ base\n  exit-af-topology\n  network 10.0.0.0\n exit-address-family\n!\n\
-          ip forward-protocol nd\nip forward-protocol udp\n!\n!\nip http server\n\
+          \ switchport access vlan 99\n spanning-tree portfast\n!\ninterface Ethernet0/2\n\
+          \ no switchport\n ip address 10.100.2.34 255.255.255.240\n ip pim sparse-mode\n\
+          !\ninterface Ethernet0/3\n switchport access vlan 99\n spanning-tree portfast\n\
+          !\ninterface Vlan1\n ip address 10.100.198.1 255.255.255.0\n ip pim sparse-mode\n\
+          !\ninterface Vlan99\n ip address 10.100.99.1 255.255.255.0\n ip pim sparse-mode\n\
+          !\n!\nrouter eigrp LAB\n !\n address-family ipv4 unicast autonomous-system\
+          \ 65000\n  !\n  af-interface default\n   passive-interface\n  exit-af-interface\n\
+          \  !\n  af-interface Ethernet0/0\n   no passive-interface\n  exit-af-interface\n\
+          \  !\n  af-interface Ethernet0/2\n   no passive-interface\n  exit-af-interface\n\
+          \  !\n  topology base\n  exit-af-topology\n  network 10.0.0.0\n exit-address-family\n\
+          !\nip forward-protocol nd\nip forward-protocol udp\n!\n!\nip http server\n\
           ip http secure-server\nip ssh bulk-mode 131072\n!\nno logging btrace\nlogging\
-          \ host 10.0.0.84\n!\n!\n!\n!\n!\ncontrol-plane\n!\n!\nalias exec q exit\n\
-          !\nline con 0\n exec-timeout 0 0\n logging synchronous\nline aux 0\nline\
-          \ vty 0 4\n exec-timeout 0 0\n logging synchronous\n transport input ssh\n\
-          !\n!\nend"
+          \ host 10.0.0.149\n!\ntacacs server LAB\n address ipv4 10.0.0.149\n key\
+          \ 7 05061F1C244F5C0C0D0E120B\n!\n!\n!\n!\ncontrol-plane\n!\n!\nalias exec\
+          \ q exit\n!\nline con 0\n exec-timeout 0 0\n logging synchronous\nline aux\
+          \ 0\nline vty 0 4\n exec-timeout 0 0\n logging synchronous\n transport input\
+          \ ssh\n!\n!\nend"
     cpu_limit: null
     cpus: null
     data_volume: null
     hide_links: false
-    id: n7
+    id: n6
     image_definition: null
-    label: sw
+    label: s1
     node_definition: ioll2-xe
     parameters: {}
     ram: null
@@ -658,9 +642,30 @@ nodes:
         mac_address: null
         type: physical
         slot: 3
+  - boot_disk_size: null
+    configuration: []
+    cpu_limit: null
+    cpus: null
+    data_volume: null
+    hide_links: false
+    id: n7
+    image_definition: null
+    label: host3
+    node_definition: ubuntu
+    parameters: {}
+    ram: null
+    tags: []
+    x: 440
+    y: -360
+    interfaces:
+      - id: i0
+        label: ens2
+        mac_address: null
+        type: physical
+        slot: 0
 links:
   - id: l0
-    n1: n5
+    n1: n4
     n2: n1
     i1: i4
     i2: i0
@@ -668,7 +673,7 @@ links:
     label: r1-GigabitEthernet4<->ext-conn-0-port
   - id: l1
     n1: n0
-    n2: n5
+    n2: n4
     i1: i1
     i2: i1
     conditioning: {}
@@ -682,32 +687,39 @@ links:
     label: r2-GigabitEthernet2<->l2-ens2
   - id: l3
     n1: n0
-    n2: n6
+    n2: n5
     i1: i3
     i2: i1
     conditioning: {}
     label: r2-GigabitEthernet3<->guestshell-GigabitEthernet1
   - id: l4
-    n1: n5
-    n2: n7
+    n1: n4
+    n2: n6
     i1: i2
     i2: i1
     conditioning: {}
     label: r1-GigabitEthernet2<->sw-Ethernet0/0
   - id: l5
-    n1: n7
-    n2: n2
-    i1: i2
-    i2: i0
-    conditioning: {}
-    label: sw-Ethernet0/1<->l1-ens2
-  - id: l6
-    n1: n7
+    n1: n6
     n2: n0
     i1: i3
     i2: i4
     conditioning: {}
     label: sw-Ethernet0/2<->r2-GigabitEthernet4
+  - id: l6
+    n1: n6
+    n2: n2
+    i1: i2
+    i2: i0
+    conditioning: {}
+    label: s1-Ethernet0/1<->host1-ens2
+  - id: l7
+    n1: n6
+    n2: n7
+    i1: i4
+    i2: i0
+    conditioning: {}
+    label: s1-Ethernet0/3<->host3-ens2
 lab:
   description: ''
   notes: ''
