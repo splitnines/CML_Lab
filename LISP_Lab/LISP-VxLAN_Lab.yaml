@@ -4,8 +4,8 @@ nodes:
   - boot_disk_size: null
     configuration:
       - name: ios_config.txt
-        content: "Building configuration...\n\nCurrent configuration : 5906 bytes\n\
-          !\n! Last configuration change at 03:32:14 UTC Tue Mar 24 2026\n!\nversion\
+        content: "Building configuration...\n\nCurrent configuration : 5927 bytes\n\
+          !\n! Last configuration change at 02:01:11 UTC Tue Apr 21 2026\n!\nversion\
           \ 17.16\nservice timestamps debug datetime msec\nservice timestamps log\
           \ datetime msec\nservice password-encryption\n!\nhostname edge-1\n!\nboot-start-marker\n\
           boot-end-marker\n!\n!\nvrf definition A\n rd 65000:10\n !\n address-family\
@@ -83,10 +83,11 @@ nodes:
           \ Loopback0\n exit-router-lisp\n!\nrouter isis\n net 49.0000.0100.0005.00\n\
           \ metric-style wide\n log-adjacency-changes\n!\nip forward-protocol nd\n\
           ip forward-protocol udp\n!\n!\nip http server\nip http secure-server\nip\
-          \ ssh bulk-mode 131072\n!\nno logging btrace\nlogging host 10.0.0.84\n!\n\
-          !\n!\ncontrol-plane\n!\n!\nalias exec q exit\n!\nline con 0\n exec-timeout\
-          \ 0 0\n logging synchronous\nline aux 0\nline vty 0 4\n exec-timeout 0 0\n\
-          \ logging synchronous\n login local\n transport input ssh\n!\n!\nend"
+          \ ssh bulk-mode 131072\nip scp server enable\n!\nno logging btrace\nlogging\
+          \ host 10.0.0.84\n!\n!\n!\ncontrol-plane\n!\n!\nalias exec q exit\n!\nline\
+          \ con 0\n exec-timeout 0 0\n logging synchronous\nline aux 0\nline vty 0\
+          \ 4\n exec-timeout 0 0\n logging synchronous\n login local\n transport input\
+          \ ssh\n!\n!\nend"
     cpu_limit: null
     cpus: null
     data_volume: null
@@ -148,8 +149,8 @@ nodes:
   - boot_disk_size: null
     configuration:
       - name: ios_config.txt
-        content: "Building configuration...\n\nCurrent configuration : 5906 bytes\n\
-          !\n! Last configuration change at 03:32:14 UTC Tue Mar 24 2026\n!\nversion\
+        content: "Building configuration...\n\nCurrent configuration : 5927 bytes\n\
+          !\n! Last configuration change at 02:01:11 UTC Tue Apr 21 2026\n!\nversion\
           \ 17.16\nservice timestamps debug datetime msec\nservice timestamps log\
           \ datetime msec\nservice password-encryption\n!\nhostname edge-2\n!\nboot-start-marker\n\
           boot-end-marker\n!\n!\nvrf definition A\n rd 65000:10\n !\n address-family\
@@ -227,10 +228,11 @@ nodes:
           \ Loopback0\n exit-router-lisp\n!\nrouter isis\n net 49.0000.0100.0006.00\n\
           \ metric-style wide\n log-adjacency-changes\n!\nip forward-protocol nd\n\
           ip forward-protocol udp\n!\n!\nip http server\nip http secure-server\nip\
-          \ ssh bulk-mode 131072\n!\nno logging btrace\nlogging host 10.0.0.84\n!\n\
-          !\n!\ncontrol-plane\n!\n!\nalias exec q exit\n!\nline con 0\n exec-timeout\
-          \ 0 0\n logging synchronous\nline aux 0\nline vty 0 4\n exec-timeout 0 0\n\
-          \ logging synchronous\n login local\n transport input ssh\n!\n!\nend"
+          \ ssh bulk-mode 131072\nip scp server enable\n!\nno logging btrace\nlogging\
+          \ host 10.0.0.84\n!\n!\n!\ncontrol-plane\n!\n!\nalias exec q exit\n!\nline\
+          \ con 0\n exec-timeout 0 0\n logging synchronous\nline aux 0\nline vty 0\
+          \ 4\n exec-timeout 0 0\n logging synchronous\n login local\n transport input\
+          \ ssh\n!\n!\nend"
     cpu_limit: null
     cpus: null
     data_volume: null
@@ -292,8 +294,8 @@ nodes:
   - boot_disk_size: null
     configuration:
       - name: ios_config.txt
-        content: "Building configuration...\n\nCurrent configuration : 4177 bytes\n\
-          !\n! Last configuration change at 03:32:14 UTC Tue Mar 24 2026\n!\nversion\
+        content: "Building configuration...\n\nCurrent configuration : 4178 bytes\n\
+          !\n! Last configuration change at 02:01:11 UTC Tue Apr 21 2026\n!\nversion\
           \ 17.16\nservice timestamps debug datetime msec\nservice timestamps log\
           \ datetime msec\nservice password-encryption\n!\nhostname underlay-1\n!\n\
           boot-start-marker\nboot-end-marker\n!\n!\nno logging console\nno aaa new-model\n\
@@ -347,10 +349,10 @@ nodes:
           !\nrouter isis\n net 49.0000.0100.0002.00\n metric-style wide\n log-adjacency-changes\n\
           !\nip forward-protocol nd\nip forward-protocol udp\n!\n!\nip http server\n\
           ip http secure-server\nip ssh bulk-mode 131072\n!\nno logging btrace\nlogging\
-          \ host 10.0.0.84\n!\n!\n!\ncontrol-plane\n!\n!\nalias exec q exit\n!\nline\
-          \ con 0\n exec-timeout 0 0\n logging synchronous\nline aux 0\nline vty 0\
-          \ 4\n exec-timeout 0 0\n logging synchronous\n login local\n transport input\
-          \ ssh\n!\n!\nend"
+          \ host 10.0.0.149\n!\n!\n!\ncontrol-plane\n!\n!\nalias exec q exit\n!\n\
+          line con 0\n exec-timeout 0 0\n logging synchronous\nline aux 0\nline vty\
+          \ 0 4\n exec-timeout 0 0\n logging synchronous\n login local\n transport\
+          \ input ssh\n!\n!\nend"
     cpu_limit: null
     cpus: null
     data_volume: null
@@ -413,7 +415,7 @@ nodes:
     configuration:
       - name: ios_config.txt
         content: "Building configuration...\n\nCurrent configuration : 4177 bytes\n\
-          !\n! Last configuration change at 03:32:14 UTC Tue Mar 24 2026\n!\nversion\
+          !\n! Last configuration change at 02:01:11 UTC Tue Apr 21 2026\n!\nversion\
           \ 17.16\nservice timestamps debug datetime msec\nservice timestamps log\
           \ datetime msec\nservice password-encryption\n!\nhostname underlay-2\n!\n\
           boot-start-marker\nboot-end-marker\n!\n!\nno logging console\nno aaa new-model\n\
@@ -532,8 +534,8 @@ nodes:
   - boot_disk_size: null
     configuration:
       - name: ios_config.txt
-        content: "Building configuration...\n\nCurrent configuration : 5681 bytes\n\
-          !\n! Last configuration change at 03:32:14 UTC Tue Mar 24 2026\n!\nversion\
+        content: "Building configuration...\n\nCurrent configuration : 5920 bytes\n\
+          !\n! Last configuration change at 02:01:13 UTC Tue Apr 21 2026\n!\nversion\
           \ 17.16\nservice timestamps debug datetime msec\nservice timestamps log\
           \ datetime msec\nservice password-encryption\n!\nhostname fusion-1\n!\n\
           boot-start-marker\nboot-end-marker\n!\n!\nvrf definition A\n rd 65000:10\n\
@@ -594,19 +596,23 @@ nodes:
           \ metric-style wide\n log-adjacency-changes\n passive-interface Ethernet0/2\n\
           !\nrouter bgp 65100\n bgp router-id 10.254.0.1\n bgp log-neighbor-changes\n\
           \ neighbor 10.255.0.2 remote-as 65200\n !\n address-family ipv4\n  network\
-          \ 10.0.0.0 mask 255.255.255.0\n  neighbor 10.255.0.2 activate\n  default-information\
-          \ originate\n exit-address-family\n !\n address-family ipv4 vrf A\n  neighbor\
-          \ 10.255.0.6 remote-as 65200\n  neighbor 10.255.0.6 activate\n  default-information\
-          \ originate\n exit-address-family\n !\n address-family ipv4 vrf B\n  neighbor\
-          \ 10.255.0.10 remote-as 65200\n  neighbor 10.255.0.10 activate\n  default-information\
-          \ originate\n exit-address-family\n!\nip forward-protocol nd\nip forward-protocol\
-          \ udp\n!\n!\nip http server\nip http secure-server\nip route 10.10.0.0 255.255.255.0\
-          \ Ethernet0/0.10 name vrf_10\nip route 10.20.0.0 255.255.255.0 Ethernet0/0.20\
-          \ name vrf_B\nip route 10.255.0.4 255.255.255.252 Ethernet0/0.10 name vrf_10\n\
-          ip route 10.255.0.8 255.255.255.252 Ethernet0/0.20 name vrf_B\nip ssh bulk-mode\
-          \ 131072\n!\nip prefix-list DEFAULT seq 10 permit 0.0.0.0/0\n!\nip prefix-list\
-          \ GLOBAL_ROUTES seq 10 permit 10.0.0.0/24\nno logging btrace\nlogging host\
-          \ 10.0.0.84\nroute-map GLOBAL_ROUTES permit 10\n match ip address prefix-list\
+          \ 10.0.0.0 mask 255.255.255.0\n  network 10.10.0.0 mask 255.255.255.0\n\
+          \  network 10.20.0.0 mask 255.255.255.0\n  neighbor 10.255.0.2 activate\n\
+          \  default-information originate\n exit-address-family\n !\n address-family\
+          \ ipv4 vrf A\n  neighbor 10.255.0.6 remote-as 65200\n  neighbor 10.255.0.6\
+          \ activate\n  default-information originate\n exit-address-family\n !\n\
+          \ address-family ipv4 vrf B\n  neighbor 10.255.0.10 remote-as 65200\n  neighbor\
+          \ 10.255.0.10 activate\n  default-information originate\n exit-address-family\n\
+          !\nip forward-protocol nd\nip forward-protocol udp\n!\n!\nip http server\n\
+          ip http secure-server\nip route 0.0.0.0 0.0.0.0 Ethernet0/2 10.0.0.149\n\
+          ip route 10.10.0.0 255.255.255.0 Ethernet0/0.10 name vrf_10\nip route 10.20.0.0\
+          \ 255.255.255.0 Ethernet0/0.20 name vrf_B\nip route 10.255.0.4 255.255.255.252\
+          \ Ethernet0/0.10 name vrf_10\nip route 10.255.0.8 255.255.255.252 Ethernet0/0.20\
+          \ name vrf_B\nip ssh bulk-mode 131072\n!\nip prefix-list DEFAULT seq 10\
+          \ permit 0.0.0.0/0\n!\nip prefix-list GLOBAL_ROUTES seq 10 permit 10.0.0.0/24\n\
+          ip prefix-list GLOBAL_ROUTES seq 20 permit 10.10.0.0/24\nip prefix-list\
+          \ GLOBAL_ROUTES seq 30 permit 10.20.0.0/24\nno logging btrace\nlogging host\
+          \ 10.0.0.149\nroute-map GLOBAL_ROUTES permit 10\n match ip address prefix-list\
           \ GLOBAL_ROUTES\n!\nroute-map DEFAULT permit 10\n match ip address prefix-list\
           \ DEFAULT\n!\n!\n!\n!\ncontrol-plane\n!\n!\nalias exec q exit\n!\nline con\
           \ 0\n exec-timeout 0 0\n logging synchronous\nline aux 0\nline vty 0 4\n\
@@ -673,8 +679,8 @@ nodes:
   - boot_disk_size: null
     configuration:
       - name: ios_config.txt
-        content: "Building configuration...\n\nCurrent configuration : 7395 bytes\n\
-          !\n! Last configuration change at 03:32:14 UTC Tue Mar 24 2026\n!\nversion\
+        content: "Building configuration...\n\nCurrent configuration : 7396 bytes\n\
+          !\n! Last configuration change at 02:01:11 UTC Tue Apr 21 2026\n!\nversion\
           \ 17.16\nservice timestamps debug datetime msec\nservice timestamps log\
           \ datetime msec\nservice password-encryption\n!\nhostname BxC-1\n!\nboot-start-marker\n\
           boot-end-marker\n!\n!\nvrf definition A\n rd 65000:10\n !\n address-family\
@@ -772,7 +778,7 @@ nodes:
           \ summary-only\n  redistribute lisp metric 10\n  neighbor 10.255.0.9 remote-as\
           \ 65100\n  neighbor 10.255.0.9 activate\n exit-address-family\n!\nip forward-protocol\
           \ nd\nip forward-protocol udp\n!\n!\nip http server\nip http secure-server\n\
-          ip ssh bulk-mode 131072\nno logging btrace\nlogging host 10.0.0.84\n!\n\
+          ip ssh bulk-mode 131072\nno logging btrace\nlogging host 10.0.0.149\n!\n\
           !\n!\ncontrol-plane\n!\n!\nalias exec q exit\n!\nline con 0\n exec-timeout\
           \ 0 0\n logging synchronous\nline aux 0\nline vty 0 4\n exec-timeout 0 0\n\
           \ logging synchronous\n login local\n transport input ssh\n!\n!\n!\n!\n\
@@ -904,7 +910,7 @@ nodes:
     configuration:
       - name: ios_config.txt
         content: "Building configuration...\n\nCurrent configuration : 5906 bytes\n\
-          !\n! Last configuration change at 03:32:14 UTC Tue Mar 24 2026\n!\nversion\
+          !\n! Last configuration change at 02:01:11 UTC Tue Apr 21 2026\n!\nversion\
           \ 17.16\nservice timestamps debug datetime msec\nservice timestamps log\
           \ datetime msec\nservice password-encryption\n!\nhostname edge-3\n!\nboot-start-marker\n\
           boot-end-marker\n!\n!\nvrf definition A\n rd 65000:10\n !\n address-family\
@@ -1151,19 +1157,19 @@ links:
     conditioning: {}
     label: Edge-3-Ethernet0/1<->Underlay-2-Ethernet1/0
   - id: l12
-    n1: n10
-    n2: n9
-    i1: i0
-    i2: i4
-    conditioning: {}
-    label: alpine-0-eth0<->Edge-3-Ethernet0/3
-  - id: l13
     n1: n8
     n2: n1
     i1: i0
     i2: i3
     conditioning: {}
     label: ubuntu-1-ens2<->Edge-2-Ethernet0/2
+  - id: l13
+    n1: n10
+    n2: n9
+    i1: i0
+    i2: i4
+    conditioning: {}
+    label: alpine-0-eth0<->Edge-3-Ethernet0/3
 lab:
   description: ''
   notes: ''
