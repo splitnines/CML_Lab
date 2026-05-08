@@ -27,8 +27,8 @@ nodes:
   - boot_disk_size: null
     configuration:
       - name: iosxe_config.txt
-        content: "Building configuration...\n\nCurrent configuration : 4581 bytes\n\
-          !\n! Last configuration change at 03:39:49 UTC Thu Apr 2 2026\n!\nversion\
+        content: "Building configuration...\n\nCurrent configuration : 6953 bytes\n\
+          !\n! Last configuration change at 14:33:01 UTC Fri May 8 2026\n!\nversion\
           \ 17.16\nservice timestamps debug datetime msec\nservice timestamps log\
           \ datetime msec\nservice password-encryption\nplatform qfp utilization monitor\
           \ load 80\nplatform sslvpn use-pd\nplatform console serial\n!\nhostname\
@@ -36,59 +36,91 @@ nodes:
           no aaa new-model\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\nno ip domain lookup\n\
           ip domain name cml.lab\n!\n!\n!\nlogin on-success log\n!\n!\nsubscriber\
           \ templating\nipv6 unicast-routing\n!\n!\n!\ncrypto pki trustpoint SLA-TrustPoint\n\
-          \ enrollment pkcs12\n revocation-check crl\n hash sha512\n!\n!\ncrypto pki\
-          \ certificate chain SLA-TrustPoint\n certificate ca 01\n  30820321 30820209\
-          \ A0030201 02020101 300D0609 2A864886 F70D0101 0B050030\n  32310E30 0C060355\
-          \ 040A1305 43697363 6F312030 1E060355 04031317 43697363\n  6F204C69 63656E73\
-          \ 696E6720 526F6F74 20434130 1E170D31 33303533 30313934\n  3834375A 170D3338\
-          \ 30353330 31393438 34375A30 32310E30 0C060355 040A1305\n  43697363 6F312030\
-          \ 1E060355 04031317 43697363 6F204C69 63656E73 696E6720\n  526F6F74 20434130\
-          \ 82012230 0D06092A 864886F7 0D010101 05000382 010F0030\n  82010A02 82010100\
-          \ A6BCBD96 131E05F7 145EA72C 2CD686E6 17222EA1 F1EFF64D\n  CBB4C798 212AA147\
-          \ C655D8D7 9471380D 8711441E 1AAF071A 9CAE6388 8A38E520\n  1C394D78 462EF239\
-          \ C659F715 B98C0A59 5BBB5CBD 0CFEBEA3 700A8BF7 D8F256EE\n  4AA4E80D DB6FD1C9\
-          \ 60B1FD18 FFC69C96 6FA68957 A2617DE7 104FDC5F EA2956AC\n  7390A3EB 2B5436AD\
-          \ C847A2C5 DAB553EB 69A9A535 58E9F3E3 C0BD23CF 58BD7188\n  68E69491 20F320E7\
-          \ 948E71D7 AE3BCC84 F10684C7 4BC8E00F 539BA42B 42C68BB7\n  C7479096 B4CB2D62\
-          \ EA2F505D C7B062A4 6811D95B E8250FC4 5D5D5FB8 8F27D191\n  C55F0D76 61F9A4CD\
-          \ 3D992327 A8BB03BD 4E6D7069 7CBADF8B DF5F4368 95135E44\n  DFC7C6CF 04DD7FD1\
-          \ 02030100 01A34230 40300E06 03551D0F 0101FF04 04030201\n  06300F06 03551D13\
-          \ 0101FF04 05300301 01FF301D 0603551D 0E041604 1449DC85\n  4B3D31E5 1B3E6A17\
-          \ 606AF333 3D3B4C73 E8300D06 092A8648 86F70D01 010B0500\n  03820101 00507F24\
-          \ D3932A66 86025D9F E838AE5C 6D4DF6B0 49631C78 240DA905\n  604EDCDE FF4FED2B\
-          \ 77FC460E CD636FDB DD44681E 3A5673AB 9093D3B1 6C9E3D8B\n  D98987BF E40CBD9E\
-          \ 1AECA0C2 2189BB5C 8FA85686 CD98B646 5575B146 8DFC66A8\n  467A3DF4 4D565700\
-          \ 6ADF0F0D CF835015 3C04FF7C 21E878AC 11BA9CD2 55A9232C\n  7CA7B7E6 C1AF74F6\
-          \ 152E99B7 B1FCF9BB E973DE7F 5BDDEB86 C71E3B49 1765308B\n  5FB0DA06 B92AFE7F\
-          \ 494E8A9E 07B85737 F3A58BE1 1A48A229 C37C1E69 39F08678\n  80DDCD16 D6BACECA\
-          \ EEBC7CF9 8428787B 35202CDC 60E4616A B623CDBD 230E3AFB\n  418616A9 4093E049\
-          \ 4D10AB75 27E86F73 932E35B5 8862FDAE 0275156F 719BB2F0\n  D697DF7F 28\n\
-          \  \tquit\n!\n!\nlicense udi pid C8000V sn 95QKMVOEWCH\nmemory free low-watermark\
-          \ processor 165529\ndiagnostic bootup level minimal\n!\n!\n!\nusername cisco\
-          \ privilege 15 password 7 104D000A0618\n!\nredundancy\n!\n!\n!\n!\n!\n!\n\
-          !\n!\n!\n!\ninterface Loopback0\n ip address 10.1.1.1 255.255.255.0\n ipv6\
-          \ address 2001:CAFE:1:1::1/64\n!\ninterface GigabitEthernet1\n ip address\
-          \ 10.192.1.1 255.255.255.0\n negotiation auto\n ipv6 address 2001:CAFE:1:2::1/64\n\
-          !\ninterface GigabitEthernet2\n ip address 10.192.2.1 255.255.255.0\n negotiation\
-          \ auto\n ipv6 address 2001:CAFE:1:3::1/64\n!\ninterface GigabitEthernet3\n\
-          \ ip address 10.0.0.248 255.255.255.0\n negotiation auto\n!\ninterface GigabitEthernet4\n\
-          \ no ip address\n shutdown\n negotiation auto\n!\ninterface GigabitEthernet5\n\
+          \ enrollment pkcs12\n revocation-check crl\n hash sha512\n!\ncrypto pki\
+          \ trustpoint TP-self-signed-1293177708\n enrollment selfsigned\n subject-name\
+          \ cn=IOS-Self-Signed-Certificate-1293177708\n revocation-check none\n rsakeypair\
+          \ TP-self-signed-1293177708\n hash sha512\n!\n!\ncrypto pki certificate\
+          \ chain SLA-TrustPoint\n certificate ca 01\n  30820321 30820209 A0030201\
+          \ 02020101 300D0609 2A864886 F70D0101 0B050030\n  32310E30 0C060355 040A1305\
+          \ 43697363 6F312030 1E060355 04031317 43697363\n  6F204C69 63656E73 696E6720\
+          \ 526F6F74 20434130 1E170D31 33303533 30313934\n  3834375A 170D3338 30353330\
+          \ 31393438 34375A30 32310E30 0C060355 040A1305\n  43697363 6F312030 1E060355\
+          \ 04031317 43697363 6F204C69 63656E73 696E6720\n  526F6F74 20434130 82012230\
+          \ 0D06092A 864886F7 0D010101 05000382 010F0030\n  82010A02 82010100 A6BCBD96\
+          \ 131E05F7 145EA72C 2CD686E6 17222EA1 F1EFF64D\n  CBB4C798 212AA147 C655D8D7\
+          \ 9471380D 8711441E 1AAF071A 9CAE6388 8A38E520\n  1C394D78 462EF239 C659F715\
+          \ B98C0A59 5BBB5CBD 0CFEBEA3 700A8BF7 D8F256EE\n  4AA4E80D DB6FD1C9 60B1FD18\
+          \ FFC69C96 6FA68957 A2617DE7 104FDC5F EA2956AC\n  7390A3EB 2B5436AD C847A2C5\
+          \ DAB553EB 69A9A535 58E9F3E3 C0BD23CF 58BD7188\n  68E69491 20F320E7 948E71D7\
+          \ AE3BCC84 F10684C7 4BC8E00F 539BA42B 42C68BB7\n  C7479096 B4CB2D62 EA2F505D\
+          \ C7B062A4 6811D95B E8250FC4 5D5D5FB8 8F27D191\n  C55F0D76 61F9A4CD 3D992327\
+          \ A8BB03BD 4E6D7069 7CBADF8B DF5F4368 95135E44\n  DFC7C6CF 04DD7FD1 02030100\
+          \ 01A34230 40300E06 03551D0F 0101FF04 04030201\n  06300F06 03551D13 0101FF04\
+          \ 05300301 01FF301D 0603551D 0E041604 1449DC85\n  4B3D31E5 1B3E6A17 606AF333\
+          \ 3D3B4C73 E8300D06 092A8648 86F70D01 010B0500\n  03820101 00507F24 D3932A66\
+          \ 86025D9F E838AE5C 6D4DF6B0 49631C78 240DA905\n  604EDCDE FF4FED2B 77FC460E\
+          \ CD636FDB DD44681E 3A5673AB 9093D3B1 6C9E3D8B\n  D98987BF E40CBD9E 1AECA0C2\
+          \ 2189BB5C 8FA85686 CD98B646 5575B146 8DFC66A8\n  467A3DF4 4D565700 6ADF0F0D\
+          \ CF835015 3C04FF7C 21E878AC 11BA9CD2 55A9232C\n  7CA7B7E6 C1AF74F6 152E99B7\
+          \ B1FCF9BB E973DE7F 5BDDEB86 C71E3B49 1765308B\n  5FB0DA06 B92AFE7F 494E8A9E\
+          \ 07B85737 F3A58BE1 1A48A229 C37C1E69 39F08678\n  80DDCD16 D6BACECA EEBC7CF9\
+          \ 8428787B 35202CDC 60E4616A B623CDBD 230E3AFB\n  418616A9 4093E049 4D10AB75\
+          \ 27E86F73 932E35B5 8862FDAE 0275156F 719BB2F0\n  D697DF7F 28\n  \tquit\n\
+          crypto pki certificate chain TP-self-signed-1293177708\n certificate self-signed\
+          \ 01\n  30820330 30820218 A0030201 02020101 300D0609 2A864886 F70D0101 0D050030\n\
+          \  31312F30 2D060355 04030C26 494F532D 53656C66 2D536967 6E65642D 43657274\n\
+          \  69666963 6174652D 31323933 31373737 3038301E 170D3236 30353038 31333037\n\
+          \  30325A17 0D333630 35303731 33303730 325A3031 312F302D 06035504 030C2649\n\
+          \  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D31 32393331\n\
+          \  37373730 38308201 22300D06 092A8648 86F70D01 01010500 0382010F 00308201\n\
+          \  0A028201 0100B2F6 EA79F495 E6EB2AA0 0FA550C5 B526E3F1 F1582C0D 45283CA9\n\
+          \  FB88A537 719C46E4 0D8C93CC E408BD05 ABC42D5D 1421516F F26868CB 71E684FF\n\
+          \  5B817BF9 E8533BFE 3136E462 16BE51CA 3CCCFFE6 621EC893 77F33A56 2663C390\n\
+          \  61050690 DB3D47AD A92D70CB 4930FD10 FB86C238 C0B65292 A661080B 883875CF\n\
+          \  7ABE10C8 C1342E2B 587F85ED 6828343A 558E2889 3834F25F 1CA6B602 17FAEB05\n\
+          \  C4A9F816 5814FD1B 59A455B5 F29E044D F0D71FB3 66C4B913 52255923 54ABBBC5\n\
+          \  C6C59558 2C81A90E F9A172A9 6BD81697 AF27A6FB DF4F6486 359770F5 4D6075DE\n\
+          \  D5FF295C 4889709B 2CE42BF2 8AFDF569 B1EE9AFA 4BDD9600 B7AEA9F1 6185ECA9\n\
+          \  92BA8C91 A0550203 010001A3 53305130 1D060355 1D0E0416 0414333C C468F3D9\n\
+          \  61EC4339 4FFF219D 847775F8 D945301F 0603551D 23041830 16801433 3CC468F3\n\
+          \  D961EC43 394FFF21 9D847775 F8D94530 0F060355 1D130101 FF040530 030101FF\n\
+          \  300D0609 2A864886 F70D0101 0D050003 82010100 8FFD4C8E 43769E28 A41CD30C\n\
+          \  05647593 468F922D 64D325CB 4B116094 8E9FDD9F 76BBB2DB D9E18FB9 6D18042E\n\
+          \  F05E6F72 91D931A3 A806216B 3BD2D15A A698D9E5 DFF8A4F8 0CE6D71F C2460825\n\
+          \  4C56F6F7 2728E08C 9F76BD06 98AE24BC 39EC0006 A46D2CDD DC0F68EB B9B609D4\n\
+          \  E7B52CCA C331FBA1 00D02942 1F1839A8 0336D0A3 79EDDF3A 31E9A0B3 F8093A3B\n\
+          \  B75DCA1F C95C3798 A404269F 0299C863 559619E1 0FE3EEC4 4995EDB3 4B6409B4\n\
+          \  1C86DD51 31D0E7BF 023977B7 FD2F569B AFFB9971 CDAA0660 299A1267 5966E14B\n\
+          \  27C80850 7C79D450 7E4FFB23 C420914B 286B0CC3 0088A847 02D5CCC7 A3533B78\n\
+          \  35BA1653 F18ADA1C 3846AA5F 535BE428 BCDCEBA6\n  \tquit\n!\n!\nlicense\
+          \ udi pid C8000V sn 95QKMVOEWCH\nmemory free low-watermark processor 165529\n\
+          diagnostic bootup level minimal\n!\n!\n!\nusername cisco privilege 15 password\
+          \ 7 104D000A0618\n!\nredundancy\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\ninterface\
+          \ Loopback0\n ip address 10.1.1.1 255.255.255.0\n ipv6 address 2001:CAFE:1:1::1/64\n\
+          !\ninterface GigabitEthernet1\n ip address 10.192.1.1 255.255.255.0\n negotiation\
+          \ auto\n ipv6 address 2001:CAFE:1:2::1/64\n!\ninterface GigabitEthernet2\n\
+          \ ip address 10.192.2.1 255.255.255.0\n negotiation auto\n ipv6 address\
+          \ 2001:CAFE:1:3::1/64\n!\ninterface GigabitEthernet3\n ip address 10.0.0.248\
+          \ 255.255.255.0\n negotiation auto\n!\ninterface GigabitEthernet4\n no ip\
+          \ address\n shutdown\n negotiation auto\n!\ninterface GigabitEthernet5\n\
           \ no ip address\n shutdown\n negotiation auto\n!\ninterface GigabitEthernet6\n\
           \ no ip address\n shutdown\n negotiation auto\n!\ninterface GigabitEthernet7\n\
           \ no ip address\n shutdown\n negotiation auto\n!\ninterface GigabitEthernet8\n\
           \ no ip address\n shutdown\n negotiation auto\n!\nrouter bgp 65001\n bgp\
           \ router-id 10.1.1.1\n bgp log-neighbor-changes\n no bgp default ipv4-unicast\n\
           \ neighbor 10.192.1.2 remote-as 65002\n neighbor 10.192.2.2 remote-as 65003\n\
-          \ neighbor 2001:CAFE:1:2::2 remote-as 65002\n neighbor 2001:CAFE:1:3::2\
-          \ remote-as 65003\n !\n address-family ipv4\n  network 10.0.0.0 mask 255.255.255.0\n\
-          \  network 10.1.1.0 mask 255.255.255.0\n  neighbor 10.192.1.2 activate\n\
-          \  neighbor 10.192.2.2 activate\n exit-address-family\n !\n address-family\
-          \ ipv6\n  network 2001:CAFE:1:1::/64\n  network 2001:CAFE:1:2::/64\n  network\
-          \ 2001:CAFE:1:3::/64\n  neighbor 2001:CAFE:1:2::2 activate\n  neighbor 2001:CAFE:1:3::2\
-          \ activate\n exit-address-family\n!\nip forward-protocol nd\nip forward-protocol\
+          \ !\n address-family ipv4\n  network 10.0.0.0 mask 255.255.255.0\n  network\
+          \ 10.1.1.0 mask 255.255.255.0\n  neighbor 10.192.1.2 activate\n  neighbor\
+          \ 10.192.2.2 activate\n exit-address-family\n !\n address-family ipv6\n\
+          \  network 2001:CAFE:1:1::/64\n  network 2001:CAFE:1:2::/64\n  network 2001:CAFE:1:3::/64\n\
+          \  neighbor 10.192.1.2 activate\n  neighbor 10.192.1.2 route-map AS65003-IPV6-NH\
+          \ out\n  neighbor 10.192.2.2 activate\n  neighbor 10.192.2.2 route-map AS65002-IPV6-NH\
+          \ out\n exit-address-family\n!\nip forward-protocol nd\nip forward-protocol\
           \ udp\n!\nno ip http server\nip http secure-server\nip route 0.0.0.0 0.0.0.0\
-          \ 10.0.0.149\nip ssh bulk-mode 131072\n!\nlogging host 10.0.0.149\n!\n!\n\
-          control-plane\n!\nalias exec q exit\n!\nline con 0\n exec-timeout 0 0\n\
+          \ 10.0.0.149\nip ssh bulk-mode 131072\n!\nlogging host 10.0.0.149\nroute-map\
+          \ AS65003-IPV6-NH permit 10\n set ipv6 next-hop 2001:CAFE:1:2::1\n!\nroute-map\
+          \ AS65002-IPV6-NH permit 10\n set ipv6 next-hop 2001:CAFE:1:3::1\n!\n!\n\
+          !\ncontrol-plane\n!\nalias exec q exit\n!\nline con 0\n exec-timeout 0 0\n\
           \ logging synchronous\n stopbits 1\nline aux 0\nline vty 0 4\n exec-timeout\
           \ 0 0\n logging synchronous\n login local\n transport input ssh\n!\n!\n\
           !\n!\n!\n!\n!\nend"
@@ -153,8 +185,8 @@ nodes:
   - boot_disk_size: null
     configuration:
       - name: iosxe_config.txt
-        content: "Building configuration...\n\nCurrent configuration : 4253 bytes\n\
-          !\n! Last configuration change at 03:39:49 UTC Thu Apr 2 2026\n!\nversion\
+        content: "Building configuration...\n\nCurrent configuration : 6499 bytes\n\
+          !\n! Last configuration change at 14:33:00 UTC Fri May 8 2026\n!\nversion\
           \ 17.16\nservice timestamps debug datetime msec\nservice timestamps log\
           \ datetime msec\nservice password-encryption\nplatform qfp utilization monitor\
           \ load 80\nplatform sslvpn use-pd\nplatform console serial\n!\nhostname\
@@ -162,57 +194,88 @@ nodes:
           no aaa new-model\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\nno ip domain lookup\n\
           ip domain name cml.lab\n!\n!\n!\nlogin on-success log\n!\n!\nsubscriber\
           \ templating\nipv6 unicast-routing\n!\n!\n!\ncrypto pki trustpoint SLA-TrustPoint\n\
-          \ enrollment pkcs12\n revocation-check crl\n hash sha512\n!\n!\ncrypto pki\
-          \ certificate chain SLA-TrustPoint\n certificate ca 01\n  30820321 30820209\
-          \ A0030201 02020101 300D0609 2A864886 F70D0101 0B050030\n  32310E30 0C060355\
-          \ 040A1305 43697363 6F312030 1E060355 04031317 43697363\n  6F204C69 63656E73\
-          \ 696E6720 526F6F74 20434130 1E170D31 33303533 30313934\n  3834375A 170D3338\
-          \ 30353330 31393438 34375A30 32310E30 0C060355 040A1305\n  43697363 6F312030\
-          \ 1E060355 04031317 43697363 6F204C69 63656E73 696E6720\n  526F6F74 20434130\
-          \ 82012230 0D06092A 864886F7 0D010101 05000382 010F0030\n  82010A02 82010100\
-          \ A6BCBD96 131E05F7 145EA72C 2CD686E6 17222EA1 F1EFF64D\n  CBB4C798 212AA147\
-          \ C655D8D7 9471380D 8711441E 1AAF071A 9CAE6388 8A38E520\n  1C394D78 462EF239\
-          \ C659F715 B98C0A59 5BBB5CBD 0CFEBEA3 700A8BF7 D8F256EE\n  4AA4E80D DB6FD1C9\
-          \ 60B1FD18 FFC69C96 6FA68957 A2617DE7 104FDC5F EA2956AC\n  7390A3EB 2B5436AD\
-          \ C847A2C5 DAB553EB 69A9A535 58E9F3E3 C0BD23CF 58BD7188\n  68E69491 20F320E7\
-          \ 948E71D7 AE3BCC84 F10684C7 4BC8E00F 539BA42B 42C68BB7\n  C7479096 B4CB2D62\
-          \ EA2F505D C7B062A4 6811D95B E8250FC4 5D5D5FB8 8F27D191\n  C55F0D76 61F9A4CD\
-          \ 3D992327 A8BB03BD 4E6D7069 7CBADF8B DF5F4368 95135E44\n  DFC7C6CF 04DD7FD1\
-          \ 02030100 01A34230 40300E06 03551D0F 0101FF04 04030201\n  06300F06 03551D13\
-          \ 0101FF04 05300301 01FF301D 0603551D 0E041604 1449DC85\n  4B3D31E5 1B3E6A17\
-          \ 606AF333 3D3B4C73 E8300D06 092A8648 86F70D01 010B0500\n  03820101 00507F24\
-          \ D3932A66 86025D9F E838AE5C 6D4DF6B0 49631C78 240DA905\n  604EDCDE FF4FED2B\
-          \ 77FC460E CD636FDB DD44681E 3A5673AB 9093D3B1 6C9E3D8B\n  D98987BF E40CBD9E\
-          \ 1AECA0C2 2189BB5C 8FA85686 CD98B646 5575B146 8DFC66A8\n  467A3DF4 4D565700\
-          \ 6ADF0F0D CF835015 3C04FF7C 21E878AC 11BA9CD2 55A9232C\n  7CA7B7E6 C1AF74F6\
-          \ 152E99B7 B1FCF9BB E973DE7F 5BDDEB86 C71E3B49 1765308B\n  5FB0DA06 B92AFE7F\
-          \ 494E8A9E 07B85737 F3A58BE1 1A48A229 C37C1E69 39F08678\n  80DDCD16 D6BACECA\
-          \ EEBC7CF9 8428787B 35202CDC 60E4616A B623CDBD 230E3AFB\n  418616A9 4093E049\
-          \ 4D10AB75 27E86F73 932E35B5 8862FDAE 0275156F 719BB2F0\n  D697DF7F 28\n\
-          \  \tquit\n!\n!\nlicense udi pid C8000V sn 916G6RVJP2B\nmemory free low-watermark\
-          \ processor 165529\ndiagnostic bootup level minimal\n!\n!\n!\nusername cisco\
-          \ privilege 15 password 7 05080F1C2243\n!\nredundancy\n!\n!\n!\n!\n!\n!\n\
-          !\n!\n!\n!\ninterface Loopback0\n ip address 10.2.2.2 255.255.255.0\n ipv6\
-          \ address 2001:BEEF:1:1::1/64\n!\ninterface GigabitEthernet1\n ip address\
-          \ 10.192.1.2 255.255.255.0\n negotiation auto\n ipv6 address 2001:CAFE:1:2::2/64\n\
-          !\ninterface GigabitEthernet2\n no ip address\n shutdown\n negotiation auto\n\
-          !\ninterface GigabitEthernet3\n no ip address\n shutdown\n negotiation auto\n\
-          !\ninterface GigabitEthernet4\n no ip address\n shutdown\n negotiation auto\n\
-          !\ninterface GigabitEthernet5\n no ip address\n shutdown\n negotiation auto\n\
-          !\ninterface GigabitEthernet6\n no ip address\n shutdown\n negotiation auto\n\
-          !\ninterface GigabitEthernet7\n no ip address\n shutdown\n negotiation auto\n\
-          !\ninterface GigabitEthernet8\n no ip address\n shutdown\n negotiation auto\n\
-          !\nrouter bgp 65002\n bgp router-id 10.2.2.2\n bgp log-neighbor-changes\n\
-          \ neighbor 10.192.1.1 remote-as 65001\n neighbor 2001:CAFE:1:2::1 remote-as\
+          \ enrollment pkcs12\n revocation-check crl\n hash sha512\n!\ncrypto pki\
+          \ trustpoint TP-self-signed-3348596122\n enrollment selfsigned\n subject-name\
+          \ cn=IOS-Self-Signed-Certificate-3348596122\n revocation-check none\n rsakeypair\
+          \ TP-self-signed-3348596122\n hash sha512\n!\n!\ncrypto pki certificate\
+          \ chain SLA-TrustPoint\n certificate ca 01\n  30820321 30820209 A0030201\
+          \ 02020101 300D0609 2A864886 F70D0101 0B050030\n  32310E30 0C060355 040A1305\
+          \ 43697363 6F312030 1E060355 04031317 43697363\n  6F204C69 63656E73 696E6720\
+          \ 526F6F74 20434130 1E170D31 33303533 30313934\n  3834375A 170D3338 30353330\
+          \ 31393438 34375A30 32310E30 0C060355 040A1305\n  43697363 6F312030 1E060355\
+          \ 04031317 43697363 6F204C69 63656E73 696E6720\n  526F6F74 20434130 82012230\
+          \ 0D06092A 864886F7 0D010101 05000382 010F0030\n  82010A02 82010100 A6BCBD96\
+          \ 131E05F7 145EA72C 2CD686E6 17222EA1 F1EFF64D\n  CBB4C798 212AA147 C655D8D7\
+          \ 9471380D 8711441E 1AAF071A 9CAE6388 8A38E520\n  1C394D78 462EF239 C659F715\
+          \ B98C0A59 5BBB5CBD 0CFEBEA3 700A8BF7 D8F256EE\n  4AA4E80D DB6FD1C9 60B1FD18\
+          \ FFC69C96 6FA68957 A2617DE7 104FDC5F EA2956AC\n  7390A3EB 2B5436AD C847A2C5\
+          \ DAB553EB 69A9A535 58E9F3E3 C0BD23CF 58BD7188\n  68E69491 20F320E7 948E71D7\
+          \ AE3BCC84 F10684C7 4BC8E00F 539BA42B 42C68BB7\n  C7479096 B4CB2D62 EA2F505D\
+          \ C7B062A4 6811D95B E8250FC4 5D5D5FB8 8F27D191\n  C55F0D76 61F9A4CD 3D992327\
+          \ A8BB03BD 4E6D7069 7CBADF8B DF5F4368 95135E44\n  DFC7C6CF 04DD7FD1 02030100\
+          \ 01A34230 40300E06 03551D0F 0101FF04 04030201\n  06300F06 03551D13 0101FF04\
+          \ 05300301 01FF301D 0603551D 0E041604 1449DC85\n  4B3D31E5 1B3E6A17 606AF333\
+          \ 3D3B4C73 E8300D06 092A8648 86F70D01 010B0500\n  03820101 00507F24 D3932A66\
+          \ 86025D9F E838AE5C 6D4DF6B0 49631C78 240DA905\n  604EDCDE FF4FED2B 77FC460E\
+          \ CD636FDB DD44681E 3A5673AB 9093D3B1 6C9E3D8B\n  D98987BF E40CBD9E 1AECA0C2\
+          \ 2189BB5C 8FA85686 CD98B646 5575B146 8DFC66A8\n  467A3DF4 4D565700 6ADF0F0D\
+          \ CF835015 3C04FF7C 21E878AC 11BA9CD2 55A9232C\n  7CA7B7E6 C1AF74F6 152E99B7\
+          \ B1FCF9BB E973DE7F 5BDDEB86 C71E3B49 1765308B\n  5FB0DA06 B92AFE7F 494E8A9E\
+          \ 07B85737 F3A58BE1 1A48A229 C37C1E69 39F08678\n  80DDCD16 D6BACECA EEBC7CF9\
+          \ 8428787B 35202CDC 60E4616A B623CDBD 230E3AFB\n  418616A9 4093E049 4D10AB75\
+          \ 27E86F73 932E35B5 8862FDAE 0275156F 719BB2F0\n  D697DF7F 28\n  \tquit\n\
+          crypto pki certificate chain TP-self-signed-3348596122\n certificate self-signed\
+          \ 01\n  30820330 30820218 A0030201 02020101 300D0609 2A864886 F70D0101 0D050030\n\
+          \  31312F30 2D060355 04030C26 494F532D 53656C66 2D536967 6E65642D 43657274\n\
+          \  69666963 6174652D 33333438 35393631 3232301E 170D3236 30353038 31333037\n\
+          \  30385A17 0D333630 35303731 33303730 385A3031 312F302D 06035504 030C2649\n\
+          \  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D33 33343835\n\
+          \  39363132 32308201 22300D06 092A8648 86F70D01 01010500 0382010F 00308201\n\
+          \  0A028201 01009E99 0F87999D 1290E8B1 01F97719 32C33BD7 FA117BEF 0C3E2739\n\
+          \  06F8394A 47549CE9 CB2982A0 607D2C1B 08B8636F C10E34FB 58E623D3 8750BD80\n\
+          \  D8B6CA62 038E5D47 B3B0894C D7AEC013 10DADD41 A5FA0CBE 84D97450 EC771659\n\
+          \  1FBFD18E E65DF6FA 10141FF0 7DDBA68D 0EEF8EE3 07CEB8F0 484D8EE8 441D98E0\n\
+          \  D6F49B84 A7C8031F B3A2E711 AB1547C1 B43A8357 F0ECD4AE 35DA9449 8D0916AC\n\
+          \  60029B97 FA9CDFF1 ADE01F64 3B4E8B71 F3C95805 DD816159 6F873684 3ED9ED88\n\
+          \  C7D1A4CB E4C2E497 7B9BF6CD F830D7F9 E46BB0B0 8C0ABA72 EC481A99 FCEDF661\n\
+          \  868F5BFC A0143DF5 9CAD7221 EE5BD3BF 898D0900 063C8113 82E53360 E239B1B2\n\
+          \  A767D471 CB7B0203 010001A3 53305130 1D060355 1D0E0416 0414DDF4 F810387A\n\
+          \  7A35967E 45A9478E AAFCBCDA 2B1D301F 0603551D 23041830 168014DD F4F81038\n\
+          \  7A7A3596 7E45A947 8EAAFCBC DA2B1D30 0F060355 1D130101 FF040530 030101FF\n\
+          \  300D0609 2A864886 F70D0101 0D050003 82010100 0CE5B615 ADDB1330 7A4D5122\n\
+          \  5AF2C7A5 D42DE0BD DB232F4F 32B503C5 AF4ABBEC AB980183 CA6605D4 5A8F568B\n\
+          \  2D1B1EAD A4A93091 F3D43A1E 089D44FA 9EE47449 A486DECB 485C860C 0A2988DD\n\
+          \  690CAFD5 50C31D3E E58A9C1C D31D50B9 ECFF4D29 0CBA721B E49175C1 8807B8B3\n\
+          \  38C922AA AD91C8B0 0FF76A0B 9DE86FB1 DEB84C23 C4CA06BB A39A1CCF FBD58421\n\
+          \  27F96334 D6EA4FDA 6116968B 3E4316C2 112EBAFA 56B5DA51 DE994023 28E7B925\n\
+          \  54714F58 C1017A80 8D2BE194 7EE050C8 4F6EF893 0CBC79B0 C776E504 2E43CDEF\n\
+          \  E9CB9D37 1D7D2DF6 04C85DDA 646E8F72 4D413A58 CF52033B D5B5BF35 058DC804\n\
+          \  2F5F401C 3973EEE6 F0C49003 C763CC77 3D3719B1\n  \tquit\n!\n!\nlicense\
+          \ udi pid C8000V sn 916G6RVJP2B\nmemory free low-watermark processor 165529\n\
+          diagnostic bootup level minimal\n!\n!\n!\nusername cisco privilege 15 password\
+          \ 7 05080F1C2243\n!\nredundancy\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\ninterface\
+          \ Loopback0\n ip address 10.2.2.2 255.255.255.0\n ipv6 address 2001:BEEF:1:1::1/64\n\
+          !\ninterface GigabitEthernet1\n ip address 10.192.1.2 255.255.255.0\n negotiation\
+          \ auto\n ipv6 address 2001:CAFE:1:2::2/64\n!\ninterface GigabitEthernet2\n\
+          \ no ip address\n shutdown\n negotiation auto\n!\ninterface GigabitEthernet3\n\
+          \ no ip address\n shutdown\n negotiation auto\n!\ninterface GigabitEthernet4\n\
+          \ no ip address\n shutdown\n negotiation auto\n!\ninterface GigabitEthernet5\n\
+          \ no ip address\n shutdown\n negotiation auto\n!\ninterface GigabitEthernet6\n\
+          \ no ip address\n shutdown\n negotiation auto\n!\ninterface GigabitEthernet7\n\
+          \ no ip address\n shutdown\n negotiation auto\n!\ninterface GigabitEthernet8\n\
+          \ no ip address\n shutdown\n negotiation auto\n!\nrouter bgp 65002\n bgp\
+          \ router-id 10.2.2.2\n bgp log-neighbor-changes\n neighbor 10.192.1.1 remote-as\
           \ 65001\n !\n address-family ipv4\n  network 10.2.2.0 mask 255.255.255.0\n\
-          \  neighbor 10.192.1.1 activate\n  no neighbor 2001:CAFE:1:2::1 activate\n\
-          \ exit-address-family\n !\n address-family ipv6\n  network 2001:BEEF:1:1::/64\n\
-          \  neighbor 2001:CAFE:1:2::1 activate\n exit-address-family\n!\nip forward-protocol\
-          \ nd\nip forward-protocol udp\n!\nno ip http server\nip http secure-server\n\
-          ip ssh bulk-mode 131072\n!\nlogging host 10.0.0.149\n!\n!\ncontrol-plane\n\
-          !\nalias exec q exit\n!\nline con 0\n exec-timeout 0 0\n logging synchronous\n\
-          \ stopbits 1\nline aux 0\nline vty 0 4\n exec-timeout 0 0\n logging synchronous\n\
-          \ login local\n transport input ssh\n!\n!\n!\n!\n!\n!\n!\nend"
+          \  neighbor 10.192.1.1 activate\n exit-address-family\n !\n address-family\
+          \ ipv6\n  network 2001:BEEF:1:1::/64\n  neighbor 10.192.1.1 activate\n \
+          \ neighbor 10.192.1.1 route-map SET-IPV6-NH out\n exit-address-family\n\
+          !\nip forward-protocol nd\nip forward-protocol udp\n!\nno ip http server\n\
+          ip http secure-server\nip ssh bulk-mode 131072\n!\nlogging host 10.0.0.149\n\
+          route-map SET-IPV6-NH permit 10\n set ipv6 next-hop 2001:CAFE:1:2::2\n!\n\
+          !\n!\ncontrol-plane\n!\nalias exec q exit\n!\nline con 0\n exec-timeout\
+          \ 0 0\n logging synchronous\n stopbits 1\nline aux 0\nline vty 0 4\n exec-timeout\
+          \ 0 0\n logging synchronous\n login local\n transport input ssh\n!\n!\n\
+          !\n!\n!\n!\n!\nend"
     cpu_limit: null
     cpus: null
     data_volume: null
@@ -274,8 +337,8 @@ nodes:
   - boot_disk_size: null
     configuration:
       - name: iosxe_config.txt
-        content: "Building configuration...\n\nCurrent configuration : 4253 bytes\n\
-          !\n! Last configuration change at 03:39:49 UTC Thu Apr 2 2026\n!\nversion\
+        content: "Building configuration...\n\nCurrent configuration : 6491 bytes\n\
+          !\n! Last configuration change at 14:33:00 UTC Fri May 8 2026\n!\nversion\
           \ 17.16\nservice timestamps debug datetime msec\nservice timestamps log\
           \ datetime msec\nservice password-encryption\nplatform qfp utilization monitor\
           \ load 80\nplatform sslvpn use-pd\nplatform console serial\n!\nhostname\
@@ -283,57 +346,88 @@ nodes:
           no aaa new-model\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\nno ip domain lookup\n\
           ip domain name cml.lab\n!\n!\n!\nlogin on-success log\n!\n!\nsubscriber\
           \ templating\nipv6 unicast-routing\n!\n!\n!\ncrypto pki trustpoint SLA-TrustPoint\n\
-          \ enrollment pkcs12\n revocation-check crl\n hash sha512\n!\n!\ncrypto pki\
-          \ certificate chain SLA-TrustPoint\n certificate ca 01\n  30820321 30820209\
-          \ A0030201 02020101 300D0609 2A864886 F70D0101 0B050030\n  32310E30 0C060355\
-          \ 040A1305 43697363 6F312030 1E060355 04031317 43697363\n  6F204C69 63656E73\
-          \ 696E6720 526F6F74 20434130 1E170D31 33303533 30313934\n  3834375A 170D3338\
-          \ 30353330 31393438 34375A30 32310E30 0C060355 040A1305\n  43697363 6F312030\
-          \ 1E060355 04031317 43697363 6F204C69 63656E73 696E6720\n  526F6F74 20434130\
-          \ 82012230 0D06092A 864886F7 0D010101 05000382 010F0030\n  82010A02 82010100\
-          \ A6BCBD96 131E05F7 145EA72C 2CD686E6 17222EA1 F1EFF64D\n  CBB4C798 212AA147\
-          \ C655D8D7 9471380D 8711441E 1AAF071A 9CAE6388 8A38E520\n  1C394D78 462EF239\
-          \ C659F715 B98C0A59 5BBB5CBD 0CFEBEA3 700A8BF7 D8F256EE\n  4AA4E80D DB6FD1C9\
-          \ 60B1FD18 FFC69C96 6FA68957 A2617DE7 104FDC5F EA2956AC\n  7390A3EB 2B5436AD\
-          \ C847A2C5 DAB553EB 69A9A535 58E9F3E3 C0BD23CF 58BD7188\n  68E69491 20F320E7\
-          \ 948E71D7 AE3BCC84 F10684C7 4BC8E00F 539BA42B 42C68BB7\n  C7479096 B4CB2D62\
-          \ EA2F505D C7B062A4 6811D95B E8250FC4 5D5D5FB8 8F27D191\n  C55F0D76 61F9A4CD\
-          \ 3D992327 A8BB03BD 4E6D7069 7CBADF8B DF5F4368 95135E44\n  DFC7C6CF 04DD7FD1\
-          \ 02030100 01A34230 40300E06 03551D0F 0101FF04 04030201\n  06300F06 03551D13\
-          \ 0101FF04 05300301 01FF301D 0603551D 0E041604 1449DC85\n  4B3D31E5 1B3E6A17\
-          \ 606AF333 3D3B4C73 E8300D06 092A8648 86F70D01 010B0500\n  03820101 00507F24\
-          \ D3932A66 86025D9F E838AE5C 6D4DF6B0 49631C78 240DA905\n  604EDCDE FF4FED2B\
-          \ 77FC460E CD636FDB DD44681E 3A5673AB 9093D3B1 6C9E3D8B\n  D98987BF E40CBD9E\
-          \ 1AECA0C2 2189BB5C 8FA85686 CD98B646 5575B146 8DFC66A8\n  467A3DF4 4D565700\
-          \ 6ADF0F0D CF835015 3C04FF7C 21E878AC 11BA9CD2 55A9232C\n  7CA7B7E6 C1AF74F6\
-          \ 152E99B7 B1FCF9BB E973DE7F 5BDDEB86 C71E3B49 1765308B\n  5FB0DA06 B92AFE7F\
-          \ 494E8A9E 07B85737 F3A58BE1 1A48A229 C37C1E69 39F08678\n  80DDCD16 D6BACECA\
-          \ EEBC7CF9 8428787B 35202CDC 60E4616A B623CDBD 230E3AFB\n  418616A9 4093E049\
-          \ 4D10AB75 27E86F73 932E35B5 8862FDAE 0275156F 719BB2F0\n  D697DF7F 28\n\
-          \  \tquit\n!\n!\nlicense udi pid C8000V sn 9F1P3O4F038\nmemory free low-watermark\
-          \ processor 165529\ndiagnostic bootup level minimal\n!\n!\n!\nusername cisco\
-          \ privilege 15 password 7 1511021F0725\n!\nredundancy\n!\n!\n!\n!\n!\n!\n\
-          !\n!\n!\n!\ninterface Loopback0\n ip address 10.3.3.3 255.255.255.0\n ipv6\
-          \ address 2001:DEAD:1:1::1/64\n!\ninterface GigabitEthernet1\n ip address\
-          \ 10.192.2.2 255.255.255.0\n negotiation auto\n ipv6 address 2001:CAFE:1:3::2/64\n\
-          !\ninterface GigabitEthernet2\n no ip address\n shutdown\n negotiation auto\n\
-          !\ninterface GigabitEthernet3\n no ip address\n shutdown\n negotiation auto\n\
-          !\ninterface GigabitEthernet4\n no ip address\n shutdown\n negotiation auto\n\
-          !\ninterface GigabitEthernet5\n no ip address\n shutdown\n negotiation auto\n\
-          !\ninterface GigabitEthernet6\n no ip address\n shutdown\n negotiation auto\n\
-          !\ninterface GigabitEthernet7\n no ip address\n shutdown\n negotiation auto\n\
-          !\ninterface GigabitEthernet8\n no ip address\n shutdown\n negotiation auto\n\
-          !\nrouter bgp 65003\n bgp router-id 10.3.3.3\n bgp log-neighbor-changes\n\
-          \ neighbor 10.192.2.1 remote-as 65001\n neighbor 2001:CAFE:1:3::1 remote-as\
+          \ enrollment pkcs12\n revocation-check crl\n hash sha512\n!\ncrypto pki\
+          \ trustpoint TP-self-signed-613145205\n enrollment selfsigned\n subject-name\
+          \ cn=IOS-Self-Signed-Certificate-613145205\n revocation-check none\n rsakeypair\
+          \ TP-self-signed-613145205\n hash sha512\n!\n!\ncrypto pki certificate chain\
+          \ SLA-TrustPoint\n certificate ca 01\n  30820321 30820209 A0030201 02020101\
+          \ 300D0609 2A864886 F70D0101 0B050030\n  32310E30 0C060355 040A1305 43697363\
+          \ 6F312030 1E060355 04031317 43697363\n  6F204C69 63656E73 696E6720 526F6F74\
+          \ 20434130 1E170D31 33303533 30313934\n  3834375A 170D3338 30353330 31393438\
+          \ 34375A30 32310E30 0C060355 040A1305\n  43697363 6F312030 1E060355 04031317\
+          \ 43697363 6F204C69 63656E73 696E6720\n  526F6F74 20434130 82012230 0D06092A\
+          \ 864886F7 0D010101 05000382 010F0030\n  82010A02 82010100 A6BCBD96 131E05F7\
+          \ 145EA72C 2CD686E6 17222EA1 F1EFF64D\n  CBB4C798 212AA147 C655D8D7 9471380D\
+          \ 8711441E 1AAF071A 9CAE6388 8A38E520\n  1C394D78 462EF239 C659F715 B98C0A59\
+          \ 5BBB5CBD 0CFEBEA3 700A8BF7 D8F256EE\n  4AA4E80D DB6FD1C9 60B1FD18 FFC69C96\
+          \ 6FA68957 A2617DE7 104FDC5F EA2956AC\n  7390A3EB 2B5436AD C847A2C5 DAB553EB\
+          \ 69A9A535 58E9F3E3 C0BD23CF 58BD7188\n  68E69491 20F320E7 948E71D7 AE3BCC84\
+          \ F10684C7 4BC8E00F 539BA42B 42C68BB7\n  C7479096 B4CB2D62 EA2F505D C7B062A4\
+          \ 6811D95B E8250FC4 5D5D5FB8 8F27D191\n  C55F0D76 61F9A4CD 3D992327 A8BB03BD\
+          \ 4E6D7069 7CBADF8B DF5F4368 95135E44\n  DFC7C6CF 04DD7FD1 02030100 01A34230\
+          \ 40300E06 03551D0F 0101FF04 04030201\n  06300F06 03551D13 0101FF04 05300301\
+          \ 01FF301D 0603551D 0E041604 1449DC85\n  4B3D31E5 1B3E6A17 606AF333 3D3B4C73\
+          \ E8300D06 092A8648 86F70D01 010B0500\n  03820101 00507F24 D3932A66 86025D9F\
+          \ E838AE5C 6D4DF6B0 49631C78 240DA905\n  604EDCDE FF4FED2B 77FC460E CD636FDB\
+          \ DD44681E 3A5673AB 9093D3B1 6C9E3D8B\n  D98987BF E40CBD9E 1AECA0C2 2189BB5C\
+          \ 8FA85686 CD98B646 5575B146 8DFC66A8\n  467A3DF4 4D565700 6ADF0F0D CF835015\
+          \ 3C04FF7C 21E878AC 11BA9CD2 55A9232C\n  7CA7B7E6 C1AF74F6 152E99B7 B1FCF9BB\
+          \ E973DE7F 5BDDEB86 C71E3B49 1765308B\n  5FB0DA06 B92AFE7F 494E8A9E 07B85737\
+          \ F3A58BE1 1A48A229 C37C1E69 39F08678\n  80DDCD16 D6BACECA EEBC7CF9 8428787B\
+          \ 35202CDC 60E4616A B623CDBD 230E3AFB\n  418616A9 4093E049 4D10AB75 27E86F73\
+          \ 932E35B5 8862FDAE 0275156F 719BB2F0\n  D697DF7F 28\n  \tquit\ncrypto pki\
+          \ certificate chain TP-self-signed-613145205\n certificate self-signed 01\n\
+          \  3082032E 30820216 A0030201 02020101 300D0609 2A864886 F70D0101 0D050030\n\
+          \  30312E30 2C060355 04030C25 494F532D 53656C66 2D536967 6E65642D 43657274\n\
+          \  69666963 6174652D 36313331 34353230 35301E17 0D323630 35303831 33303731\n\
+          \  335A170D 33363035 30373133 30373133 5A303031 2E302C06 03550403 0C25494F\n\
+          \  532D5365 6C662D53 69676E65 642D4365 72746966 69636174 652D3631 33313435\n\
+          \  32303530 82012230 0D06092A 864886F7 0D010101 05000382 010F0030 82010A02\n\
+          \  82010100 C9C95D78 FC9E5634 8E07CEC5 3B18D094 82B25280 40186458 B1AB1003\n\
+          \  76D025AF 6D838AC4 C81B1039 1AE8D98A 3EB4A0D9 56BD3BB8 7F1AEF53 1AF091DC\n\
+          \  AD3EE0FF 096B8152 04CDCE57 84CD2760 570440B7 C277AA9A 52522AC4 42837CF2\n\
+          \  55EF039F A58CDF58 19423106 EB10BBAC F0DE0B6B 94B8D6FA 5F5886C7 D192CFC9\n\
+          \  2CF5834D BDBDC55E 9045E30A 3BDE7502 236864C9 701DC56E 5E0C1CBB EDECBB1A\n\
+          \  020B890E 8E2B3549 0746EE23 A294A3E3 49A2F504 6881BA58 B4CF413D 98F18654\n\
+          \  AD7EE100 6108F2FA F865C1EE 572F8901 91927930 6C7386D9 E8903D9B DEE4CEFE\n\
+          \  8E0A1D3F C036D9AC 9A89E8A0 1B4FC684 3E292E26 B4C8121C 952DA4B4 D77B728B\n\
+          \  6B1AD991 02030100 01A35330 51301D06 03551D0E 04160414 08AE32A9 287A3FFA\n\
+          \  F3FD95EA 3D280DA5 D102E25D 301F0603 551D2304 18301680 1408AE32 A9287A3F\n\
+          \  FAF3FD95 EA3D280D A5D102E2 5D300F06 03551D13 0101FF04 05300301 01FF300D\n\
+          \  06092A86 4886F70D 01010D05 00038201 0100044C 6EA49DA0 5EAB9F46 B13A8E6C\n\
+          \  B98F1A3B 9B09759F E7EE2280 9E3E90DE 46DF6FF9 DE572E80 236EA22C 8CFE342B\n\
+          \  D12ADDC0 EC1B4AEC C24C7F7B BCAD007C 201B2738 3D5CA91F 59EA169F 5A6A90E6\n\
+          \  14F86445 3871DCA5 DC0D6E95 1C8890C0 DD11B8B5 22742977 08D5F19A BF82E225\n\
+          \  5A6D0187 14DAF2AC EB8074C9 136C975D 49C3ABF9 21F237F7 BAB803BC DC07FBCD\n\
+          \  80F981FC 867E4491 F35B9FF5 AD925DEF 38D09D6D CFA2BFED B51294D4 8E4E0C68\n\
+          \  C329449A D93C384E 370A8CBE CD85005D 6F268C12 1E180D5E A4EE02EF F50A9D61\n\
+          \  9D475FFD 13CFF8E8 EC91E0FF 783F72BB 709E5CE7 0CB036E6 71A32E70 36A2CD34\n\
+          \  9CCB3DD6 E5BE1690 2F437088 8551612C 97B6\n  \tquit\n!\n!\nlicense udi\
+          \ pid C8000V sn 9F1P3O4F038\nmemory free low-watermark processor 165529\n\
+          diagnostic bootup level minimal\n!\n!\n!\nusername cisco privilege 15 password\
+          \ 7 1511021F0725\n!\nredundancy\n!\n!\n!\n!\n!\n!\n!\n!\n!\n!\ninterface\
+          \ Loopback0\n ip address 10.3.3.3 255.255.255.0\n ipv6 address 2001:DEAD:1:1::1/64\n\
+          !\ninterface GigabitEthernet1\n ip address 10.192.2.2 255.255.255.0\n negotiation\
+          \ auto\n ipv6 address 2001:CAFE:1:3::2/64\n!\ninterface GigabitEthernet2\n\
+          \ no ip address\n shutdown\n negotiation auto\n!\ninterface GigabitEthernet3\n\
+          \ no ip address\n shutdown\n negotiation auto\n!\ninterface GigabitEthernet4\n\
+          \ no ip address\n shutdown\n negotiation auto\n!\ninterface GigabitEthernet5\n\
+          \ no ip address\n shutdown\n negotiation auto\n!\ninterface GigabitEthernet6\n\
+          \ no ip address\n shutdown\n negotiation auto\n!\ninterface GigabitEthernet7\n\
+          \ no ip address\n shutdown\n negotiation auto\n!\ninterface GigabitEthernet8\n\
+          \ no ip address\n shutdown\n negotiation auto\n!\nrouter bgp 65003\n bgp\
+          \ router-id 10.3.3.3\n bgp log-neighbor-changes\n neighbor 10.192.2.1 remote-as\
           \ 65001\n !\n address-family ipv4\n  network 10.3.3.0 mask 255.255.255.0\n\
-          \  neighbor 10.192.2.1 activate\n  no neighbor 2001:CAFE:1:3::1 activate\n\
-          \ exit-address-family\n !\n address-family ipv6\n  network 2001:DEAD:1:1::/64\n\
-          \  neighbor 2001:CAFE:1:3::1 activate\n exit-address-family\n!\nip forward-protocol\
-          \ nd\nip forward-protocol udp\n!\nno ip http server\nip http secure-server\n\
-          ip ssh bulk-mode 131072\n!\nlogging host 10.0.0.149\n!\n!\ncontrol-plane\n\
-          !\nalias exec q exit\n!\nline con 0\n exec-timeout 0 0\n logging synchronous\n\
-          \ stopbits 1\nline aux 0\nline vty 0 4\n exec-timeout 0 0\n logging synchronous\n\
-          \ login local\n transport input ssh\n!\n!\n!\n!\n!\n!\n!\nend"
+          \  neighbor 10.192.2.1 activate\n exit-address-family\n !\n address-family\
+          \ ipv6\n  network 2001:DEAD:1:1::/64\n  neighbor 10.192.2.1 activate\n \
+          \ neighbor 10.192.2.1 route-map SET-IPV6-NH out\n exit-address-family\n\
+          !\nip forward-protocol nd\nip forward-protocol udp\n!\nno ip http server\n\
+          ip http secure-server\nip ssh bulk-mode 131072\n!\nlogging host 10.0.0.149\n\
+          route-map SET-IPV6-NH permit 10\n set ipv6 next-hop 2001:CAFE:1:3::2\n!\n\
+          !\n!\ncontrol-plane\n!\nalias exec q exit\n!\nline con 0\n exec-timeout\
+          \ 0 0\n logging synchronous\n stopbits 1\nline aux 0\nline vty 0 4\n exec-timeout\
+          \ 0 0\n logging synchronous\n login local\n transport input ssh\n!\n!\n\
+          !\n!\n!\n!\n!\nend"
     cpu_limit: null
     cpus: null
     data_volume: null
