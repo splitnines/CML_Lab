@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+# curl
+export TOKEN="$(curl -sk \
+        -u 'devnetuser:Cisco123!' \
+        -X POST \
+        https://sandboxdnac.cisco.com/dna/system/api/v1/auth/token \
+        | jq -r '.Token')"
+
+curl -sk -i \
+     -H "X-Auth-Token: $TOKEN" \
+     https://sandboxdnac.cisco.com/dna/intent/api/v1/network-device
+
+curl -sk \
+     -H "X-Auth-Token: $TOKEN" \
+     https://sandboxdnac.cisco.com/dna/intent/api/v1/interface \
+     | jq .
+
+# ==============
+curl -k -i \
+     -u "$USER:$PASS" \
+     -H "Accept: application/yang-data+json" \
+     "$RESTCONF_URL/restconf/data/Cisco-IOS-XE-native:native/interface/GigabitEthernet=3"
+
+curl -k -i \
+     -u "$USER:$PASS" \
+     -H "Accept: application/yang-data+json" \
+     "https://$DEVICE/restconf/data/Cisco-IOS-XE-native:native/interface"

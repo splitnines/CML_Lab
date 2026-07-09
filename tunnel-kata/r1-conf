@@ -1,0 +1,81 @@
+conf t
+!
+service password-encryption
+!
+hostname r1
+!
+vrf definition TUNNEL
+ !
+ address-family ipv4
+ exit-address-family
+!
+aaa new-model
+!
+aaa authentication login default local
+aaa authentication login LOCAL_AUTH local
+aaa authorization console
+aaa authorization exec default local
+!
+aaa session-id common
+!
+no ip domain lookup
+ip domain name cml.lab
+!
+login on-success log
+!
+license boot level network-advantage addon dna-advantage
+!
+username cisco privilege 15 secret 9 $9$U/pThF6xDtXAmk$UDap1IAlcEeB.yQroKnYW6g2hnADSVPFuc78sAOnS0o
+!
+interface Loopback0
+ ip address 10.254.0.1 255.255.255.255
+ ip ospf 1 area 0
+ no shutdown
+!
+interface GigabitEthernet1
+ ip address 10.10.0.1 255.255.255.252
+ ip ospf network point-to-point
+ ip ospf 1 area 0
+ negotiation auto
+ no shutdown
+!
+interface GigabitEthernet2
+ vrf forwarding TUNNEL
+ ip address 10.100.1.1 255.255.255.0
+ negotiation auto
+!
+router eigrp LAB
+ !
+ address-family ipv4 unicast vrf TUNNEL autonomous-system 65000
+  !
+  topology base
+  exit-af-topology
+  network 10.100.1.0 0.0.0.255
+  network 10.192.1.0 0.0.0.3
+ exit-address-family
+!
+router ospf 1
+ router-id 10.254.0.1
+ log-adjacency-changes detail
+ passive-interface Loopback0
+!
+ip forward-protocol nd
+ip forward-protocol udp
+!
+logging host 10.0.0.149
+!
+alias exec q exit
+!
+line con 0
+ exec-timeout 0 0
+ logging synchronous
+ login authentication LOCAL_AUTH
+ stopbits 1
+line vty 0 4
+ exec-timeout 0 0
+ logging synchronous
+ transport input ssh
+!
+crypto key gen rsa mod 2048
+!
+end

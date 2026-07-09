@@ -8,18 +8,18 @@ ip ssh version 2
 !
 logging console
 !
-username cisco privilege 15 secret 9 $9$U/pThF6xDtXAmk$UDap1IAlcEeB.yQroKnYW6g2hnADSVPFuc78sAOnS0o
+!username cisco privilege 15 secret 9 $9$U/pThF6xDtXAmk$UDap1IAlcEeB.yQroKnYW6g2hnADSVPFuc78sAOnS0o
 !
-aaa new-model
+!aaa new-model
 !
 !
-aaa authentication login default local
-aaa authentication login LOCAL_AUTH local
-aaa authorization console
-aaa authorization exec default local
+!aaa authentication login default local
+!aaa authentication login LOCAL_AUTH local
+!aaa authorization console
+!aaa authorization exec default local
 !
 line con 0
- login authentication LOCAL_AUTH
+ !login authentication LOCAL_AUTH
  exec-timeout 0 0
  logging synchronous
 
