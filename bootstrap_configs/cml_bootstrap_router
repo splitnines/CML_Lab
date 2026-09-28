@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+file=${1:-}
+first_port=${2:-}
+last_port=${3:-}
+
+send_cmd() {
+    cmd=$1
+    if [[ "$cmd" == "quit" ]]; then
+        printf '\x1dquit\r\n'
+    else
+        printf '%s\r\n' "$cmd"
+        sleep 0.25
+    fi
+}
+
+for ((i = first_port; i <= last_port; i++)); do
+    {
+        send_cmd "enable"
+        send_cmd "configure terminal"
+        send_cmd "hostname r$i"
+        send_cmd "end"
+        send_cmd "quit"
+    } | telnet localhost "900$i"
+done
+
+for ((i = first_port; i <= last_port; i++)); do
+    {
+        send_cmd "enable"
+        cat "$file"
+        sleep 0.25
+        send_cmd "end"
+        send_cmd "write memory"
+        send_cmd "quit"
+    } | telnet localhost "900$i"
+done
