@@ -3,7 +3,7 @@
 #
 # Lab topology used here:
 #   FTD/FDM management address: 10.1.0.3
-#   SNMP manager:               10.0.0.198
+#   SNMP managers:              10.0.0.198, 10.0.0.85
 #   FTD polling interface:      management
 #
 # Requirements: curl and jq. Install snmpwalk to run the final test.
@@ -24,8 +24,15 @@ FDM_URL="https://10.1.0.3"
 API_VERSION="v6"
 FDM_USERNAME="admin"
 
-SNMP_MANAGER_NAME="snmp-manager"
-SNMP_MANAGER_IP="10.0.0.198"
+# Add or remove addresses as needed. Each address is the source IP of an SNMP
+# manager that is allowed to poll the FTD. The script creates/reuses one FDM
+# network object and one SNMP host association for each address.
+SNMP_MANAGER_IPS=(
+    "10.0.0.198"
+    "10.0.0.85"
+)
+SNMP_MANAGER_NAME_PREFIX="snmp-manager"
+SNMP_HOST_NAME_PREFIX="snmpv3-manager"
 SNMP_INTERFACE_NAME="management"
 
 SNMP_USERNAME="admin"
@@ -33,7 +40,11 @@ SNMP_AUTH_PASSWORD="cisco123!"
 SNMP_PRIV_PASSWORD="cisco123!"
 SNMP_AUTH_ALGORITHM="SHA"
 SNMP_PRIV_ALGORITHM="AES128"
-SNMP_HOST_NAME="snmpv3-manager"
+
+if (( ${#SNMP_MANAGER_IPS[@]} == 0 )); then
+    echo "ERROR: SNMP_MANAGER_IPS must contain at least one manager address." >&2
+    exit 1
+fi
 
 command -v curl >/dev/null || { echo "ERROR: curl is required" >&2; exit 1; }
 command -v jq >/dev/null || { echo "ERROR: jq is required" >&2; exit 1; }
@@ -72,66 +83,65 @@ api() {
 }
 
 # -----------------------------------------------------------------------------
-# 2. Create or update the network object representing the SNMP manager
+# 2. Create or reuse a network object for each SNMP manager
 #
-# This address is the source host allowed to poll the FTD. It is not the FTD's
-# own address.
+# These addresses are the source hosts allowed to poll the FTD. They are not
+# addresses assigned to the FTD itself. Existing HOST objects are matched by
+# their IP value, so the script can reuse objects that have different names.
 # -----------------------------------------------------------------------------
 NETWORKS=$(api '/object/networks?limit=100')
-NETWORK_OBJECT=$(jq -c --arg name "$SNMP_MANAGER_NAME" \
-    '.items[] | select(.name == $name)' <<<"$NETWORKS")
+EXISTING_HOSTS=$(api '/object/snmphosts?limit=100')
+declare -A NETWORK_OBJECTS=()
 
-if [[ -n "$NETWORK_OBJECT" ]]; then
-    NETWORK_ID=$(jq -r '.id' <<<"$NETWORK_OBJECT")
-    NETWORK_VERSION=$(jq -r '.version' <<<"$NETWORK_OBJECT")
+for SNMP_MANAGER_IP in "${SNMP_MANAGER_IPS[@]}"; do
+    SAFE_IP=${SNMP_MANAGER_IP//[^a-zA-Z0-9]/-}
+    SNMP_MANAGER_NAME="${SNMP_MANAGER_NAME_PREFIX}-${SAFE_IP}"
 
-    NETWORK_PAYLOAD=$(jq -n \
-        --arg version "$NETWORK_VERSION" \
-        --arg name "$SNMP_MANAGER_NAME" \
+    # If duplicate network objects contain the same address, prefer the one
+    # already referenced by an SNMP host. Otherwise, reuse the first matching
+    # HOST object.
+    NETWORK_OBJECT=$(jq -c \
         --arg value "$SNMP_MANAGER_IP" \
-        --arg id "$NETWORK_ID" \
-        '{
-            version: $version,
-            name: $name,
-            description: "SNMP monitoring server",
-            subType: "HOST",
-            value: $value,
-            isSystemDefined: false,
-            dnsResolution: "IPV4_ONLY",
-            id: $id,
-            type: "networkobject"
-        }')
+        --argjson hosts "$EXISTING_HOSTS" \
+        '(
+            first(
+                .items[] as $network
+                | select($network.subType == "HOST" and $network.value == $value)
+                | select(any($hosts.items[]?; .managerAddress.id == $network.id))
+                | $network
+            )
+            // first(.items[] | select(.subType == "HOST" and .value == $value))
+            // empty
+        )' <<<"$NETWORKS")
 
-    # Some FDM PUT operations return an empty response body. Re-read the
-    # object after updating it so the current version and ID are available.
-    api "/object/networks/${NETWORK_ID}" \
-        -X PUT --data-binary "$NETWORK_PAYLOAD" >/dev/null
-    NETWORK_OBJECT=$(api "/object/networks/${NETWORK_ID}")
-    echo "Updated network object ${SNMP_MANAGER_NAME} -> ${SNMP_MANAGER_IP}."
-else
-    NETWORK_PAYLOAD=$(jq -n \
-        --arg name "$SNMP_MANAGER_NAME" \
-        --arg value "$SNMP_MANAGER_IP" \
-        '{
-            version: null,
-            name: $name,
-            description: "SNMP monitoring server",
-            subType: "HOST",
-            value: $value,
-            isSystemDefined: false,
-            dnsResolution: "IPV4_ONLY",
-            type: "networkobject"
-        }')
+    if [[ -n "$NETWORK_OBJECT" ]]; then
+        NETWORK_ID=$(jq -er '.id' <<<"$NETWORK_OBJECT")
+        NETWORK_OBJECT=$(api "/object/networks/${NETWORK_ID}")
+        echo "Reusing network object $(jq -r '.name' <<<"$NETWORK_OBJECT") -> ${SNMP_MANAGER_IP}."
+    else
+        NETWORK_PAYLOAD=$(jq -n \
+            --arg name "$SNMP_MANAGER_NAME" \
+            --arg value "$SNMP_MANAGER_IP" \
+            '{
+                name: $name,
+                description: "SNMP monitoring server",
+                subType: "HOST",
+                value: $value,
+                dnsResolution: "IPV4_ONLY",
+                type: "networkobject"
+            }')
 
-    NETWORK_OBJECT=$(api '/object/networks' \
-        -X POST --data-binary "$NETWORK_PAYLOAD")
-    NETWORK_ID=$(jq -er '.id' <<<"$NETWORK_OBJECT")
-    NETWORK_OBJECT=$(api "/object/networks/${NETWORK_ID}")
-    echo "Created network object ${SNMP_MANAGER_NAME} -> ${SNMP_MANAGER_IP}."
-fi
+        NETWORK_OBJECT=$(api '/object/networks' \
+            -X POST --data-binary "$NETWORK_PAYLOAD")
+        NETWORK_ID=$(jq -er '.id' <<<"$NETWORK_OBJECT")
+        NETWORK_OBJECT=$(api "/object/networks/${NETWORK_ID}")
+        echo "Created network object ${SNMP_MANAGER_NAME} -> ${SNMP_MANAGER_IP}."
+    fi
 
-jq '{name, value, version, id, type}' <<<"$NETWORK_OBJECT"
-printf '%s\n' "$NETWORK_OBJECT" >/tmp/snmp-manager-network.json
+    NETWORK_OBJECTS["$SNMP_MANAGER_IP"]="$NETWORK_OBJECT"
+    jq '{name, value, version, id, type}' <<<"$NETWORK_OBJECT"
+    printf '%s\n' "$NETWORK_OBJECT" >"/tmp/snmp-manager-network-${SAFE_IP}.json"
+done
 
 # -----------------------------------------------------------------------------
 # 3. Create or update the SNMPv3 user
@@ -220,79 +230,91 @@ fi
 echo "Using interface $(jq -r '.name' <<<"$INTERFACE_OBJECT") at $(jq -r '.ipv4.ipAddress.ipAddress' <<<"$INTERFACE_OBJECT")."
 
 # -----------------------------------------------------------------------------
-# 5. Create or update the SNMP host association
+# 5. Create or update an SNMP host association for each manager
 #
-# pollEnabled=true allows the manager to query UDP/161.
+# pollEnabled=true allows each manager to query UDP/161.
 # trapEnabled=false means the FTD will not send traps to UDP/162.
+# Existing associations are matched by their managerAddress object ID.
 # -----------------------------------------------------------------------------
-HOSTS=$(api '/object/snmphosts?limit=100')
-SNMP_HOST_OBJECT=$(jq -c --arg name "$SNMP_HOST_NAME" \
-    '.items[] | select(.name == $name)' <<<"$HOSTS")
+HOSTS=$EXISTING_HOSTS
 
-if [[ -n "$SNMP_HOST_OBJECT" ]]; then
-    SNMP_HOST_ID=$(jq -r '.id' <<<"$SNMP_HOST_OBJECT")
-    SNMP_HOST_VERSION=$(jq -r '.version' <<<"$SNMP_HOST_OBJECT")
-else
-    SNMP_HOST_ID=""
-    SNMP_HOST_VERSION=""
-fi
+for SNMP_MANAGER_IP in "${SNMP_MANAGER_IPS[@]}"; do
+    SAFE_IP=${SNMP_MANAGER_IP//[^a-zA-Z0-9]/-}
+    DEFAULT_SNMP_HOST_NAME="${SNMP_HOST_NAME_PREFIX}-${SAFE_IP}"
+    NETWORK_OBJECT=${NETWORK_OBJECTS["$SNMP_MANAGER_IP"]}
+    NETWORK_ID=$(jq -er '.id' <<<"$NETWORK_OBJECT")
 
-SNMP_HOST_PAYLOAD=$(jq -n \
-    --arg version "$SNMP_HOST_VERSION" \
-    --arg name "$SNMP_HOST_NAME" \
-    --arg managerIp "$SNMP_MANAGER_IP" \
-    --arg id "$SNMP_HOST_ID" \
-    --argjson manager "$NETWORK_OBJECT" \
-    --argjson user "$SNMP_USER_OBJECT" \
-    --argjson interface "$INTERFACE_OBJECT" \
-    '{
-        version: (if $version == "" then null else $version end),
-        name: $name,
-        description: ("SNMPv3 manager at " + $managerIp),
-        managerAddress: {
-            version: $manager.version,
-            name: $manager.name,
-            id: $manager.id,
-            type: $manager.type
-        },
-        udpPort: 162,
-        pollEnabled: true,
-        trapEnabled: false,
-        securityConfiguration: {
-            authentication: {
-                version: $user.version,
-                name: $user.name,
-                id: $user.id,
-                type: $user.type
+    SNMP_HOST_OBJECT=$(jq -c --arg managerId "$NETWORK_ID" \
+        'first(.items[] | select(.managerAddress.id == $managerId)) // empty' \
+        <<<"$HOSTS")
+
+    if [[ -n "$SNMP_HOST_OBJECT" ]]; then
+        SNMP_HOST_ID=$(jq -er '.id' <<<"$SNMP_HOST_OBJECT")
+        SNMP_HOST_VERSION=$(jq -er '.version' <<<"$SNMP_HOST_OBJECT")
+        SNMP_HOST_NAME=$(jq -er '.name' <<<"$SNMP_HOST_OBJECT")
+    else
+        SNMP_HOST_ID=""
+        SNMP_HOST_VERSION=""
+        SNMP_HOST_NAME="$DEFAULT_SNMP_HOST_NAME"
+    fi
+
+    SNMP_HOST_PAYLOAD=$(jq -n \
+        --arg version "$SNMP_HOST_VERSION" \
+        --arg name "$SNMP_HOST_NAME" \
+        --arg managerIp "$SNMP_MANAGER_IP" \
+        --arg id "$SNMP_HOST_ID" \
+        --argjson manager "$NETWORK_OBJECT" \
+        --argjson user "$SNMP_USER_OBJECT" \
+        --argjson interface "$INTERFACE_OBJECT" \
+        '{
+            version: (if $version == "" then null else $version end),
+            name: $name,
+            description: ("SNMPv3 manager at " + $managerIp),
+            managerAddress: {
+                version: $manager.version,
+                name: $manager.name,
+                id: $manager.id,
+                type: $manager.type
             },
-            type: "snmpv3securityconfiguration"
-        },
-        interface: {
-            version: $interface.version,
-            name: $interface.name,
-            id: $interface.id,
-            type: $interface.type
-        },
-        id: (if $id == "" then null else $id end),
-        type: "snmphost"
-    }')
+            udpPort: 162,
+            pollEnabled: true,
+            trapEnabled: false,
+            securityConfiguration: {
+                authentication: {
+                    version: $user.version,
+                    name: $user.name,
+                    id: $user.id,
+                    type: $user.type
+                },
+                type: "snmpv3securityconfiguration"
+            },
+            interface: {
+                version: $interface.version,
+                name: $interface.name,
+                id: $interface.id,
+                type: $interface.type
+            },
+            id: (if $id == "" then null else $id end),
+            type: "snmphost"
+        }')
 
-if [[ -n "$SNMP_HOST_ID" ]]; then
-    api "/object/snmphosts/${SNMP_HOST_ID}" \
-        -X PUT --data-binary "$SNMP_HOST_PAYLOAD" >/dev/null
-    SNMP_HOST_OBJECT=$(api "/object/snmphosts/${SNMP_HOST_ID}")
-    echo "Updated SNMP host association ${SNMP_HOST_NAME}."
-else
-    SNMP_HOST_OBJECT=$(api '/object/snmphosts' \
-        -X POST --data-binary "$SNMP_HOST_PAYLOAD")
-    SNMP_HOST_ID=$(jq -er '.id' <<<"$SNMP_HOST_OBJECT")
-    SNMP_HOST_OBJECT=$(api "/object/snmphosts/${SNMP_HOST_ID}")
-    echo "Created SNMP host association ${SNMP_HOST_NAME}."
-fi
+    if [[ -n "$SNMP_HOST_ID" ]]; then
+        api "/object/snmphosts/${SNMP_HOST_ID}" \
+            -X PUT --data-binary "$SNMP_HOST_PAYLOAD" >/dev/null
+        SNMP_HOST_OBJECT=$(api "/object/snmphosts/${SNMP_HOST_ID}")
+        echo "Updated SNMP host association ${SNMP_HOST_NAME} for ${SNMP_MANAGER_IP}."
+    else
+        SNMP_HOST_OBJECT=$(api '/object/snmphosts' \
+            -X POST --data-binary "$SNMP_HOST_PAYLOAD")
+        SNMP_HOST_ID=$(jq -er '.id' <<<"$SNMP_HOST_OBJECT")
+        SNMP_HOST_OBJECT=$(api "/object/snmphosts/${SNMP_HOST_ID}")
+        echo "Created SNMP host association ${SNMP_HOST_NAME} for ${SNMP_MANAGER_IP}."
+    fi
 
-jq '{name, udpPort, pollEnabled, trapEnabled, managerAddress, securityConfiguration, interface, version, id}' \
-    <<<"$SNMP_HOST_OBJECT"
-printf '%s\n' "$SNMP_HOST_OBJECT" >/tmp/snmp-host.json
+    jq '{name, udpPort, pollEnabled, trapEnabled, managerAddress, securityConfiguration, interface, version, id}' \
+        <<<"$SNMP_HOST_OBJECT"
+    printf '%s\n' "$SNMP_HOST_OBJECT" >"/tmp/snmp-host-${SAFE_IP}.json"
+done
 
 # -----------------------------------------------------------------------------
 # 6. Deploy the pending configuration
@@ -331,10 +353,17 @@ fi
 echo "SNMPv3 configuration deployed successfully."
 
 # -----------------------------------------------------------------------------
-# 7. Test from the SNMP manager (10.0.0.198)
+# 7. Test from an authorized SNMP manager
+#
+# The test originates from the computer running this script. It succeeds only
+# if that computer's actual source address is included in SNMP_MANAGER_IPS.
+# Run the same command separately from each authorized manager as needed.
 # -----------------------------------------------------------------------------
+printf 'Authorized SNMP manager addresses:\n'
+printf '  %s\n' "${SNMP_MANAGER_IPS[@]}"
+
 if command -v snmpwalk >/dev/null; then
-    echo "Testing SNMPv3 polling of ${FDM_URL#https://} ..."
+    echo "Testing SNMPv3 polling of ${FDM_URL#https://} from this computer ..."
     snmpwalk -v3 -l authPriv \
         -u "$SNMP_USERNAME" \
         -a "$SNMP_AUTH_ALGORITHM" -A "$SNMP_AUTH_PASSWORD" \
@@ -344,7 +373,7 @@ if command -v snmpwalk >/dev/null; then
         1.3.6.1.2.1.1
 else
     cat <<EOF
-snmpwalk is not installed. Test from ${SNMP_MANAGER_IP} with:
+snmpwalk is not installed. Run this command from each authorized manager:
 
 snmpwalk -v3 -l authPriv -u '${SNMP_USERNAME}' \\
   -a ${SNMP_AUTH_ALGORITHM} -A '${SNMP_AUTH_PASSWORD}' \\
