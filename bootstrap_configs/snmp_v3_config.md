@@ -27,7 +27,7 @@
   
   ! Permit only the SNMP manager
   ip access-list standard SNMP-ACL
-   permit 10.0.0.248
+   permit <SNMP HOST IP>
    deny any
   exit
   
@@ -39,7 +39,6 @@
   
   ! Create the SNMPv3 user
   snmp-server user <USERNAME> CISCO-IQ-GROUP v3 auth sha <AUTH_PASSWORD> priv aes 128 <PRIV_PASSWORD>
-  
   end
   write memory
 ```
@@ -65,3 +64,33 @@
 ```
 
 ---
+
+## ASA SSH Config
+
+```bash
+  configure terminal
+  username <USERNAME> password <PASSWORD> privilege 15
+  aaa authentication ssh console LOCAL
+  crypto key generate rsa modulus 2048
+  ssh version 2
+  ssh <IP ADDRESS> <MASK> <INTERFACE>
+  end
+```
+
+## ASA SNMPv3
+```bash
+  configure terminal
+  snmp-server group <GROUP NAME> v3 priv
+  snmp-server user <USERNAME> <GROUP NAME> v3 auth sha256 <PASSWORD> priv aes 128 <PASSWORD>
+  snmp-server host <INTERFACE> <HOST IP> version 3 <USERNAME> 
+  end
+  write memory
+```
+
+## ASA SNMPv2c
+```bash
+  configure terminal
+  snmp-server host <INTERFACE> <HOST IP> community <COMMUNITY STRING> version 2c
+  end
+  write memory
+```
